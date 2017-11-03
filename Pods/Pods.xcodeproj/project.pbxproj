@@ -1,0 +1,2199 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02CDE2922FE1EC17B551218B6F835561 /* Pods-ruckus.lite.watch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD1E42691DC0E890C579ED43F5EE10AD /* Pods-ruckus.lite.watch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0598DA96FC09E118A4D16659C0666659 /* MKRingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481A7F0DEC99DB01E3BDA0DDEAF99F5 /* MKRingProgressView.swift */; };
+		0BFB83FB77B5B37503028824F5F2AD6F /* Pods-ruckus.lite.watch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E99849D08102CBF9801B1A47E2256C5 /* Pods-ruckus.lite.watch-dummy.m */; };
+		0D449C0EBD2176EB1BF23F84E4B35618 /* Pods-ruckus.lite-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2CCB11A4730EF3F91FCE14785F77A3 /* Pods-ruckus.lite-dummy.m */; };
+		10E01A5F05136E3364A002ADAAD0B35A /* SwiftyStoreKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D73F5585496CD583C039F24198DE7D /* SwiftyStoreKit-dummy.m */; };
+		179499E95924F4392A26EE34E498154D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97F07D346B98DC05CE6CCB6BE66391E /* Foundation.framework */; };
+		1A782F3602B341A25E7E61CFD8902FF6 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF2195CC991D66762CF3FAD2D560F86 /* PaymentsController.swift */; };
+		1AFD8402A99F9C3BA0110EA4E61ADEF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AE75794229AF080CAB392B8DB1A3CE /* UIKit.framework */; };
+		1C9AF992C79F9F46BB71E12D071A9AB7 /* FoldingCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B76632B4C04549EAD8D79B17780D5E /* FoldingCell-dummy.m */; };
+		1CFE7711BA9A28B75FC2BE05B5648D6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97F07D346B98DC05CE6CCB6BE66391E /* Foundation.framework */; };
+		24C4432DB15B9E18DF0E147EAF2EB4A4 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D47610533B3767AFEAC80538D5CD8 /* InAppReceipt.swift */; };
+		25366926348C80445D46FBE9E8C6D194 /* Pods-ruckus.watch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 589807301A515E9D7B3C44FC51D24643 /* Pods-ruckus.watch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E024F9009AB2D75DDBB285858FC0570 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D7EAB13D7CDD205AE1406BFDA70D65 /* SKProduct+LocalizedPrice.swift */; };
+		42D0CA1D00BAD7046D4622A5F2FD928A /* Pods-ruckusTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D1359E5D2E41B4610B8B61E479AA6C /* Pods-ruckusTests-dummy.m */; };
+		436CD7BCDF2D723F97D1B045A6684940 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97F07D346B98DC05CE6CCB6BE66391E /* Foundation.framework */; };
+		4F2FF7526E51AD6C74F773C56BE858C1 /* Pods-ruckus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E99BAED739F09F9BEFD41B30D61276FB /* Pods-ruckus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		541E73271966746296BC783736F1BE06 /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D194B190E7E354935CAC3AA69D8662 /* OS.swift */; };
+		59C73B547722FC15F3835D606BDD29CA /* SwiftyStoreKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5114748E9855F20D478AF195D8409DEA /* SwiftyStoreKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AF2551CEB383691E6605327D9033085 /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142225E76B891CFF2C2F255F3E98D737 /* InAppReceiptRefreshRequest.swift */; };
+		64DD95A7D0BBE5393D4EC43F9FA05421 /* Pods-ruckus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B398E9A7AD75AD974638D285E4F34 /* Pods-ruckus-dummy.m */; };
+		67C3599EE623706653FD8BEBD2FB08AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		6BF7135A9A8DA4856791FF07BD70FA24 /* Pods-ruckusUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AD49612FB96308ADD309A2C6F566D1 /* Pods-ruckusUITests-dummy.m */; };
+		701405F4674DD18A56B5EE82D6B93D57 /* Pods-ruckusUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56D9F4E154FA3F7A52630248F35A06E8 /* Pods-ruckusUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72D741E39E7AC0837502E8B5F7B46003 /* ProductsInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBA8407E0926CA593AA42AD6FFFB8C /* ProductsInfoController.swift */; };
+		7EFADFF151F6E7718C0761400E3729E3 /* CompleteTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C41E0B6DA74C5DFC9D383944AA3F83 /* CompleteTransactionsController.swift */; };
+		84DA8E8BBF756010A3240E4C0F235D4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		934A028131F8C11112D34C8547C46956 /* RestorePurchasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9361ABBB7EEE4C746E0537E4711D2AFC /* RestorePurchasesController.swift */; };
+		9739A8C40D62241D37BB0B88731D819E /* Pods-ruckus.watch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2BAC72967BAAF764904527EB7BBF61 /* Pods-ruckus.watch-dummy.m */; };
+		9931E023F6C12E8C0985E524F191A888 /* InAppReceiptVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705F6CBAA7E5D96B394FB52327F431D /* InAppReceiptVerificator.swift */; };
+		9C674283828523B9141D9E7366BEB94A /* SwiftyStoreKit+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F054DA3C9DEC2B7C0CC228143D8A79F /* SwiftyStoreKit+Types.swift */; };
+		9E7CB405A1B0C851F4D26655CC6502E6 /* PaymentQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA245434D616F19094DAF3E55BD4E097 /* PaymentQueueController.swift */; };
+		A4053DBC24FA6298E05ED3BA18B77B38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		AA27234BD8B7DC6D9A720E7597DD01A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		B0D07F62CD3496986992F04A8227A3F0 /* Pods-ruckusTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 068037925D8F07BEA0BCF95F9268208A /* Pods-ruckusTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2071D9215E11A4DE5E7A06EC4FD15BC /* AppleReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353EBE2C42DF074D205BE4738A802E9 /* AppleReceiptValidator.swift */; };
+		BD381550C3C1079B42A2A11F6DD0019F /* MKRingProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA54740561DF1EA09E90A8424B71211 /* MKRingProgressView-dummy.m */; };
+		BEC7F39D2F092B15CB7E0FBFB6328845 /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49127381A552A19D53C459CE39D53255 /* SwiftyStoreKit.swift */; };
+		BFCD83742100695FCEFF81B03F37B902 /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD439F6508AB27CA67FDCBF304A8D4C /* InAppProductQueryRequest.swift */; };
+		C00193334E4A23C5BD2DA5EF0420AF1B /* Pods-ruckus.watch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B650CD137269BEAD017EE3B61331D387 /* Pods-ruckus.watch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0A5D393FE99D1B51E72C294FE24C7AE /* FoldingCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C5E893B36BFFA8B3E18FE2BA85A7A7E /* FoldingCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C26FA45024BD93C827C942A485396D69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		C2FB636D434F8FC87CDA3616A836C51E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		C80D060B5B3128E6EBF6E4CF867AABFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97F07D346B98DC05CE6CCB6BE66391E /* Foundation.framework */; };
+		D7616EBEC115AF2B6C648B22CBB406AE /* Pods-ruckus.lite.watch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ABE8A1CC64E55B8C00A8CDA99DEFB9 /* Pods-ruckus.lite.watch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0B66BD63A377075A7987E1C00544D23 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168466AD465EBC2B75A46E577E3B07C /* FoldingCell.swift */; };
+		E325BCB1605341E3A4766AA0BBD254EE /* MKGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575699DEF1BE0EB9EBFA19BC5CB980B /* MKGradientGenerator.swift */; };
+		E55A722A0124768A53063AAFDC8B6426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */; };
+		E98ADE5D9965ED216C5FEC5801FE3A33 /* Pods-ruckus.lite.watch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB40E89822B0BA4D0D7FF2F6C6A730F /* Pods-ruckus.lite.watch Extension-dummy.m */; };
+		E9E23544001FF653AD908F242DC78E1C /* Pods-ruckus.lite-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 677AF4288A2324D81E4280CA59651FBD /* Pods-ruckus.lite-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F885D968D2A53A848D24EFF1B1E38A87 /* MKRingProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A7F03403B925C830AB8C7991642BD6 /* MKRingProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA1BB1C4675A3EE3CF0CD2FB4B8DC5AC /* Pods-ruckus.watch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8899472092E359A6688858631C53EACB /* Pods-ruckus.watch Extension-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05823A644A46FEEA51E4B71A9AF4EAD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E07921B3BC92DC8DE1F763BB935DB5;
+			remoteInfo = SwiftyStoreKit;
+		};
+		51FABD6E51A7F565D7AC0A81A9201496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B626E472969D6F87698AF0041EAAFC38;
+			remoteInfo = FoldingCell;
+		};
+		523BA7EEFCEB1E21E994FDB42CEDCE3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E07921B3BC92DC8DE1F763BB935DB5;
+			remoteInfo = SwiftyStoreKit;
+		};
+		76AA5C536B8553F45D935125C7CBBAE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB34D9D6318E23B9B54B7F408106A1BE;
+			remoteInfo = MKRingProgressView;
+		};
+		7C1329E04CFB38A1449ACF9C7BFA9B8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB34D9D6318E23B9B54B7F408106A1BE;
+			remoteInfo = MKRingProgressView;
+		};
+		A09B97B3DC62545C50571DB631ED670A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B626E472969D6F87698AF0041EAAFC38;
+			remoteInfo = FoldingCell;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		01FFFD7923D25EFD5390F06A30BA241E /* Pods-ruckusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckusTests.release.xcconfig"; sourceTree = "<group>"; };
+		068037925D8F07BEA0BCF95F9268208A /* Pods-ruckusTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckusTests-umbrella.h"; sourceTree = "<group>"; };
+		07D73F5585496CD583C039F24198DE7D /* SwiftyStoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyStoreKit-dummy.m"; sourceTree = "<group>"; };
+		0830E223966168D869D2704C7FFC4E94 /* Pods-ruckus.watch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckus.watch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		08D7EAB13D7CDD205AE1406BFDA70D65 /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+LocalizedPrice.swift"; path = "SwiftyStoreKit/SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		10B76632B4C04549EAD8D79B17780D5E /* FoldingCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoldingCell-dummy.m"; sourceTree = "<group>"; };
+		139B398E9A7AD75AD974638D285E4F34 /* Pods-ruckus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckus-dummy.m"; sourceTree = "<group>"; };
+		1403A444B113E2BAD106B3E6B9F8E6E5 /* Pods-ruckus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckus-acknowledgements.plist"; sourceTree = "<group>"; };
+		142225E76B891CFF2C2F255F3E98D737 /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptRefreshRequest.swift; path = SwiftyStoreKit/InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
+		180D15C55E37AFEA903822A85A872C08 /* Pods-ruckusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		183B1E86FFD23C005649731441E75381 /* Pods_ruckus_lite_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckus_lite_watch_Extension.framework; path = "Pods-ruckus.lite.watch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19303434230BE8F304AF74083BCAF240 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A611D1A526DAFF1CBCE2F7DE2FCF7BC /* Pods-ruckus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.release.xcconfig"; sourceTree = "<group>"; };
+		1D961BA043AD865774EC36167E2DFA7C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DEAC983676708D5E89B34CDFD6D5420 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25C41E0B6DA74C5DFC9D383944AA3F83 /* CompleteTransactionsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompleteTransactionsController.swift; path = SwiftyStoreKit/CompleteTransactionsController.swift; sourceTree = "<group>"; };
+		26E14DEBDEF802F6F8C5A331C0A3CF27 /* Pods-ruckus.lite.watch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckus.lite.watch Extension.modulemap"; sourceTree = "<group>"; };
+		2866D3833A4B1F056169997255FBFD09 /* Pods-ruckusTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckusTests-resources.sh"; sourceTree = "<group>"; };
+		287BA4115B290AB38ACFCD1711CC8BF2 /* FoldingCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FoldingCell.modulemap; sourceTree = "<group>"; };
+		2978596302B5ACFF5F47A7A6D853630F /* Pods-ruckus.lite.watch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckus.lite.watch.modulemap"; sourceTree = "<group>"; };
+		2A064A9F97F3A0C36DCC53DADE33FB85 /* Pods-ruckusTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckusTests.modulemap"; sourceTree = "<group>"; };
+		2D25B46DEB05C040F9C4D33CE18036F4 /* MKRingProgressView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKRingProgressView.xcconfig; sourceTree = "<group>"; };
+		30017CA48E41F2C54606B3F3D63C8B6C /* MKRingProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MKRingProgressView.modulemap; sourceTree = "<group>"; };
+		32D194B190E7E354935CAC3AA69D8662 /* OS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OS.swift; path = SwiftyStoreKit/OS.swift; sourceTree = "<group>"; };
+		33E5DD95A8D6C1E2EAA250F85C1952EF /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		3407C912A092F73329C3FA4A8D0FB860 /* Pods_ruckus_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckus_watch_Extension.framework; path = "Pods-ruckus.watch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		349B0B9FF7A532A13F1711DBFF17EC62 /* Pods-ruckus.watch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.watch Extension-resources.sh"; sourceTree = "<group>"; };
+		3546839A843A5BC2503E6B2C242A22C2 /* Pods-ruckus.lite.watch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckus.lite.watch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		35A3E0BBAF256F17DA3BF9E9B61F5ED5 /* Pods_ruckus_lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckus_lite.framework; path = "Pods-ruckus.lite.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3ADABCB7E5E61926A6B89BBFBD6EC3 /* Pods_ruckusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckusTests.framework; path = "Pods-ruckusTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1855EEFEF9CF761DABC70BF5D641E2 /* Pods-ruckus.lite.watch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.lite.watch-frameworks.sh"; sourceTree = "<group>"; };
+		3DA54740561DF1EA09E90A8424B71211 /* MKRingProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKRingProgressView-dummy.m"; sourceTree = "<group>"; };
+		3E99849D08102CBF9801B1A47E2256C5 /* Pods-ruckus.lite.watch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckus.lite.watch-dummy.m"; sourceTree = "<group>"; };
+		3FC0B287DC0FA30DB9C3BE5D400AEE33 /* Pods-ruckusTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckusTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		404F67CD61778E1CA8EC82DE7432FC61 /* Pods-ruckusTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckusTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		41FBA2A8EA0146759C8C92E874FD7249 /* Pods-ruckusUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckusUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4353EBE2C42DF074D205BE4738A802E9 /* AppleReceiptValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleReceiptValidator.swift; path = SwiftyStoreKit/AppleReceiptValidator.swift; sourceTree = "<group>"; };
+		4463A59C90E09896F803F80653092CD6 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
+		4481A7F0DEC99DB01E3BDA0DDEAF99F5 /* MKRingProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressView.swift; path = MKRingProgressView/MKRingProgressView.swift; sourceTree = "<group>"; };
+		4705F6CBAA7E5D96B394FB52327F431D /* InAppReceiptVerificator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptVerificator.swift; path = SwiftyStoreKit/InAppReceiptVerificator.swift; sourceTree = "<group>"; };
+		49127381A552A19D53C459CE39D53255 /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyStoreKit.swift; path = SwiftyStoreKit/SwiftyStoreKit.swift; sourceTree = "<group>"; };
+		4AB183BCC8FC17C1F8E605D66CDA8E4D /* Pods-ruckus.watch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckus.watch-acknowledgements.plist"; sourceTree = "<group>"; };
+		4CA7F3DE7D464E9722304A049913AE26 /* Pods-ruckus.lite-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckus.lite-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5114748E9855F20D478AF195D8409DEA /* SwiftyStoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-umbrella.h"; sourceTree = "<group>"; };
+		525D596232109EAABB4488881A624452 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D1359E5D2E41B4610B8B61E479AA6C /* Pods-ruckusTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckusTests-dummy.m"; sourceTree = "<group>"; };
+		55905F09E26F7C1591EC2AA76B2A3E75 /* Pods-ruckus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckus-acknowledgements.markdown"; sourceTree = "<group>"; };
+		56D9F4E154FA3F7A52630248F35A06E8 /* Pods-ruckusUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckusUITests-umbrella.h"; sourceTree = "<group>"; };
+		589807301A515E9D7B3C44FC51D24643 /* Pods-ruckus.watch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckus.watch Extension-umbrella.h"; sourceTree = "<group>"; };
+		5B1A9064E88EA7B9BC8F0B413A015804 /* MKRingProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKRingProgressView.framework; path = MKRingProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B98727F6E90866369E00020A27419D7 /* Pods_ruckus_lite_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckus_lite_watch.framework; path = "Pods-ruckus.lite.watch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D12B0C30C63ABAE2BFA44D4B5FFED02 /* SwiftyStoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyStoreKit.modulemap; sourceTree = "<group>"; };
+		5DA105C008788B544F44613F9E344123 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		61EF151D94C8DAD1DD3C84F5AF591039 /* Pods-ruckus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckus.modulemap"; sourceTree = "<group>"; };
+		65AD49612FB96308ADD309A2C6F566D1 /* Pods-ruckusUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckusUITests-dummy.m"; sourceTree = "<group>"; };
+		677AF4288A2324D81E4280CA59651FBD /* Pods-ruckus.lite-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckus.lite-umbrella.h"; sourceTree = "<group>"; };
+		694ECA72BF87562BA656D880B9736816 /* Pods-ruckus.lite.watch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.lite.watch Extension-resources.sh"; sourceTree = "<group>"; };
+		6C1DB49FC9BB26E3D8172C633506878C /* Pods-ruckus.lite.watch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckus.lite.watch-acknowledgements.plist"; sourceTree = "<group>"; };
+		6F5889263981238A720A1034A8179E7E /* MKRingProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-prefix.pch"; sourceTree = "<group>"; };
+		6FDC4D184DFC0C02F0FA5A0F08408D80 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		762549C7DBF659140C4AE5A757AF0BA8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B46D33F4BECB5256F3B55D446587A4 /* Pods-ruckus.watch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckus.watch.modulemap"; sourceTree = "<group>"; };
+		77BD5442DF91DCC0FE50B36B9BF9AF45 /* FoldingCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FoldingCell-prefix.pch"; sourceTree = "<group>"; };
+		7908891867BD17CC8347E212E36F7091 /* Pods_ruckusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckusUITests.framework; path = "Pods-ruckusUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5E893B36BFFA8B3E18FE2BA85A7A7E /* FoldingCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FoldingCell-umbrella.h"; sourceTree = "<group>"; };
+		80EB16334A7B8254658CB5CBB8D16392 /* Pods-ruckus.watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		8308F97D859F26C1AC0DAC198B364164 /* Pods-ruckus.lite-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.lite-frameworks.sh"; sourceTree = "<group>"; };
+		8496ED095B7AE0AABD18D39B5383C700 /* Pods-ruckusUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckusUITests-resources.sh"; sourceTree = "<group>"; };
+		849BB7CDFED47A0D2C484F7DF913B33C /* Pods-ruckus.watch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckus.watch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		84BEEDE4E72057B3274B6514C4929DC8 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		858C3419E41A63061701FAE42BF8AD9E /* Pods-ruckus-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus-resources.sh"; sourceTree = "<group>"; };
+		870AE660F0E8AFBA6E9894B2A8D7C7AB /* Pods-ruckus.lite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.lite.release.xcconfig"; sourceTree = "<group>"; };
+		876818442C70FA1E1997BC05BE93BE7B /* SwiftyStoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-prefix.pch"; sourceTree = "<group>"; };
+		8899472092E359A6688858631C53EACB /* Pods-ruckus.watch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckus.watch Extension-dummy.m"; sourceTree = "<group>"; };
+		88ABE8A1CC64E55B8C00A8CDA99DEFB9 /* Pods-ruckus.lite.watch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckus.lite.watch-umbrella.h"; sourceTree = "<group>"; };
+		8A24C9C52D243B992C6C3D21DAE43023 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		8A5A296AB9909B4A6846879488E8380B /* Pods-ruckus.lite.watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.lite.watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		8AAC0E545D663A41786FD630A07E6E98 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BA548F7918910E1393DD2C254739A84 /* Pods-ruckus.watch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.watch Extension-frameworks.sh"; sourceTree = "<group>"; };
+		8C554CD8699D2787B132085E60E5FCBB /* Pods-ruckus.lite.watch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckus.lite.watch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8F054DA3C9DEC2B7C0CC228143D8A79F /* SwiftyStoreKit+Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyStoreKit+Types.swift"; path = "SwiftyStoreKit/SwiftyStoreKit+Types.swift"; sourceTree = "<group>"; };
+		9067E74A9F6E7DFC8D8512FFA1ABCDC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9361ABBB7EEE4C746E0537E4711D2AFC /* RestorePurchasesController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RestorePurchasesController.swift; path = SwiftyStoreKit/RestorePurchasesController.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		993FAE729B8C9A0F99465FD1265C311D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AB05127654AB690B3ECFCE8E3B38117 /* Pods-ruckus.lite.watch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.lite.watch Extension-frameworks.sh"; sourceTree = "<group>"; };
+		9F70FBEBD3245EACE3F541EAE0EDCB8F /* Pods-ruckusUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckusUITests-frameworks.sh"; sourceTree = "<group>"; };
+		A022BD385278F8C3A2722144F377F834 /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyStoreKit.framework; path = SwiftyStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A076D89278C7F6B14C675542288BCC69 /* Pods-ruckus.watch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.watch-frameworks.sh"; sourceTree = "<group>"; };
+		A0C74B5AC86B29350DB71CCE4772909E /* Pods-ruckusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A261AAF440A5F4C98145D44A9C7FB581 /* Pods-ruckus.watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.watch.debug.xcconfig"; sourceTree = "<group>"; };
+		A2CBA8407E0926CA593AA42AD6FFFB8C /* ProductsInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsInfoController.swift; path = SwiftyStoreKit/ProductsInfoController.swift; sourceTree = "<group>"; };
+		A378C8DF2705D426490A14757E5DF8E2 /* Pods-ruckus.watch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.watch-resources.sh"; sourceTree = "<group>"; };
+		A7114FF1136E85DB89A8D588594697AA /* FoldingCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FoldingCell.framework; path = FoldingCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A922143C4C5FBFB2E264A8A16030E851 /* Pods-ruckus.watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.watch.release.xcconfig"; sourceTree = "<group>"; };
+		A9D804CC803A3FA6F77C4950EA45BC9F /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		AC7CD6D25749A48E9B3E34DAF421C282 /* Pods-ruckus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.debug.xcconfig"; sourceTree = "<group>"; };
+		AD2BAC72967BAAF764904527EB7BBF61 /* Pods-ruckus.watch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckus.watch-dummy.m"; sourceTree = "<group>"; };
+		AD6D5BF14AC80F86798F59F0E8A027F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD9D1D2327AC2C820168161C325852F1 /* Pods-ruckus.lite-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.lite-resources.sh"; sourceTree = "<group>"; };
+		AE15F51D270455C710314860528F4654 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
+		AE419872F779D455AAAA2DDBDB49EC36 /* Pods-ruckusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF8E24F1A1371A34E38EAEB7EA0330D0 /* SwiftyStoreKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyStoreKit.xcconfig; sourceTree = "<group>"; };
+		B11225E76C860B283D5AE87AD77DFE16 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		B36DC1B4A3AFAC86583F11A215316649 /* Pods-ruckus-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus-frameworks.sh"; sourceTree = "<group>"; };
+		B575699DEF1BE0EB9EBFA19BC5CB980B /* MKGradientGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKGradientGenerator.swift; path = MKRingProgressView/MKGradientGenerator.swift; sourceTree = "<group>"; };
+		B650CD137269BEAD017EE3B61331D387 /* Pods-ruckus.watch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckus.watch-umbrella.h"; sourceTree = "<group>"; };
+		B6CA585F6F160A312D4A5E996BF8E353 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		BAD439F6508AB27CA67FDCBF304A8D4C /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductQueryRequest.swift; path = SwiftyStoreKit/InAppProductQueryRequest.swift; sourceTree = "<group>"; };
+		BB86A875842BD8D83B396A09796B4BBB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB95DF9A998D0E53EC520D9B8043A7EF /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
+		BBED9138E14AE253A3FA3654F50404ED /* Pods-ruckus.lite.watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.lite.watch.debug.xcconfig"; sourceTree = "<group>"; };
+		BD1E42691DC0E890C579ED43F5EE10AD /* Pods-ruckus.lite.watch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckus.lite.watch Extension-umbrella.h"; sourceTree = "<group>"; };
+		BD948F24C89AFBC7E03C7AF56537F37A /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		BE8546C850423C0E0488E79DEC15BEA8 /* Pods_ruckus_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckus_watch.framework; path = "Pods-ruckus.watch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF437B04F3BCE1CE8475DD111479B52F /* Pods-ruckus.lite-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckus.lite-acknowledgements.plist"; sourceTree = "<group>"; };
+		BFB79820C85814D12D82F3AC137D7665 /* Pods-ruckus.lite.watch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckus.lite.watch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C0AE75794229AF080CAB392B8DB1A3CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C97F07D346B98DC05CE6CCB6BE66391E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CB7F925453D9E37D6E6E3500758FCC3C /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		CE6D31E2B9F152156858D8F01EAEBD7C /* Pods-ruckus.watch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckus.watch Extension.modulemap"; sourceTree = "<group>"; };
+		D26E04FCD0822A9E6B8757360CC34354 /* Pods-ruckus.watch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ruckus.watch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		D6EA8A00EFD7EC8F4FCD386981229A64 /* Pods-ruckus.lite.watch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckus.lite.watch-resources.sh"; sourceTree = "<group>"; };
+		D92D47610533B3767AFEAC80538D5CD8 /* InAppReceipt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceipt.swift; path = SwiftyStoreKit/InAppReceipt.swift; sourceTree = "<group>"; };
+		D99C50D55F2FE83ACDDB248F028EEE32 /* FoldingCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FoldingCell.xcconfig; sourceTree = "<group>"; };
+		DA245434D616F19094DAF3E55BD4E097 /* PaymentQueueController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentQueueController.swift; path = SwiftyStoreKit/PaymentQueueController.swift; sourceTree = "<group>"; };
+		DFBC57396EF6FE3A4CD78D9C13462946 /* Pods-ruckusUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckusUITests.modulemap"; sourceTree = "<group>"; };
+		E11BE8072A4D2636DFB798FDC4B97557 /* Pods-ruckusTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ruckusTests-frameworks.sh"; sourceTree = "<group>"; };
+		E141F9C1B70E60F420A5D857C0FF8EF8 /* Pods-ruckus.watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		E5B2C2F24254AF91D54E213B6AD3BA14 /* Pods-ruckus.lite.watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.lite.watch.release.xcconfig"; sourceTree = "<group>"; };
+		E99BAED739F09F9BEFD41B30D61276FB /* Pods-ruckus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ruckus-umbrella.h"; sourceTree = "<group>"; };
+		EAC3F2D9F33C230A9A19B4DC1A5D308F /* Pods-ruckus.lite.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ruckus.lite.modulemap"; sourceTree = "<group>"; };
+		ECD4624E650AB9DF69E755DDAC2E7271 /* Pods_ruckus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ruckus.framework; path = "Pods-ruckus.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2CCB11A4730EF3F91FCE14785F77A3 /* Pods-ruckus.lite-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckus.lite-dummy.m"; sourceTree = "<group>"; };
+		EFB40E89822B0BA4D0D7FF2F6C6A730F /* Pods-ruckus.lite.watch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ruckus.lite.watch Extension-dummy.m"; sourceTree = "<group>"; };
+		F01A54DF70EC9C780E8EE4B70AA14247 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.lite.watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		F0B33286D7868FDD955F9D50E9DB1B73 /* Pods-ruckus.lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ruckus.lite.debug.xcconfig"; sourceTree = "<group>"; };
+		F168466AD465EBC2B75A46E577E3B07C /* FoldingCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoldingCell.swift; path = FoldingCell/FoldingCell/FoldingCell/FoldingCell.swift; sourceTree = "<group>"; };
+		F1A7F03403B925C830AB8C7991642BD6 /* MKRingProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-umbrella.h"; sourceTree = "<group>"; };
+		FBC49699EA5929E0EF9D74B3D2C5A859 /* Pods-ruckusUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ruckusUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FEF2195CC991D66762CF3FAD2D560F86 /* PaymentsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentsController.swift; path = SwiftyStoreKit/PaymentsController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F028BC8AFE3ECB1DC578C9CE7E2ECF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436CD7BCDF2D723F97D1B045A6684940 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		104432A28F79A9543896938CF2E5E90C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				179499E95924F4392A26EE34E498154D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DB7D0D56107AEB73B9C575B53DA46F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84DA8E8BBF756010A3240E4C0F235D4D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DFB81B95DCE9ECC6845625A55E0DFE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67C3599EE623706653FD8BEBD2FB08AE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E64E5F2E5179674BD75C6C47BF4BF14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80D060B5B3128E6EBF6E4CF867AABFE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B31B8055D3CFA19C18084680EEC5DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA27234BD8B7DC6D9A720E7597DD01A1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895E813740E707217B1191E73034CC0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55A722A0124768A53063AAFDC8B6426 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BC03D371A8054B88B7E3B540ACF5D1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C26FA45024BD93C827C942A485396D69 /* Foundation.framework in Frameworks */,
+				1AFD8402A99F9C3BA0110EA4E61ADEF5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4C580C2CD2D96F152F2ED3322D303FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CFE7711BA9A28B75FC2BE05B5648D6D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0532370BEEEA2464F7DF7B3B14BA908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2FB636D434F8FC87CDA3616A836C51E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BD039D2F4F3B50091F0667B1EFE83B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4053DBC24FA6298E05ED3BA18B77B38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AB9042B4416563E4B415225C7082E01 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				AE15F51D270455C710314860528F4654 /* FABAttributes.h */,
+				4463A59C90E09896F803F80653092CD6 /* Fabric.h */,
+				30C066BF51E51D3D6BBC06C515D28B95 /* Frameworks */,
+			);
+			name = Fabric;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		1FD84C4A2BDE6E7D38C9BC64ADA29463 /* MKRingProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				B575699DEF1BE0EB9EBFA19BC5CB980B /* MKGradientGenerator.swift */,
+				4481A7F0DEC99DB01E3BDA0DDEAF99F5 /* MKRingProgressView.swift */,
+				B4EF4B4E975A5FBDA1F4A9CEB626B4A6 /* Support Files */,
+			);
+			name = MKRingProgressView;
+			path = MKRingProgressView;
+			sourceTree = "<group>";
+		};
+		2E1CBE516A2213DA23DC49FD9ECB799F /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				E5FEFBA26F0D72510C1CF5F7CDFFB287 /* Frameworks */,
+			);
+			name = "Google-Mobile-Ads-SDK";
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		2E43A6B8AE1B7239F8BAB11D70767542 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				287BA4115B290AB38ACFCD1711CC8BF2 /* FoldingCell.modulemap */,
+				D99C50D55F2FE83ACDDB248F028EEE32 /* FoldingCell.xcconfig */,
+				10B76632B4C04549EAD8D79B17780D5E /* FoldingCell-dummy.m */,
+				77BD5442DF91DCC0FE50B36B9BF9AF45 /* FoldingCell-prefix.pch */,
+				7C5E893B36BFFA8B3E18FE2BA85A7A7E /* FoldingCell-umbrella.h */,
+				762549C7DBF659140C4AE5A757AF0BA8 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FoldingCell";
+			sourceTree = "<group>";
+		};
+		30C066BF51E51D3D6BBC06C515D28B95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6CA585F6F160A312D4A5E996BF8E353 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3280484BB6F7F73FEF24DADB84FB1AE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D602FC9DD7DE23EE7C0AE5DD31B14D70 /* Crashlytics */,
+				0AB9042B4416563E4B415225C7082E01 /* Fabric */,
+				BAAE910A872D2D6F164BE4E837B7412F /* FoldingCell */,
+				2E1CBE516A2213DA23DC49FD9ECB799F /* Google-Mobile-Ads-SDK */,
+				1FD84C4A2BDE6E7D38C9BC64ADA29463 /* MKRingProgressView */,
+				CE743B19F8B179F0F60B7D44DC8C6B54 /* SwiftyStoreKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		585F01296D9DBB3B310F14754141B070 /* Pods-ruckus.watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6FDC4D184DFC0C02F0FA5A0F08408D80 /* Info.plist */,
+				CE6D31E2B9F152156858D8F01EAEBD7C /* Pods-ruckus.watch Extension.modulemap */,
+				849BB7CDFED47A0D2C484F7DF913B33C /* Pods-ruckus.watch Extension-acknowledgements.markdown */,
+				D26E04FCD0822A9E6B8757360CC34354 /* Pods-ruckus.watch Extension-acknowledgements.plist */,
+				8899472092E359A6688858631C53EACB /* Pods-ruckus.watch Extension-dummy.m */,
+				8BA548F7918910E1393DD2C254739A84 /* Pods-ruckus.watch Extension-frameworks.sh */,
+				349B0B9FF7A532A13F1711DBFF17EC62 /* Pods-ruckus.watch Extension-resources.sh */,
+				589807301A515E9D7B3C44FC51D24643 /* Pods-ruckus.watch Extension-umbrella.h */,
+				E141F9C1B70E60F420A5D857C0FF8EF8 /* Pods-ruckus.watch Extension.debug.xcconfig */,
+				80EB16334A7B8254658CB5CBB8D16392 /* Pods-ruckus.watch Extension.release.xcconfig */,
+			);
+			name = "Pods-ruckus.watch Extension";
+			path = "Target Support Files/Pods-ruckus.watch Extension";
+			sourceTree = "<group>";
+		};
+		5D58B82FC2BDD6983CEFB39F959E6367 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B11225E76C860B283D5AE87AD77DFE16 /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6130E81BDFB0763E43B4BF8FCCCFA2FD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDDB0E96CB454DD25B1D5171985E3A74 /* Pods-ruckus */,
+				6E4C5E961C8635E17DF7A76BCCB4E67F /* Pods-ruckus.lite */,
+				F94578609715D1050C8665D1B349C594 /* Pods-ruckus.watch */,
+				585F01296D9DBB3B310F14754141B070 /* Pods-ruckus.watch Extension */,
+				92D2801406773AC894C04E9DC26E9F31 /* Pods-ruckus.lite.watch */,
+				D7D1E7B74C27F7EF814507CD27037387 /* Pods-ruckus.lite.watch Extension */,
+				97044BF309F1C93BAD067A7801A1B025 /* Pods-ruckusTests */,
+				C7A0E5D66A24B9098B198D2A4A3AC9EB /* Pods-ruckusUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6E4C5E961C8635E17DF7A76BCCB4E67F /* Pods-ruckus.lite */ = {
+			isa = PBXGroup;
+			children = (
+				1D961BA043AD865774EC36167E2DFA7C /* Info.plist */,
+				EAC3F2D9F33C230A9A19B4DC1A5D308F /* Pods-ruckus.lite.modulemap */,
+				4CA7F3DE7D464E9722304A049913AE26 /* Pods-ruckus.lite-acknowledgements.markdown */,
+				BF437B04F3BCE1CE8475DD111479B52F /* Pods-ruckus.lite-acknowledgements.plist */,
+				EE2CCB11A4730EF3F91FCE14785F77A3 /* Pods-ruckus.lite-dummy.m */,
+				8308F97D859F26C1AC0DAC198B364164 /* Pods-ruckus.lite-frameworks.sh */,
+				AD9D1D2327AC2C820168161C325852F1 /* Pods-ruckus.lite-resources.sh */,
+				677AF4288A2324D81E4280CA59651FBD /* Pods-ruckus.lite-umbrella.h */,
+				F0B33286D7868FDD955F9D50E9DB1B73 /* Pods-ruckus.lite.debug.xcconfig */,
+				870AE660F0E8AFBA6E9894B2A8D7C7AB /* Pods-ruckus.lite.release.xcconfig */,
+			);
+			name = "Pods-ruckus.lite";
+			path = "Target Support Files/Pods-ruckus.lite";
+			sourceTree = "<group>";
+		};
+		75978F70C34AF305E925F17665FA85BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7114FF1136E85DB89A8D588594697AA /* FoldingCell.framework */,
+				5B1A9064E88EA7B9BC8F0B413A015804 /* MKRingProgressView.framework */,
+				ECD4624E650AB9DF69E755DDAC2E7271 /* Pods_ruckus.framework */,
+				35A3E0BBAF256F17DA3BF9E9B61F5ED5 /* Pods_ruckus_lite.framework */,
+				5B98727F6E90866369E00020A27419D7 /* Pods_ruckus_lite_watch.framework */,
+				183B1E86FFD23C005649731441E75381 /* Pods_ruckus_lite_watch_Extension.framework */,
+				BE8546C850423C0E0488E79DEC15BEA8 /* Pods_ruckus_watch.framework */,
+				3407C912A092F73329C3FA4A8D0FB860 /* Pods_ruckus_watch_Extension.framework */,
+				3B3ADABCB7E5E61926A6B89BBFBD6EC3 /* Pods_ruckusTests.framework */,
+				7908891867BD17CC8347E212E36F7091 /* Pods_ruckusUITests.framework */,
+				A022BD385278F8C3A2722144F377F834 /* SwiftyStoreKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				8B6D968432DA454CBE7BE3761821A977 /* Frameworks */,
+				3280484BB6F7F73FEF24DADB84FB1AE3 /* Pods */,
+				75978F70C34AF305E925F17665FA85BC /* Products */,
+				6130E81BDFB0763E43B4BF8FCCCFA2FD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8B6D968432DA454CBE7BE3761821A977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D7C381501B10DB60664EBEBAF23B8F /* iOS */,
+				F9CEFB1FC8D846B0C896AE07833F880F /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CB9FE5D0265B8169EA758664EACDF10 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB86A875842BD8D83B396A09796B4BBB /* Info.plist */,
+				5D12B0C30C63ABAE2BFA44D4B5FFED02 /* SwiftyStoreKit.modulemap */,
+				AF8E24F1A1371A34E38EAEB7EA0330D0 /* SwiftyStoreKit.xcconfig */,
+				07D73F5585496CD583C039F24198DE7D /* SwiftyStoreKit-dummy.m */,
+				876818442C70FA1E1997BC05BE93BE7B /* SwiftyStoreKit-prefix.pch */,
+				5114748E9855F20D478AF195D8409DEA /* SwiftyStoreKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyStoreKit";
+			sourceTree = "<group>";
+		};
+		90D7C381501B10DB60664EBEBAF23B8F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				01B26A1E3EE1136043D55F568E117113 /* Foundation.framework */,
+				C0AE75794229AF080CAB392B8DB1A3CE /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		92D2801406773AC894C04E9DC26E9F31 /* Pods-ruckus.lite.watch */ = {
+			isa = PBXGroup;
+			children = (
+				9067E74A9F6E7DFC8D8512FFA1ABCDC7 /* Info.plist */,
+				2978596302B5ACFF5F47A7A6D853630F /* Pods-ruckus.lite.watch.modulemap */,
+				BFB79820C85814D12D82F3AC137D7665 /* Pods-ruckus.lite.watch-acknowledgements.markdown */,
+				6C1DB49FC9BB26E3D8172C633506878C /* Pods-ruckus.lite.watch-acknowledgements.plist */,
+				3E99849D08102CBF9801B1A47E2256C5 /* Pods-ruckus.lite.watch-dummy.m */,
+				3D1855EEFEF9CF761DABC70BF5D641E2 /* Pods-ruckus.lite.watch-frameworks.sh */,
+				D6EA8A00EFD7EC8F4FCD386981229A64 /* Pods-ruckus.lite.watch-resources.sh */,
+				88ABE8A1CC64E55B8C00A8CDA99DEFB9 /* Pods-ruckus.lite.watch-umbrella.h */,
+				BBED9138E14AE253A3FA3654F50404ED /* Pods-ruckus.lite.watch.debug.xcconfig */,
+				E5B2C2F24254AF91D54E213B6AD3BA14 /* Pods-ruckus.lite.watch.release.xcconfig */,
+			);
+			name = "Pods-ruckus.lite.watch";
+			path = "Target Support Files/Pods-ruckus.lite.watch";
+			sourceTree = "<group>";
+		};
+		97044BF309F1C93BAD067A7801A1B025 /* Pods-ruckusTests */ = {
+			isa = PBXGroup;
+			children = (
+				19303434230BE8F304AF74083BCAF240 /* Info.plist */,
+				2A064A9F97F3A0C36DCC53DADE33FB85 /* Pods-ruckusTests.modulemap */,
+				3FC0B287DC0FA30DB9C3BE5D400AEE33 /* Pods-ruckusTests-acknowledgements.markdown */,
+				404F67CD61778E1CA8EC82DE7432FC61 /* Pods-ruckusTests-acknowledgements.plist */,
+				53D1359E5D2E41B4610B8B61E479AA6C /* Pods-ruckusTests-dummy.m */,
+				E11BE8072A4D2636DFB798FDC4B97557 /* Pods-ruckusTests-frameworks.sh */,
+				2866D3833A4B1F056169997255FBFD09 /* Pods-ruckusTests-resources.sh */,
+				068037925D8F07BEA0BCF95F9268208A /* Pods-ruckusTests-umbrella.h */,
+				180D15C55E37AFEA903822A85A872C08 /* Pods-ruckusTests.debug.xcconfig */,
+				01FFFD7923D25EFD5390F06A30BA241E /* Pods-ruckusTests.release.xcconfig */,
+			);
+			name = "Pods-ruckusTests";
+			path = "Target Support Files/Pods-ruckusTests";
+			sourceTree = "<group>";
+		};
+		B4EF4B4E975A5FBDA1F4A9CEB626B4A6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AAC0E545D663A41786FD630A07E6E98 /* Info.plist */,
+				30017CA48E41F2C54606B3F3D63C8B6C /* MKRingProgressView.modulemap */,
+				2D25B46DEB05C040F9C4D33CE18036F4 /* MKRingProgressView.xcconfig */,
+				3DA54740561DF1EA09E90A8424B71211 /* MKRingProgressView-dummy.m */,
+				6F5889263981238A720A1034A8179E7E /* MKRingProgressView-prefix.pch */,
+				F1A7F03403B925C830AB8C7991642BD6 /* MKRingProgressView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MKRingProgressView";
+			sourceTree = "<group>";
+		};
+		BAAE910A872D2D6F164BE4E837B7412F /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				F168466AD465EBC2B75A46E577E3B07C /* FoldingCell.swift */,
+				2E43A6B8AE1B7239F8BAB11D70767542 /* Support Files */,
+			);
+			name = FoldingCell;
+			path = FoldingCell;
+			sourceTree = "<group>";
+		};
+		C7A0E5D66A24B9098B198D2A4A3AC9EB /* Pods-ruckusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				993FAE729B8C9A0F99465FD1265C311D /* Info.plist */,
+				DFBC57396EF6FE3A4CD78D9C13462946 /* Pods-ruckusUITests.modulemap */,
+				FBC49699EA5929E0EF9D74B3D2C5A859 /* Pods-ruckusUITests-acknowledgements.markdown */,
+				41FBA2A8EA0146759C8C92E874FD7249 /* Pods-ruckusUITests-acknowledgements.plist */,
+				65AD49612FB96308ADD309A2C6F566D1 /* Pods-ruckusUITests-dummy.m */,
+				9F70FBEBD3245EACE3F541EAE0EDCB8F /* Pods-ruckusUITests-frameworks.sh */,
+				8496ED095B7AE0AABD18D39B5383C700 /* Pods-ruckusUITests-resources.sh */,
+				56D9F4E154FA3F7A52630248F35A06E8 /* Pods-ruckusUITests-umbrella.h */,
+				A0C74B5AC86B29350DB71CCE4772909E /* Pods-ruckusUITests.debug.xcconfig */,
+				AE419872F779D455AAAA2DDBDB49EC36 /* Pods-ruckusUITests.release.xcconfig */,
+			);
+			name = "Pods-ruckusUITests";
+			path = "Target Support Files/Pods-ruckusUITests";
+			sourceTree = "<group>";
+		};
+		CE743B19F8B179F0F60B7D44DC8C6B54 /* SwiftyStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				4353EBE2C42DF074D205BE4738A802E9 /* AppleReceiptValidator.swift */,
+				25C41E0B6DA74C5DFC9D383944AA3F83 /* CompleteTransactionsController.swift */,
+				BAD439F6508AB27CA67FDCBF304A8D4C /* InAppProductQueryRequest.swift */,
+				D92D47610533B3767AFEAC80538D5CD8 /* InAppReceipt.swift */,
+				142225E76B891CFF2C2F255F3E98D737 /* InAppReceiptRefreshRequest.swift */,
+				4705F6CBAA7E5D96B394FB52327F431D /* InAppReceiptVerificator.swift */,
+				32D194B190E7E354935CAC3AA69D8662 /* OS.swift */,
+				DA245434D616F19094DAF3E55BD4E097 /* PaymentQueueController.swift */,
+				FEF2195CC991D66762CF3FAD2D560F86 /* PaymentsController.swift */,
+				A2CBA8407E0926CA593AA42AD6FFFB8C /* ProductsInfoController.swift */,
+				9361ABBB7EEE4C746E0537E4711D2AFC /* RestorePurchasesController.swift */,
+				08D7EAB13D7CDD205AE1406BFDA70D65 /* SKProduct+LocalizedPrice.swift */,
+				49127381A552A19D53C459CE39D53255 /* SwiftyStoreKit.swift */,
+				8F054DA3C9DEC2B7C0CC228143D8A79F /* SwiftyStoreKit+Types.swift */,
+				8CB9FE5D0265B8169EA758664EACDF10 /* Support Files */,
+			);
+			name = SwiftyStoreKit;
+			path = SwiftyStoreKit;
+			sourceTree = "<group>";
+		};
+		D602FC9DD7DE23EE7C0AE5DD31B14D70 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				CB7F925453D9E37D6E6E3500758FCC3C /* ANSCompatibility.h */,
+				8A24C9C52D243B992C6C3D21DAE43023 /* Answers.h */,
+				5DA105C008788B544F44613F9E344123 /* CLSAttributes.h */,
+				A9D804CC803A3FA6F77C4950EA45BC9F /* CLSLogging.h */,
+				BB95DF9A998D0E53EC520D9B8043A7EF /* CLSReport.h */,
+				BD948F24C89AFBC7E03C7AF56537F37A /* CLSStackFrame.h */,
+				84BEEDE4E72057B3274B6514C4929DC8 /* Crashlytics.h */,
+				5D58B82FC2BDD6983CEFB39F959E6367 /* Frameworks */,
+			);
+			name = Crashlytics;
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		D7D1E7B74C27F7EF814507CD27037387 /* Pods-ruckus.lite.watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				525D596232109EAABB4488881A624452 /* Info.plist */,
+				26E14DEBDEF802F6F8C5A331C0A3CF27 /* Pods-ruckus.lite.watch Extension.modulemap */,
+				8C554CD8699D2787B132085E60E5FCBB /* Pods-ruckus.lite.watch Extension-acknowledgements.markdown */,
+				3546839A843A5BC2503E6B2C242A22C2 /* Pods-ruckus.lite.watch Extension-acknowledgements.plist */,
+				EFB40E89822B0BA4D0D7FF2F6C6A730F /* Pods-ruckus.lite.watch Extension-dummy.m */,
+				9AB05127654AB690B3ECFCE8E3B38117 /* Pods-ruckus.lite.watch Extension-frameworks.sh */,
+				694ECA72BF87562BA656D880B9736816 /* Pods-ruckus.lite.watch Extension-resources.sh */,
+				BD1E42691DC0E890C579ED43F5EE10AD /* Pods-ruckus.lite.watch Extension-umbrella.h */,
+				F01A54DF70EC9C780E8EE4B70AA14247 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */,
+				8A5A296AB9909B4A6846879488E8380B /* Pods-ruckus.lite.watch Extension.release.xcconfig */,
+			);
+			name = "Pods-ruckus.lite.watch Extension";
+			path = "Target Support Files/Pods-ruckus.lite.watch Extension";
+			sourceTree = "<group>";
+		};
+		DDDB0E96CB454DD25B1D5171985E3A74 /* Pods-ruckus */ = {
+			isa = PBXGroup;
+			children = (
+				AD6D5BF14AC80F86798F59F0E8A027F5 /* Info.plist */,
+				61EF151D94C8DAD1DD3C84F5AF591039 /* Pods-ruckus.modulemap */,
+				55905F09E26F7C1591EC2AA76B2A3E75 /* Pods-ruckus-acknowledgements.markdown */,
+				1403A444B113E2BAD106B3E6B9F8E6E5 /* Pods-ruckus-acknowledgements.plist */,
+				139B398E9A7AD75AD974638D285E4F34 /* Pods-ruckus-dummy.m */,
+				B36DC1B4A3AFAC86583F11A215316649 /* Pods-ruckus-frameworks.sh */,
+				858C3419E41A63061701FAE42BF8AD9E /* Pods-ruckus-resources.sh */,
+				E99BAED739F09F9BEFD41B30D61276FB /* Pods-ruckus-umbrella.h */,
+				AC7CD6D25749A48E9B3E34DAF421C282 /* Pods-ruckus.debug.xcconfig */,
+				1A611D1A526DAFF1CBCE2F7DE2FCF7BC /* Pods-ruckus.release.xcconfig */,
+			);
+			name = "Pods-ruckus";
+			path = "Target Support Files/Pods-ruckus";
+			sourceTree = "<group>";
+		};
+		E5FEFBA26F0D72510C1CF5F7CDFFB287 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33E5DD95A8D6C1E2EAA250F85C1952EF /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F94578609715D1050C8665D1B349C594 /* Pods-ruckus.watch */ = {
+			isa = PBXGroup;
+			children = (
+				1DEAC983676708D5E89B34CDFD6D5420 /* Info.plist */,
+				76B46D33F4BECB5256F3B55D446587A4 /* Pods-ruckus.watch.modulemap */,
+				0830E223966168D869D2704C7FFC4E94 /* Pods-ruckus.watch-acknowledgements.markdown */,
+				4AB183BCC8FC17C1F8E605D66CDA8E4D /* Pods-ruckus.watch-acknowledgements.plist */,
+				AD2BAC72967BAAF764904527EB7BBF61 /* Pods-ruckus.watch-dummy.m */,
+				A076D89278C7F6B14C675542288BCC69 /* Pods-ruckus.watch-frameworks.sh */,
+				A378C8DF2705D426490A14757E5DF8E2 /* Pods-ruckus.watch-resources.sh */,
+				B650CD137269BEAD017EE3B61331D387 /* Pods-ruckus.watch-umbrella.h */,
+				A261AAF440A5F4C98145D44A9C7FB581 /* Pods-ruckus.watch.debug.xcconfig */,
+				A922143C4C5FBFB2E264A8A16030E851 /* Pods-ruckus.watch.release.xcconfig */,
+			);
+			name = "Pods-ruckus.watch";
+			path = "Target Support Files/Pods-ruckus.watch";
+			sourceTree = "<group>";
+		};
+		F9CEFB1FC8D846B0C896AE07833F880F /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				C97F07D346B98DC05CE6CCB6BE66391E /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		05B5BDD386BFD8ED985E69F854E9BD02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				701405F4674DD18A56B5EE82D6B93D57 /* Pods-ruckusUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21A906C5C02E549F9F8692CE0A56F43B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A5D393FE99D1B51E72C294FE24C7AE /* FoldingCell-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E6B6E33F8389FC7F993DF1C199A13D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25366926348C80445D46FBE9E8C6D194 /* Pods-ruckus.watch Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3649FBA08B553ABBE3FDDED3BE6615F8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59C73B547722FC15F3835D606BDD29CA /* SwiftyStoreKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E1F20092F46373A00ED45E2536E0FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F885D968D2A53A848D24EFF1B1E38A87 /* MKRingProgressView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C42037E74CEDF35241E34F995641F2E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2FF7526E51AD6C74F773C56BE858C1 /* Pods-ruckus-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ABAD97FAB3545361CD4BF67BBDBA1D1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02CDE2922FE1EC17B551218B6F835561 /* Pods-ruckus.lite.watch Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98F44EBD95C3BBD46999EC2EDB4BE867 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9E23544001FF653AD908F242DC78E1C /* Pods-ruckus.lite-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3EBF049FAF3F4003AB84AC19B981371 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D07F62CD3496986992F04A8227A3F0 /* Pods-ruckusTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D317145DD4234D226C088811765EBDED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C00193334E4A23C5BD2DA5EF0420AF1B /* Pods-ruckus.watch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72E11D321AB8C7CAD3DFC548E8EEA18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7616EBEC115AF2B6C648B22CBB406AE /* Pods-ruckus.lite.watch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0AA8C3F15F9BAF455A093D80735BBB7A /* Pods-ruckus.watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660400DE9BD31833BD1C962C1819DE24 /* Build configuration list for PBXNativeTarget "Pods-ruckus.watch" */;
+			buildPhases = (
+				FA7B23B386CAB526C49425A6885398F9 /* Sources */,
+				A4C580C2CD2D96F152F2ED3322D303FE /* Frameworks */,
+				D317145DD4234D226C088811765EBDED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ruckus.watch";
+			productName = "Pods-ruckus.watch";
+			productReference = BE8546C850423C0E0488E79DEC15BEA8 /* Pods_ruckus_watch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3C49E46D21AA1AF91AB978C65B005447 /* Pods-ruckus.lite.watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82BA3C911B6616534DC2F1DA2181EC9D /* Build configuration list for PBXNativeTarget "Pods-ruckus.lite.watch" */;
+			buildPhases = (
+				CDCDB742E76416A9D38FDB1B8E426033 /* Sources */,
+				104432A28F79A9543896938CF2E5E90C /* Frameworks */,
+				F72E11D321AB8C7CAD3DFC548E8EEA18 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ruckus.lite.watch";
+			productName = "Pods-ruckus.lite.watch";
+			productReference = 5B98727F6E90866369E00020A27419D7 /* Pods_ruckus_lite_watch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		584A783090EF5D51DD15D23E6838FAAC /* Pods-ruckus.lite.watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6F328C23696E1EA7CEDD72F45BFF8BA /* Build configuration list for PBXNativeTarget "Pods-ruckus.lite.watch Extension" */;
+			buildPhases = (
+				6F290934CB911288C782DA318EC03854 /* Sources */,
+				0F028BC8AFE3ECB1DC578C9CE7E2ECF1 /* Frameworks */,
+				8ABAD97FAB3545361CD4BF67BBDBA1D1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ruckus.lite.watch Extension";
+			productName = "Pods-ruckus.lite.watch Extension";
+			productReference = 183B1E86FFD23C005649731441E75381 /* Pods_ruckus_lite_watch_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5967865C6052A10116E62B016CCA9106 /* Pods-ruckus.watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5713B6890F88476A0A7E91320A4CDA7 /* Build configuration list for PBXNativeTarget "Pods-ruckus.watch Extension" */;
+			buildPhases = (
+				F3FC0E911559C33B13466958E0939441 /* Sources */,
+				6E64E5F2E5179674BD75C6C47BF4BF14 /* Frameworks */,
+				23E6B6E33F8389FC7F993DF1C199A13D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ruckus.watch Extension";
+			productName = "Pods-ruckus.watch Extension";
+			productReference = 3407C912A092F73329C3FA4A8D0FB860 /* Pods_ruckus_watch_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6CCAB3BEAE41D5AA193C91905614C912 /* Pods-ruckusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25398AE4360E559F0512024BF9958F0 /* Build configuration list for PBXNativeTarget "Pods-ruckusUITests" */;
+			buildPhases = (
+				6996CA4526A15034966A271F19C605DB /* Sources */,
+				7B31B8055D3CFA19C18084680EEC5DDA /* Frameworks */,
+				05B5BDD386BFD8ED985E69F854E9BD02 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ruckusUITests";
+			productName = "Pods-ruckusUITests";
+			productReference = 7908891867BD17CC8347E212E36F7091 /* Pods_ruckusUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A4E07921B3BC92DC8DE1F763BB935DB5 /* SwiftyStoreKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 797D68E3DFBBCD4620AC8B045FE1C92E /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */;
+			buildPhases = (
+				D1E2F0963D9637A17C9264CFA5C84753 /* Sources */,
+				D0532370BEEEA2464F7DF7B3B14BA908 /* Frameworks */,
+				3649FBA08B553ABBE3FDDED3BE6615F8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyStoreKit;
+			productName = SwiftyStoreKit;
+			productReference = A022BD385278F8C3A2722144F377F834 /* SwiftyStoreKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B626E472969D6F87698AF0041EAAFC38 /* FoldingCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5E52972EF33CE3CB7D4D997DA9EA71A /* Build configuration list for PBXNativeTarget "FoldingCell" */;
+			buildPhases = (
+				C7CB2C7035BBEB0B87DC77599F23895D /* Sources */,
+				4DB7D0D56107AEB73B9C575B53DA46F5 /* Frameworks */,
+				21A906C5C02E549F9F8692CE0A56F43B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoldingCell;
+			productName = FoldingCell;
+			productReference = A7114FF1136E85DB89A8D588594697AA /* FoldingCell.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B887802B0AB22F3DE3CA7687C5CABB0C /* Pods-ruckus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7836F605D277F7DBD2F744E39A109890 /* Build configuration list for PBXNativeTarget "Pods-ruckus" */;
+			buildPhases = (
+				1F84FF6B94C3059B4DDB239CCBA584B1 /* Sources */,
+				F3BD039D2F4F3B50091F0667B1EFE83B /* Frameworks */,
+				7C42037E74CEDF35241E34F995641F2E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE09B4172FD7887E13AAD91BD82FCA30 /* PBXTargetDependency */,
+				CBF1AD0858D1A2745DA974F8A7977839 /* PBXTargetDependency */,
+				62240AB3DB4B9D5BEAAC0773748D8234 /* PBXTargetDependency */,
+			);
+			name = "Pods-ruckus";
+			productName = "Pods-ruckus";
+			productReference = ECD4624E650AB9DF69E755DDAC2E7271 /* Pods_ruckus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB34D9D6318E23B9B54B7F408106A1BE /* MKRingProgressView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43422D8B74A5ADB213535D72F0DBC499 /* Build configuration list for PBXNativeTarget "MKRingProgressView" */;
+			buildPhases = (
+				48C1CDF278B1617C9FC791D2C5A65F47 /* Sources */,
+				9BC03D371A8054B88B7E3B540ACF5D1D /* Frameworks */,
+				56E1F20092F46373A00ED45E2536E0FA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MKRingProgressView;
+			productName = MKRingProgressView;
+			productReference = 5B1A9064E88EA7B9BC8F0B413A015804 /* MKRingProgressView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB83A2F6540EA5CE4AC09D79A5800D30 /* Pods-ruckus.lite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5353CC8888A94D058367AB3AFEDF7C3 /* Build configuration list for PBXNativeTarget "Pods-ruckus.lite" */;
+			buildPhases = (
+				0846E7D85D7E9201C158225408F88242 /* Sources */,
+				895E813740E707217B1191E73034CC0B /* Frameworks */,
+				98F44EBD95C3BBD46999EC2EDB4BE867 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				460C31ACA7F5E766806596870EA23729 /* PBXTargetDependency */,
+				CACD97F6A0F547BEAC85DF86D53C80EE /* PBXTargetDependency */,
+				FC4AAFBE825FF65E18DC3838BB0B71FB /* PBXTargetDependency */,
+			);
+			name = "Pods-ruckus.lite";
+			productName = "Pods-ruckus.lite";
+			productReference = 35A3E0BBAF256F17DA3BF9E9B61F5ED5 /* Pods_ruckus_lite.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E8DE602ACC19249E3B2C4C2202E2075A /* Pods-ruckusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B85996F900238AF045A85ED34FA8AED9 /* Build configuration list for PBXNativeTarget "Pods-ruckusTests" */;
+			buildPhases = (
+				8696DD35667A9A367D57FAA862C3AFB4 /* Sources */,
+				4DFB81B95DCE9ECC6845625A55E0DFE2 /* Frameworks */,
+				A3EBF049FAF3F4003AB84AC19B981371 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ruckusTests";
+			productName = "Pods-ruckusTests";
+			productReference = 3B3ADABCB7E5E61926A6B89BBFBD6EC3 /* Pods_ruckusTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 75978F70C34AF305E925F17665FA85BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B626E472969D6F87698AF0041EAAFC38 /* FoldingCell */,
+				CB34D9D6318E23B9B54B7F408106A1BE /* MKRingProgressView */,
+				B887802B0AB22F3DE3CA7687C5CABB0C /* Pods-ruckus */,
+				CB83A2F6540EA5CE4AC09D79A5800D30 /* Pods-ruckus.lite */,
+				3C49E46D21AA1AF91AB978C65B005447 /* Pods-ruckus.lite.watch */,
+				584A783090EF5D51DD15D23E6838FAAC /* Pods-ruckus.lite.watch Extension */,
+				0AA8C3F15F9BAF455A093D80735BBB7A /* Pods-ruckus.watch */,
+				5967865C6052A10116E62B016CCA9106 /* Pods-ruckus.watch Extension */,
+				E8DE602ACC19249E3B2C4C2202E2075A /* Pods-ruckusTests */,
+				6CCAB3BEAE41D5AA193C91905614C912 /* Pods-ruckusUITests */,
+				A4E07921B3BC92DC8DE1F763BB935DB5 /* SwiftyStoreKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0846E7D85D7E9201C158225408F88242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D449C0EBD2176EB1BF23F84E4B35618 /* Pods-ruckus.lite-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F84FF6B94C3059B4DDB239CCBA584B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DD95A7D0BBE5393D4EC43F9FA05421 /* Pods-ruckus-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C1CDF278B1617C9FC791D2C5A65F47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E325BCB1605341E3A4766AA0BBD254EE /* MKGradientGenerator.swift in Sources */,
+				BD381550C3C1079B42A2A11F6DD0019F /* MKRingProgressView-dummy.m in Sources */,
+				0598DA96FC09E118A4D16659C0666659 /* MKRingProgressView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6996CA4526A15034966A271F19C605DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BF7135A9A8DA4856791FF07BD70FA24 /* Pods-ruckusUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F290934CB911288C782DA318EC03854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98ADE5D9965ED216C5FEC5801FE3A33 /* Pods-ruckus.lite.watch Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8696DD35667A9A367D57FAA862C3AFB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D0CA1D00BAD7046D4622A5F2FD928A /* Pods-ruckusTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CB2C7035BBEB0B87DC77599F23895D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C9AF992C79F9F46BB71E12D071A9AB7 /* FoldingCell-dummy.m in Sources */,
+				E0B66BD63A377075A7987E1C00544D23 /* FoldingCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDCDB742E76416A9D38FDB1B8E426033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB83FB77B5B37503028824F5F2AD6F /* Pods-ruckus.lite.watch-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1E2F0963D9637A17C9264CFA5C84753 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2071D9215E11A4DE5E7A06EC4FD15BC /* AppleReceiptValidator.swift in Sources */,
+				7EFADFF151F6E7718C0761400E3729E3 /* CompleteTransactionsController.swift in Sources */,
+				BFCD83742100695FCEFF81B03F37B902 /* InAppProductQueryRequest.swift in Sources */,
+				24C4432DB15B9E18DF0E147EAF2EB4A4 /* InAppReceipt.swift in Sources */,
+				5AF2551CEB383691E6605327D9033085 /* InAppReceiptRefreshRequest.swift in Sources */,
+				9931E023F6C12E8C0985E524F191A888 /* InAppReceiptVerificator.swift in Sources */,
+				541E73271966746296BC783736F1BE06 /* OS.swift in Sources */,
+				9E7CB405A1B0C851F4D26655CC6502E6 /* PaymentQueueController.swift in Sources */,
+				1A782F3602B341A25E7E61CFD8902FF6 /* PaymentsController.swift in Sources */,
+				72D741E39E7AC0837502E8B5F7B46003 /* ProductsInfoController.swift in Sources */,
+				934A028131F8C11112D34C8547C46956 /* RestorePurchasesController.swift in Sources */,
+				3E024F9009AB2D75DDBB285858FC0570 /* SKProduct+LocalizedPrice.swift in Sources */,
+				9C674283828523B9141D9E7366BEB94A /* SwiftyStoreKit+Types.swift in Sources */,
+				10E01A5F05136E3364A002ADAAD0B35A /* SwiftyStoreKit-dummy.m in Sources */,
+				BEC7F39D2F092B15CB7E0FBFB6328845 /* SwiftyStoreKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3FC0E911559C33B13466958E0939441 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1BB1C4675A3EE3CF0CD2FB4B8DC5AC /* Pods-ruckus.watch Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA7B23B386CAB526C49425A6885398F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9739A8C40D62241D37BB0B88731D819E /* Pods-ruckus.watch-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		460C31ACA7F5E766806596870EA23729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FoldingCell;
+			target = B626E472969D6F87698AF0041EAAFC38 /* FoldingCell */;
+			targetProxy = A09B97B3DC62545C50571DB631ED670A /* PBXContainerItemProxy */;
+		};
+		62240AB3DB4B9D5BEAAC0773748D8234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyStoreKit;
+			target = A4E07921B3BC92DC8DE1F763BB935DB5 /* SwiftyStoreKit */;
+			targetProxy = 05823A644A46FEEA51E4B71A9AF4EAD4 /* PBXContainerItemProxy */;
+		};
+		BE09B4172FD7887E13AAD91BD82FCA30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FoldingCell;
+			target = B626E472969D6F87698AF0041EAAFC38 /* FoldingCell */;
+			targetProxy = 51FABD6E51A7F565D7AC0A81A9201496 /* PBXContainerItemProxy */;
+		};
+		CACD97F6A0F547BEAC85DF86D53C80EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MKRingProgressView;
+			target = CB34D9D6318E23B9B54B7F408106A1BE /* MKRingProgressView */;
+			targetProxy = 7C1329E04CFB38A1449ACF9C7BFA9B8A /* PBXContainerItemProxy */;
+		};
+		CBF1AD0858D1A2745DA974F8A7977839 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MKRingProgressView;
+			target = CB34D9D6318E23B9B54B7F408106A1BE /* MKRingProgressView */;
+			targetProxy = 76AA5C536B8553F45D935125C7CBBAE4 /* PBXContainerItemProxy */;
+		};
+		FC4AAFBE825FF65E18DC3838BB0B71FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyStoreKit;
+			target = A4E07921B3BC92DC8DE1F763BB935DB5 /* SwiftyStoreKit */;
+			targetProxy = 523BA7EEFCEB1E21E994FDB42CEDCE3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		11B2986192664F0BECFA7B8C006D6EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C74B5AC86B29350DB71CCE4772909E /* Pods-ruckusUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckusUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckusUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		21B53CCD6050C06A3A977B3214693C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D25B46DEB05C040F9C4D33CE18036F4 /* MKRingProgressView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MKRingProgressView/MKRingProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MKRingProgressView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MKRingProgressView/MKRingProgressView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MKRingProgressView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		232C8186A12FB01717A16F4DC3468AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		4B445E6CCB966B6DE8126922F3EC8355 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE419872F779D455AAAA2DDBDB49EC36 /* Pods-ruckusUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckusUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckusUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		502B9BEAF3135634FF9AEE1DBC7044C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99C50D55F2FE83ACDDB248F028EEE32 /* FoldingCell.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FoldingCell/FoldingCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FoldingCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FoldingCell/FoldingCell.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FoldingCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5C116A5B43794B7814428C88C053B133 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E141F9C1B70E60F420A5D857C0FF8EF8 /* Pods-ruckus.watch Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_watch_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		5CDB64ACC36E1CE763A43944ECF27463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5A296AB9909B4A6846879488E8380B /* Pods-ruckus.lite.watch Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.lite.watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_lite_watch_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		6F3110F226F21385221DF0B0D795F4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 180D15C55E37AFEA903822A85A872C08 /* Pods-ruckusTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckusTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckusTests/Pods-ruckusTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckusTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		723FF5A4A423A0DD868B694EBBB2785F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D25B46DEB05C040F9C4D33CE18036F4 /* MKRingProgressView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MKRingProgressView/MKRingProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MKRingProgressView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MKRingProgressView/MKRingProgressView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MKRingProgressView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		893C1A3963B6578762D5E851106E387A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A611D1A526DAFF1CBCE2F7DE2FCF7BC /* Pods-ruckus.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus/Pods-ruckus.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9A4174771D353FD5A11D605D2D4D4500 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F01A54DF70EC9C780E8EE4B70AA14247 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.lite.watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_lite_watch_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		9B545220B67AE1E232A30F9E76D76F3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 870AE660F0E8AFBA6E9894B2A8D7C7AB /* Pods-ruckus.lite.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.lite/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_lite;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9BD5A54B622CCFB11BB1739360AA0070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBED9138E14AE253A3FA3654F50404ED /* Pods-ruckus.lite.watch.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.lite.watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_lite_watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		A3A2B6A48728A23AF9C634228F56FAD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		AFE9225B880E688A09118A33C7FE969F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF8E24F1A1371A34E38EAEB7EA0330D0 /* SwiftyStoreKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyStoreKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyStoreKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B5A454622EC7E05ABC7157AC855D46D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01FFFD7923D25EFD5390F06A30BA241E /* Pods-ruckusTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckusTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckusTests/Pods-ruckusTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckusTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B6B363F0BDC0FD26B36DA3C90F25253B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A261AAF440A5F4C98145D44A9C7FB581 /* Pods-ruckus.watch.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.watch/Pods-ruckus.watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		C7FDEA030F234690534B9DD3AA5710C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B2C2F24254AF91D54E213B6AD3BA14 /* Pods-ruckus.lite.watch.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.lite.watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_lite_watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		D1AA1740AE92E4C2386C9997A2765B49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A922143C4C5FBFB2E264A8A16030E851 /* Pods-ruckus.watch.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.watch/Pods-ruckus.watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		D356E6AFEAD0296FEFEB9DCDC735C86E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80EB16334A7B8254658CB5CBB8D16392 /* Pods-ruckus.watch Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_watch_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		E61A98C48505923B0725CC8396A57961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF8E24F1A1371A34E38EAEB7EA0330D0 /* SwiftyStoreKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyStoreKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyStoreKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EE9A3EA12AEE2EA216CBDC0192F0A677 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99C50D55F2FE83ACDDB248F028EEE32 /* FoldingCell.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FoldingCell/FoldingCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FoldingCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FoldingCell/FoldingCell.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FoldingCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB575CA6D63E5AEC8A73F40A28FF2548 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0B33286D7868FDD955F9D50E9DB1B73 /* Pods-ruckus.lite.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus.lite/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus_lite;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FFAE128B86910739A9DE9EC7FE1C0405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC7CD6D25749A48E9B3E34DAF421C282 /* Pods-ruckus.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ruckus/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ruckus/Pods-ruckus.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ruckus;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				232C8186A12FB01717A16F4DC3468AD6 /* Debug */,
+				A3A2B6A48728A23AF9C634228F56FAD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43422D8B74A5ADB213535D72F0DBC499 /* Build configuration list for PBXNativeTarget "MKRingProgressView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				723FF5A4A423A0DD868B694EBBB2785F /* Debug */,
+				21B53CCD6050C06A3A977B3214693C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660400DE9BD31833BD1C962C1819DE24 /* Build configuration list for PBXNativeTarget "Pods-ruckus.watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B363F0BDC0FD26B36DA3C90F25253B /* Debug */,
+				D1AA1740AE92E4C2386C9997A2765B49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7836F605D277F7DBD2F744E39A109890 /* Build configuration list for PBXNativeTarget "Pods-ruckus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFAE128B86910739A9DE9EC7FE1C0405 /* Debug */,
+				893C1A3963B6578762D5E851106E387A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		797D68E3DFBBCD4620AC8B045FE1C92E /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFE9225B880E688A09118A33C7FE969F /* Debug */,
+				E61A98C48505923B0725CC8396A57961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82BA3C911B6616534DC2F1DA2181EC9D /* Build configuration list for PBXNativeTarget "Pods-ruckus.lite.watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD5A54B622CCFB11BB1739360AA0070 /* Debug */,
+				C7FDEA030F234690534B9DD3AA5710C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5E52972EF33CE3CB7D4D997DA9EA71A /* Build configuration list for PBXNativeTarget "FoldingCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502B9BEAF3135634FF9AEE1DBC7044C0 /* Debug */,
+				EE9A3EA12AEE2EA216CBDC0192F0A677 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B85996F900238AF045A85ED34FA8AED9 /* Build configuration list for PBXNativeTarget "Pods-ruckusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F3110F226F21385221DF0B0D795F4E1 /* Debug */,
+				B5A454622EC7E05ABC7157AC855D46D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5713B6890F88476A0A7E91320A4CDA7 /* Build configuration list for PBXNativeTarget "Pods-ruckus.watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C116A5B43794B7814428C88C053B133 /* Debug */,
+				D356E6AFEAD0296FEFEB9DCDC735C86E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6F328C23696E1EA7CEDD72F45BFF8BA /* Build configuration list for PBXNativeTarget "Pods-ruckus.lite.watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4174771D353FD5A11D605D2D4D4500 /* Debug */,
+				5CDB64ACC36E1CE763A43944ECF27463 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25398AE4360E559F0512024BF9958F0 /* Build configuration list for PBXNativeTarget "Pods-ruckusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B2986192664F0BECFA7B8C006D6EBC /* Debug */,
+				4B445E6CCB966B6DE8126922F3EC8355 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5353CC8888A94D058367AB3AFEDF7C3 /* Build configuration list for PBXNativeTarget "Pods-ruckus.lite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB575CA6D63E5AEC8A73F40A28FF2548 /* Debug */,
+				9B545220B67AE1E232A30F9E76D76F3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

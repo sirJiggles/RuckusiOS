@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0zo-eA-Jnk">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+    </dependencies>
+    <scenes>
+        <!--Workout Complete-->
+        <scene sceneID="WCM-As-09G">
+            <objects>
+                <controller identifier="FinishedController" title="Workout Complete" id="5fv-7X-KGV" customClass="FinishedInterfaceController" customModule="ruckus_watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" radius="6" id="Z3E-mU-yET" userLabel="TimeRow">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Time:" id="fIn-Ku-hbF">
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="00:00" id="9Am-9p-7mg">
+                                    <color key="textColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="22"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="7" right="7" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" radius="6" id="lqh-jI-KFp" userLabel="IntervalRow">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Rounds:" id="Mcf-Vv-bGk">
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="0" id="HEZ-sI-Hdv">
+                                    <color key="textColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="22"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="7" right="7" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" radius="6" id="Xih-zi-QI3" userLabel="HeartRow">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Heart:" id="cTE-6i-uM9">
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="0" textAlignment="left" id="NPW-X9-3tS">
+                                    <color key="textColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="22"/>
+                                </label>
+                                <group alignment="right" verticalAlignment="bottom" id="MGe-cK-0mH">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="bottom" text="BPM" id="bES-6V-kV4">
+                                            <color key="textColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="11"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="3"/>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="7" right="7" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" radius="6" id="NIU-oj-nmV" userLabel="CaloriesRow">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Calories:" id="7uS-IZ-clO">
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="0" id="Ztd-AK-BUd">
+                                    <color key="textColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="22"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="7" right="7" top="5" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="L08-tk-vI2">
+                            <items>
+                                <button width="1" alignment="left" title="Discard" id="Jgx-Y2-Oc8">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.13350695371627808" green="0.13364198803901672" blue="0.13352787494659424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="15"/>
+                                    <connections>
+                                        <action selector="tapDiscard" destination="5fv-7X-KGV" id="Sip-wh-BT0"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Save" id="FON-mD-iMI">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="15"/>
+                                    <connections>
+                                        <action selector="tapSave" destination="5fv-7X-KGV" id="nJR-9R-hPK"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="4"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="KcalLabel" destination="Ztd-AK-BUd" id="Kdu-dQ-YuB"/>
+                        <outlet property="heartRateLabel" destination="NPW-X9-3tS" id="Vww-Cr-aGr"/>
+                        <outlet property="intervalTimeLabel" destination="9Am-9p-7mg" id="Nct-il-hD9"/>
+                        <outlet property="intervalsLabel" destination="HEZ-sI-Hdv" id="wgj-x5-uya"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="79" y="-50"/>
+        </scene>
+        <!--Unlocking Controller-->
+        <scene sceneID="tdf-D2-SXa">
+            <objects>
+                <controller identifier="UnlockingController" id="cdY-Fa-9sv" userLabel="Unlocking Controller" customClass="UnlockingInterfaceController" customModule="ruckus_watch_Extension">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="2A8-0o-z5P">
+                            <items>
+                                <button width="60" height="60" alignment="center" backgroundImage="padlock-unlocked" id="z8r-UD-GmU">
+                                    <connections>
+                                        <action selector="tapUnlock" destination="cdY-Fa-9sv" id="lLL-7L-TqU"/>
+                                    </connections>
+                                </button>
+                                <label alignment="center" text="Unlock" id="Dbp-7h-fi5">
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="16"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="42"/>
+        </scene>
+        <!--TimerController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="TimerController" id="AgC-eL-Hgc" customClass="TimerController" customModule="ruckus_watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" verticalAlignment="center" layout="vertical" id="wPy-dw-McU" userLabel="MainUI">
+                            <items>
+                                <group width="1" height="1" alignment="left" layout="vertical" id="Q4L-UN-pYB" userLabel="WorkingGroup">
+                                    <items>
+                                        <group width="1" height="58" alignment="left" layout="vertical" spacing="0.0" id="Tu0-iG-MoK" userLabel="TimeText">
+                                            <items>
+                                                <group width="1" alignment="left" layout="vertical" id="7LH-MB-Qt2">
+                                                    <items>
+                                                        <label height="16" alignment="right" alpha="0.69999999999999996" text="Working" textAlignment="left" id="fbh-uT-Nfx">
+                                                            <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="14"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <label width="1" height="43" alignment="left" verticalAlignment="bottom" text="00:00" textAlignment="left" id="6nc-RF-SfM">
+                                                    <color key="textColor" red="0.77633714679999999" green="0.32453614469999997" blue="0.070057354870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="52"/>
+                                                    <variation key="device=watch42mm">
+                                                        <fontDescription key="font" type="system" weight="semibold" pointSize="60"/>
+                                                    </variation>
+                                                </label>
+                                            </items>
+                                            <variation key="device=watch42mm" height="61"/>
+                                        </group>
+                                        <button width="1" alignment="left" hidden="YES" title="Button" id="bdF-V3-VUZ">
+                                            <connections>
+                                                <action selector="tapThat" destination="AgC-eL-Hgc" id="TAw-Xu-Tdi"/>
+                                            </connections>
+                                        </button>
+                                        <group width="1" height="32" alignment="left" id="vGk-Vb-G8x" userLabel="heartRateRow">
+                                            <items>
+                                                <label height="36" alignment="left" verticalAlignment="bottom" text="60" textAlignment="left" id="pxL-ud-HGN">
+                                                    <color key="textColor" red="0.66666666666666663" green="0.0" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="34"/>
+                                                    <variation key="device=watch42mm">
+                                                        <fontDescription key="font" type="system" weight="semibold" pointSize="45"/>
+                                                    </variation>
+                                                </label>
+                                                <group height="1" alignment="left" id="ivf-GP-0Wy" userLabel="heartWrapper">
+                                                    <items>
+                                                        <imageView width="17" height="17" alignment="right" verticalAlignment="bottom" alpha="0.59999999999999998" image="heart" id="xjO-NB-ywk">
+                                                            <color key="tintColor" red="0.66666666666666663" green="0.0" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </imageView>
+                                                    </items>
+                                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="3"/>
+                                                </group>
+                                                <group width="41" alignment="left" verticalAlignment="bottom" id="B0g-Wg-ObS" userLabel="BPMWrapper">
+                                                    <items>
+                                                        <label height="8" alignment="left" verticalAlignment="bottom" alpha="0.59999999999999998" text="BPM" textAlignment="left" id="oW7-lO-54A">
+                                                            <color key="textColor" red="0.66666666666666663" green="0.0" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="10"/>
+                                                        </label>
+                                                    </items>
+                                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="3"/>
+                                                </group>
+                                            </items>
+                                            <variation key="device=watch42mm" height="37"/>
+                                        </group>
+                                        <group width="1" height="57" alignment="left" id="dw8-I0-id6">
+                                            <items>
+                                                <group width="74" height="1" alignment="left" layout="vertical" id="5Ic-wM-wrF">
+                                                    <items>
+                                                        <group width="74" height="24" alignment="left" id="1PC-8I-RWa" userLabel="caloriesRow">
+                                                            <items>
+                                                                <label height="23" alignment="left" verticalAlignment="bottom" text="---" id="8gj-l6-o7M">
+                                                                    <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="23"/>
+                                                                    <variation key="device=watch42mm" height="31">
+                                                                        <fontDescription key="font" type="system" weight="semibold" pointSize="30"/>
+                                                                    </variation>
+                                                                </label>
+                                                                <group width="20" alignment="left" verticalAlignment="bottom" id="fZL-YO-j8j">
+                                                                    <items>
+                                                                        <imageView width="14" height="20" alignment="left" verticalAlignment="bottom" alpha="0.59999999999999998" image="fire-small" id="z4P-DX-JzG">
+                                                                            <color key="tintColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </imageView>
+                                                                    </items>
+                                                                    <edgeInsets key="margins" left="1" right="0.0" top="0.0" bottom="2"/>
+                                                                </group>
+                                                            </items>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                                            <variation key="device=watch42mm" height="26"/>
+                                                        </group>
+                                                        <label height="19" alignment="left" text="Round" textAlignment="left" id="8xX-PJ-5xV">
+                                                            <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="font" type="system" weight="thin" pointSize="18"/>
+                                                            <variation key="device=watch38mm" height="14"/>
+                                                            <variation key="device=watch42mm">
+                                                                <fontDescription key="font" type="system" weight="thin" pointSize="25"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="6"/>
+                                                </group>
+                                                <group height="53" alignment="left" verticalAlignment="bottom" layout="vertical" id="4Dv-ab-bRw">
+                                                    <items>
+                                                        <label width="1" height="1" alignment="right" verticalAlignment="bottom" text="1" textAlignment="right" id="POq-he-agl">
+                                                            <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="font" type="system" weight="semibold" pointSize="50"/>
+                                                            <variation key="device=watch42mm">
+                                                                <fontDescription key="font" type="system" weight="semibold" pointSize="68"/>
+                                                            </variation>
+                                                        </label>
+                                                    </items>
+                                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                                    <variation key="device=watch42mm" height="65"/>
+                                                </group>
+                                            </items>
+                                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                            <variation key="device=watch38mm" height="52"/>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" spacing="15" id="JBB-pb-Qr9" userLabel="ControlsGroup">
+                                    <items>
+                                        <group width="80" height="80" alignment="center" verticalAlignment="center" radius="40" id="sAq-Bu-iC6">
+                                            <items>
+                                                <group width="1" height="70" alignment="left" verticalAlignment="center" id="SSd-c2-Kqq">
+                                                    <items>
+                                                        <imageView height="1" alignment="center" image="iconsmall" contentMode="scaleAspectFit" id="x8x-bm-3qc"/>
+                                                    </items>
+                                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                                </group>
+                                            </items>
+                                            <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </group>
+                                        <button width="1" alignment="left" verticalAlignment="center" title="Start" id="J4c-Ph-gG2">
+                                            <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" weight="thin" pointSize="15"/>
+                                            <connections>
+                                                <action selector="tapPlayResume" destination="AgC-eL-Hgc" id="LXr-b4-UkK"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="calorieLabel" destination="8gj-l6-o7M" id="ZDn-5C-MGE"/>
+                        <outlet property="heartImage" destination="xjO-NB-ywk" id="1TO-ld-b2F"/>
+                        <outlet property="heartRateLabel" destination="pxL-ud-HGN" id="fol-xb-O8g"/>
+                        <outlet property="intervalLabel" destination="POq-he-agl" id="c2U-oa-b3W"/>
+                        <outlet property="modeLabel" destination="fbh-uT-Nfx" id="nJY-xw-7Ry"/>
+                        <outlet property="playSection" destination="JBB-pb-Qr9" id="d5l-AG-nVd"/>
+                        <outlet property="timeLabel" destination="6nc-RF-SfM" id="21T-IF-dK3"/>
+                        <outlet property="workingSection" destination="Q4L-UN-pYB" id="czy-xK-h3M"/>
+                        <segue destination="ojR-2K-eLj" kind="relationship" relationship="nextPage" id="oug-JN-4et"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="476.87179487179492" y="336.94871794871796"/>
+        </scene>
+        <!--SettingsController-->
+        <scene sceneID="0hb-aI-fOH">
+            <objects>
+                <controller identifier="SettingsController" title="Settings" id="ojR-2K-eLj" userLabel="SettingsController" customClass="SettingsInterfaceController" customModule="ruckus_watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="G1R-DO-Iqk" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Rounds" textAlignment="justified" baselineAdjustment="alignCenters" id="V9f-1n-UjZ">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <picker height="70" alignment="left" focusStyle="stack" id="m60-oR-hK9">
+                            <accessibilityTraits key="accessibilityTraits" adjustable="YES"/>
+                            <connections>
+                                <action selector="didPickIntervals:" destination="ojR-2K-eLj" id="0fh-Cb-XJx"/>
+                            </connections>
+                        </picker>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="sih-jd-lFL" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Round Time" textAlignment="justified" baselineAdjustment="alignCenters" id="yOq-5a-yHu">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group height="70" alignment="left" id="4tX-8S-O5U">
+                            <items>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="Mmz-lv-L1Y">
+                                    <connections>
+                                        <action selector="didPickIntervalTime:" destination="ojR-2K-eLj" id="lg6-2G-NKP"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="Kdm-71-f9h">
+                                    <connections>
+                                        <action selector="didPickIntervalsSeconds:" destination="ojR-2K-eLj" id="yng-Bh-BzY"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="Acs-fu-Gbr" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Pause Time" textAlignment="justified" baselineAdjustment="alignCenters" id="gtv-dZ-pUq">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group height="70" alignment="left" id="GlS-P6-nVz">
+                            <items>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="4P7-D3-VIb">
+                                    <connections>
+                                        <action selector="didPickPauseTime:" destination="ojR-2K-eLj" id="oev-fu-pt1"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="l0e-v0-zZ7">
+                                    <connections>
+                                        <action selector="didPickPauseTimeSeconds:" destination="ojR-2K-eLj" id="Kf9-As-miT"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="mOI-Cx-kgs" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Preperation Time" textAlignment="justified" baselineAdjustment="alignCenters" id="83z-4X-OKV">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group height="70" alignment="left" id="HNi-bZ-yaJ">
+                            <items>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="C0v-6v-Gds">
+                                    <connections>
+                                        <action selector="didPickPreperationTime:" destination="ojR-2K-eLj" id="Peo-bA-E0H"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="uYR-OP-X53">
+                                    <connections>
+                                        <action selector="didPickPreperationTimeSeconds:" destination="ojR-2K-eLj" id="yAQ-HG-4li"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="JxT-NO-N8g" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Warmup time" textAlignment="justified" baselineAdjustment="alignCenters" id="aFh-lX-X6v">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group height="70" alignment="left" id="DE6-v5-eRY">
+                            <items>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="89y-cU-N2V">
+                                    <connections>
+                                        <action selector="didPickWarmUpTime:" destination="ojR-2K-eLj" id="wwr-Ko-Q5I"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="I5f-ce-A0n">
+                                    <connections>
+                                        <action selector="didPickWarmUpTimeSeconds:" destination="ojR-2K-eLj" id="CPM-qJ-yDd"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="joj-9d-mRj" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Stretching time" textAlignment="justified" baselineAdjustment="alignCenters" id="Xgc-M3-CPv">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <group height="70" alignment="left" id="nw0-C1-Mh0">
+                            <items>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="ZA8-NS-GqK">
+                                    <connections>
+                                        <action selector="didPickStretchingTime:" destination="ojR-2K-eLj" id="xUC-z9-LsG"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" height="70" alignment="left" focusStyle="stack" id="hl4-9I-obr">
+                                    <connections>
+                                        <action selector="didPickStretchingTimeSeconds:" destination="ojR-2K-eLj" id="OBr-Ez-p81"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" hidden="YES" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="0JW-QP-7Tu" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Sounds" textAlignment="justified" baselineAdjustment="alignCenters" id="M5z-D3-8cl">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <switch width="1" alignment="left" value="YES" title="Call out hits" id="nxC-Ic-ej3">
+                            <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didToggleCallOutHits:" destination="ojR-2K-eLj" id="KbJ-gu-Q7j"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Kicks" id="WPB-K7-QEg">
+                            <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didToggleKicks:" destination="ojR-2K-eLj" id="Ic9-VO-mD9"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Jumping kicks" id="pfr-Ia-1cu">
+                            <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didToggleJumpingKicks:" destination="ojR-2K-eLj" id="67c-A6-m8z"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Spinning kicks" id="GQh-HK-yMS">
+                            <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didToggleSpinningKicks:" destination="ojR-2K-eLj" id="Afa-Sp-462"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Dirty moves" id="42W-Tp-RJf">
+                            <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didToggleDirtyMoves:" destination="ojR-2K-eLj" id="Csy-L8-zQF"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Dodges / covers" id="1AV-zd-V4W">
+                            <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didToggleDodges:" destination="ojR-2K-eLj" id="ZT3-6w-IGn"/>
+                            </connections>
+                        </switch>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="3kr-62-n8O" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Voice style" textAlignment="justified" baselineAdjustment="alignCenters" id="hIc-ty-emA">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <picker height="70" alignment="left" focusStyle="stack" id="6zW-fE-e25">
+                            <connections>
+                                <action selector="didPickVoiceStyle:" destination="ojR-2K-eLj" id="3Z5-PG-AN5"/>
+                            </connections>
+                        </picker>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="oEo-Fc-iYX" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Difficulty" textAlignment="justified" baselineAdjustment="alignCenters" id="qJB-S9-zGA">
+                                    <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935668230057" green="0.11765726655721664" blue="0.11762756854295731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <slider width="1" alignment="left" value="8" maximum="10" steps="10" id="1re-1u-2gG">
+                            <color key="color" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didSlideDifficulty:" destination="ojR-2K-eLj" id="Roa-tt-omD"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="Au8-3d-tRg" userLabel="dividerGroup">
+                            <items>
+                                <label alignment="center" text="Volume" textAlignment="justified" baselineAdjustment="alignCenters" id="s6s-km-PlT">
+                                    <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="5"/>
+                        </group>
+                        <label alignment="left" text="Volume" id="5E5-0x-d2R"/>
+                        <slider width="1" alignment="left" value="8" maximum="10" steps="10" id="Xvw-bO-byd">
+                            <color key="color" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didSlideVolume:" destination="ojR-2K-eLj" id="vbl-lO-uOl"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="callOutHitsToggle" destination="nxC-Ic-ej3" id="otq-fw-JIZ"/>
+                        <outlet property="difficultySlider" destination="1re-1u-2gG" id="szm-5x-j2b"/>
+                        <outlet property="dirtyMovesToggle" destination="42W-Tp-RJf" id="Ohk-Ql-tcQ"/>
+                        <outlet property="dodgesToggle" destination="1AV-zd-V4W" id="FhW-87-DPO"/>
+                        <outlet property="intervalTime" destination="Mmz-lv-L1Y" id="Glq-87-8d6"/>
+                        <outlet property="intervalTimeSeconds" destination="Kdm-71-f9h" id="VII-Ry-VlN"/>
+                        <outlet property="intervalsPicker" destination="m60-oR-hK9" id="WMR-2j-dpk"/>
+                        <outlet property="jumpingKicksToggle" destination="pfr-Ia-1cu" id="gFL-WM-7he"/>
+                        <outlet property="kicksToggle" destination="WPB-K7-QEg" id="dqP-Pb-0qt"/>
+                        <outlet property="pauseTime" destination="4P7-D3-VIb" id="dzJ-Hv-Chh"/>
+                        <outlet property="pauseTimeSeconds" destination="l0e-v0-zZ7" id="EEe-oe-Eas"/>
+                        <outlet property="preperationTime" destination="C0v-6v-Gds" id="MGl-TC-e8N"/>
+                        <outlet property="preperationTimeSeconds" destination="uYR-OP-X53" id="t9Q-Kv-gok"/>
+                        <outlet property="spinningKicksToggle" destination="GQh-HK-yMS" id="kue-cH-7tj"/>
+                        <outlet property="stretchingTime" destination="ZA8-NS-GqK" id="STH-6e-XlZ"/>
+                        <outlet property="stretchingTimeSeonds" destination="hl4-9I-obr" id="Zoi-25-J2p"/>
+                        <outlet property="voiceStylePicker" destination="6zW-fE-e25" id="zEP-7y-g1p"/>
+                        <outlet property="volumeSlider" destination="Xvw-bO-byd" id="X9O-bb-u7K"/>
+                        <outlet property="warmUpTimeSeconds" destination="I5f-ce-A0n" id="hYu-15-a6z"/>
+                        <outlet property="warmupTime" destination="89y-cU-N2V" id="6tA-Uq-KmL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="794" y="338"/>
+        </scene>
+        <!--ControllsController-->
+        <scene sceneID="Jzj-5D-V1c">
+            <objects>
+                <controller identifier="ControllsController" id="0zo-eA-Jnk" customClass="ControlsInterfaceControllerController" customModule="ruckus_watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="PXY-tv-Kr5" userLabel="Wrapper">
+                            <items>
+                                <group width="1" height="0.5" alignment="left" id="fbG-cR-TVp" userLabel="lockWrapper">
+                                    <items>
+                                        <button width="60" height="60" alignment="center" verticalAlignment="center" alpha="0.40000000000000002" enabled="NO" backgroundImage="padlock" id="s5i-E0-N95" userLabel="Lock">
+                                            <connections>
+                                                <action selector="tapLock" destination="0zo-eA-Jnk" id="Mr0-JB-cEN"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.5" alignment="center" verticalAlignment="center" spacing="8" id="Jta-WD-7bt" userLabel="PauseStop">
+                                    <items>
+                                        <group alignment="center" id="qMU-v0-zKL" userLabel="Play/Pause">
+                                            <items>
+                                                <button width="60" height="60" alignment="left" hidden="YES" backgroundImage="play" id="05v-BN-DQC" userLabel="Play">
+                                                    <connections>
+                                                        <action selector="tapPlay" destination="0zo-eA-Jnk" id="C3L-4K-wjR"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="60" height="60" alignment="center" alpha="0.40000000000000002" enabled="NO" backgroundImage="pause" id="8gg-Jf-RYt" userLabel="Pause">
+                                                    <connections>
+                                                        <action selector="tapPause" destination="0zo-eA-Jnk" id="Ucx-0L-Lgw"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <button width="60" height="60" alignment="center" alpha="0.40000000000000002" enabled="NO" backgroundImage="stop" id="okY-nP-0l4" userLabel="Stop">
+                                            <connections>
+                                                <action selector="tapStop" destination="0zo-eA-Jnk" id="jIc-kE-5t7"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="lockBtn" destination="s5i-E0-N95" id="AhU-eR-ad8"/>
+                        <outlet property="pauseBtn" destination="8gg-Jf-RYt" id="pWl-KN-f15"/>
+                        <outlet property="playBtn" destination="05v-BN-DQC" id="iUX-8E-IJm"/>
+                        <outlet property="stopBtn" destination="okY-nP-0l4" id="AHt-5y-p4J"/>
+                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="JyB-rw-Rti"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="79" y="337"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="ruckus_lite_watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

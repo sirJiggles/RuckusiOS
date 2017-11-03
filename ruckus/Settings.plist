@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>uppercuts</key>
+	<dict>
+		<key>descr</key>
+		<string>Enables uppercuts as part of the punches</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Uppercuts</string>
+		<key>value</key>
+		<string>0</string>
+	</dict>
+	<key>rounds</key>
+	<dict>
+		<key>descr</key>
+		<string>How many rounds.</string>
+		<key>label</key>
+		<string>Rounds</string>
+		<key>value</key>
+		<string>5</string>
+		<key>possibleValues</key>
+		<array>
+			<string>1</string>
+			<string>2</string>
+			<string>3</string>
+			<string>4</string>
+			<string>5</string>
+			<string>6</string>
+			<string>7</string>
+			<string>8</string>
+			<string>9</string>
+			<string>10</string>
+			<string>11</string>
+			<string>12</string>
+			<string>13</string>
+			<string>14</string>
+			<string>15</string>
+			<string>16</string>
+			<string>17</string>
+			<string>18</string>
+			<string>19</string>
+			<string>20</string>
+		</array>
+	</dict>
+	<key>roundTime</key>
+	<dict>
+		<key>descr</key>
+		<string>How long is each round.</string>
+		<key>label</key>
+		<string>Round Time</string>
+		<key>value</key>
+		<string>2:30</string>
+	</dict>
+	<key>pauseTime</key>
+	<dict>
+		<key>descr</key>
+		<string>How long to pause in between each interval, can also set to 0 for stretching and warm ups etc.</string>
+		<key>label</key>
+		<string>Pause Time</string>
+		<key>value</key>
+		<string>0:30</string>
+	</dict>
+	<key>preperationTime</key>
+	<dict>
+		<key>descr</key>
+		<string>A time duration to pause after warmup and stretching before starting the workout. Workout paused during this time</string>
+		<key>value</key>
+		<string>0:30</string>
+		<key>label</key>
+		<string>Preperation Time</string>
+	</dict>
+	<key>callOutHits</key>
+	<dict>
+		<key>descr</key>
+		<string>If the timer should call out hits like &quot;Jab&quot; while it is running in &quot;round mode&quot;.</string>
+		<key>enabled</key>
+		<true/>
+		<key>disables</key>
+		<array>
+			<string>kicks</string>
+			<string>jumpingKicks</string>
+			<string>spinningKicks</string>
+			<string>dirtyMoves</string>
+			<string>dodgesAndCovers</string>
+		</array>
+		<key>value</key>
+		<string>1</string>
+		<key>label</key>
+		<string>Call out hits</string>
+	</dict>
+	<key>voiceStyle</key>
+	<dict>
+		<key>descr</key>
+		<string>The style of voice for calling out the hits.</string>
+		<key>label</key>
+		<string>Voice Style</string>
+		<key>value</key>
+		<string>Male</string>
+		<key>possibleValues</key>
+		<array>
+			<string>Male</string>
+			<string>Deep</string>
+			<string>Female</string>
+			<string>Husky</string>
+			<string>Deamon</string>
+		</array>
+	</dict>
+	<key>kicks</key>
+	<dict>
+		<key>descr</key>
+		<string>Will also call out kicks: push kick, round kick and side kick.</string>
+		<key>enabled</key>
+		<true/>
+		<key>disables</key>
+		<array>
+			<string>jumpingKicks</string>
+			<string>spinningKicks</string>
+		</array>
+		<key>label</key>
+		<string>Kicks</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
+	<key>backgroundCrowd</key>
+	<dict>
+		<key>descr</key>
+		<string>Play the sound of a boxing crowd in the background?</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Background Crowd</string>
+		<key>value</key>
+		<string>0</string>
+	</dict>
+	<key>jumpingKicks</key>
+	<dict>
+		<key>descr</key>
+		<string>Will also call out: jumping front, round and side kick.</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Jumping Kicks</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
+	<key>spinningKicks</key>
+	<dict>
+		<key>descr</key>
+		<string>Will also call out kicks: spinning side kick and spinning hook kick.</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Spinning Kicks</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
+	<key>dirtyMoves</key>
+	<dict>
+		<key>descr</key>
+		<string>Will also call out the moves elbow, shin kick, knee and spinning back fist.</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Dirty Moves</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
+	<key>dodgesAndCovers</key>
+	<dict>
+		<key>descr</key>
+		<string>Will also call out defensive and evasive moves: duck, cover and slip.</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Dodges and Covers</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
+	<key>difficulty</key>
+	<dict>
+		<key>label</key>
+		<string>Difficulty</string>
+		<key>value</key>
+		<real>0.75</real>
+	</dict>
+	<key>volume</key>
+	<dict>
+		<key>label</key>
+		<string>Volume</string>
+		<key>value</key>
+		<real>0.75</real>
+	</dict>
+	<key>warmUpTime</key>
+	<dict>
+		<key>descr</key>
+		<string>Duration of warm up, is counted as part of your workout.</string>
+		<key>value</key>
+		<string>3:00</string>
+		<key>label</key>
+		<string>Warm up Time</string>
+	</dict>
+	<key>stretchTime</key>
+	<dict>
+		<key>descr</key>
+		<string>Duration of time to stretch after warmup, workout paused during stretching time.</string>
+		<key>value</key>
+		<string>3:00</string>
+		<key>label</key>
+		<string>Stretching Time</string>
+	</dict>
+	<key>location</key>
+	<dict>
+		<key>descr</key>
+		<string>Where are you traning?</string>
+		<key>label</key>
+		<string>Location</string>
+		<key>value</key>
+		<string>Indoor</string>
+		<key>possibleValues</key>
+		<array>
+			<string>Indoor</string>
+			<string>Outdoor</string>
+		</array>
+	</dict>
+	<key>sport</key>
+	<dict>
+		<key>descr</key>
+		<string>Which sport are you training?</string>
+		<key>label</key>
+		<string>Sport</string>
+		<key>value</key>
+		<string>High intensity</string>
+		<key>possibleValues</key>
+		<array>
+			<string>Boxing</string>
+			<string>Core training</string>
+			<string>Cross training</string>
+			<string>Dance</string>
+			<string>Elliptical</string>
+			<string>Fencing</string>
+			<string>Flexibility</string>
+			<string>Func strength</string>
+			<string>Gymnastics</string>
+			<string>High intensity</string>
+			<string>Jump rope</string>
+			<string>Kickboxing</string>
+			<string>Martial arts</string>
+			<string>Mind and body</string>
+			<string>Metabolic cardio</string>
+			<string>Prep and recovery</string>
+			<string>Step training</string>
+			<string>Strength</string>
+			<string>Wrestling</string>
+			<string>Yoga</string>
+			<string>Other</string>
+		</array>
+	</dict>
+</dict>
+</plist>
