@@ -1,13 +1,13 @@
 # Ruckus
 This is the iOS (swift) version of the app on the appstore with watch support.
 
-# Description
+## Description
 Push yourself during your kickboxing workouts with an app that calls out combos and has no sympathy for 
 how tired you are. Ruckus calls out hit combinations like “jab-cross-hook” 
 in a variety of voices for you to land on the punchbag.
 
 
-## Features
+### Features
 
 * Calls out hits to land on the punchbag
 * Configure your workouts including warmup and stretching time
