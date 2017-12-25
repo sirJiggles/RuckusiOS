@@ -110,6 +110,12 @@
 		7F7775711F40BF1F0037B49F /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7775701F40BF160037B49F /* SoundPlayer.swift */; };
 		7F7775771F40BFFA0037B49F /* HitCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7775721F40BF270037B49F /* HitCaller.swift */; };
 		7F83E53B1E53AB530019A31F /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83E53A1E53AB530019A31F /* LoadingScreenViewController.swift */; };
+		7F8593A31FF130BA0085DB3E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8593A21FF130B90085DB3E /* art.scnassets */; };
+		7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8593A21FF130B90085DB3E /* art.scnassets */; };
+		7F8593A61FF130C60085DB3E /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A51FF130C60085DB3E /* ARVC.swift */; };
+		7F8593A71FF130C60085DB3E /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A51FF130C60085DB3E /* ARVC.swift */; };
+		7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A91FF130F10085DB3E /* ARScene.swift */; };
+		7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A91FF130F10085DB3E /* ARScene.swift */; };
 		7F8619171E60CEDF005236C2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8619161E60CEDF005236C2 /* UIColorExtension.swift */; };
 		7F89BD4F1F3E152300A74374 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F89BD4E1F3E152300A74374 /* Impact.ttf */; };
 		7F917ACF1F04487600120FC2 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
@@ -351,6 +357,9 @@
 		7F7775701F40BF160037B49F /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		7F7775721F40BF270037B49F /* HitCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitCaller.swift; sourceTree = "<group>"; };
 		7F83E53A1E53AB530019A31F /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		7F8593A21FF130B90085DB3E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		7F8593A51FF130C60085DB3E /* ARVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
+		7F8593A91FF130F10085DB3E /* ARScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScene.swift; sourceTree = "<group>"; };
 		7F8619161E60CEDF005236C2 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ruckus/UIColorExtension.swift; sourceTree = "<group>"; };
 		7F89BD4E1F3E152300A74374 /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		7F8F6B231EAD46A300A2DD2B /* UnlockingInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockingInterfaceController.swift; sourceTree = "<group>"; };
@@ -629,6 +638,7 @@
 		7F6126FA1E50A33C00ED1544 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F8593A51FF130C60085DB3E /* ARVC.swift */,
 				7F83E53A1E53AB530019A31F /* LoadingScreenViewController.swift */,
 				7F01E3241E56617E0093622A /* SettingsViewController.swift */,
 				7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */,
@@ -694,6 +704,14 @@
 				7F692BFB1F40681A00D768FB /* Combos.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		7F8593A81FF130DC0085DB3E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7F8593A91FF130F10085DB3E /* ARScene.swift */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		7F8619151E60CE29005236C2 /* Collections */ = {
@@ -840,6 +858,8 @@
 		7FB358021E4294EA00EF9BD2 /* ruckus */ = {
 			isa = PBXGroup;
 			children = (
+				7F8593A81FF130DC0085DB3E /* Scenes */,
+				7F8593A21FF130B90085DB3E /* art.scnassets */,
 				7F692C001F4083DA00D768FB /* Sounds */,
 				7F7775731F40BF3A0037B49F /* Models */,
 				7F76938E1EE3060C0036DED7 /* Supporting Files */,
@@ -1222,6 +1242,7 @@
 			files = (
 				7FB358101E4294EA00EF9BD2 /* LaunchScreen.storyboard in Resources */,
 				7FB5F5C91F4A10BE006BF8F3 /* bell.mp3 in Resources */,
+				7F8593A31FF130BA0085DB3E /* art.scnassets in Resources */,
 				7F6127061E50BB4800ED1544 /* Settings.plist in Resources */,
 				7FB5F5CA1F4A10C1006BF8F3 /* round-end.wav in Resources */,
 				7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */,
@@ -1255,6 +1276,7 @@
 			files = (
 				7FB057081F51B3B10023D873 /* Assets.xcassets in Resources */,
 				7FC61E411F5192D300645009 /* LaunchScreen.storyboard in Resources */,
+				7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */,
 				7FC61E421F5192D300645009 /* bell.mp3 in Resources */,
 				7FC61E431F5192D300645009 /* Settings.plist in Resources */,
 				7FC61E441F5192D300645009 /* round-end.wav in Resources */,
@@ -1695,6 +1717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5AE9C21E6F551F005B4290 /* TimerViewController.swift in Sources */,
+				7F8593A61FF130C60085DB3E /* ARVC.swift in Sources */,
 				7F76939F1EE37C950036DED7 /* CreditsCell.swift in Sources */,
 				7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */,
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
@@ -1718,6 +1741,7 @@
 				7FB247FD1ED2420700267498 /* WorkoutSession.swift in Sources */,
 				7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */,
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
+				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */,
 				7F7775651F40AF140037B49F /* SettingsAccessor.swift in Sources */,
 				7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */,
@@ -1766,6 +1790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC61E181F5192D300645009 /* TimerViewController.swift in Sources */,
+				7F8593A71FF130C60085DB3E /* ARVC.swift in Sources */,
 				7FC61E191F5192D300645009 /* CreditsCell.swift in Sources */,
 				7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */,
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
@@ -1789,6 +1814,7 @@
 				7FC61E2C1F5192D300645009 /* WorkoutSession.swift in Sources */,
 				7FC61E2D1F5192D300645009 /* StringExtension.swift in Sources */,
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
+				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */,
 				7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */,
 				7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */,
