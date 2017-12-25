@@ -43,16 +43,11 @@ class ARScene: SCNScene {
             light.attenuationEndDistance = 50
             light.attenuationStartDistance = 0
             light.attenuationFalloffExponent = 2
-            light.color = UIColor(
-                red: 1,
-                green: 0x2b/255.0,
-                blue: 0x71/255.0,
-                alpha: 1
-            )
+            light.color = UIColor.red
         }
         spotLightNode.position = SCNVector3(0,2,2)
         rootNode.addChildNode(spotLightNode)
-        
+//
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         if let amLight = ambientLightNode.light {
@@ -61,13 +56,13 @@ class ARScene: SCNScene {
         }
         rootNode.addChildNode(ambientLightNode)
         
-        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
-        cube.firstMaterial?.diffuse.contents = UIColor.red
-        let box = SCNNode(geometry: cube)
+//        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
+//        cube.firstMaterial?.diffuse.contents = UIColor.red
+//        let box = SCNNode(geometry: cube)
         
-        box.position = SCNVector3Zero
-        
-        rootNode.addChildNode(box)
+//        box.position = SCNVector3Zero
+//
+//        rootNode.addChildNode(box)
         
         // node to look at
         let spotLookAtNode = SCNNode()
@@ -78,7 +73,7 @@ class ARScene: SCNScene {
         cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
         
         // load the jab
-        let jabScene = SCNScene(named: "art.scnassets/3.dae")
+        let jabScene = SCNScene(named: "art.scnassets/jab.dae")
         if let jabSceneUnWraped = jabScene {
             model = jabSceneUnWraped.rootNode.childNode(withName: "model", recursively: true)!
             
@@ -91,10 +86,11 @@ class ARScene: SCNScene {
 //            )
             
             // wrapper for scaling
-//            let nodeWrapper = SCNNode()
-//            nodeWrapper.scale = SCNVector3(0.3,0.3,0.3)
-//            nodeWrapper.addChildNode(model)
-            rootNode.addChildNode(model)
+            let nodeWrapper = SCNNode()
+            nodeWrapper.scale = SCNVector3(0.03,0.03,0.03)
+            nodeWrapper.position = SCNVector3Zero
+            nodeWrapper.addChildNode(model)
+            rootNode.addChildNode(nodeWrapper)
             
         }
     }
