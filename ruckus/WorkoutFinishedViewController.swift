@@ -43,6 +43,13 @@ class WorkoutFinishedViewController: UIViewController, WorkoutSummeryProtocol {
         workoutStoreHelper.summeryDelegate = self
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

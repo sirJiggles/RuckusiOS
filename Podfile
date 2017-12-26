@@ -14,6 +14,7 @@ def ruckusPods
     pod 'Google-Mobile-Ads-SDK'
     pod 'Fabric'
     pod 'Crashlytics'
+#    pod 'CardboardSDK', '~> 0.7'
 end
 
 target 'ruckus' do

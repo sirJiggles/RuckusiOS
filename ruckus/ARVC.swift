@@ -9,16 +9,24 @@
 import UIKit
 import QuartzCore
 import SceneKit
+import ARKit
 
-class ARVC: UIViewController {
-
+class ARVC: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var scnView: SCNView!
+    @IBOutlet weak var arSceneView: ARSCNView!
+    
     let scene = ARScene.init(create: true)
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set the scene to the view
+        // AR version
+//        arSceneView.scene = scene
+//        arSceneView.allowsCameraControl = true
+//        arSceneView.showsStatistics = true
+        
+        // normal verison
+        arSceneView.isHidden = true
         scnView.scene = scene
         
         // allows the user to manipulate the camera
@@ -30,21 +38,37 @@ class ARVC: UIViewController {
         // configure the view
         scnView.backgroundColor = UIColor.black
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let orientation = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(orientation, forKey: "orientation")
+        UIViewController.attemptRotationToDeviceOrientation()
+        
+        // ARKit shizzle
+//        let configuration = ARWorldTrackingConfiguration()
+        
+        // Run the view's session
+//        arSceneView.session.run(configuration)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .landscapeRight
+        } else {
+            return .portrait
+        }
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

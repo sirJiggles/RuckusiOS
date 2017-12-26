@@ -10,9 +10,9 @@ import Foundation
 
 extension Double {
     func splitAtDecimal() -> [Int?] {
-        return ("\(self)".characters.split{ $0 == "." }).map({
+        return ("\(self)".split{ $0 == "." }).map({
             let s = String($0)
-            if s.characters.count > 2 {
+            if s.count > 2 {
                 let index = s.index(s.startIndex, offsetBy: 2)
                 let sub = s.substring(to: index)
                 return Int(sub)

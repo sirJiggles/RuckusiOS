@@ -64,8 +64,20 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
     
     // MARK: - View life cycle
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let orientation = UIInterfaceOrientation.portrait.rawValue
+//        UIDevice.current.setValue(orientation, forKey: "orientation")
+//        UIViewController.attemptRotationToDeviceOrientation()
+        
         NotificationCenter.default.removeObserver(
             self,
             name: NSNotification.Name(NotificationKey.StartWorkoutFromWatch.rawValue),

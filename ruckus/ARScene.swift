@@ -40,22 +40,23 @@ class ARScene: SCNScene {
         spotLightNode.light = SCNLight()
         if let light = spotLightNode.light {
             light.type = .spot
-            light.attenuationEndDistance = 50
+            light.attenuationEndDistance = 100
             light.attenuationStartDistance = 0
-            light.attenuationFalloffExponent = 2
-            light.color = UIColor.red
+            light.attenuationFalloffExponent = 1
+            light.color = UIColor.white
         }
-        spotLightNode.position = SCNVector3(0,2,2)
+        spotLightNode.position = SCNVector3(0,10,10)
         rootNode.addChildNode(spotLightNode)
 //
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        if let amLight = ambientLightNode.light {
-            amLight.type = .ambient
-            amLight.color = UIColor.white
-        }
-        rootNode.addChildNode(ambientLightNode)
+//        let ambientLightNode = SCNNode()
+//        ambientLightNode.light = SCNLight()
+//        if let amLight = ambientLightNode.light {
+//            amLight.type = .ambient
+//            amLight.color = UIColor.white
+//        }
+//        rootNode.addChildNode(ambientLightNode)
         
+        // DEBUG CUBE
 //        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
 //        cube.firstMaterial?.diffuse.contents = UIColor.red
 //        let box = SCNNode(geometry: cube)
@@ -66,7 +67,7 @@ class ARScene: SCNScene {
         
         // node to look at
         let spotLookAtNode = SCNNode()
-        spotLightNode.position = SCNVector3Zero
+        spotLookAtNode.position = SCNVector3Zero
         
         // look at look at node
         spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
@@ -87,7 +88,7 @@ class ARScene: SCNScene {
             
             // wrapper for scaling
             let nodeWrapper = SCNNode()
-            nodeWrapper.scale = SCNVector3(0.03,0.03,0.03)
+            nodeWrapper.scale = SCNVector3(0.05,0.05,0.05)
             nodeWrapper.position = SCNVector3Zero
             nodeWrapper.addChildNode(model)
             rootNode.addChildNode(nodeWrapper)

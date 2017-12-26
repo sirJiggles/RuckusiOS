@@ -18,12 +18,12 @@ extension String {
     var camelcaseString: String {
         let source = self
         let first = source.lowercased().substring(to: source.index(after: source.startIndex))
-        if source.characters.contains(" ") {
+        if source.contains(" ") {
             let cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
-            let rest = String(cammel.characters.dropFirst())
+            let rest = String(cammel.dropFirst())
             return "\(first)\(rest)"
         } else {
-            let rest = String(source.characters.dropFirst())
+            let rest = String(source.dropFirst())
             return "\(first)\(rest)"
         }
     }

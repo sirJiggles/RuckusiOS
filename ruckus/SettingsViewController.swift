@@ -91,6 +91,11 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     
     // MARK: lifecycle
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         
         if PurchasedState.sharedInstance.isPaid || currentReachabilityStatus == .notReachable {
@@ -237,7 +242,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         for (key,open) in selectStates {
             // if open
             if open {
-                var parts = key.characters.split{$0 == ":"}.map(String.init)
+                var parts = key.split{$0 == ":"}.map(String.init)
                 
                 parts[0].remove(at: parts[0].startIndex)
                 parts[1].remove(at: parts[1].startIndex)

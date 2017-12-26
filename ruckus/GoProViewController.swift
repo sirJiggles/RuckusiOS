@@ -25,6 +25,10 @@ class GoProViewController: UIViewController {
     
     var loadedProduct: SKProduct?
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -193,6 +193,8 @@
 		7FE390311F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7FE390321F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7FE53BC11F5C1B3200B45643 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
+		7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
+		7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
 		7FFC06801F5C6D9C00F40EED /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC067F1F5C6B8B00F40EED /* crowd.wav */; };
 		7FFC06811F5C6D9C00F40EED /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC067F1F5C6B8B00F40EED /* crowd.wav */; };
 		C6AA4A801597CDCC308D3468 /* Pods_ruckus_lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B8DE8DA792AABEF2236F6C /* Pods_ruckus_lite.framework */; };
@@ -406,6 +408,7 @@
 		7FE53BC31F5C1C5100B45643 /* ruckus.lite.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.lite.watch.entitlements; sourceTree = SOURCE_ROOT; };
 		7FE53BC41F5C1C8C00B45643 /* ruckus.lite.watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ruckus.lite.watch Extension.entitlements"; sourceTree = SOURCE_ROOT; };
 		7FEDF1381EB773C000B63539 /* ToggleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleController.swift; sourceTree = "<group>"; };
+		7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		7FFC067F1F5C6B8B00F40EED /* crowd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crowd.wav; sourceTree = "<group>"; };
 		862A59C76E7A93C5186A93F1 /* Pods-ruckus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus/Pods-ruckus.debug.xcconfig"; sourceTree = "<group>"; };
 		9041E651361575E7FD10EE12 /* Pods_ruckus_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -798,6 +801,7 @@
 				7FA5CE571E80684000EF3248 /* StringExtension.swift */,
 				7F8619161E60CEDF005236C2 /* UIColorExtension.swift */,
 				7F340E961EF719AB00AE3DEB /* XCUIElement.swift */,
+				7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -1727,6 +1731,7 @@
 				7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */,
 				7F19F1961E6E0CF100D5CFC3 /* IntervalTimer.swift in Sources */,
 				7F4D9FE61EE45FC20049ADA8 /* WorkoutStoreHelper.swift in Sources */,
+				7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
 				7F95A9991E9016600057D8AB /* AppToWatchNotificationBridge.swift in Sources */,
 				7F7775771F40BFFA0037B49F /* HitCaller.swift in Sources */,
 				7F692BFC1F40681A00D768FB /* Combos.swift in Sources */,
@@ -1800,6 +1805,7 @@
 				7FC61E1E1F5192D300645009 /* Settings.swift in Sources */,
 				7FC61E1F1F5192D300645009 /* IntervalTimer.swift in Sources */,
 				7FC61E201F5192D300645009 /* WorkoutStoreHelper.swift in Sources */,
+				7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
 				7FC61E211F5192D300645009 /* AppToWatchNotificationBridge.swift in Sources */,
 				7FC61E221F5192D300645009 /* HitCaller.swift in Sources */,
 				7FC61E231F5192D300645009 /* Combos.swift in Sources */,
@@ -2179,7 +2185,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = ruckus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2201,7 +2207,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = ruckus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2293,7 +2299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2315,7 +2321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
