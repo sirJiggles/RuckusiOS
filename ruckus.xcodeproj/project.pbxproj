@@ -189,6 +189,12 @@
 		7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */; };
 		7FCA39E81E8AEA8600F53C61 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
+		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
+		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
+		7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */; };
+		7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */; };
+		7FDE6B9B1FF2F26C00502F4A /* ARAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */; };
+		7FDE6B9C1FF2F26C00502F4A /* ARAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */; };
 		7FE390301F5C9C2A0006EBE7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3902F1F5C9C2A0006EBE7 /* StoreKit.framework */; };
 		7FE390311F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7FE390321F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
@@ -403,6 +409,9 @@
 		7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7FD12BBE1E8EE956003209EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
 		7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHelper.swift; path = ruckus/UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationLoader.swift; path = ../AnimationLoader.swift; sourceTree = "<group>"; };
+		7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitGiver.swift; sourceTree = "<group>"; };
+		7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAnimationController.swift; sourceTree = "<group>"; };
 		7FE3902F1F5C9C2A0006EBE7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7FE53BC21F5C1C4900B45643 /* ruckus.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.watch.entitlements; sourceTree = "<group>"; };
 		7FE53BC31F5C1C5100B45643 /* ruckus.lite.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.lite.watch.entitlements; sourceTree = SOURCE_ROOT; };
@@ -666,6 +675,7 @@
 				7FC575D91EEDDC57006DAD3E /* SelectCellTime.swift */,
 				7F06580F1F44ECA500802155 /* HelpCell.swift */,
 				7F018A1F1F4BECF200BC044F /* VolumeCell.swift */,
+				7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -673,10 +683,12 @@
 		7F76938B1EE2FE0B0036DED7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */,
 				7F7775721F40BF270037B49F /* HitCaller.swift */,
 				7F7775701F40BF160037B49F /* SoundPlayer.swift */,
 				7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */,
 				7F7775641F40AF140037B49F /* SettingsAccessor.swift */,
+				7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1721,10 +1733,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5AE9C21E6F551F005B4290 /* TimerViewController.swift in Sources */,
+				7FDE6B9B1FF2F26C00502F4A /* ARAnimationController.swift in Sources */,
 				7F8593A61FF130C60085DB3E /* ARVC.swift in Sources */,
 				7F76939F1EE37C950036DED7 /* CreditsCell.swift in Sources */,
 				7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */,
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
+				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
 				7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */,
 				7F8619171E60CEDF005236C2 /* UIColorExtension.swift in Sources */,
@@ -1758,6 +1772,7 @@
 				7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */,
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
+				7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */,
 				7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */,
 				7F7775711F40BF1F0037B49F /* SoundPlayer.swift in Sources */,
 				7F7693A11EE37FF20036DED7 /* ButtonCell.swift in Sources */,
@@ -1795,10 +1810,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC61E181F5192D300645009 /* TimerViewController.swift in Sources */,
+				7FDE6B9C1FF2F26C00502F4A /* ARAnimationController.swift in Sources */,
 				7F8593A71FF130C60085DB3E /* ARVC.swift in Sources */,
 				7FC61E191F5192D300645009 /* CreditsCell.swift in Sources */,
 				7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */,
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
+				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
 				7FC61E1C1F5192D300645009 /* WorkoutFinishedViewController.swift in Sources */,
 				7FC61E1D1F5192D300645009 /* UIColorExtension.swift in Sources */,
@@ -1832,6 +1849,7 @@
 				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
+				7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */,
 				7FC61E3A1F5192D300645009 /* ScrollCell.swift in Sources */,
 				7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */,
 				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
