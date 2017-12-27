@@ -12,7 +12,9 @@ import SceneKit
 class ARAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .rightHook, .cross, .stance]
+    let animations: [Move] = [.jab, .cross, .hook, .idle, .leftHook, .rightHook]
+
+    
     var runningPlayer: SCNAnimationPlayer?
     
     static let sharedInstance = ARAnimationController()
@@ -63,17 +65,16 @@ class ARAnimationController {
     
     func setUpMoves() {
         for animation in animations {
+            print("we are trying to find \(animation.rawValue).dae")
             let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/\(animation.rawValue).dae")
 
-            switch (animation) {
-            case .cross, .leftHook:
-                player.speed = 0.7
-            case .jab:
-                player.speed = 0.5
-            default:
-                player.speed = 0.7
-            }
-            player.blendFactor = 0.75
+//            switch (animation) {
+//            case .jab:
+//                player.speed = 0.5
+//            default:
+//                player.speed = 0.7
+//            }
+//            player.blendFactor = 0.75
             players.append(player)
 
             model.addAnimationPlayer(player, forKey: animation.rawValue)

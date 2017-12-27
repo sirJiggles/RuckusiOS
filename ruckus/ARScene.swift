@@ -29,15 +29,19 @@ class ARScene: SCNScene {
         lightsCameraAction()
         
         // load the first model state
-        let stance = SCNScene(named: "art.scnassets/stance.dae")
-        if let stanceUnWraped = stance {
-            model = stanceUnWraped.rootNode.childNode(withName: "model", recursively: true)!
+        let idle = SCNScene(named: "art.scnassets/char.dae")
+        if let indleUnwrapped = idle {
+            
+            for child in indleUnwrapped.rootNode.childNodes {
+                model.addChildNode(child)
+            }
             
             
             // wrapper for scaling
             let nodeWrapper = SCNNode()
-            nodeWrapper.scale = SCNVector3(0.03,0.03,0.03)
-            nodeWrapper.position = SCNVector3(0, -3.7, -3.2)
+            nodeWrapper.scale = SCNVector3(0.01,0.01,0.01)
+            nodeWrapper.position = SCNVector3(0, -1, -1)
+//            nodeWrapper.rotation = SCNVector4(1, 2, 0, Float(90).degreesToRadians)
             nodeWrapper.addChildNode(model)
             rootNode.addChildNode(nodeWrapper)
             
@@ -86,7 +90,7 @@ class ARScene: SCNScene {
         
         // DEBUG CUBE
 //        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
-//        cube.firstMaterial?.diffuse.contents = UIColor.blue
+//        cube.firstMaterial?.diffuse.contents = UIColor.red
 //        let box = SCNNode(geometry: cube)
 //
 //        box.position = SCNVector3Zero

@@ -94,6 +94,8 @@
 		7F5AE9C21E6F551F005B4290 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */; };
 		7F5B0A631EE4A22E00BA7358 /* GoProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */; };
 		7F5B0A651EE4B6D800BA7358 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
+		7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */; };
+		7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */; };
 		7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F6127061E50BB4800ED1544 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
@@ -355,6 +357,7 @@
 		7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProViewController.swift; sourceTree = "<group>"; };
 		7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedState.swift; sourceTree = "<group>"; };
+		7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExtension.swift; sourceTree = "<group>"; };
 		7F6127001E50B9BF00ED1544 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ruckus/Settings.swift; sourceTree = "<group>"; };
 		7F6127051E50BB4800ED1544 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7F6127071E50BF1500ED1544 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistHelper.swift; path = ruckus/PlistHelper.swift; sourceTree = "<group>"; };
@@ -817,6 +820,7 @@
 				7F8619161E60CEDF005236C2 /* UIColorExtension.swift */,
 				7F340E961EF719AB00AE3DEB /* XCUIElement.swift */,
 				7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */,
+				7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -1746,6 +1750,7 @@
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
+				7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
 				7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */,
 				7F8619171E60CEDF005236C2 /* UIColorExtension.swift in Sources */,
 				7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */,
@@ -1823,6 +1828,7 @@
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
+				7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
 				7FC61E1C1F5192D300645009 /* WorkoutFinishedViewController.swift in Sources */,
 				7FC61E1D1F5192D300645009 /* UIColorExtension.swift in Sources */,
 				7FC61E1E1F5192D300645009 /* Settings.swift in Sources */,

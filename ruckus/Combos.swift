@@ -32,7 +32,7 @@ enum Move: String {
     case cover
     case uppercut
     case knee
-    case stance
+    case idle
     case leftHook
     case rightHook
 }

@@ -15,12 +15,12 @@ protocol GivesHites {
 
 class HitGiver: GivesHites {
     let combos: [[Move]] = [
-        [.jab, .jab, .cross, .stance],
-        [.jab, .cross, .rightHook, .stance],
-        [.rightHook, .jab, .cross, .stance],
-        [.jab, .rightHook, .stance],
-        [.jab, .rightHook, .cross, .stance],
-        [.jab, .jab, .stance]
+        [.jab, .jab, .cross, .idle],
+        [.jab, .cross, .rightHook, .idle],
+        [.rightHook, .jab, .cross, .idle],
+        [.jab, .rightHook, .idle],
+        [.jab, .rightHook, .cross, .idle],
+        [.jab, .jab, .idle]
     ]
 
     var hitsthGiveth: Int = 0
