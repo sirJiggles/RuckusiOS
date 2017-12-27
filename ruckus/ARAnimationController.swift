@@ -11,9 +11,8 @@ import SceneKit
 
 class ARAnimationController {
     var model = SCNNode()
-    var moves: [AnimatedMove]  = []
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .rightHook, .cross]
+    let animations: [Move] = [.jab, .rightHook, .cross, .stance]
     var runningPlayer: SCNAnimationPlayer?
     
     static let sharedInstance = ARAnimationController()
@@ -28,7 +27,7 @@ class ARAnimationController {
         setUpMoves()
         
         // just to test
-        Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
     }
     
     @objc func runCombo() {
@@ -37,24 +36,17 @@ class ARAnimationController {
         var i: Double = 0.0
         for move in combo {
             playMove(named: move, after: i)
-            i = i + 2
+            i = i + 1.6
         }
     }
     
-    func playMove(named animationName: String, after: Double) {
-        
-        for move in moves {
-            if let player = move[animationName] {
-//                if let running = runningPlayer {
-//                    running.stop(withBlendOutDuration: 0.2)
-//                }
-                print("got the move named \(animationName)!")
-//                player.play()
-                
-                Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: player, repeats: false)
-                
-                runningPlayer = player
-            }
+    func playMove(named move: Move, after: Double) {
+        if let player = model.animationPlayer(forKey: move.rawValue) {
+            print("got the move named \(move.rawValue)!")
+            
+            Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: player, repeats: false)
+            
+            runningPlayer = player
         }
     }
     
@@ -72,9 +64,7 @@ class ARAnimationController {
     func setUpMoves() {
         for animation in animations {
             let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/\(animation.rawValue).dae")
-            let move: AnimatedMove = [
-                "\(animation)": player
-            ]
+
             switch (animation) {
             case .cross, .leftHook:
                 player.speed = 0.7
@@ -85,7 +75,7 @@ class ARAnimationController {
             }
             player.blendFactor = 0.75
             players.append(player)
-            moves.append(move)
+
             model.addAnimationPlayer(player, forKey: animation.rawValue)
         }
     }
