@@ -33,6 +33,8 @@ enum Move: String {
     case uppercut
     case knee
     case stance
+    case leftHook
+    case rightHook
 }
 
 struct Combos: ReturnsCombos {

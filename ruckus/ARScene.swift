@@ -26,6 +26,7 @@ class ARScene: SCNScene {
     convenience init(create: Bool) {
         self.init()
         
+        lightsCameraAction()
         
         // load the first model state
         let stance = SCNScene(named: "art.scnassets/stance.dae")
@@ -35,8 +36,8 @@ class ARScene: SCNScene {
             
             // wrapper for scaling
             let nodeWrapper = SCNNode()
-            nodeWrapper.scale = SCNVector3(1,1,1)
-            nodeWrapper.position = SCNVector3Zero
+            nodeWrapper.scale = SCNVector3(0.03,0.03,0.03)
+            nodeWrapper.position = SCNVector3(0, -3.7, -3.2)
             nodeWrapper.addChildNode(model)
             rootNode.addChildNode(nodeWrapper)
             
@@ -53,7 +54,7 @@ class ARScene: SCNScene {
         if let cam = cameraNode.camera {
             cam.usesOrthographicProjection = true
         }
-        cameraNode.position = SCNVector3(0, 1, 5)
+        cameraNode.position = SCNVector3(0, 2, 10)
         
         // root node always accessible as we are subclassing scnscene
         rootNode.addChildNode(cameraNode)
@@ -68,26 +69,29 @@ class ARScene: SCNScene {
             light.attenuationStartDistance = 0
             light.attenuationFalloffExponent = 1
             light.color = UIColor.white
+            light.intensity = 1800
         }
-        spotLightNode.position = SCNVector3(0,10,10)
+        
+        spotLightNode.position = SCNVector3(0,20,20)
         rootNode.addChildNode(spotLightNode)
-        //
+        
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         if let amLight = ambientLightNode.light {
             amLight.type = .ambient
             amLight.color = UIColor.white
+            amLight.intensity = 200
         }
         rootNode.addChildNode(ambientLightNode)
         
         // DEBUG CUBE
-        //        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
-        //        cube.firstMaterial?.diffuse.contents = UIColor.red
-        //        let box = SCNNode(geometry: cube)
-        
-        //        box.position = SCNVector3Zero
-        //
-        //        rootNode.addChildNode(box)
+//        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
+//        cube.firstMaterial?.diffuse.contents = UIColor.blue
+//        let box = SCNNode(geometry: cube)
+//
+//        box.position = SCNVector3Zero
+//
+//        rootNode.addChildNode(box)
         
         // node to look at
         let spotLookAtNode = SCNNode()
