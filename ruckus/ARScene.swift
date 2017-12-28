@@ -75,7 +75,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
 //        playerNode.position = position
         
         // move it arround my char
-        playerNode.position = SCNVector3(Int(arc4random_uniform(2) + 1),0, Int(arc4random_uniform(2) + 1))
+        playerNode.position = SCNVector3(Int(arc4random_uniform(4) + 1),0, Int(arc4random_uniform(4) + 1))
     }
     
     // set up the lights and cam
@@ -131,7 +131,6 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         centerNode.position = SCNVector3Zero
         rootNode.addChildNode(centerNode)
         spotLightNode.constraints = [SCNLookAtConstraint(target: centerNode)]
-//        cameraNode.constraints = [SCNLookAtConstraint(target: centerNode)]
         
     }
     
@@ -140,6 +139,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         let box2 = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0.1)
         box2.firstMaterial?.diffuse.contents = UIColor.green
         playerNode.geometry = box2
+        playerNode.position = SCNVector3(4,0,0)
         
         rootNode.addChildNode(playerNode)
         

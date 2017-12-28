@@ -15,11 +15,13 @@ class TargetingAgent: GKAgent3D {
         
         let seek = GKGoal(toSeekAgent: targetAgent)
         
-        self.behavior = GKBehavior(goal: seek, weight: 1)
+        let dontGetToClose = GKGoal(toSeparateFrom: [targetAgent], maxDistance: 1, maxAngle: 1.0)
+
+        self.behavior = GKBehavior(goals: [seek, dontGetToClose], andWeights: [0.9, 1.0])
         
 //        self.maxSpeed = 4000
 //        self.maxAcceleration = 4000
-        self.mass = 0.4
+//        self.mass = 0.4
     }
     
     required init?(coder aDecoder: NSCoder) {
