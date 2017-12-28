@@ -21,8 +21,18 @@ import GameKit
 
 typealias AnimatedMove = [String:SCNAnimationPlayer]
 
-class ARScene: SCNScene {
+class ARScene: SCNScene, SCNSceneRendererDelegate {
     var model = SCNNode()
+    var playerNode: SCNNode?
+    var timeLast: Double?
+    var player: PlayerEntity?
+    var fighter: FighterEntity?
+    
+    lazy var componentSystems:[GKComponentSystem] = {
+        let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
+        let nodeSystem = GKComponentSystem(componentClass: NodeComponent.self)
+        return [moveSystem, nodeSystem]
+    }()
     
     convenience init(create: Bool) {
         self.init()
@@ -49,22 +59,15 @@ class ARScene: SCNScene {
         lightsCameraAction()
         
         // start callin those babies
-        let _ = ARAnimationController.init(withModel: model)
-        
+//        let _ = ARAnimationController.init(withModel: model)
     }
     
-    func follow(node: SCNNode) {
-        let player = PlayerEntity.init(usingNode: node)
-        
-        guard let moveAgent = player.component(ofType: MoveComponent.self) else {
-            return
+    func follow(position: SCNVector3) {
+        // @MAKE go to position soon
+        if let node = playerNode {
+            node.position = SCNVector3(0,Int(arc4random_uniform(6) + 1),Int(arc4random_uniform(6) + 1))
+            
         }
-
-//        playerAgent.delegate = player.component(ofType: MoveComponent.self)
-        
-       _ = FighterEntity.init(withTargetAgent: moveAgent, andNode: model)
-        
-        node.position = SCNVector3(0, 3, 0)
     }
     
     func lightsCameraAction() {
@@ -103,15 +106,6 @@ class ARScene: SCNScene {
         }
         rootNode.addChildNode(ambientLightNode)
         
-        // DEBUG CUBE
-//        let cube = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
-//        cube.firstMaterial?.diffuse.contents = UIColor.red
-//        let box = SCNNode(geometry: cube)
-//
-//        box.position = SCNVector3Zero
-//
-//        rootNode.addChildNode(box)
-        
         // node to look at (head of the bot)
         if let spotLookAtNode = model.childNode(withName: "mixamorig_Head", recursively: true) {
         
@@ -121,6 +115,52 @@ class ARScene: SCNScene {
             spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
             cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
         }
+        
+        let box = SCNBox(width: 1.2, height: 1.2, length: 1.2, chamferRadius: 0.1)
+        box.firstMaterial?.diffuse.contents = UIColor.blue
+        let cube = SCNNode(geometry: box)
+        
+        
+        let box2 = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.1)
+        box2.firstMaterial?.diffuse.contents = UIColor.green
+        playerNode = SCNNode(geometry: box2)
+        
+        player = PlayerEntity.init(usingNode: playerNode!)
+        
+        fighter = FighterEntity.init(withTargetAgent: player!.agent, andNode: cube)
+        
+        for componentSystem in self.componentSystems {
+            componentSystem.addComponent(foundIn: player!)
+            componentSystem.addComponent(foundIn: fighter!)
+        }
+        
+        rootNode.addChildNode(playerNode!)
+        rootNode.addChildNode(cube)
+        
+    }
+    
+    // MARK:- Render delegate
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        // update the component systems in the scene on render
+        // this is game loop!
+        let dt: Double
+        
+        if let lt = timeLast {
+            dt = time - lt
+        } else {
+            dt = 0
+        }
+        
+        player?.agent.update(deltaTime: dt)
+        fighter?.agent.update(deltaTime: dt)
+        
+        for componentSystem in componentSystems {
+            componentSystem.update(deltaTime: dt)
+        }
+        
+        
+        
+        timeLast = time
         
     }
 }

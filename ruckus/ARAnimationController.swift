@@ -48,8 +48,6 @@ class ARAnimationController {
     
     func playMove(named move: Move, after: Double) {
         if let player = model.animationPlayer(forKey: move.rawValue) {
-            print("got the move named \(move.rawValue)!")
-            
             Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: player, repeats: false)
             
             runningPlayer = player

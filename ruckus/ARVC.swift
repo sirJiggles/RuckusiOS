@@ -28,6 +28,8 @@ class ARVC: UIViewController, ARSCNViewDelegate {
         // normal verison
         arSceneView.isHidden = true
         scnView.scene = scene
+        // render delegate
+        scnView.delegate = scene
         
         // gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -48,12 +50,8 @@ class ARVC: UIViewController, ARSCNViewDelegate {
         // what did you tap on
         let sceneView = recognizer.view as! SCNView
         let pos = recognizer.location(in: sceneView)
-        let box = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
-        box.firstMaterial?.diffuse.contents = UIColor.green
-        let cube = SCNNode(geometry: box)
-    
-        scene.rootNode.addChildNode(cube)
-        scene.follow(node: cube)
+        
+        scene.follow(position: SCNVector3(pos.x, pos.y, 0))
     }
     
     
