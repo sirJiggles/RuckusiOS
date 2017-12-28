@@ -113,6 +113,8 @@
 		7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
 		7F692BFC1F40681A00D768FB /* Combos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F692BFB1F40681A00D768FB /* Combos.swift */; };
 		7F692C011F4083DA00D768FB /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7F692C001F4083DA00D768FB /* Sounds */; };
+		7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A05D1FF538E600F6992F /* MatrixConversions.swift */; };
+		7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A05D1FF538E600F6992F /* MatrixConversions.swift */; };
 		7F73C62C1EFC76D4003423E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F73C62E1EFC7785003423E9 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
 		7F73C62F1EFC7787003423E9 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
@@ -381,6 +383,7 @@
 		7F6127071E50BF1500ED1544 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistHelper.swift; path = ruckus/PlistHelper.swift; sourceTree = "<group>"; };
 		7F692BFB1F40681A00D768FB /* Combos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combos.swift; sourceTree = "<group>"; };
 		7F692C001F4083DA00D768FB /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		7F72A05D1FF538E600F6992F /* MatrixConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixConversions.swift; sourceTree = "<group>"; };
 		7F76939C1EE376490036DED7 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		7F76939E1EE37C950036DED7 /* CreditsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
 		7F7693A01EE37FF20036DED7 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
@@ -747,6 +750,7 @@
 				7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */,
 				7F7775641F40AF140037B49F /* SettingsAccessor.swift */,
 				7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */,
+				7F72A05D1FF538E600F6992F /* MatrixConversions.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1849,6 +1853,7 @@
 				7F7775711F40BF1F0037B49F /* SoundPlayer.swift in Sources */,
 				7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7F7693A11EE37FF20036DED7 /* ButtonCell.swift in Sources */,
+				7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1933,6 +1938,7 @@
 				7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */,
 				7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
+				7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

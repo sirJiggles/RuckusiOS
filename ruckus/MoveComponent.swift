@@ -19,7 +19,6 @@ class MoveComponent: GKComponent, GKAgentDelegate {
         guard let component = entity?.component(ofType: NodeComponent.self) else {
             return
         }
-
         agent3d.position = float3(component.node.position)
     }
 
@@ -30,7 +29,6 @@ class MoveComponent: GKComponent, GKAgentDelegate {
         guard let component = entity?.component(ofType: NodeComponent.self) else {
             return
         }
-
         component.node.position = SCNVector3(agent3d.position)
     }
 }

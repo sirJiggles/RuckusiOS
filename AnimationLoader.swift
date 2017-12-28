@@ -12,6 +12,7 @@ import SceneKit
 struct AnimationLoader {
     static func loadAnimation(fromSceneNamed sceneName: String) -> SCNAnimationPlayer {
         let scene = SCNScene( named: sceneName )!
+        
         // find top level animation
         var animationPlayer: SCNAnimationPlayer! = nil
         scene.rootNode.enumerateChildNodes { (child, stop) in

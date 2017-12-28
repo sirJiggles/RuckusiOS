@@ -19,7 +19,7 @@ class TargetingAgent: GKAgent3D {
         
 //        self.maxSpeed = 4000
 //        self.maxAcceleration = 4000
-//        self.mass = 0.4
+        self.mass = 0.4
     }
     
     required init?(coder aDecoder: NSCoder) {

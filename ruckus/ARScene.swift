@@ -25,58 +25,72 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
     
+    // this is all for the seeking behaviour, we won't use it for now
     var playerNode = SCNNode()
     var timeLast: Double?
     var player: PlayerEntity?
     var fighter: FighterEntity?
     
     lazy var componentSystems:[GKComponentSystem] = {
+        let targetSystem = GKComponentSystem(componentClass: TargetingAgent.self)
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
         let nodeSystem = GKComponentSystem(componentClass: NodeComponent.self)
-        return [moveSystem, nodeSystem]
+        return [targetSystem, moveSystem, nodeSystem]
     }()
     
     convenience init(create: Bool) {
         self.init()
         
-        // load the first model state
+        // load the char dae
         let charModel = SCNScene(named: "art.scnassets/char.dae")
         if let charUnwrapped = charModel {
             
+            // we need to do this as mixamo puts all on root level
             for child in charUnwrapped.rootNode.childNodes {
                 model.addChildNode(child)
             }
             
-            // wrapper for scaling
-            modelWrapper.scale = SCNVector3(0.01,0.01,0.01)
-            modelWrapper.position = SCNVector3(0, -1, 0)
+            // 'face' the correct direction, for the look at
+            model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+            
+            // wrapper for scaling, and used later for following
             modelWrapper.addChildNode(model)
+            modelWrapper.scale = SCNVector3(0.01,0.01,0.01)
+
             rootNode.addChildNode(modelWrapper)
             
         }
         
         lightsCameraAction()
         
-        // start callin those babies
+        createSeekingBehaviour()
+        
+        // start callin the hits
         let _ = ARAnimationController.init(withModel: model)
     }
     
+    // this is called when we touch the scene, it's a simple test func
     func follow(position: SCNVector3) {
         // @MAKE go to position soon
+//        playerNode.position = position
         
-        playerNode.position = SCNVector3(0,Int(arc4random_uniform(3) + 1),Int(arc4random_uniform(3) + 1))
+        // move it arround my char
+        playerNode.position = SCNVector3(Int(arc4random_uniform(2) + 1),0, Int(arc4random_uniform(2) + 1))
     }
     
+    // set up the lights and cam
     func lightsCameraAction() {
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        if let cam = cameraNode.camera {
-            cam.usesOrthographicProjection = true
-        }
-        cameraNode.position = SCNVector3(0, 0.5, 2)
+//        let cameraNode = SCNNode()
+//        cameraNode.camera = SCNCamera()
+//        if let cam = cameraNode.camera {
+////            cam.usesOrthographicProjection = true
+////            cam.zFar = 10000
+////            cam.zNear = 0.001
+//        }
+//        cameraNode.position = SCNVector3(0, 4, 2)
         
         // root node always accessible as we are subclassing scnscene
-        rootNode.addChildNode(cameraNode)
+//        rootNode.addChildNode(cameraNode)
         
         
         // lights
@@ -93,7 +107,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         
         spotLightNode.position = SCNVector3(0,10,10)
         rootNode.addChildNode(spotLightNode)
-        
+//
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         if let amLight = ambientLightNode.light {
@@ -104,16 +118,26 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         rootNode.addChildNode(ambientLightNode)
         
         // node to look at (head of the bot)
-        if let spotLookAtNode = model.childNode(withName: "mixamorig_Head", recursively: true) {
+//        if let spotLookAtNode = model.childNode(withName: "mixamorig_Head", recursively: true) {
+//
+//            spotLookAtNode.position = SCNVector3Zero
+//
+//            // look at look at node
+//            spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
+//            cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
+//        }
         
-            spotLookAtNode.position = SCNVector3Zero
+        let centerNode = SCNNode()
+        centerNode.position = SCNVector3Zero
+        rootNode.addChildNode(centerNode)
+        spotLightNode.constraints = [SCNLookAtConstraint(target: centerNode)]
+//        cameraNode.constraints = [SCNLookAtConstraint(target: centerNode)]
         
-            // look at look at node
-            spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
-            cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
-        }
+    }
+    
+    func createSeekingBehaviour() {
         
-        let box2 = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.1)
+        let box2 = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0.1)
         box2.firstMaterial?.diffuse.contents = UIColor.green
         playerNode.geometry = box2
         
@@ -129,8 +153,6 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
             componentSystem.addComponent(foundIn: fighter!)
         }
         
-       
-        
     }
     
     // MARK:- Render delegate
@@ -145,11 +167,17 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
             dt = 0
         }
         
-        player?.agent.update(deltaTime: dt)
+        // update the agents
+        if let pl = player {
+            if let component = pl.component(ofType: NodeComponent.self) {
+                modelWrapper.look(at: component.node.position)
+            }
+            pl.agent.update(deltaTime: dt)
+        }
+        
         fighter?.agent.update(deltaTime: dt)
-//
-//        print(componentSystems)
-//
+        
+        
 //        for componentSystem in componentSystems {
 //            componentSystem.update(deltaTime: dt)
 //        }

@@ -17,9 +17,6 @@ class FighterEntity: GKEntity {
         
         super.init()
         
-        // The agent update delegates get called in move component
-//        agent.delegate = self
-        
         let nodeComponent = NodeComponent(withNode: node)
         addComponent(nodeComponent)
         
@@ -27,6 +24,8 @@ class FighterEntity: GKEntity {
         addComponent(moveComponent)
         
         agent.delegate = moveComponent
+        
+        addComponent(agent)
     }
     
     required init?(coder aDecoder: NSCoder) {
