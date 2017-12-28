@@ -13,9 +13,16 @@ import ARKit
 
 class ARVC: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var scnView: SCNView!
+    @IBOutlet weak var leftEyeScene: SCNView!
+    @IBOutlet weak var rightEyeScene: SCNView!
+    
     @IBOutlet weak var arSceneView: ARSCNView!
     
+    @IBOutlet weak var leftEyeView: UIView!
+    @IBOutlet weak var rightEyeView: UIView!
     let scene = ARScene.init(create: true)
+    
+    let VRMode = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,24 +34,72 @@ class ARVC: UIViewController, ARSCNViewDelegate {
         
         // normal verison
         arSceneView.isHidden = true
-        scnView.scene = scene
+        
+        if VRMode {
+            setUpVRScene()
+        } else {
+            initSceneView(scnView)
+        }
+    }
+    
+    func setUpVRScene() {
+        initSceneView(leftEyeScene, withDebug: true)
+        initSceneView(rightEyeScene, withDebug: false)
+        
+        // corner radius of the eyes
+        let cornerSize = CGFloat(80)
+        leftEyeView.layer.cornerRadius = cornerSize
+        leftEyeView.layer.masksToBounds = true
+        rightEyeView.layer.cornerRadius = cornerSize
+        rightEyeView.layer.masksToBounds = true
+        
+        // set up different cams for each eye!
+        // Create cameras
+        let leftCamera = SCNCamera()
+        let rightCamera = SCNCamera()
+        
+        let leftCameraNode = SCNNode()
+        leftCameraNode.camera = leftCamera
+        leftCameraNode.position = SCNVector3(x: -0.5, y: 0, z: 0)
+        
+        let rightCameraNode = SCNNode()
+        rightCameraNode.camera = rightCamera
+        rightCameraNode.position = SCNVector3(x: 0.5, y: 0, z: 0)
+        
+        let camerasNode = SCNNode()
+        camerasNode.position = SCNVector3(x: 0, y: 2, z: 3)
+        camerasNode.addChildNode(leftCameraNode)
+        camerasNode.addChildNode(rightCameraNode)
+        
+        // add the cams
+        scene.rootNode.addChildNode(camerasNode)
+        
+        // set the pov
+        leftEyeScene.pointOfView = leftCameraNode
+        rightEyeScene.pointOfView = rightCameraNode
+        
+    }
+    
+    func initSceneView(_ sceneView: SCNView, withDebug debug: Bool = false) {
+        sceneView.scene = scene
         // render delegate
-        scnView.delegate = scene
+        sceneView.delegate = scene
         
         // gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         
-        scnView.addGestureRecognizer(tapGesture)
+        sceneView.addGestureRecognizer(tapGesture)
         
         // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
+        sceneView.allowsCameraControl = true
         
         // show statistics such as fps and timing information
-        scnView.showsStatistics = true
+        sceneView.showsStatistics = debug
         
         // configure the view
-        scnView.backgroundColor = UIColor.black
+        sceneView.backgroundColor = UIColor.black
     }
+    
     
     @objc func tapped(recognizer: UITapGestureRecognizer) {
         // what did you tap on

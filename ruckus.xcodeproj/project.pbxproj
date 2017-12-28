@@ -106,8 +106,6 @@
 		7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42171FF4556100AAED46 /* FighterEntity.swift */; };
 		7F5B421B1FF462FD00AAED46 /* TargetingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */; };
 		7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */; };
-		7F5B421F1FF46E2800AAED46 /* NodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */; };
-		7F5B42201FF46E2800AAED46 /* NodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */; };
 		7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F6127061E50BB4800ED1544 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
@@ -377,7 +375,6 @@
 		7F5B42141FF4539100AAED46 /* NodeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeComponent.swift; sourceTree = "<group>"; };
 		7F5B42171FF4556100AAED46 /* FighterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterEntity.swift; sourceTree = "<group>"; };
 		7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetingAgent.swift; sourceTree = "<group>"; };
-		7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeEntity.swift; sourceTree = "<group>"; };
 		7F6127001E50B9BF00ED1544 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ruckus/Settings.swift; sourceTree = "<group>"; };
 		7F6127051E50BB4800ED1544 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7F6127071E50BF1500ED1544 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistHelper.swift; path = ruckus/PlistHelper.swift; sourceTree = "<group>"; };
@@ -692,14 +689,6 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		7F5B421D1FF46DFB00AAED46 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 		7F5B42211FF4734500AAED46 /* Agents */ = {
 			isa = PBXGroup;
 			children = (
@@ -937,7 +926,6 @@
 		7FB358021E4294EA00EF9BD2 /* ruckus */ = {
 			isa = PBXGroup;
 			children = (
-				7F5B421D1FF46DFB00AAED46 /* Protocols */,
 				7F5B42211FF4734500AAED46 /* Agents */,
 				7F5B42081FF44D7900AAED46 /* Entities */,
 				7F5B42091FF44D8000AAED46 /* Components */,
@@ -1836,7 +1824,6 @@
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
 				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */,
-				7F5B421F1FF46E2800AAED46 /* NodeEntity.swift in Sources */,
 				7F7775651F40AF140037B49F /* SettingsAccessor.swift in Sources */,
 				7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */,
 				7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */,
@@ -1921,7 +1908,6 @@
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
 				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */,
-				7F5B42201FF46E2800AAED46 /* NodeEntity.swift in Sources */,
 				7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */,
 				7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */,
 				7FC61E321F5192D300645009 /* SelectCell.swift in Sources */,

@@ -139,7 +139,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         let box2 = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0.1)
         box2.firstMaterial?.diffuse.contents = UIColor.green
         playerNode.geometry = box2
-        playerNode.position = SCNVector3(4,0,0)
+        playerNode.position = SCNVector3(0,0,2)
         
         rootNode.addChildNode(playerNode)
         
