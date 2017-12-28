@@ -16,6 +16,7 @@ class ARAnimationController {
 
     
     var runningPlayer: SCNAnimationPlayer?
+    let speed: Double = 2.0
     
     static let sharedInstance = ARAnimationController()
     
@@ -28,8 +29,11 @@ class ARAnimationController {
         self.model = model
         setUpMoves()
         
+        // start with the idle stance on init
+        playMove(named: .idle, after: 0)
+        
         // just to test
-        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 6.0 / speed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
     }
     
     @objc func runCombo() {
@@ -38,7 +42,7 @@ class ARAnimationController {
         var i: Double = 0.0
         for move in combo {
             playMove(named: move, after: i)
-            i = i + 1.6
+            i = i + (1 / speed) - 0.2
         }
     }
     
@@ -67,14 +71,14 @@ class ARAnimationController {
         for animation in animations {
             print("we are trying to find \(animation.rawValue).dae")
             let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/\(animation.rawValue).dae")
+            
+            switch (animation) {
+            case .idle:
+                player.speed = 1.2
+            default:
+                player.speed = CGFloat(speed + 0.2)
+            }
 
-//            switch (animation) {
-//            case .jab:
-//                player.speed = 0.5
-//            default:
-//                player.speed = 0.7
-//            }
-//            player.blendFactor = 0.75
             players.append(player)
 
             model.addAnimationPlayer(player, forKey: animation.rawValue)

@@ -29,6 +29,11 @@ class ARVC: UIViewController, ARSCNViewDelegate {
         arSceneView.isHidden = true
         scnView.scene = scene
         
+        // gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        
+        scnView.addGestureRecognizer(tapGesture)
+        
         // allows the user to manipulate the camera
         scnView.allowsCameraControl = true
         
@@ -38,6 +43,20 @@ class ARVC: UIViewController, ARSCNViewDelegate {
         // configure the view
         scnView.backgroundColor = UIColor.black
     }
+    
+    @objc func tapped(recognizer: UITapGestureRecognizer) {
+        // what did you tap on
+        let sceneView = recognizer.view as! SCNView
+        let pos = recognizer.location(in: sceneView)
+        let box = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
+        box.firstMaterial?.diffuse.contents = UIColor.green
+        let cube = SCNNode(geometry: box)
+    
+        scene.rootNode.addChildNode(cube)
+        scene.follow(node: cube)
+    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

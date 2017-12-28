@@ -17,6 +17,7 @@
 import UIKit
 import QuartzCore
 import SceneKit
+import GameKit
 
 typealias AnimatedMove = [String:SCNAnimationPlayer]
 
@@ -25,8 +26,6 @@ class ARScene: SCNScene {
     
     convenience init(create: Bool) {
         self.init()
-        
-        lightsCameraAction()
         
         // load the first model state
         let idle = SCNScene(named: "art.scnassets/char.dae")
@@ -40,16 +39,32 @@ class ARScene: SCNScene {
             // wrapper for scaling
             let nodeWrapper = SCNNode()
             nodeWrapper.scale = SCNVector3(0.01,0.01,0.01)
-            nodeWrapper.position = SCNVector3(0, -1, -1)
+            nodeWrapper.position = SCNVector3(0, -1, 0)
 //            nodeWrapper.rotation = SCNVector4(1, 2, 0, Float(90).degreesToRadians)
             nodeWrapper.addChildNode(model)
             rootNode.addChildNode(nodeWrapper)
             
         }
         
+        lightsCameraAction()
+        
         // start callin those babies
         let _ = ARAnimationController.init(withModel: model)
         
+    }
+    
+    func follow(node: SCNNode) {
+        let player = PlayerEntity.init(usingNode: node)
+        
+        guard let moveAgent = player.component(ofType: MoveComponent.self) else {
+            return
+        }
+
+//        playerAgent.delegate = player.component(ofType: MoveComponent.self)
+        
+       _ = FighterEntity.init(withTargetAgent: moveAgent, andNode: model)
+        
+        node.position = SCNVector3(0, 3, 0)
     }
     
     func lightsCameraAction() {
@@ -58,7 +73,7 @@ class ARScene: SCNScene {
         if let cam = cameraNode.camera {
             cam.usesOrthographicProjection = true
         }
-        cameraNode.position = SCNVector3(0, 2, 10)
+        cameraNode.position = SCNVector3(0, 0.5, 2)
         
         // root node always accessible as we are subclassing scnscene
         rootNode.addChildNode(cameraNode)
@@ -76,7 +91,7 @@ class ARScene: SCNScene {
             light.intensity = 1800
         }
         
-        spotLightNode.position = SCNVector3(0,20,20)
+        spotLightNode.position = SCNVector3(0,10,10)
         rootNode.addChildNode(spotLightNode)
         
         let ambientLightNode = SCNNode()
@@ -97,13 +112,16 @@ class ARScene: SCNScene {
 //
 //        rootNode.addChildNode(box)
         
-        // node to look at
-        let spotLookAtNode = SCNNode()
-        spotLookAtNode.position = SCNVector3Zero
+        // node to look at (head of the bot)
+        if let spotLookAtNode = model.childNode(withName: "mixamorig_Head", recursively: true) {
         
-        // look at look at node
-        spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
-        cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
+            spotLookAtNode.position = SCNVector3Zero
+        
+            // look at look at node
+            spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
+            cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
+        }
+        
     }
 }
 

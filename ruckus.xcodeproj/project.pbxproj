@@ -96,6 +96,18 @@
 		7F5B0A651EE4B6D800BA7358 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
 		7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */; };
 		7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */; };
+		7F5B420F1FF4503300AAED46 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */; };
+		7F5B42101FF4503300AAED46 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */; };
+		7F5B42121FF4529100AAED46 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42111FF4529100AAED46 /* MoveComponent.swift */; };
+		7F5B42131FF4529100AAED46 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42111FF4529100AAED46 /* MoveComponent.swift */; };
+		7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42141FF4539100AAED46 /* NodeComponent.swift */; };
+		7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42141FF4539100AAED46 /* NodeComponent.swift */; };
+		7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42171FF4556100AAED46 /* FighterEntity.swift */; };
+		7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42171FF4556100AAED46 /* FighterEntity.swift */; };
+		7F5B421B1FF462FD00AAED46 /* TargetingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */; };
+		7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */; };
+		7F5B421F1FF46E2800AAED46 /* NodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */; };
+		7F5B42201FF46E2800AAED46 /* NodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */; };
 		7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F6127061E50BB4800ED1544 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
@@ -358,6 +370,12 @@
 		7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProViewController.swift; sourceTree = "<group>"; };
 		7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedState.swift; sourceTree = "<group>"; };
 		7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExtension.swift; sourceTree = "<group>"; };
+		7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
+		7F5B42111FF4529100AAED46 /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
+		7F5B42141FF4539100AAED46 /* NodeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeComponent.swift; sourceTree = "<group>"; };
+		7F5B42171FF4556100AAED46 /* FighterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterEntity.swift; sourceTree = "<group>"; };
+		7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetingAgent.swift; sourceTree = "<group>"; };
+		7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeEntity.swift; sourceTree = "<group>"; };
 		7F6127001E50B9BF00ED1544 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ruckus/Settings.swift; sourceTree = "<group>"; };
 		7F6127051E50BB4800ED1544 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7F6127071E50BF1500ED1544 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistHelper.swift; path = ruckus/PlistHelper.swift; sourceTree = "<group>"; };
@@ -653,6 +671,40 @@
 			path = "Ruckus Watch Extension";
 			sourceTree = "<group>";
 		};
+		7F5B42081FF44D7900AAED46 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */,
+				7F5B42171FF4556100AAED46 /* FighterEntity.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		7F5B42091FF44D8000AAED46 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F5B42111FF4529100AAED46 /* MoveComponent.swift */,
+				7F5B42141FF4539100AAED46 /* NodeComponent.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		7F5B421D1FF46DFB00AAED46 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7F5B421E1FF46E2800AAED46 /* NodeEntity.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		7F5B42211FF4734500AAED46 /* Agents */ = {
+			isa = PBXGroup;
+			children = (
+				7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */,
+			);
+			name = Agents;
+			sourceTree = "<group>";
+		};
 		7F6126FA1E50A33C00ED1544 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +933,10 @@
 		7FB358021E4294EA00EF9BD2 /* ruckus */ = {
 			isa = PBXGroup;
 			children = (
+				7F5B421D1FF46DFB00AAED46 /* Protocols */,
+				7F5B42211FF4734500AAED46 /* Agents */,
+				7F5B42081FF44D7900AAED46 /* Entities */,
+				7F5B42091FF44D8000AAED46 /* Components */,
 				7F8593A81FF130DC0085DB3E /* Scenes */,
 				7F8593A21FF130B90085DB3E /* art.scnassets */,
 				7F692C001F4083DA00D768FB /* Sounds */,
@@ -1750,10 +1806,13 @@
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
+				7F5B42121FF4529100AAED46 /* MoveComponent.swift in Sources */,
 				7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
 				7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */,
 				7F8619171E60CEDF005236C2 /* UIColorExtension.swift in Sources */,
+				7F5B420F1FF4503300AAED46 /* PlayerEntity.swift in Sources */,
 				7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */,
+				7F5B421B1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
 				7F19F1961E6E0CF100D5CFC3 /* IntervalTimer.swift in Sources */,
 				7F4D9FE61EE45FC20049ADA8 /* WorkoutStoreHelper.swift in Sources */,
 				7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
@@ -1773,6 +1832,7 @@
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
 				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */,
+				7F5B421F1FF46E2800AAED46 /* NodeEntity.swift in Sources */,
 				7F7775651F40AF140037B49F /* SettingsAccessor.swift in Sources */,
 				7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */,
 				7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */,
@@ -1783,9 +1843,11 @@
 				7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */,
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
+				7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */,
 				7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */,
 				7F7775711F40BF1F0037B49F /* SoundPlayer.swift in Sources */,
+				7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7F7693A11EE37FF20036DED7 /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1828,10 +1890,13 @@
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
+				7F5B42131FF4529100AAED46 /* MoveComponent.swift in Sources */,
 				7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
 				7FC61E1C1F5192D300645009 /* WorkoutFinishedViewController.swift in Sources */,
 				7FC61E1D1F5192D300645009 /* UIColorExtension.swift in Sources */,
+				7F5B42101FF4503300AAED46 /* PlayerEntity.swift in Sources */,
 				7FC61E1E1F5192D300645009 /* Settings.swift in Sources */,
+				7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
 				7FC61E1F1F5192D300645009 /* IntervalTimer.swift in Sources */,
 				7FC61E201F5192D300645009 /* WorkoutStoreHelper.swift in Sources */,
 				7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
@@ -1851,6 +1916,7 @@
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
 				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */,
+				7F5B42201FF46E2800AAED46 /* NodeEntity.swift in Sources */,
 				7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */,
 				7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */,
 				7FC61E321F5192D300645009 /* SelectCell.swift in Sources */,
@@ -1861,9 +1927,11 @@
 				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
+				7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */,
 				7FC61E3A1F5192D300645009 /* ScrollCell.swift in Sources */,
 				7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */,
+				7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
