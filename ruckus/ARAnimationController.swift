@@ -12,7 +12,7 @@ import SceneKit
 class ARAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .cross, .hook, .idle, .leftHook, .rightHook]
+    let animations: [Move] = [.jab, .cross, .idle, .leftHook, .rightHook]
 
     
     var runningPlayer: SCNAnimationPlayer?

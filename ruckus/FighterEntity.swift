@@ -8,7 +8,7 @@
 import SceneKit
 import GameKit
 
-class FighterEntity: GKEntity, GKAgentDelegate {
+class FighterEntity: GKEntity {
     
     let agent: GKAgent3D
     
@@ -18,41 +18,18 @@ class FighterEntity: GKEntity, GKAgentDelegate {
         super.init()
         
         // The agent update delegates get called in move component
-        agent.delegate = self
+//        agent.delegate = self
         
         let nodeComponent = NodeComponent(withNode: node)
         addComponent(nodeComponent)
         
-//        let moveComponent = MoveComponent()
+        let moveComponent = MoveComponent()
+        addComponent(moveComponent)
         
-//        addComponent(moveComponent)
+        agent.delegate = moveComponent
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func agentWillUpdate(_ agent: GKAgent) {
-        print("agent will update fighter")
-        guard let agent3d = agent as? GKAgent3D else {
-            return
-        }
-        guard let component = self.component(ofType: NodeComponent.self) else {
-            return
-        }
-        
-        agent3d.position = float3(component.node.position)
-    }
-    
-    func agentDidUpdate(_ agent: GKAgent) {
-        print("agent did update fighter")
-        guard let agent3d = agent as? GKAgent3D else {
-            return
-        }
-        guard let component = self.component(ofType: NodeComponent.self) else {
-            return
-        }
-        
-        component.node.position = SCNVector3(agent3d.position)
     }
 }

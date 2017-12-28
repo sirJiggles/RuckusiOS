@@ -23,7 +23,9 @@ typealias AnimatedMove = [String:SCNAnimationPlayer]
 
 class ARScene: SCNScene, SCNSceneRendererDelegate {
     var model = SCNNode()
-    var playerNode: SCNNode?
+    var modelWrapper = SCNNode()
+    
+    var playerNode = SCNNode()
     var timeLast: Double?
     var player: PlayerEntity?
     var fighter: FighterEntity?
@@ -38,36 +40,31 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         self.init()
         
         // load the first model state
-        let idle = SCNScene(named: "art.scnassets/char.dae")
-        if let indleUnwrapped = idle {
+        let charModel = SCNScene(named: "art.scnassets/char.dae")
+        if let charUnwrapped = charModel {
             
-            for child in indleUnwrapped.rootNode.childNodes {
+            for child in charUnwrapped.rootNode.childNodes {
                 model.addChildNode(child)
             }
             
-            
             // wrapper for scaling
-            let nodeWrapper = SCNNode()
-            nodeWrapper.scale = SCNVector3(0.01,0.01,0.01)
-            nodeWrapper.position = SCNVector3(0, -1, 0)
-//            nodeWrapper.rotation = SCNVector4(1, 2, 0, Float(90).degreesToRadians)
-            nodeWrapper.addChildNode(model)
-            rootNode.addChildNode(nodeWrapper)
+            modelWrapper.scale = SCNVector3(0.01,0.01,0.01)
+            modelWrapper.position = SCNVector3(0, -1, 0)
+            modelWrapper.addChildNode(model)
+            rootNode.addChildNode(modelWrapper)
             
         }
         
         lightsCameraAction()
         
         // start callin those babies
-//        let _ = ARAnimationController.init(withModel: model)
+        let _ = ARAnimationController.init(withModel: model)
     }
     
     func follow(position: SCNVector3) {
         // @MAKE go to position soon
-        if let node = playerNode {
-            node.position = SCNVector3(0,Int(arc4random_uniform(6) + 1),Int(arc4random_uniform(6) + 1))
-            
-        }
+        
+        playerNode.position = SCNVector3(0,Int(arc4random_uniform(3) + 1),Int(arc4random_uniform(3) + 1))
     }
     
     func lightsCameraAction() {
@@ -116,26 +113,23 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
             cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
         }
         
-        let box = SCNBox(width: 1.2, height: 1.2, length: 1.2, chamferRadius: 0.1)
-        box.firstMaterial?.diffuse.contents = UIColor.blue
-        let cube = SCNNode(geometry: box)
-        
-        
         let box2 = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.1)
         box2.firstMaterial?.diffuse.contents = UIColor.green
-        playerNode = SCNNode(geometry: box2)
+        playerNode.geometry = box2
         
-        player = PlayerEntity.init(usingNode: playerNode!)
+        rootNode.addChildNode(playerNode)
         
-        fighter = FighterEntity.init(withTargetAgent: player!.agent, andNode: cube)
+        player = PlayerEntity.init(usingNode: playerNode)
+        
+        fighter = FighterEntity.init(withTargetAgent: player!.agent, andNode: modelWrapper
+        )
         
         for componentSystem in self.componentSystems {
             componentSystem.addComponent(foundIn: player!)
             componentSystem.addComponent(foundIn: fighter!)
         }
         
-        rootNode.addChildNode(playerNode!)
-        rootNode.addChildNode(cube)
+       
         
     }
     
@@ -153,12 +147,12 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         
         player?.agent.update(deltaTime: dt)
         fighter?.agent.update(deltaTime: dt)
-        
-        for componentSystem in componentSystems {
-            componentSystem.update(deltaTime: dt)
-        }
-        
-        
+//
+//        print(componentSystems)
+//
+//        for componentSystem in componentSystems {
+//            componentSystem.update(deltaTime: dt)
+//        }
         
         timeLast = time
         
