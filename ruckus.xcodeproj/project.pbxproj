@@ -204,6 +204,8 @@
 		7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9AAC51EDB1B6C002E2085 /* AdIdents.swift */; };
 		7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */; };
 		7FCA39E81E8AEA8600F53C61 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		7FCD8A651FF6A85300180075 /* AROverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A641FF6A85300180075 /* AROverlay.swift */; };
+		7FCD8A661FF6A85300180075 /* AROverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A641FF6A85300180075 /* AROverlay.swift */; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
 		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
 		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
@@ -431,6 +433,7 @@
 		7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutFinishedViewController.swift; sourceTree = "<group>"; };
 		7FCA39E61E8AEA8600F53C61 /* ruckus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.entitlements; sourceTree = "<group>"; };
 		7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7FCD8A641FF6A85300180075 /* AROverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AROverlay.swift; sourceTree = "<group>"; };
 		7FD12BBE1E8EE956003209EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
 		7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHelper.swift; path = ruckus/UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationLoader.swift; path = ../AnimationLoader.swift; sourceTree = "<group>"; };
@@ -775,6 +778,7 @@
 		7F8593A81FF130DC0085DB3E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7FCD8A641FF6A85300180075 /* AROverlay.swift */,
 				7F8593A91FF130F10085DB3E /* ARScene.swift */,
 			);
 			name = Scenes;
@@ -1841,6 +1845,7 @@
 				7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7F7693A11EE37FF20036DED7 /* ButtonCell.swift in Sources */,
 				7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */,
+				7FCD8A651FF6A85300180075 /* AROverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1925,6 +1930,7 @@
 				7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
 				7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */,
+				7FCD8A661FF6A85300180075 /* AROverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

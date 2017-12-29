@@ -5,21 +5,10 @@
 //  Created by Gareth on 25.12.17.
 //  Copyright © 2017 Gareth. All rights reserved.
 //
-
-//
-//  GameScene.swift
-//  deer
-//
-//  Created by Gareth on 19.09.17.
-//  Copyright © 2017 Gareth. All rights reserved.
-//
-
 import UIKit
 import QuartzCore
 import SceneKit
 import GameKit
-
-typealias AnimatedMove = [String:SCNAnimationPlayer]
 
 class ARScene: SCNScene, SCNSceneRendererDelegate {
     var model = SCNNode()
@@ -38,7 +27,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         return [targetSystem, moveSystem, nodeSystem]
     }()
     
-    convenience init(create: Bool) {
+    convenience init(create: Bool, moveMode: Bool = true) {
         self.init()
         
         // load the char dae
@@ -50,20 +39,29 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
                 model.addChildNode(child)
             }
             
-            // 'face' the correct direction, for the look at
-            model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+            if moveMode {
+                // 'face' the correct direction, for the look at
+                model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+            }
             
             // wrapper for scaling, and used later for following
             modelWrapper.addChildNode(model)
             modelWrapper.scale = SCNVector3(0.01,0.01,0.01)
+            
+            // get up close and personal!
+            if !moveMode {
+                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
+            }
 
             rootNode.addChildNode(modelWrapper)
             
         }
         
-        lightsCameraAction()
+        ligntMeUp()
         
-        createSeekingBehaviour()
+        if moveMode {
+            createSeekingBehaviour()
+        }
         
         // start callin the hits
         let _ = ARAnimationController.init(withModel: model)
@@ -78,21 +76,8 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         playerNode.position = SCNVector3(Int(arc4random_uniform(4) + 1),0, Int(arc4random_uniform(4) + 1))
     }
     
-    // set up the lights and cam
-    func lightsCameraAction() {
-//        let cameraNode = SCNNode()
-//        cameraNode.camera = SCNCamera()
-//        if let cam = cameraNode.camera {
-////            cam.usesOrthographicProjection = true
-////            cam.zFar = 10000
-////            cam.zNear = 0.001
-//        }
-//        cameraNode.position = SCNVector3(0, 4, 2)
-        
-        // root node always accessible as we are subclassing scnscene
-//        rootNode.addChildNode(cameraNode)
-        
-        
+    // set up the lights
+    func ligntMeUp() {
         // lights
         let spotLightNode = SCNNode()
         spotLightNode.light = SCNLight()
@@ -107,7 +92,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         
         spotLightNode.position = SCNVector3(0,10,10)
         rootNode.addChildNode(spotLightNode)
-//
+
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         if let amLight = ambientLightNode.light {
@@ -116,17 +101,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
             amLight.intensity = 200
         }
         rootNode.addChildNode(ambientLightNode)
-        
-        // node to look at (head of the bot)
-//        if let spotLookAtNode = model.childNode(withName: "mixamorig_Head", recursively: true) {
-//
-//            spotLookAtNode.position = SCNVector3Zero
-//
-//            // look at look at node
-//            spotLightNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
-//            cameraNode.constraints = [SCNLookAtConstraint(target: spotLookAtNode)]
-//        }
-        
+      
         let centerNode = SCNNode()
         centerNode.position = SCNVector3Zero
         rootNode.addChildNode(centerNode)
@@ -155,8 +130,14 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         
     }
     
+    
+    
     // MARK:- Render delegate
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        update(updateAtTime: time)
+    }
+    
+    func update(updateAtTime time: TimeInterval) {
         // update the component systems in the scene on render
         // this is game loop!
         let dt: Double
@@ -178,12 +159,11 @@ class ARScene: SCNScene, SCNSceneRendererDelegate {
         fighter?.agent.update(deltaTime: dt)
         
         
-//        for componentSystem in componentSystems {
-//            componentSystem.update(deltaTime: dt)
-//        }
+        //        for componentSystem in componentSystems {
+        //            componentSystem.update(deltaTime: dt)
+        //        }
         
         timeLast = time
-        
     }
 }
 

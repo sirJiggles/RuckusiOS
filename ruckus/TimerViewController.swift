@@ -74,9 +74,6 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let orientation = UIInterfaceOrientation.portrait.rawValue
-//        UIDevice.current.setValue(orientation, forKey: "orientation")
-//        UIViewController.attemptRotationToDeviceOrientation()
         
         NotificationCenter.default.removeObserver(
             self,

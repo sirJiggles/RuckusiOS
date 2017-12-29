@@ -16,7 +16,7 @@ class ARAnimationController {
 
     
     var runningPlayer: SCNAnimationPlayer?
-    let speed: Double = 2.0
+    let speed: Double = 1.0
     
     static let sharedInstance = ARAnimationController()
     
