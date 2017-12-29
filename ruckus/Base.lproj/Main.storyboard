@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -959,7 +959,6 @@ none of the ads</string>
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -973,7 +972,7 @@ none of the ads</string>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="vPz-ww-a1l" kind="relationship" relationship="viewControllers" id="HAB-sM-HVZ"/>
+                        <segue destination="1Yg-yA-J9M" kind="relationship" relationship="viewControllers" id="uBx-ja-kF7"/>
                         <segue destination="MM0-Yh-bD1" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="A4s-6a-WkJ" kind="relationship" relationship="viewControllers" id="HbB-qi-Pct"/>
                     </connections>
@@ -1123,6 +1122,130 @@ none of the ads</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJF-Sc-3tQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1970.625" y="991.90140845070425"/>
+        </scene>
+        <!--AR Boxing-->
+        <scene sceneID="FB1-0P-QIe">
+            <objects>
+                <viewController id="1Yg-yA-J9M" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oYj-DM-UpT"/>
+                        <viewControllerLayoutGuide type="bottom" id="csh-LQ-Yxc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lXz-vh-OyR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-yj-QxO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wO7-dR-j2i" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardboard" translatesAutoresizingMaskIntoConstraints="NO" id="Gdw-0k-q9i">
+                                                <rect key="frame" x="76.5" y="65" width="240" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="IFg-Nd-Pb2"/>
+                                                    <constraint firstAttribute="height" constant="128" id="kEY-yg-2pl"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rV-gu-ALc">
+                                                <rect key="frame" x="28" y="501.5" width="319" height="60"/>
+                                                <color key="backgroundColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="CnG-Kd-vQG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                                <state key="normal" title="START">
+                                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="vPz-ww-a1l" kind="show" id="yqY-dw-G9Q"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-aC-DM6">
+                                                <rect key="frame" x="28" y="201" width="319" height="101.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="101.5" id="2R2-Sz-tRk"/>
+                                                </constraints>
+                                                <string key="text">When running in AR / VR mode I would advise using a "Google Cardboard" headset. They are cheap and you can make a hole in the front for thre fornt facing camera of the phone.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrC-ye-UY4">
+                                                <rect key="frame" x="28" y="310.5" width="319" height="81.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81.5" id="V5C-3D-64Y"/>
+                                                </constraints>
+                                                <string key="text">Phones are expensive so make sure it is secure in the headset before starting. I find that it can slide out the side of the cardboard headset!</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2U3-dN-SW5">
+                                                <rect key="frame" x="28" y="400" width="319" height="81.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81.5" id="Izs-TP-COS"/>
+                                                </constraints>
+                                                <string key="text">Double tap the screen to go back to this screen. All controls like pause and so on can be done from the "normal" timer screen or the watch.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pr-to-DXt">
+                                                <rect key="frame" x="135" y="20" width="104.5" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="C6u-X4-5QO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
+                                                <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="4rV-gu-ALc" firstAttribute="leading" secondItem="wO7-dR-j2i" secondAttribute="leadingMargin" constant="20" id="1Jz-4E-9vD"/>
+                                            <constraint firstItem="Gdw-0k-q9i" firstAttribute="centerX" secondItem="wO7-dR-j2i" secondAttribute="centerX" constant="9" id="3K3-K8-h1K"/>
+                                            <constraint firstItem="4rV-gu-ALc" firstAttribute="trailing" secondItem="wO7-dR-j2i" secondAttribute="trailingMargin" constant="-20" id="477-Th-y79"/>
+                                            <constraint firstItem="2U3-dN-SW5" firstAttribute="top" secondItem="jrC-ye-UY4" secondAttribute="bottom" constant="8" id="53v-Yl-PHl"/>
+                                            <constraint firstItem="2U3-dN-SW5" firstAttribute="trailing" secondItem="wO7-dR-j2i" secondAttribute="trailingMargin" constant="-20" id="8ga-Fl-V3i"/>
+                                            <constraint firstItem="2U3-dN-SW5" firstAttribute="leading" secondItem="wO7-dR-j2i" secondAttribute="leadingMargin" constant="20" id="C3b-n3-Vpq"/>
+                                            <constraint firstItem="jrC-ye-UY4" firstAttribute="top" secondItem="SdU-aC-DM6" secondAttribute="bottom" constant="8" id="Fnf-fo-FcI"/>
+                                            <constraint firstItem="5Pr-to-DXt" firstAttribute="centerX" secondItem="wO7-dR-j2i" secondAttribute="centerX" id="IHZ-3V-Wn5"/>
+                                            <constraint firstItem="jrC-ye-UY4" firstAttribute="leading" secondItem="wO7-dR-j2i" secondAttribute="leadingMargin" constant="20" id="Ln1-co-Qm5"/>
+                                            <constraint firstItem="Gdw-0k-q9i" firstAttribute="top" secondItem="5Pr-to-DXt" secondAttribute="bottom" constant="8" id="OTd-yj-yq9"/>
+                                            <constraint firstItem="SdU-aC-DM6" firstAttribute="trailing" secondItem="wO7-dR-j2i" secondAttribute="trailingMargin" constant="-20" id="OlU-m9-3bo"/>
+                                            <constraint firstItem="jrC-ye-UY4" firstAttribute="trailing" secondItem="wO7-dR-j2i" secondAttribute="trailingMargin" constant="-20" id="PgU-Q3-o8N"/>
+                                            <constraint firstItem="SdU-aC-DM6" firstAttribute="top" secondItem="Gdw-0k-q9i" secondAttribute="bottom" constant="8" id="QOx-fq-GtF"/>
+                                            <constraint firstItem="5Pr-to-DXt" firstAttribute="top" secondItem="wO7-dR-j2i" secondAttribute="top" constant="20" id="VzT-2K-JyM"/>
+                                            <constraint firstItem="SdU-aC-DM6" firstAttribute="leading" secondItem="wO7-dR-j2i" secondAttribute="leadingMargin" constant="20" id="Yra-Qy-llj"/>
+                                            <constraint firstItem="4rV-gu-ALc" firstAttribute="top" secondItem="2U3-dN-SW5" secondAttribute="bottom" constant="20" id="ghM-WA-sDd"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4rV-gu-ALc" secondAttribute="bottom" constant="20" id="lws-qf-IxV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wO7-dR-j2i" firstAttribute="width" secondItem="NQ6-yj-QxO" secondAttribute="width" id="DxQ-X9-ecJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="wO7-dR-j2i" secondAttribute="trailing" id="KNh-rs-Ssp"/>
+                                    <constraint firstItem="wO7-dR-j2i" firstAttribute="top" secondItem="NQ6-yj-QxO" secondAttribute="top" id="LgX-Rk-juc"/>
+                                    <constraint firstAttribute="bottom" secondItem="wO7-dR-j2i" secondAttribute="bottom" id="WPI-Dx-fBy"/>
+                                    <constraint firstItem="wO7-dR-j2i" firstAttribute="leading" secondItem="NQ6-yj-QxO" secondAttribute="leading" id="qsV-73-WwS"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="csh-LQ-Yxc" firstAttribute="top" secondItem="NQ6-yj-QxO" secondAttribute="bottom" id="1Ta-fB-HZB"/>
+                            <constraint firstAttribute="trailing" secondItem="NQ6-yj-QxO" secondAttribute="trailing" id="1fQ-og-4gt"/>
+                            <constraint firstItem="NQ6-yj-QxO" firstAttribute="top" secondItem="lXz-vh-OyR" secondAttribute="top" id="Vwy-g3-dU3"/>
+                            <constraint firstItem="NQ6-yj-QxO" firstAttribute="leading" secondItem="lXz-vh-OyR" secondAttribute="leading" id="WPu-MY-YBh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="AR Boxing" image="gloves" id="FIR-LE-ful"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPF-Pb-Oqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1983.2" y="991.75412293853083"/>
         </scene>
         <!--Workout finished-->
         <scene sceneID="ZzW-6o-tuB">
@@ -1495,13 +1618,13 @@ none of the ads</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oQ-vb-nN4" userLabel="fullScene">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zs-Pn-F38" userLabel="LeftEyeView">
-                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
                                 <subviews>
                                     <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-kL-eky" userLabel="LeftEyeScene">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="618"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
                                     </sceneKitView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1513,10 +1636,10 @@ none of the ads</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iji-vP-t44" userLabel="RightEyeView">
-                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="618"/>
+                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="667"/>
                                 <subviews>
                                     <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-R7-AaM" userLabel="RightEyeScene">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="618"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
                                     </sceneKitView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1528,7 +1651,7 @@ none of the ads</string>
                                 </constraints>
                             </view>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-oo-Z02">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1559,11 +1682,12 @@ none of the ads</string>
                         <outlet property="rightEyeScene" destination="r5m-R7-AaM" id="foE-zg-DWi"/>
                         <outlet property="rightEyeView" destination="Iji-vP-t44" id="RyV-b6-tHx"/>
                         <outlet property="scnView" destination="2oQ-vb-nN4" id="1OH-WX-OxF"/>
+                        <segue destination="XFC-7j-dmq" kind="presentation" identifier="workoutFinishedFromTimer" id="bfH-a8-V8R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hca-Yc-cYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1895.2" y="991.75412293853083"/>
+            <point key="canvasLocation" x="-1983" y="1793"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7df-f2-XDz">
@@ -1572,6 +1696,7 @@ none of the ads</string>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Vj3-fy-db1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -1591,6 +1716,7 @@ none of the ads</string>
     <resources>
         <image name="angry" width="87" height="87"/>
         <image name="arrow" width="36" height="66"/>
+        <image name="cardboard" width="512" height="288"/>
         <image name="clock" width="20" height="22"/>
         <image name="gloves" width="18" height="23"/>
         <image name="goPro" width="1125" height="2001"/>
@@ -1604,5 +1730,8 @@ none of the ads</string>
         <image name="settings" width="22" height="22"/>
         <image name="stopApp" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BUB-5n-Kud"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

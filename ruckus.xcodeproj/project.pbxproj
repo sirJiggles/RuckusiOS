@@ -206,6 +206,8 @@
 		7FCA39E81E8AEA8600F53C61 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7FCD8A651FF6A85300180075 /* AROverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A641FF6A85300180075 /* AROverlay.swift */; };
 		7FCD8A661FF6A85300180075 /* AROverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A641FF6A85300180075 /* AROverlay.swift */; };
+		7FCD8A681FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
+		7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
 		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
 		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
@@ -434,6 +436,7 @@
 		7FCA39E61E8AEA8600F53C61 /* ruckus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.entitlements; sourceTree = "<group>"; };
 		7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7FCD8A641FF6A85300180075 /* AROverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AROverlay.swift; sourceTree = "<group>"; };
+		7FCD8A671FF6E54C00180075 /* TimableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimableController.swift; sourceTree = "<group>"; };
 		7FD12BBE1E8EE956003209EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
 		7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHelper.swift; path = ruckus/UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationLoader.swift; path = ../AnimationLoader.swift; sourceTree = "<group>"; };
@@ -729,6 +732,7 @@
 				7F06580F1F44ECA500802155 /* HelpCell.swift */,
 				7F018A1F1F4BECF200BC044F /* VolumeCell.swift */,
 				7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */,
+				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1809,6 +1813,7 @@
 				7F5B420F1FF4503300AAED46 /* PlayerEntity.swift in Sources */,
 				7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */,
 				7F5B421B1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
+				7FCD8A681FF6E54C00180075 /* TimableController.swift in Sources */,
 				7F19F1961E6E0CF100D5CFC3 /* IntervalTimer.swift in Sources */,
 				7F4D9FE61EE45FC20049ADA8 /* WorkoutStoreHelper.swift in Sources */,
 				7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
@@ -1894,6 +1899,7 @@
 				7F5B42101FF4503300AAED46 /* PlayerEntity.swift in Sources */,
 				7FC61E1E1F5192D300645009 /* Settings.swift in Sources */,
 				7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
+				7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */,
 				7FC61E1F1F5192D300645009 /* IntervalTimer.swift in Sources */,
 				7FC61E201F5192D300645009 /* WorkoutStoreHelper.swift in Sources */,
 				7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,

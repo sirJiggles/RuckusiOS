@@ -10,27 +10,10 @@ import MKRingProgressView
 import HealthKit
 import GoogleMobileAds
 
-class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstitialDelegate, ListensToPlayEndEvents {
+class TimerViewController: TimableController, TimableVCDelegate, GADInterstitialDelegate {
     
-    var ruckusTimer: IntervalTimer
-    var notificationBridge: WatchNotificationBridge
-    let intervalTimerSettings: IntervalTimerSettingsHelper
-    var comboTimer: Timer?
     
     var interstitial: GADInterstitial!
-    
-    var soundPlayer = SoundPlayer.sharedInstance
-    let workoutStoreHelper = WorkoutStoreHelper.sharedInstance
-    let workoutSession = WorkoutSession.sharedInstance
-    var settingsAccessor: SettingsAccessor?
-    
-    var paused: Bool = false
-    var wasPaused: Bool = false
-    var running: Bool = false
-    var callOutsEnabled: Bool = false
-    var comboPauseTime: Double = 1.0
-    var aboutToSwitch: Bool = false
-    var crowedSoundsEnabled: Bool = false
     
     var ringCurrent: Double = 0.0
     var roundIcons: [UIView] = []
@@ -50,16 +33,8 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
     @IBOutlet weak var roundsContainer: UIView!
     
     required init?(coder aDecoder: NSCoder) {
-        ruckusTimer = IntervalTimer.sharedInstance
-        notificationBridge = WatchNotificationBridge.sharedInstance
-        intervalTimerSettings = IntervalTimerSettingsHelper()
-        settingsAccessor = SettingsAccessor()
-        
         super.init(coder: aDecoder)
-        // set up the delgate for listening to sound end events
-        soundPlayer.delegate = self
-        // delgate for listening to timer events
-        ruckusTimer.delegate = self
+        timerVCDelegate = self
     }
     
     // MARK: - View life cycle
@@ -74,61 +49,6 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name(NotificationKey.StartWorkoutFromWatch.rawValue),
-            object: nil
-        )
-        NotificationCenter.default.addObserver(self,
-           selector: #selector(startFromWatch(_:)),
-           name: NSNotification.Name(NotificationKey.StartWorkoutFromWatch.rawValue),
-           object: nil
-        )
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name(NotificationKey.PauseWorkoutFromWatch.rawValue),
-            object: nil
-        )
-        NotificationCenter.default.addObserver(self,
-           selector: #selector(pauseFromWatch(_:)),
-           name: NSNotification.Name(NotificationKey.PauseWorkoutFromWatch.rawValue),
-           object: nil
-        )
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name(NotificationKey.StopWorkoutFromWatch.rawValue),
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(stopFromWatch),
-            name: NSNotification.Name(NotificationKey.StopWorkoutFromWatch.rawValue),
-            object: nil
-        )
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name(NotificationKey.SettingsSync.rawValue),
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(didGetSettingsSync),
-            name: NSNotification.Name(NotificationKey.SettingsSync.rawValue),
-            object: nil
-        )
-        
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name(NotificationKey.ShowFinishedScreenFromWatch.rawValue),
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(showDoneFromWatch(_:)),
-            name: NSNotification.Name(NotificationKey.ShowFinishedScreenFromWatch.rawValue),
-            object: nil
-        )
         
         // set up the full page add, if not paid and have internet connection
         if PurchasedState.sharedInstance.isPaid == false && currentReachabilityStatus != .notReachable{
@@ -146,10 +66,8 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        aboutToSwitch = false
-        updateTimer()
+        super.viewDidAppear(animated)
         setUpRoundIcons()
-        updateDifficultyAndVolume()
     }
     
     // will go into various rotation modes in iPad large portrait
@@ -165,183 +83,24 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
         super.didReceiveMemoryWarning()
     }
     
-    // this gets called befoe we segue away
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "workoutFinishedFromTimer" {
-            if let summaryData = sender as? [String:String] {
-                let vc = segue.destination as! WorkoutFinishedViewController
-                vc.summaryData = summaryData
-            }
-        }
-    }
-    
-    // util functions for updating the timer and so on
-    func updateTimer() {
-        let settings = intervalTimerSettings.getSettings()
-        ruckusTimer.updateSettings(settings: settings)
-    }
-    
-    func updateDifficultyAndVolume() {
-        if let callOutSetting = settingsAccessor?.getCallOuts() {
-           callOutsEnabled = callOutSetting
-        }
-        
-        if let crowedEnabledSetting = settingsAccessor?.getCrowdEnabled() {
-            // incase it is running
-            if (!crowedEnabledSetting) {
-                stopCrowd()
-                crowedSoundsEnabled = false
-            } else {
-                crowedSoundsEnabled = true
-                // if it is running and in working mode, start the crowd again
-                if ruckusTimer.currentMode == .working && running {
-                    startCrowd()
-                }
-            }
-        }
-        
-        // update the difficulty, this is how often we will call our combos
-        if let difficultySetting = settingsAccessor?.getDifficulty() {
-            // this is the time offset for calling out the hits (beetween 4 and 0.5 seconds)
-            comboPauseTime = Double(4 - (3.5 * difficultySetting))
-        }
-        // set the volume on the sound player shared instance
-        if let volumeSetting = settingsAccessor?.getVolume() {
-            soundPlayer.setNewVolume(volumeSetting)
-        }
-        // if the voice style has changed
-        HitCaller.sharedInstance.updateVoiceStyle()
-    }
-    
-    
-    @objc func didGetSettingsSync() {
-        updateTimer()
-        updateDifficultyAndVolume()
+    // MARK: - Timer VC delegate hooks
+
+    func settingsSyncUI() {
         // might also need to update the rounds area (in main thread)
         DispatchQueue.main.async {
             self.setUpRoundIcons()
         }
     }
     
-    @objc func runComboAfterTime() {
-        // here we work out if still playing and in working mode, and the difficulty etc
-        // we use this information to decide on how fast to pick and if to play a combo or not
-        if (self.ruckusTimer.currentMode != .working) {
-            return
+    func didTickUISecond(time: String, mode: TimerMode) {
+        print("should update the UI?")
+        DispatchQueue.main.async {
+            self.timeLabel.text = time
         }
-        if (!self.running) {
-            return
-        }
-        if (!self.callOutsEnabled) {
-            return
-        }
-        
-        // if about to switch dont start a new combo
-        if (self.aboutToSwitch) {
-            return
-        }
-        
-        HitCaller.sharedInstance.runCombo()
-    }
-    
-    // MARK: - Delegate functions for Sound player
-    func didFinishPlaying() {
-        
-        // to make sure there is no overlap of combos!
-        if (comboTimer != nil) {
-            comboTimer?.invalidate()
-        }
-        
-        comboTimer = Timer.scheduledTimer(timeInterval: comboPauseTime, target: self, selector: #selector(runComboAfterTime), userInfo: nil, repeats: false)
     }
 
-    
-    // MARK: - Delegate functions for Ruckus timer
-    func didTickSecond(time: String, mode: TimerMode) {
-        timeLabel.text = time
-    }
-    
-    func tickRest(newValue: Double) {
-        tick(newValue: newValue)
-    }
-    
-    func tickPrep(newValue: Double) {
-        tick(newValue: newValue)
-    }
-    
-    func tickStretch(newValue: Double) {
-        tick(newValue: newValue)
-    }
-    
-    func tickWarmUp(newValue: Double) {
-        tick(newValue: newValue)
-    }
-    
-    func tickWork(newValue: Double) {
-        // pass the new value allong to the util func
-        tick(newValue: newValue)
-    }
-    
-    // called when we switch modes
-    func reset() {
-        playRoundEndSound()
-        setColours()
-        setUpSwitchModes()
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(0.1)
-        ring.progress = 0
-        CATransaction.commit()
-        ringCurrent = 0
-        aboutToSwitch = false
-    }
-    
-    func startCrowd() {
-        if !crowedSoundsEnabled {
-            return
-        }
-        if soundPlayer.looping {
-            return
-        }
-        // start the sound for the crowd if the setting is turned on
-        do {
-            try soundPlayer.play("crowd", withExtension: "wav", loop: true)
-        } catch let error {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
-    func stopCrowd() {
-        if !crowedSoundsEnabled {
-            return
-        }
-        if (soundPlayer.looping) {
-            soundPlayer.loopingPlayer.stop()
-            soundPlayer.looping = false
-        }
-    }
-    
-    func playRoundEndSound() {
-        var sound = ""
-        var ext = ""
-        switch ruckusTimer.currentMode {
-        case .working:
-            sound = "bell"
-            ext = "mp3"
-            
-            startCrowd()
-        default:
-            sound = "round-end"
-            ext = "wav"
-        }
-        
-        do {
-            try soundPlayer.play(sound, withExtension: ext)
-        } catch let error {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
     func tick(newValue: Double) -> Void {
+        print("TICK TOCK")
         // update the ring, always
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.0)
@@ -350,64 +109,36 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
         ringCurrent = newValue
     }
     
-    func updateCircuitNumber(to newValue: Double, circuitNumber: Int) {
+    func updateCircuitNumberUI(to newValue: Double, circuitNumber: Int) {
         if roundIcons.indices.contains(circuitNumber - 1) {
             roundIcons[circuitNumber - 1].backgroundColor = UIColor.white
         }
     }
     
     // when done the workout
-    func finished() {
-        stopCrowd()
+    func finnishedUI() {
         showPlayButton()
-        paused = false
-        running = false
-        // only show done if not on watch session, else watch will handle it
-        if !notificationBridge.sessionReachable() {
-            performSegue(withIdentifier: "workoutFinishedFromTimer", sender: nil)
-        }
-        resetUI()
     }
     
-    func aboutToSwitchModes() {
-        // used so we know not to keep calling out combos
-        aboutToSwitch = true
-    }
-    
-    func setUpSwitchModes() {
+    func setUpSwitchModesUI() {
         timeLabel.text = "00:00"
-        switch (ruckusTimer.currentMode) {
+        switch (timer.currentMode) {
         case .preparing:
             modeLabel.text = "Prepare"
-            workoutSession.pause()
         case .resting:
             modeLabel.text = "Resting"
-            workoutSession.pause()
         case .stretching:
             modeLabel.text = "Stretch"
-            workoutSession.pause()
         case .warmup:
-            workoutSession.resume()
             modeLabel.text = "Warmup"
         case .working:
-            workoutSession.resume()
-            
-            if callOutsEnabled {
-                
-                if (comboTimer != nil) {
-                    comboTimer?.invalidate()
-                }
-                // start the combo calling after a second
-                comboTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runComboAfterTime), userInfo: nil, repeats: false)
-            }
-            
             modeLabel.text = "Working"
         }
             
     }
     
     func setColours() {
-        switch (ruckusTimer.currentMode) {
+        switch (timer.currentMode) {
         case .preparing:
             modeLabel.textColor = UIColor.lightGreen
             timeLabel.textColor = UIColor.lightGreen
@@ -421,40 +152,43 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
     }
     
     // reset the rings
-    func didStart() {
-        // only do the following if not was paused
-        if wasPaused {
-            wasPaused = false
-            startCrowd()
-            return
-        }
-        
-        var sound = ""
-        var ext = ""
-        if (ruckusTimer.currentMode == .working) {
-            sound = "bell"
-            ext = "mp3"
-            
-            startCrowd()
-        } else {
-            sound = "round-end"
-            ext = "wav"
-        }
-        do {
-            try soundPlayer.play(sound, withExtension: ext)
-        } catch let error {
-            fatalError(error.localizedDescription)
-        }
-        
-        
-        setColours()
-        setUpSwitchModes()
+    func didStartUI() {
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.1)
         self.ring.progress = 0
         CATransaction.commit()
     }
     
+    func resetUI() {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(0.1)
+        ring.progress = 0
+        CATransaction.commit()
+        ringCurrent = 0
+        timeLabel.text = "00:00"
+        timeLabel.textColor = UIColor.greyOne
+        modeLabel.isHidden = true
+        // reset the colors for the icons
+        for icon in roundIcons {
+            icon.backgroundColor = UIColor.greyOne
+        }
+    }
+    
+    func startWorkoutUI() {
+        print("GOT START WORKOUT UI")
+        timeLabel.textColor = UIColor.theOrange
+        modeLabel.textColor = UIColor.theOrange
+        hidePlayButton()
+        modeLabel.isHidden = false
+    }
+    
+    func stopWorkoutUI() {
+        showPlayButton()
+    }
+    
+    func pauseWorkoutUI() {
+        showPlayButton()
+    }
     
     
     // MARK: - Delegate for the full page ad
@@ -579,7 +313,7 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
         // clear out the array
         roundIcons = []
         
-        var amountOfRounds = ruckusTimer.intervals
+        var amountOfRounds = timer.intervals
         let segmentSize = Double(roundsContainer.frame.width) / amountOfRounds
         let maxHeight = Double(roundsContainer.frame.height / 2)
         var height = segmentSize + (segmentSize * 0.3)
@@ -608,7 +342,7 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
         }
         
         // update the color of the rounds that are done, incase we removed them by mistake
-        var amountDone = Int(ruckusTimer.intervalsDone)
+        var amountDone = Int(timer.intervalsDone)
         while amountDone > 0 {
             roundIcons[amountDone - 1].backgroundColor = UIColor.white
             amountDone = amountDone - 1
@@ -626,145 +360,6 @@ class TimerViewController: UIViewController, IntervalTimerDelegate, GADInterstit
         pauseStopContainer.isHidden = true
     }
     
-    func resetUI() {
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(0.1)
-        ring.progress = 0
-        CATransaction.commit()
-        timeLabel.text = "00:00"
-        timeLabel.textColor = UIColor.greyOne
-        modeLabel.isHidden = true
-        // reset the colors for the icons
-        for icon in roundIcons {
-            icon.backgroundColor = UIColor.greyOne
-        }
-    }
-    
-    @objc func startFromWatch(_ payload: Notification) {
-        if let data = payload.userInfo as? [String: NSDate], let timestamp = data["startTime"] {
-            DispatchQueue.main.async {
-                self.workoutStoreHelper.workoutStartDate = timestamp as Date
-                self.startWorkout(timestamp)
-            }
-        }
-    }
-    func startWorkout(_ timestamp: NSDate) {
-        if running {
-            return
-        }
-        // if it was paused and the current mode is working, start the hit caller again
-        if (paused && ruckusTimer.currentMode == .working) {
-            if callOutsEnabled {
-                if (comboTimer != nil) {
-                    comboTimer?.invalidate()
-                }
-                comboTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runComboAfterTime), userInfo: nil, repeats: false)
-            }
-        }
-        
-        // so we know on cb from dlegate that was paused
-        if paused {
-            wasPaused = true
-        }
-        
-        running = true
-        paused = false
-        timeLabel.textColor = UIColor.theOrange
-        modeLabel.textColor = UIColor.theOrange
-        DispatchQueue.main.async {
-            self.ruckusTimer.start(timestamp)
-        }
-        hidePlayButton()
-        modeLabel.isHidden = false
-    }
-    
-    
-    @objc func stopFromWatch() { 
-        DispatchQueue.main.async {
-            self.stopWorkout()
-        }
-    }
-    func stopWorkout() {
-        stopCrowd()
-        ruckusTimer.stop()
-        showPlayButton()
-        resetUI()
-        paused = false
-        running = false
-    }
-    
-    @objc func pauseFromWatch(_ payload: Notification) {
-        if let data = payload.userInfo as? [String: NSDate], let timestamp = data["pauseTime"] {
-            DispatchQueue.main.async {
-                do {
-                    try self.soundPlayer.play("pause", withExtension: "wav")
-                } catch let error {
-                    fatalError(error.localizedDescription)
-                }
-                self.pauseWorkout(timestamp)
-            }
-        }
-    }
-    
-    // called from the watch to show the finnished screen when not connected to a watch session
-    @objc func showDoneFromWatch(_ payload: Notification) {
-        
-        // get the summary information and use it to pass to the next screen
-        guard let summary = payload.userInfo as? [String:String] else {
-            fatalError("summary payload of wrong type for finished screen")
-        }
-        
-        DispatchQueue.main.async {
-            // reset the UI and stop the timer!
-            self.stopWorkout()
-            self.performSegue(withIdentifier: "workoutFinishedFromTimer", sender: summary)
-        }
-    }
-    
-    func pauseWorkout(_ timestamp: NSDate?) {
-        if paused {
-            return
-        }
-        stopCrowd()
-        paused = true
-        running = false
-        ruckusTimer.pause(timestamp)
-        showPlayButton()
-    }
-    
-    func pauseWorkoutTimer() {
-        ruckusTimer.pause(nil)
-        running = false
-        showPlayButton()
-    }
-    
-    func getAuthAndBeginWorkout() {
-        
-        workoutStoreHelper.getAuth { (authorized, error) -> Void in
-            if (authorized) {
-                self.workoutStoreHelper.startWorkout()
-            } else {
-                // iPad
-                self.workoutStoreHelper.workoutStartDate = Date()
-            }
-            // go back to the main thread to start the workout (even if not authorized)
-            DispatchQueue.main.async (execute: {
-                self.startWorkout(NSDate())
-            })
-        }
-    }
-    
-    func proceedWithPlayClick() {
-        if notificationBridge.sessionReachable() {
-            // wait for the watch to tell us it was ok to start the workout (auth etc) we dont start it here
-            notificationBridge.sendMessage(.StartWorkoutFromApp, callback: nil)
-            // also always start a workout on the phone just incase we loose connection
-            // with the watch during it!
-            self.workoutStoreHelper.startWorkout()
-        } else {
-            getAuthAndBeginWorkout()
-        }
-    }
     
     // interacting with buttons
     @IBAction func clickPause(_ sender: Any) {
