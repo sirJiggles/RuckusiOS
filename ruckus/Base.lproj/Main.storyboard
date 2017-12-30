@@ -33,7 +33,7 @@
                                 <rect key="frame" x="10" y="20" width="355" height="193"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-AL-xl5" userLabel="modeLabel">
-                                        <rect key="frame" x="20" y="0.0" width="315" height="47"/>
+                                        <rect key="frame" x="20" y="0.0" width="315" height="49"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
                                         <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEL-Ln-Pih" userLabel="timeLabel">
-                                        <rect key="frame" x="20" y="37" width="315" height="105"/>
+                                        <rect key="frame" x="20" y="39" width="315" height="110"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="90"/>
                                         <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1149,7 +1149,7 @@ none of the ads</string>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rV-gu-ALc">
-                                                <rect key="frame" x="28" y="501.5" width="319" height="60"/>
+                                                <rect key="frame" x="28" y="445" width="319" height="60"/>
                                                 <color key="backgroundColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="CnG-Kd-vQG"/>
@@ -1167,7 +1167,7 @@ none of the ads</string>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="101.5" id="2R2-Sz-tRk"/>
                                                 </constraints>
-                                                <string key="text">When running in AR / VR mode I would advise using a "Google Cardboard" headset. They are cheap and you can make a hole in the front for thre fornt facing camera of the phone.</string>
+                                                <string key="text">When running in AR / VR mode I would advise using a "Google Cardboard" headset. They are cheap and you can make a hole in the front for the fornt facing camera of the phone.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1182,18 +1182,17 @@ none of the ads</string>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2U3-dN-SW5">
-                                                <rect key="frame" x="28" y="400" width="319" height="81.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to leave AR mode at any time" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2U3-dN-SW5">
+                                                <rect key="frame" x="28" y="400" width="319" height="25"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81.5" id="Izs-TP-COS"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Izs-TP-COS"/>
                                                 </constraints>
-                                                <string key="text">Double tap the screen to go back to this screen. All controls like pause and so on can be done from the "normal" timer screen or the watch.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pr-to-DXt">
-                                                <rect key="frame" x="125.5" y="20" width="126" height="37"/>
+                                                <rect key="frame" x="135.5" y="20" width="104.5" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="C6u-X4-5QO"/>
                                                 </constraints>
