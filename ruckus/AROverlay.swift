@@ -14,8 +14,8 @@ class AROverlay: SKScene {
     
     // UI components (that need to be modified)
     var timeLabel = SKLabelNode(text: "00:00")
-    var modeLabel = SKLabelNode(text: "working")
-    var roundLabel = SKLabelNode(text: "Round: 0")
+    var modeLabel = SKLabelNode(text: "Working")
+    var roundLabel = SKLabelNode(text: "Round: 1")
     
     convenience init(parent: ARVC, size: CGSize) {
         self.init(sceneSize: size)
@@ -37,13 +37,13 @@ class AROverlay: SKScene {
         
         // add the time and the mode
         timeLabel.position = CGPoint(x: rightAlign, y: topAlign)
-        timeLabel.fontColor = UIColor.orange
+        timeLabel.fontColor = UIColor.theOrange
         timeLabel.fontSize = fontSize
         timeLabel.fontName = fontName
         self.addChild(timeLabel)
         
         modeLabel.position = CGPoint(x: leftAlign, y: topAlign)
-        modeLabel.fontColor = UIColor.orange
+        modeLabel.fontColor = UIColor.theOrange
         modeLabel.fontSize = fontSize
         modeLabel.fontName = fontName
         self.addChild(modeLabel)
@@ -54,39 +54,7 @@ class AROverlay: SKScene {
         roundLabel.fontSize = fontSize
         roundLabel.fontName = fontName
         self.addChild(roundLabel)
-        
-        
-//        let playTexture = SKTexture(image: #imageLiteral(resourceName: "Play"))
-//        playButtonNode = SKSpriteNode(texture: playTexture)
-//        playButtonNode.size = CGSize(width: 100, height: 100)
-//        playButtonNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        playButtonNode.position = CGPoint(x: self.size.width / 2.0, y: self.size.height / 2 - 200)
-//        playButtonNode.name = buttonNames.playButton.rawValue
-//
-//        self.addChild(playButtonNode)
-//
-//        let titleTexture = SKTexture(image: #imageLiteral(resourceName: "Title"))
-//        titleGame = SKSpriteNode(texture: titleTexture)
-//        titleGame.size = CGSize(width: 300, height: 300)
-//        titleGame.position = CGPoint(x: self.size.width / 2.0, y: self.size.height / 2 + 180)
-//
-//        self.addChild(titleGame)
-//
-//        scoreLabel.text = "0"
-//        scoreLabel.fontColor = UIColor.white
-//        scoreLabel.position = CGPoint(x: self.size.width / 2.0, y: self.size.height - 72)
-        
     }
-    
-    // when the users tap on the overlay
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let pv = parentView {
-//            pv.touchesFunction(touches, with: event)
-//        }
-    }
-    
-    // MARK: - Interval timer delegates
-    
     
 }
 

@@ -123,6 +123,10 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

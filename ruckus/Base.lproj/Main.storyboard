@@ -1123,10 +1123,10 @@ none of the ads</string>
             </objects>
             <point key="canvasLocation" x="1970.625" y="991.90140845070425"/>
         </scene>
-        <!--AR Boxing-->
+        <!--AR Intro Boxing-->
         <scene sceneID="FB1-0P-QIe">
             <objects>
-                <viewController id="1Yg-yA-J9M" sceneMemberID="viewController">
+                <viewController id="1Yg-yA-J9M" userLabel="AR Intro Boxing" customClass="ARIntroVC" customModule="ruckus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oYj-DM-UpT"/>
                         <viewControllerLayoutGuide type="bottom" id="csh-LQ-Yxc"/>
@@ -1193,7 +1193,7 @@ none of the ads</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pr-to-DXt">
-                                                <rect key="frame" x="125" y="20" width="126" height="37"/>
+                                                <rect key="frame" x="125.5" y="20" width="126" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="C6u-X4-5QO"/>
                                                 </constraints>

@@ -208,6 +208,8 @@
 		7FCD8A661FF6A85300180075 /* AROverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A641FF6A85300180075 /* AROverlay.swift */; };
 		7FCD8A681FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
 		7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
+		7FCD8A6B1FF71F9400180075 /* ARIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */; };
+		7FCD8A6C1FF71F9400180075 /* ARIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
 		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
 		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
@@ -437,6 +439,7 @@
 		7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7FCD8A641FF6A85300180075 /* AROverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AROverlay.swift; sourceTree = "<group>"; };
 		7FCD8A671FF6E54C00180075 /* TimableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimableController.swift; sourceTree = "<group>"; };
+		7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARIntoVC.swift; sourceTree = "<group>"; };
 		7FD12BBE1E8EE956003209EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
 		7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHelper.swift; path = ruckus/UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationLoader.swift; path = ../AnimationLoader.swift; sourceTree = "<group>"; };
@@ -714,6 +717,7 @@
 				7F76939C1EE376490036DED7 /* CreditsViewController.swift */,
 				7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */,
 				7F06580D1F44E9B400802155 /* HelpViewController.swift */,
+				7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1843,6 +1847,7 @@
 				7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */,
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
+				7FCD8A6B1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */,
 				7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */,
@@ -1929,6 +1934,7 @@
 				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
+				7FCD8A6C1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */,
 				7FC61E3A1F5192D300645009 /* ScrollCell.swift in Sources */,

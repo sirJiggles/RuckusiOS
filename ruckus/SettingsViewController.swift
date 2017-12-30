@@ -95,6 +95,9 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         return .portrait
     }
     
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         

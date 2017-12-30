@@ -186,21 +186,21 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     // MARK: - delegate functions for the timable VC!
     func resetUI() {
         gameOverlay?.timeLabel.text = "00:00"
-        gameOverlay?.timeLabel.color = UIColor.white
+        gameOverlay?.timeLabel.fontColor = UIColor.white
         gameOverlay?.modeLabel.isHidden = true
     }
     
     func setColours() {
         switch (timer.currentMode) {
         case .preparing:
-            gameOverlay?.modeLabel.color = UIColor.lightGreen
-            gameOverlay?.timeLabel.color = UIColor.lightGreen
+            gameOverlay?.modeLabel.fontColor = UIColor.lightGreen
+            gameOverlay?.timeLabel.fontColor = UIColor.lightGreen
         case .resting, .stretching:
-            gameOverlay?.modeLabel.color = UIColor.lightestBlue
-            gameOverlay?.timeLabel.color = UIColor.lightestBlue
+            gameOverlay?.modeLabel.fontColor = UIColor.lightestBlue
+            gameOverlay?.timeLabel.fontColor = UIColor.lightestBlue
         case .working, .warmup:
-            gameOverlay?.modeLabel.color = UIColor.theOrange
-            gameOverlay?.timeLabel.color = UIColor.theOrange
+            gameOverlay?.modeLabel.fontColor = UIColor.theOrange
+            gameOverlay?.timeLabel.fontColor = UIColor.theOrange
         }
     }
     
@@ -221,13 +221,12 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     }
     
     func updateCircuitNumberUI(to newValue: Double, circuitNumber: Int) {
-        let roundNum = circuitNumber - 1
-        gameOverlay?.roundLabel.text = "Round: \(roundNum)"
+        gameOverlay?.roundLabel.text = "Round: \(circuitNumber)"
     }
     
     func startWorkoutUI() {
-        gameOverlay?.timeLabel.color = UIColor.theOrange
-        gameOverlay?.modeLabel.color = UIColor.theOrange
+        gameOverlay?.timeLabel.fontColor = UIColor.theOrange
+        gameOverlay?.modeLabel.fontColor = UIColor.theOrange
         gameOverlay?.modeLabel.isHidden = false
     }
     

@@ -121,8 +121,6 @@ class WorkoutFinishedViewController: UIViewController, WorkoutSummeryProtocol {
             time.text = String.localizedStringWithFormat("%02d:%02d", timeMins, timeSeconds)
         }
         
-        
-        
         // check what controls we should show
         if !HKHealthStore.isHealthDataAvailable() {
             controlsClose.isHidden = false
@@ -151,12 +149,17 @@ class WorkoutFinishedViewController: UIViewController, WorkoutSummeryProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Workout controller summery delegate functions
+    // MARK: - Workout controller summary delegate functions
     func didSaveWorkout() {
-        saveButton.isEnabled = true
-        saveButton.setTitle("Save", for: .normal)
-        resetUI()
-        dismiss(animated: true, completion: nil)
+        
+        DispatchQueue.main.sync {
+            self.saveButton.isEnabled = true
+            self.saveButton.setTitle("Save", for: .normal)
+            self.resetUI()
+            self.presentingViewController?.dismiss(animated: false, completion: nil)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     func couldNotSaveWorkout() {
@@ -211,7 +214,8 @@ class WorkoutFinishedViewController: UIViewController, WorkoutSummeryProtocol {
         } else {
             workoutSession.stop(andSave: false)
         }
-        dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTapSave(_ sender: Any) {

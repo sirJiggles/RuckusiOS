@@ -21,6 +21,14 @@ class LoadingScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
 
     /*
     // MARK: - Navigation

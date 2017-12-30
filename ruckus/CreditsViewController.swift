@@ -19,6 +19,10 @@ class CreditsViewController: UIViewController, UITableViewDataSource, UITableVie
         return .portrait
     }
     
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         // a horid static list for the credits, but whateva treva
         tableData = [
