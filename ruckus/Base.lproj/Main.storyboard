@@ -1159,7 +1159,7 @@ none of the ads</string>
                                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="vPz-ww-a1l" kind="show" id="yqY-dw-G9Q"/>
+                                                    <segue destination="vPz-ww-a1l" kind="presentation" id="yqY-dw-G9Q"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-aC-DM6">
@@ -1625,6 +1625,9 @@ none of the ads</string>
                                 <subviews>
                                     <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-kL-eky" userLabel="LeftEyeScene">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="BXY-oi-jN4" appends="YES" id="hAV-Bl-GXo"/>
+                                        </connections>
                                     </sceneKitView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1640,6 +1643,10 @@ none of the ads</string>
                                 <subviews>
                                     <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-R7-AaM" userLabel="RightEyeScene">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="BXY-oi-jN4" appends="YES" id="NID-7g-xlK"/>
+                                        </connections>
                                     </sceneKitView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1652,9 +1659,11 @@ none of the ads</string>
                             </view>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-oo-Z02">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Iyn-oo-Z02" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="3TU-un-HGJ"/>
                             <constraint firstAttribute="trailing" secondItem="Iji-vP-t44" secondAttribute="trailing" id="6xc-vo-J1D"/>
@@ -1673,6 +1682,9 @@ none of the ads</string>
                             <constraint firstItem="Iji-vP-t44" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="aBC-ss-YlB"/>
                             <constraint firstItem="2zs-Pn-F38" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="lO9-G1-c0L"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BXY-oi-jN4" appends="YES" id="2Tg-ML-SvG"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="ARBoxing" image="gloves" id="Ztn-t9-5NX"/>
                     <connections>
@@ -1686,6 +1698,11 @@ none of the ads</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hca-Yc-cYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="BXY-oi-jN4">
+                    <connections>
+                        <action selector="doubleTapThat:" destination="vPz-ww-a1l" id="RrD-2W-Qes"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1983" y="1793"/>
         </scene>
@@ -1731,7 +1748,7 @@ none of the ads</string>
         <image name="stopApp" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BUB-5n-Kud"/>
+        <segue reference="bfH-a8-V8R"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

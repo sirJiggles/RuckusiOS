@@ -277,5 +277,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     func pauseWorkoutUI() {
         // do nothing
     }
+    
+    // MARK: - IB actions
+    @IBAction func doubleTapThat(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
