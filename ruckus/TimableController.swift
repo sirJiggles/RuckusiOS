@@ -25,8 +25,7 @@ protocol TimableVCDelegate: class {
     func pauseWorkoutUI() -> Void
 }
 
-// this moves much of the functionality away from the
-// VC
+// this moves much of the functionality away from the VC
 class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayEndEvents {
     
     var timer: IntervalTimer
@@ -55,10 +54,11 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
         intervalTimerSettings = IntervalTimerSettingsHelper()
         settingsAccessor = SettingsAccessor()
         
-        super.init(coder: aDecoder)
+        // set the state of the flags at the start
+        paused = timer.paused
+        running = timer.running
         
-        timer.delegate = self
-        soundPlayer.delegate = self
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
@@ -70,6 +70,15 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
         aboutToSwitch = false
         updateTimer()
         updateDifficultyAndVolume()
+        
+        // need to reset the delegates each time!
+        timer.delegate = self
+        soundPlayer.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // stop the workout regardless from now on
+        stopWorkout()
     }
     
     // unsub and re-subscribe to notifications
@@ -351,8 +360,6 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
     
     // MARK: - Delegate functions for Ruckus timer
     func didTickSecond(time: String, mode: TimerMode) {
-        print("Tick second")
-        print(timerVCDelegate)
         // just let the UI know
         timerVCDelegate?.didTickUISecond(time: time, mode: mode)
     }

@@ -27,25 +27,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     
     var gameOverlay: AROverlay?
     
-    // Timer stuff
-
-//    var notificationBridge: WatchNotificationBridge
-//    let intervalTimerSettings: IntervalTimerSettingsHelper
-//    var comboTimer: Timer?
-//
-//    var soundPlayer = SoundPlayer.sharedInstance
-//    let workoutStoreHelper = WorkoutStoreHelper.sharedInstance
-//    let workoutSession = WorkoutSession.sharedInstance
-//    var settingsAccessor: SettingsAccessor?
-//
-//    var paused: Bool = false
-//    var wasPaused: Bool = false
-//    var running: Bool = false
-//    var callOutsEnabled: Bool = false
-//    var comboPauseTime: Double = 1.0
-//    var aboutToSwitch: Bool = false
-//    var crowedSoundsEnabled: Bool = false
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

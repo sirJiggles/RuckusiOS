@@ -32,11 +32,6 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
     // this is what we insert the round marks into
     @IBOutlet weak var roundsContainer: UIView!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        timerVCDelegate = self
-    }
-    
     // MARK: - View life cycle
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -66,7 +61,10 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
+        
+        timerVCDelegate = self
+        
         setUpRoundIcons()
     }
     
@@ -93,14 +91,12 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
     }
     
     func didTickUISecond(time: String, mode: TimerMode) {
-        print("should update the UI?")
         DispatchQueue.main.async {
             self.timeLabel.text = time
         }
     }
 
     func tick(newValue: Double) -> Void {
-        print("TICK TOCK")
         // update the ring, always
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.0)
@@ -175,7 +171,6 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
     }
     
     func startWorkoutUI() {
-        print("GOT START WORKOUT UI")
         timeLabel.textColor = UIColor.theOrange
         modeLabel.textColor = UIColor.theOrange
         hidePlayButton()
