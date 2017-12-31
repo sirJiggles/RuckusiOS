@@ -16,12 +16,18 @@ class ARAnimationController {
 
     
     var runningPlayer: SCNAnimationPlayer?
-    let speed: Double = 1.0
+    var speed: Double = 1.0
+    
+    var settingsAccessor: SettingsAccessor?
     
     static let sharedInstance = ARAnimationController()
     
     init() {
+        settingsAccessor = SettingsAccessor()
         
+        if let difficulty = settingsAccessor?.getARDifficulty() {
+            speed = Double(difficulty + 1.0)
+        }
     }
     
     convenience init(withModel model: SCNNode) {

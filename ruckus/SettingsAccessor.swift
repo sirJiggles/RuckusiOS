@@ -71,4 +71,15 @@ struct SettingsAccessor: GetsSettings {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func getARDifficulty() -> Float {
+        do {
+            if let difficulty = try settings.getValue(forKey: PossibleSetting.hitSpeed.rawValue) as? Float {
+                return difficulty
+            }
+            return 0.5
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

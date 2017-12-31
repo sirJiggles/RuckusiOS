@@ -35,9 +35,22 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     var gameOverlay: AROverlay?
     var punchCount: Int = 0
     var canBeHit: Bool = true
+
+    // how long the user is untouchable, depends on difficulty
+    var invincibleTime = 0.3
     
     required init?(coder aDecoder: NSCoder) {
+
         super.init(coder: aDecoder)
+        
+        if let difficulty = self.settingsAccessor?.getARDifficulty() {
+            if difficulty > 0 {
+                invincibleTime = Double(0.08 / difficulty)
+            } else {
+                invincibleTime = 0.08
+            }
+            print(invincibleTime)
+        }
         
         // we want to know about VC timer stuff
         timerVCDelegate = self
@@ -125,6 +138,9 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
 //            SCNDebugOptions.showBoundingBoxes
         ]
         
+        // allows the user to manipulate the camera
+        leftEyeScene.allowsCameraControl = true
+        
         // add cam for the left eye lopez
         let cam = SCNCamera()
         cam.zNear = 0.1
@@ -149,9 +165,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         
         sceneView.addGestureRecognizer(tapGesture)
         
-        // allows the user to manipulate the camera
-        sceneView.allowsCameraControl = true
-        
         // show statistics such as fps and timing information
         sceneView.showsStatistics = debug
         
@@ -175,7 +188,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         gameOverlay?.punchLabel.text = ("Hits: \(punchCount)")
         
         DispatchQueue.main.async {
-            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false){ _ in
+            Timer.scheduledTimer(withTimeInterval: self.invincibleTime, repeats: false){ _ in
                 self.canBeHit = true
             }
         }
