@@ -21,7 +21,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     
     @IBOutlet weak var leftEyeView: UIView!
     @IBOutlet weak var rightEyeView: UIView!
-    let scene = ARScene.init(create: true, moveMode: false)
+    let scene = ARScene.init(create: true, moveMode: true)
     
     let VRMode = true
     
@@ -70,7 +70,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         
         // if the timer is not started, start it now! (like a button click)
         if !running {
-            proceedWithPlayClick()
+//            proceedWithPlayClick()
         }
     }
     
@@ -107,6 +107,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         // render delegate (in here for the VR stuff)
         leftEyeScene.delegate = self
         rightEyeScene.isPlaying = true
+        
+        leftEyeScene.debugOptions = [
+            SCNDebugOptions.showPhysicsShapes,
+//            SCNDebugOptions.showBoundingBoxes
+        ]
         
         // add cam for the left eye lopez
         let cam = SCNCamera()
