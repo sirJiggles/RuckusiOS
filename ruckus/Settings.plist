@@ -135,6 +135,17 @@
 		<key>value</key>
 		<string>0</string>
 	</dict>
+	<key>arFollow</key>
+	<dict>
+		<key>descr</key>
+		<string>Turn on / off the AR robot follow mode</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>AR Follow mode</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
 	<key>jumpingKicks</key>
 	<dict>
 		<key>descr</key>
@@ -257,6 +268,13 @@
 			<string>Yoga</string>
 			<string>Other</string>
 		</array>
+	</dict>
+	<key>hitSpeed</key>
+	<dict>
+		<key>label</key>
+		<string>Hit Speed</string>
+		<key>value</key>
+		<real>0.5</real>
 	</dict>
 </dict>
 </plist>

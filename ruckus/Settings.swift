@@ -33,6 +33,8 @@ enum PossibleSetting: String {
     case volumeButton
     case uppercuts
     case backgroundCrowd
+    case hitSpeed
+    case arFollow
 }
 
 enum CellType: String {
@@ -169,6 +171,15 @@ class Settings {
                 return .volumeCell
             }
         case 4:
+            return .scrollCell
+        case 5:
+            switch indexPath.row {
+            case 0:
+                return .toggleCell
+            default:
+                return .toggleCell
+            }
+        case 6:
             return .buttonCell
         default:
             return .toggleCell
@@ -216,6 +227,10 @@ class Settings {
         case (3,1):
             // this key does nothing with regards to settings
             return .volumeButton
+        case (4,0):
+            return .hitSpeed
+        case (5,0):
+            return .arFollow
         default:
             return .callOutHits
         }
