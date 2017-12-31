@@ -26,6 +26,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     var player: PlayerEntity?
     var fighter: FighterEntity?
     
+    var punchDelegate: PunchInTheHeadDelegate?
     let hitBoxHeight = 4
     
     lazy var componentSystems:[GKComponentSystem] = {
@@ -34,6 +35,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         let nodeSystem = GKComponentSystem(componentClass: NodeComponent.self)
         return [targetSystem, moveSystem, nodeSystem]
     }()
+    
     
     convenience init(create: Bool, moveMode: Bool = true) {
         self.init()
@@ -224,13 +226,13 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         let isBPlayer = contact.nodeB.physicsBody!.categoryBitMask == CollisionCategory.player.rawValue
         
         if (isAPlayer && isBFighter) || (isAFighter && isBPlayer) {
-            // we have contact!
-            print("we have impact!")
+            // send a message for the amount of times hit to the overlay
+            if let delegate = punchDelegate {
+                if delegate.canBeHit {
+                    delegate.didGetPunched()
+                }
+            }
         }
-    }
-    
-    func physicsWorld(_ world: SCNPhysicsWorld, didEnd contact: SCNPhysicsContact) {
-        print("contact ended")
     }
     
     // MARK:- Render delegate

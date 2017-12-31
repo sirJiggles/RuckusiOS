@@ -11,7 +11,14 @@ import QuartzCore
 import SceneKit
 import ARKit
 
-class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRendererDelegate {
+protocol PunchInTheHeadDelegate {
+    func didGetPunched() -> Void
+    var canBeHit: Bool {
+        get set
+    }
+}
+
+class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRendererDelegate, PunchInTheHeadDelegate {
     
     @IBOutlet weak var scnView: SCNView!
     @IBOutlet weak var leftEyeScene: SCNView!
@@ -26,6 +33,8 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     let VRMode = true
     
     var gameOverlay: AROverlay?
+    var punchCount: Int = 0
+    var canBeHit: Bool = true
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -67,6 +76,9 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
             // render delegate
             scnView.delegate = scene
         }
+        
+        // delegate for sending punch signals
+        scene.punchDelegate = self
         
         // if the timer is not started, start it now! (like a button click)
         if !running {
@@ -154,6 +166,19 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         let pos = recognizer.location(in: sceneView)
         
         scene.follow(position: SCNVector3(pos.x, pos.y, 0))
+    }
+    
+    // MARK: - Punch in the head delegates
+    func didGetPunched() {
+        canBeHit = false
+        punchCount = punchCount + 1
+        gameOverlay?.punchLabel.text = ("Hits: \(punchCount)")
+        
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false){ _ in
+                self.canBeHit = true
+            }
+        }
     }
     
     

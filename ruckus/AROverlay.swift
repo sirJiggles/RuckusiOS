@@ -16,6 +16,7 @@ class AROverlay: SKScene {
     var timeLabel = SKLabelNode(text: "00:00")
     var modeLabel = SKLabelNode(text: "Working")
     var roundLabel = SKLabelNode(text: "Round: 1")
+    var punchLabel = SKLabelNode(text: "Hits: 0")
     
     convenience init(parent: ARVC, size: CGSize) {
         self.init(sceneSize: size)
@@ -54,6 +55,13 @@ class AROverlay: SKScene {
         roundLabel.fontSize = fontSize
         roundLabel.fontName = fontName
         self.addChild(roundLabel)
+        
+        // add punch label bottom left
+        punchLabel.position = CGPoint(x: leftAlign, y: bottomAlign)
+        punchLabel.color = UIColor.white
+        punchLabel.fontSize = fontSize
+        punchLabel.fontName = fontName
+        self.addChild(punchLabel)
     }
     
 }
