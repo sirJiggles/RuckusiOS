@@ -82,4 +82,15 @@ struct SettingsAccessor: GetsSettings {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func getModelName() -> String {
+        do {
+            if let model = try settings.getValue(forKey: PossibleSetting.model.rawValue) as? String {
+                return model
+            }
+            return "robot"
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

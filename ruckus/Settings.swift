@@ -35,6 +35,7 @@ enum PossibleSetting: String {
     case backgroundCrowd
     case hitSpeed
     case arFollow
+    case model
 }
 
 enum CellType: String {
@@ -171,11 +172,13 @@ class Settings {
                 return .volumeCell
             }
         case 4:
-            return .scrollCell
+            return .difficultyCell
         case 5:
             switch indexPath.row {
             case 0:
                 return .toggleCell
+            case 1:
+                return .selectCell
             default:
                 return .toggleCell
             }
@@ -231,6 +234,8 @@ class Settings {
             return .hitSpeed
         case (5,0):
             return .arFollow
+        case (5,1):
+            return .model
         default:
             return .callOutHits
         }

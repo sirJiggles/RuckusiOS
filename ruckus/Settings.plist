@@ -276,5 +276,21 @@
 		<key>value</key>
 		<real>0.5</real>
 	</dict>
+	<key>model</key>
+	<dict>
+		<key>descr</key>
+		<string>Who will you fight against in AR mode?</string>
+		<key>label</key>
+		<string>Opponent</string>
+		<key>value</key>
+		<string>robot</string>
+		<key>possibleValues</key>
+		<array>
+			<string>robot</string>
+			<string>futureMan</string>
+			<string>vanguard</string>
+			<string>heraklios</string>
+		</array>
+	</dict>
 </dict>
 </plist>

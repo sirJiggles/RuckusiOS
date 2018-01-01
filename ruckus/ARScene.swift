@@ -16,6 +16,13 @@ enum CollisionCategory : Int {
     case fighter
 }
 
+enum AnimationModelName: String {
+    case robot
+    case futureMan
+    case vanguard
+    case heraklios
+}
+
 class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
@@ -29,6 +36,9 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     var punchDelegate: PunchInTheHeadDelegate?
     let hitBoxHeight = 4
     
+    var modelName: AnimationModelName = .robot
+    var settingsAccessor: SettingsAccessor?
+    
     lazy var componentSystems:[GKComponentSystem] = {
         let targetSystem = GKComponentSystem(componentClass: TargetingAgent.self)
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
@@ -39,6 +49,14 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     
     convenience init(create: Bool, moveMode: Bool = true) {
         self.init()
+        
+        settingsAccessor = SettingsAccessor()
+        
+        if let animationName = settingsAccessor?.getModelName() {
+            if let enumValue = AnimationModelName.init(rawValue: animationName) {
+                self.modelName = enumValue
+            }
+        }
         
         // this class will check for collisions
         physicsWorld.contactDelegate = self
@@ -62,12 +80,12 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     // this is called when we touch the scene, it's a simple test func
     func follow(position: SCNVector3) {
         // move it arround my char
-        playerNode.position = SCNVector3(Float(arc4random_uniform(5) + 1),0, Float(arc4random_uniform(5) + 1))
+        playerNode.position = SCNVector3(Float(arc4random_uniform(2) + 1),0, Float(arc4random_uniform(2) + 1))
     }
     
     func setUpChar(moveMode: Bool = true) {
         // load the char dae
-        let charModel = SCNScene(named: "art.scnassets/char.dae")
+        let charModel = SCNScene(named: "art.scnassets/\(modelName.rawValue).dae")
         if let charUnwrapped = charModel {
             
             // we need to do this as mixamo puts all on root level
@@ -79,6 +97,17 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
 //                 'face' the correct direction, for the look at
                 model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             }
+            
+            // work out the scale depending on the animations
+//            switch modelName {
+//            case .dreyar :
+//                model.scale = SCNVector3(0.001, 0.001, 0.001)
+////                model.position = SCNVector3(0, 1, 0)
+//            case .swat:
+//                model.scale = SCNVector3(0.001, 0.001, 0.001)
+//            default:
+//                model.scale = SCNVector3(0.01, 0.01, 0.01)
+//            }
             
             model.scale = SCNVector3(0.01, 0.01, 0.01)
             

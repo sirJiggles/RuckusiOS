@@ -35,6 +35,7 @@ enum Move: String {
     case idle
     case leftHook
     case rightHook
+    case bigCross
 }
 
 struct Combos: ReturnsCombos {

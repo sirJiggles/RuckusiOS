@@ -149,8 +149,6 @@
 		7FB5F5C91F4A10BE006BF8F3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5F5C81F4A1077006BF8F3 /* bell.mp3 */; };
 		7FB5F5CA1F4A10C1006BF8F3 /* round-end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5F5C71F4A0EC5006BF8F3 /* round-end.wav */; };
 		7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC67A51E5B88D500FBEB3B /* DifficultyCell.swift */; };
-		7FC156F91FF33B91001E8D4E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC156F61FF33B91001E8D4E /* spark.png */; };
-		7FC156FA1FF33B91001E8D4E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC156F61FF33B91001E8D4E /* spark.png */; };
 		7FC575D81EED5D17006DAD3E /* Reachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC575D71EED5D17006DAD3E /* Reachable.swift */; };
 		7FC575DA1EEDDC57006DAD3E /* SelectCellTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC575D91EEDDC57006DAD3E /* SelectCellTime.swift */; };
 		7FC61E181F5192D300645009 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */; };
@@ -424,7 +422,6 @@
 		7FB5F5C71F4A0EC5006BF8F3 /* round-end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "round-end.wav"; sourceTree = "<group>"; };
 		7FB5F5C81F4A1077006BF8F3 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		7FBC67A51E5B88D500FBEB3B /* DifficultyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyCell.swift; sourceTree = "<group>"; };
-		7FC156F61FF33B91001E8D4E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = art.scnassets/spark.png; sourceTree = "<group>"; };
 		7FC378A31EB2869A003DA72C /* SettingsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInterfaceController.swift; sourceTree = "<group>"; };
 		7FC378A51EB288EF003DA72C /* PickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		7FC575D71EED5D17006DAD3E /* Reachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachable.swift; sourceTree = "<group>"; };
@@ -957,7 +954,6 @@
 				7FB3580E1E4294EA00EF9BD2 /* LaunchScreen.storyboard */,
 				7FB358111E4294EA00EF9BD2 /* Info.plist */,
 				7F6127051E50BB4800ED1544 /* Settings.plist */,
-				7FC156F61FF33B91001E8D4E /* spark.png */,
 			);
 			path = ruckus;
 			sourceTree = "<group>";
@@ -1333,7 +1329,6 @@
 				7F692C011F4083DA00D768FB /* Sounds in Resources */,
 				7F89BD4F1F3E152300A74374 /* Impact.ttf in Resources */,
 				7FB3580D1E4294EA00EF9BD2 /* Assets.xcassets in Resources */,
-				7FC156F91FF33B91001E8D4E /* spark.png in Resources */,
 				7FFC06811F5C6D9C00F40EED /* crowd.wav in Resources */,
 				7FB3580B1E4294EA00EF9BD2 /* Main.storyboard in Resources */,
 				7FE390321F5C9F4F0006EBE7 /* Assets.xcassets in Resources */,
@@ -1368,7 +1363,6 @@
 				7FC61E451F5192D300645009 /* finished.wav in Resources */,
 				7FC61E461F5192D300645009 /* Sounds in Resources */,
 				7FC61E471F5192D300645009 /* Impact.ttf in Resources */,
-				7FC156FA1FF33B91001E8D4E /* spark.png in Resources */,
 				7FFC06801F5C6D9C00F40EED /* crowd.wav in Resources */,
 				7FC61E491F5192D300645009 /* Main.storyboard in Resources */,
 				7FE390311F5C9F4F0006EBE7 /* Assets.xcassets in Resources */,
