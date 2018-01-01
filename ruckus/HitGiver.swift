@@ -18,13 +18,11 @@ class HitGiver: GivesHites {
         [.jab, .jab, .cross, .idle],
         [.jab, .bigCross, .idle],
         [.bigCross, .idle],
-        [.jab, .cross, .leftHook, .idle],
-        [.leftHook, .rightHook, .jab, .idle],
-        [.jab, .leftHook, .idle],
-        [.leftHook, .bigCross, .idle],
-        [.cross, .leftHook, .idle],
+        [.jab, .cross, .idle],
+        [.rightHook, .jab, .idle],
         [.jab, .cross, .rightHook, .idle],
         [.rightHook, .jab, .cross, .idle],
+        [.rightHook, .jab, .bigCross, .idle],
         [.jab, .rightHook, .idle],
         [.jab, .jab, .idle]
     ]

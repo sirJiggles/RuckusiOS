@@ -12,8 +12,7 @@ import SceneKit
 class ARAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .cross, .idle, .leftHook, .rightHook, .bigCross]
-
+    let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
     
     var runningPlayer: SCNAnimationPlayer?
     var speed: Double = 1.0
@@ -46,9 +45,13 @@ class ARAnimationController {
         
         let combo = HitGiver.sharedInstance.getCombo()
         var i: Double = 0.0
+        var factor = 1.0
         for move in combo {
             playMove(named: move, after: i)
-            i = i + (1 / speed) - 0.2
+            if move == .bigCross {
+                factor = 2.0
+            }
+            i = i + (factor / speed) - 0.2
         }
     }
     
@@ -73,7 +76,6 @@ class ARAnimationController {
     
     func setUpMoves() {
         for animation in animations {
-            print("we are trying to find \(animation.rawValue).dae")
             let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/\(animation.rawValue).dae")
             
             switch (animation) {

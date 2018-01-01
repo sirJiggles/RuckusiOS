@@ -98,17 +98,6 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
                 model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             }
             
-            // work out the scale depending on the animations
-//            switch modelName {
-//            case .dreyar :
-//                model.scale = SCNVector3(0.001, 0.001, 0.001)
-////                model.position = SCNVector3(0, 1, 0)
-//            case .swat:
-//                model.scale = SCNVector3(0.001, 0.001, 0.001)
-//            default:
-//                model.scale = SCNVector3(0.01, 0.01, 0.01)
-//            }
-            
             model.scale = SCNVector3(0.01, 0.01, 0.01)
             
             // add some levels of detail for the main char to bring the size down
@@ -159,8 +148,6 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             // get up close and personal!
 //            if !moveMode {
 //                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
-//            } else {
-            
 //            }
             
             rootNode.addChildNode(modelWrapper)
