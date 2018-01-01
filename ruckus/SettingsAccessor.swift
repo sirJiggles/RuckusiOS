@@ -72,17 +72,6 @@ struct SettingsAccessor: GetsSettings {
         }
     }
     
-    func getARDifficulty() -> Float {
-        do {
-            if let difficulty = try settings.getValue(forKey: PossibleSetting.hitSpeed.rawValue) as? Float {
-                return difficulty
-            }
-            return 0.5
-        } catch let error {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
     func getModelName() -> String {
         do {
             if let model = try settings.getValue(forKey: PossibleSetting.model.rawValue) as? String {

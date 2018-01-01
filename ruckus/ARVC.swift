@@ -51,7 +51,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
 
         super.init(coder: aDecoder)
         
-        if let difficulty = self.settingsAccessor?.getARDifficulty() {
+        if let difficulty = self.settingsAccessor?.getDifficulty() {
             if difficulty > 0 {
                 invincibleTime = Double(0.08 / difficulty)
             } else {
@@ -61,6 +61,8 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         
         // we want to know about VC timer stuff
         timerVCDelegate = self
+        
+        isARVC = true
     }
     
     // MARK: - VC Lifecycle
@@ -260,14 +262,19 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         switch (timer.currentMode) {
         case .preparing:
             gameOverlay?.modeLabel.text = "Prepare"
+            scene.animationController?.didStop()
         case .resting:
             gameOverlay?.modeLabel.text = "Resting"
+            scene.animationController?.didStop()
         case .stretching:
             gameOverlay?.modeLabel.text = "Stretch"
+            scene.animationController?.didStop()
         case .warmup:
             gameOverlay?.modeLabel.text = "Warmup"
+            scene.animationController?.didStop()
         case .working:
             gameOverlay?.modeLabel.text = "Working"
+            scene.animationController?.didStart()
         }
     }
     
@@ -285,6 +292,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         gameOverlay?.timeLabel.text = time
     }
     
+    func didFinishPlayingCombo() {
+        // let the scene know to play a combo, only if call outs is enabled!
+        scene.animationController?.didFinnishCallingCombo()
+    }
+    
     func tick(newValue: Double) {
         // do nothing
     }
@@ -294,7 +306,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     }
     
     func finnishedUI() {
-        // do nothing
+        scene.animationController?.didStop()
     }
     
     func didStartUI() {
@@ -302,11 +314,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     }
     
     func stopWorkoutUI() {
-        // do nothing
+        scene.animationController?.didStop()
     }
     
     func pauseWorkoutUI() {
-        // do nothing
+        scene.animationController?.didStop()
     }
     
     // MARK: - IB actions

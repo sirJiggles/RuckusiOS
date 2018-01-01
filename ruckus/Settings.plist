@@ -269,13 +269,6 @@
 			<string>Other</string>
 		</array>
 	</dict>
-	<key>hitSpeed</key>
-	<dict>
-		<key>label</key>
-		<string>Hit Speed</string>
-		<key>value</key>
-		<real>0.5</real>
-	</dict>
 	<key>model</key>
 	<dict>
 		<key>descr</key>
@@ -289,7 +282,6 @@
 			<string>robot</string>
 			<string>futureMan</string>
 			<string>vanguard</string>
-			<string>heraklios</string>
 		</array>
 	</dict>
 </dict>

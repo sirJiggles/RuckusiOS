@@ -16,16 +16,24 @@ class ARAnimationController {
     
     var runningPlayer: SCNAnimationPlayer?
     var speed: Double = 1.0
+    var callOutsEnabled: Bool = true
     
     var settingsAccessor: SettingsAccessor?
+    
+    var aniamtionSequences: [Timer] = []
+    var attackTimer: Timer?
     
     static let sharedInstance = ARAnimationController()
     
     init() {
         settingsAccessor = SettingsAccessor()
         
-        if let difficulty = settingsAccessor?.getARDifficulty() {
+        if let difficulty = settingsAccessor?.getDifficulty() {
             speed = Double(difficulty + 1.0)
+        }
+        
+        if let enabled = settingsAccessor?.getCallOuts() {
+            callOutsEnabled = enabled
         }
     }
     
@@ -36,13 +44,11 @@ class ARAnimationController {
         
         // start with the idle stance on init
         playMove(named: .idle, after: 0)
-        
-        // just to test
-        Timer.scheduledTimer(timeInterval: 6.0 / speed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
     }
     
     @objc func runCombo() {
-        
+        // clear all the animation timers from the last combo
+        aniamtionSequences = []
         let combo = HitGiver.sharedInstance.getCombo()
         var i: Double = 0.0
         var factor = 1.0
@@ -55,10 +61,45 @@ class ARAnimationController {
         }
     }
     
+    // this is called way up on high when the hit calling is done with a combo
+    func didFinnishCallingCombo() {
+        if callOutsEnabled {
+            let startAgainSpeed = 3.0 / speed
+            attackTimer = Timer.scheduledTimer(timeInterval: startAgainSpeed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: false)
+        }
+    }
+    
+    // this gets called when we switch to a form of working mode
+    func didStart() {
+        // just go into full attack mode
+        if !callOutsEnabled {
+            attackTimer = Timer.scheduledTimer(timeInterval: 6.0 / speed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
+        }
+        
+        // the else is to just wait for the did finnish calling combo call
+    }
+    
+    // this gets called when we go into a paused / rest / ended mode
+    func didStop() {
+        // stop all that are qeued
+        for timer in aniamtionSequences {
+            timer.invalidate()
+        }
+        
+        attackTimer?.invalidate()
+        
+        // stop the animations running
+        for pl in players {
+            pl.stop(withBlendOutDuration: 0.2)
+        }
+        // play the idle
+        playMove(named: .idle, after: 0)
+    }
+    
     func playMove(named move: Move, after: Double) {
         if let player = model.animationPlayer(forKey: move.rawValue) {
-            Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: player, repeats: false)
-            
+            let move = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: player, repeats: false)
+            aniamtionSequences.append(move)
             runningPlayer = player
         }
     }

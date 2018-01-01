@@ -23,6 +23,7 @@ protocol TimableVCDelegate: class {
     func didStartUI() -> Void
     func stopWorkoutUI() -> Void
     func pauseWorkoutUI() -> Void
+    func didFinishPlayingCombo() -> Void
 }
 
 // this moves much of the functionality away from the VC
@@ -47,6 +48,8 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
     var crowedSoundsEnabled: Bool = false
     
     weak var timerVCDelegate: TimableVCDelegate?
+    
+    var isARVC: Bool = false
     
     required init?(coder aDecoder: NSCoder) {
         timer = IntervalTimer.sharedInstance
@@ -167,10 +170,17 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
             }
         }
         
+        comboPauseTime = (isARVC) ? 4.0 : 1.0
+        
         // update the difficulty, this is how often we will call our combos
         if let difficultySetting = settingsAccessor?.getDifficulty() {
             // this is the time offset for calling out the hits (beetween 4 and 0.5 seconds)
-            comboPauseTime = Double(4 - (3.5 * difficultySetting))
+            if isARVC {
+                // plus 3 seconds for the AR combo
+                comboPauseTime = Double((4 - (3.5 * difficultySetting)) + 3.0)
+            } else {
+                comboPauseTime = Double(4 - (3.5 * difficultySetting))
+            }
         }
         // set the volume on the sound player shared instance
         if let volumeSetting = settingsAccessor?.getVolume() {
@@ -353,6 +363,9 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
         if (comboTimer != nil) {
             comboTimer?.invalidate()
         }
+        
+        // if we have a finished playing delegate like the AR player, let it know it's time
+        timerVCDelegate?.didFinishPlayingCombo()
         
         comboTimer = Timer.scheduledTimer(timeInterval: comboPauseTime, target: self, selector: #selector(runComboAfterTime), userInfo: nil, repeats: false)
     }

@@ -20,7 +20,6 @@ enum AnimationModelName: String {
     case robot
     case futureMan
     case vanguard
-    case heraklios
 }
 
 class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
@@ -40,6 +39,8 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     var settingsAccessor: SettingsAccessor?
     // if the cam follows the user
     var moveMode: Bool = true
+    
+    var animationController: ARAnimationController?
     
     lazy var componentSystems:[GKComponentSystem] = {
         let targetSystem = GKComponentSystem(componentClass: TargetingAgent.self)
@@ -64,6 +65,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             moveMode = moveEnabled
         }
         
+        
         // this class will check for collisions
         physicsWorld.contactDelegate = self
         
@@ -80,7 +82,8 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         }
         
         // start callin the hits
-        let _ = ARAnimationController.init(withModel: model)
+        animationController = ARAnimationController.init(withModel: model)
+//        let _ = ARAnimationController.init(withModel: model)
     }
     
     // this is called when we touch the scene, it's a simple test func

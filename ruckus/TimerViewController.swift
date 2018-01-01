@@ -185,6 +185,10 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
         showPlayButton()
     }
     
+    func didFinishPlayingCombo() {
+        // do nothing
+    }
+    
     
     // MARK: - Delegate for the full page ad
     func createAndLoadInterstitial() {
