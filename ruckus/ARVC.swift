@@ -24,20 +24,28 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     @IBOutlet weak var leftEyeScene: SCNView!
     @IBOutlet weak var rightEyeScene: SCNView!
     
-    @IBOutlet weak var arSceneView: ARSCNView!
+    @IBOutlet weak var leftEyeSceneAR: ARSCNView!
+    @IBOutlet weak var rightEyeSceneAR: ARSCNView!
     
     @IBOutlet weak var leftEyeView: UIView!
     @IBOutlet weak var rightEyeView: UIView!
-    let scene = ARScene.init(create: true, moveMode: true)
     
-    let VRMode = true
+    let scene = ARScene.init(create: true)
     
     var gameOverlay: AROverlay?
     var punchCount: Int = 0
     var canBeHit: Bool = true
+    
+    let ARMode = false
+    
+    // this changes depending on AR mode
+    var leftScene: SCNView?
+    var rightScene: SCNView?
+    
+    var playOnLoad = true
 
-    // how long the user is untouchable, depends on difficulty
-    var invincibleTime = 0.3
+    // how long the user is untouchable, gets set based on difficulty
+    var invincibleTime = 0.08
     
     required init?(coder aDecoder: NSCoder) {
 
@@ -49,7 +57,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
             } else {
                 invincibleTime = 0.08
             }
-            print(invincibleTime)
         }
         
         // we want to know about VC timer stuff
@@ -60,42 +67,43 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // ARKit shizzle
-        //        let configuration = ARWorldTrackingConfiguration()
+        if ARMode {
+            let configuration = ARWorldTrackingConfiguration()
+            if let left = leftEyeScene as? ARSCNView {
+                left.session.run(configuration)
+            }
+        }
         
-        // Run the view's session
-        //        arSceneView.session.run(configuration)
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if ARMode {
+            leftScene = leftEyeSceneAR
+            rightScene = rightEyeSceneAR
+            
+            leftEyeScene.isHidden = true
+            rightEyeScene.isHidden = true
+        } else {
+            leftEyeSceneAR.isHidden = true
+            rightEyeSceneAR.isHidden = true
+            
+            leftScene = leftEyeScene
+            rightScene = rightEyeScene
+        }
+        
         // overlay configuration
         gameOverlay = AROverlay(parent: self, size: self.view.frame.size)
         
-        // AR version
-//        arSceneView.scene = scene
-//        arSceneView.allowsCameraControl = true
-//        arSceneView.showsStatistics = true
-        
-        
-        // normal verison
-        arSceneView.isHidden = true
-        
-        if VRMode {
-            setUpVRScene()
-        } else {
-            initSceneView(scnView)
-            // render delegate
-            scnView.delegate = scene
-        }
+        setUpVRScene()
         
         // delegate for sending punch signals
         scene.punchDelegate = self
         
         // if the timer is not started, start it now! (like a button click)
-        if !running {
-//            proceedWithPlayClick()
+        if !running && playOnLoad {
+            proceedWithPlayClick()
         }
     }
     
@@ -126,20 +134,20 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         rightEyeView.layer.cornerRadius = cornerSize
         rightEyeView.layer.masksToBounds = true
         
-        initSceneView(leftEyeScene, withDebug: true)
-        initSceneView(rightEyeScene, withDebug: false)
+        initSceneView(leftScene!, withDebug: true)
+        initSceneView(rightScene!, withDebug: false)
         
         // render delegate (in here for the VR stuff)
-        leftEyeScene.delegate = self
-        rightEyeScene.isPlaying = true
+        leftScene?.delegate = self
+        rightScene?.isPlaying = true
         
-        leftEyeScene.debugOptions = [
-            SCNDebugOptions.showPhysicsShapes,
+        leftScene?.debugOptions = [
+//            SCNDebugOptions.showPhysicsShapes,
 //            SCNDebugOptions.showBoundingBoxes
         ]
         
         // allows the user to manipulate the camera
-        leftEyeScene.allowsCameraControl = true
+        leftScene?.allowsCameraControl = true
         
         // add cam for the left eye lopez
         let cam = SCNCamera()
@@ -147,13 +155,13 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         let camNode = SCNNode()
         camNode.position = SCNVector3(0, 2, 3)
         camNode.camera = cam
-        leftEyeScene.scene?.rootNode.addChildNode(camNode)
-        leftEyeScene.pointOfView = camNode
+        leftScene?.scene?.rootNode.addChildNode(camNode)
+        leftScene?.pointOfView = camNode
         
         // overlay for both scenes
         if let overlay = gameOverlay {
-            leftEyeScene.overlaySKScene = overlay
-            rightEyeScene.overlaySKScene = overlay
+            leftScene?.overlaySKScene = overlay
+            rightScene?.overlaySKScene = overlay
         }
     }
     
@@ -207,7 +215,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     func updateFrame() {
         
         // Clone pointOfView for Second View
-        let pointOfView : SCNNode = (leftEyeScene.pointOfView?.clone())!
+        let pointOfView : SCNNode = (leftScene?.pointOfView?.clone())!
         
         // Determine Adjusted Position for Right Eye
         let orientation : SCNQuaternion = pointOfView.orientation

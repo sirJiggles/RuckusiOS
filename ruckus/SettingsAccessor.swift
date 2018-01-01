@@ -93,4 +93,15 @@ struct SettingsAccessor: GetsSettings {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func getMoveMode() -> Bool {
+        do {
+            if let enabled = try settings.getValue(forKey: PossibleSetting.arFollow.rawValue) as? String {
+                return (enabled == "1")
+            }
+            return true
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

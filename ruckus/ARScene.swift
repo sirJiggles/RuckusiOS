@@ -38,6 +38,8 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     
     var modelName: AnimationModelName = .robot
     var settingsAccessor: SettingsAccessor?
+    // if the cam follows the user
+    var moveMode: Bool = true
     
     lazy var componentSystems:[GKComponentSystem] = {
         let targetSystem = GKComponentSystem(componentClass: TargetingAgent.self)
@@ -47,7 +49,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     }()
     
     
-    convenience init(create: Bool, moveMode: Bool = true) {
+    convenience init(create: Bool) {
         self.init()
         
         settingsAccessor = SettingsAccessor()
@@ -58,12 +60,16 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             }
         }
         
+        if let moveEnabled = settingsAccessor?.getMoveMode() {
+            moveMode = moveEnabled
+        }
+        
         // this class will check for collisions
         physicsWorld.contactDelegate = self
         
         createPlayerNode()
         
-        setUpChar(moveMode: moveMode)
+        setUpChar()
         
         makeFloor()
         
@@ -83,7 +89,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         playerNode.position = SCNVector3(Float(arc4random_uniform(2) + 1),0, Float(arc4random_uniform(2) + 1))
     }
     
-    func setUpChar(moveMode: Bool = true) {
+    func setUpChar() {
         // load the char dae
         let charModel = SCNScene(named: "art.scnassets/\(modelName.rawValue).dae")
         if let charUnwrapped = charModel {
@@ -146,9 +152,9 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             
             
             // get up close and personal!
-//            if !moveMode {
-//                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
-//            }
+            if !moveMode {
+                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
+            }
             
             rootNode.addChildNode(modelWrapper)
             
