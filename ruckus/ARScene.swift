@@ -73,9 +73,9 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         
         setUpChar()
         
-        makeFloor()
+//        makeFloor()
         
-        ligntMeUp()
+//        ligntMeUp()
         
         if moveMode {
             createSeekingBehaviour()
@@ -83,7 +83,6 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         
         // start callin the hits
         animationController = ARAnimationController.init(withModel: model)
-//        let _ = ARAnimationController.init(withModel: model)
     }
     
     // this is called when we touch the scene, it's a simple test func
@@ -108,6 +107,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             }
             
             model.scale = SCNVector3(0.01, 0.01, 0.01)
+            model.position = SCNVector3(0,0,0)
             
             // add some levels of detail for the main char to bring the size down
             var levelsOfDetail: [SCNLevelOfDetail] = []
@@ -155,13 +155,18 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             
             
             // get up close and personal!
-            if !moveMode {
-                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
-            }
+//            if !moveMode {
+//                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
+//            }
             
-            rootNode.addChildNode(modelWrapper)
+//            rootNode.addChildNode(modelWrapper)
             
         }
+    }
+    
+    func setCharAt(position: SCNVector3) {
+        modelWrapper.position = position
+        rootNode.addChildNode(modelWrapper)
     }
     
     // set up the lights

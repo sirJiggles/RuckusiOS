@@ -18,12 +18,10 @@ protocol PunchInTheHeadDelegate {
     }
 }
 
-class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRendererDelegate, PunchInTheHeadDelegate {
+class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
-    @IBOutlet weak var scnView: SCNView!
-    @IBOutlet weak var leftEyeScene: SCNView!
-    @IBOutlet weak var rightEyeScene: SCNView!
     
+    @IBOutlet weak var fullScreenARView: ARSCNView!
     @IBOutlet weak var leftEyeSceneAR: ARSCNView!
     @IBOutlet weak var rightEyeSceneAR: ARSCNView!
     
@@ -36,16 +34,22 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     var punchCount: Int = 0
     var canBeHit: Bool = true
     
-    let ARMode = false
-    
-    // this changes depending on AR mode
-    var leftScene: SCNView?
-    var rightScene: SCNView?
-    
     var playOnLoad = true
 
     // how long the user is untouchable, gets set based on difficulty
     var invincibleTime = 0.08
+    
+    // plane detection and so on
+    let planeIdentifiers = [UUID]()
+    var anchors = [ARAnchor]()
+    var nodes = [SCNNode]()
+    // keep track of number of anchor nodes that are added into the scene
+    var planeNodesCount = 0
+    let planeHeight: CGFloat = 0.01
+    // set isPlaneSelected to true when user taps on the anchor plane to select.
+    var isPlaneSelected = false
+    
+    var started = false
     
     required init?(coder aDecoder: NSCoder) {
 
@@ -69,31 +73,23 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if ARMode {
-            let configuration = ARWorldTrackingConfiguration()
-            if let left = leftEyeScene as? ARSCNView {
-                left.session.run(configuration)
-            }
-        }
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        leftEyeSceneAR.session.run(configuration, options: [
+            ARSession.RunOptions.removeExistingAnchors,
+            ARSession.RunOptions.resetTracking
+        ])
         
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if ARMode {
-            leftScene = leftEyeSceneAR
-            rightScene = rightEyeSceneAR
-            
-            leftEyeScene.isHidden = true
-            rightEyeScene.isHidden = true
-        } else {
-            leftEyeSceneAR.isHidden = true
-            rightEyeSceneAR.isHidden = true
-            
-            leftScene = leftEyeScene
-            rightScene = rightEyeScene
-        }
+//        leftEyeView.isHidden = true
+//        leftEyeSceneAR.isHidden = true
+//        rightEyeSceneAR.isHidden = true
+//        rightEyeView.isHidden = true
+        fullScreenARView.isHidden = true
         
         // overlay configuration
         gameOverlay = AROverlay(parent: self, size: self.view.frame.size)
@@ -102,11 +98,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         
         // delegate for sending punch signals
         scene.punchDelegate = self
-        
-        // if the timer is not started, start it now! (like a button click)
-        if !running && playOnLoad {
-            proceedWithPlayClick()
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,17 +105,80 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - VC config
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .landscapeRight
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if started {
+            return
+        }
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: leftEyeSceneAR)
+        if !isPlaneSelected {
+            selectExistingPlane(location: location)
         } else {
-            return .portrait
+            addNodeAtLocation(location: location)
         }
     }
     
-    override var shouldAutorotate: Bool {
-        return true
+    // selects the anchor at the specified location and removes all other unused anchors
+    func selectExistingPlane(location: CGPoint) {
+        if started {
+            return
+        }
+        // Hit test result from intersecting with an existing plane anchor, taking into account the plane’s extent.
+        let hitResults = leftEyeSceneAR.hitTest(location, types: .existingPlaneUsingExtent)
+        if hitResults.count > 0 {
+            let result: ARHitTestResult = hitResults.first!
+            if let planeAnchor = result.anchor as? ARPlaneAnchor {
+                for var index in 0...anchors.count - 1 {
+                    // remove all the nodes from the scene except for the one that is selected
+                    if anchors[index].identifier != planeAnchor.identifier {
+                        leftEyeSceneAR.node(for: anchors[index])?.removeFromParentNode()
+                        leftEyeSceneAR.session.remove(anchor: anchors[index])
+                    }
+                    index += 1
+                }
+                // keep track of selected anchor only
+                anchors = [planeAnchor]
+                // set isPlaneSelected to true
+                isPlaneSelected = true
+                setPlaneTexture(node: leftEyeSceneAR.node(for: planeAnchor)!)
+            }
+        }
+    }
+    
+    func setPlaneTexture(node: SCNNode) {
+        if started {
+            return
+        }
+        if let geometryNode = node.childNodes.first {
+            if node.childNodes.count > 0 {
+                geometryNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "overlay_grid")
+                geometryNode.geometry?.firstMaterial?.locksAmbientWithDiffuse = true
+                geometryNode.geometry?.firstMaterial?.diffuse.wrapS = SCNWrapMode.repeat
+                geometryNode.geometry?.firstMaterial?.diffuse.wrapT = SCNWrapMode.repeat
+                geometryNode.geometry?.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
+            }
+        }
+    }
+    
+    func addNodeAtLocation(location: CGPoint) {
+        guard anchors.count > 0 else {
+            print("anchors are not created yet")
+            return
+        }
+        
+        if started {
+            return
+        }
+        
+        let hitResults = leftEyeSceneAR.hitTest(location, types: .existingPlaneUsingExtent)
+        if hitResults.count > 0 {
+            let result: ARHitTestResult = hitResults.first!
+            let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+            
+            scene.setCharAt(position: newLocation)
+            
+            donePositioningAndStart()
+        }
     }
     
     // MARK:- Helper functions
@@ -136,50 +190,45 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         rightEyeView.layer.cornerRadius = cornerSize
         rightEyeView.layer.masksToBounds = true
         
-        initSceneView(leftScene!, withDebug: true)
-        initSceneView(rightScene!, withDebug: false)
+//        fullScreenARView.scene = scene
+        leftEyeSceneAR.scene = scene
+        rightEyeSceneAR.scene = scene
         
         // render delegate (in here for the VR stuff)
-        leftScene?.delegate = self
-        rightScene?.isPlaying = true
+        leftEyeSceneAR.delegate = self
         
-        leftScene?.debugOptions = [
-//            SCNDebugOptions.showPhysicsShapes,
-//            SCNDebugOptions.showBoundingBoxes
-        ]
+        rightEyeSceneAR.isPlaying = true
         
-        // allows the user to manipulate the camera
-        leftScene?.allowsCameraControl = true
+        leftEyeSceneAR.automaticallyUpdatesLighting = true
         
-        // add cam for the left eye lopez
-        let cam = SCNCamera()
-        cam.zNear = 0.1
-        let camNode = SCNNode()
-        camNode.position = SCNVector3(0, 2, 3)
-        camNode.camera = cam
-        leftScene?.scene?.rootNode.addChildNode(camNode)
-        leftScene?.pointOfView = camNode
-        
-        // overlay for both scenes
-        if let overlay = gameOverlay {
-            leftScene?.overlaySKScene = overlay
-            rightScene?.overlaySKScene = overlay
-        }
+//        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
     }
     
-    func initSceneView(_ sceneView: SCNView, withDebug debug: Bool = false) {
+    func initSceneView(_ sceneView: ARSCNView, withDebug debug: Bool = false) {
         sceneView.scene = scene
         
-        // gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        
-        sceneView.addGestureRecognizer(tapGesture)
+//        // gesture recognizer
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+//
+//        sceneView.addGestureRecognizer(tapGesture)
         
         // show statistics such as fps and timing information
         sceneView.showsStatistics = debug
-        
-        // configure the view
-        sceneView.backgroundColor = UIColor.black
+    }
+    
+    func donePositioningAndStart() {
+        // if the timer is not started, start it now! (like a button click)
+        if !running && playOnLoad {
+            proceedWithPlayClick()
+            
+            started = true
+            
+            // overlay for both eyes
+            if let overlay = gameOverlay {
+                leftEyeSceneAR.overlaySKScene = overlay
+                rightEyeSceneAR.overlaySKScene = overlay
+            }
+        }
     }
     
     // debug for the move to functionality
@@ -214,26 +263,85 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
         }
     }
     
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        var node:  SCNNode?
+        if started {
+            return node
+        }
+        if let planeAnchor = anchor as? ARPlaneAnchor {
+            node = SCNNode()
+//            let geo = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+            let geo = SCNPlane(width: 1, height: 1)
+            geo.firstMaterial?.diffuse.contents = UIColor.green
+            let planeNode = SCNNode(geometry: geo)
+            planeNode.position = SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z)
+            planeNode.transform = SCNMatrix4MakeRotation(Float(-Double.pi / 2.0), 1.0, 0.0, 0.0);
+            node?.addChildNode(planeNode)
+            anchors.append(planeAnchor)
+            
+        } else {
+            // haven't encountered this scenario yet
+            print("not plane anchor \(anchor)")
+        }
+        return node
+    }
+    
+    // Called when a new node has been mapped to the given anchor
+    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if started {
+            return
+        }
+        planeNodesCount += 1
+        if node.childNodes.count > 0 && planeNodesCount % 2 == 0 {
+            node.childNodes[0].geometry?.firstMaterial?.diffuse.contents = UIColor.yellow
+        }
+    }
+    
+    // Called when a node has been updated with data from the given anchor
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        if started {
+            return
+        }
+        // update the anchor node size only if the plane is not already selected.
+        guard !isPlaneSelected else {
+            return
+        }
+        
+        if let planeAnchor = anchor as? ARPlaneAnchor {
+            if anchors.contains(planeAnchor) {
+                if node.childNodes.count > 0 {
+                    let planeNode = node.childNodes.first!
+                    planeNode.position = SCNVector3Make(planeAnchor.center.x, Float(planeHeight / 2), planeAnchor.center.z)
+                    if let plane = planeNode.geometry as? SCNBox {
+                        plane.width = CGFloat(planeAnchor.extent.x)
+                        plane.length = CGFloat(planeAnchor.extent.z)
+                        plane.height = planeHeight
+                    }
+                }
+            }
+        }
+    }
+    
     func updateFrame() {
         
         // Clone pointOfView for Second View
-        let pointOfView : SCNNode = (leftScene?.pointOfView?.clone())!
-        
+        let pointOfView : SCNNode = (leftEyeSceneAR.pointOfView?.clone())!
+
         // Determine Adjusted Position for Right Eye
         let orientation : SCNQuaternion = pointOfView.orientation
         let orientationQuaternion : GLKQuaternion = GLKQuaternionMake(orientation.x, orientation.y, orientation.z, orientation.w)
         let eyePos : GLKVector3 = GLKVector3Make(1.0, 0.0, 0.0)
         let rotatedEyePos : GLKVector3 = GLKQuaternionRotateVector3(orientationQuaternion, eyePos)
         let rotatedEyePosSCNV : SCNVector3 = SCNVector3Make(rotatedEyePos.x, rotatedEyePos.y, rotatedEyePos.z)
-        
+
         let mag : Float = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
         pointOfView.position.x += rotatedEyePosSCNV.x * mag
         pointOfView.position.y += rotatedEyePosSCNV.y * mag
         pointOfView.position.z += rotatedEyePosSCNV.z * mag
-        
+
         // Set PointOfView for SecondView
-        rightEyeScene.pointOfView = pointOfView
-        
+        rightEyeSceneAR.pointOfView = pointOfView
+
     }
     
     // MARK: - delegate functions for the timable VC!
@@ -320,11 +428,5 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, SCNSceneRen
     func pauseWorkoutUI() {
         scene.animationController?.didStop()
     }
-    
-    // MARK: - IB actions
-    @IBAction func doubleTapThat(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 
 }

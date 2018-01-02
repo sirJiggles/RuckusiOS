@@ -316,7 +316,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="57" id="RZi-nM-MWx" customClass="ButtonCell" customModule="ruckus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="57" id="RZi-nM-MWx" customClass="ButtonCell" customModule="ruckus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RZi-nM-MWx" id="pwk-Cd-aRE">
@@ -357,7 +357,7 @@
                                             <outlet property="button" destination="vf0-ss-qwq" id="tdb-MR-eey"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="toggleCell" rowHeight="57" id="bnk-uI-cju" customClass="ToggleCell" customModule="ruckus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="toggleCell" rowHeight="57" id="bnk-uI-cju" customClass="ToggleCell" customModule="ruckus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="85" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bnk-uI-cju" id="2hd-gk-pGm">
@@ -409,7 +409,7 @@
                                             <outlet property="toggleSwitch" destination="eN4-Cg-AUU" id="POQ-o3-GGc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectCellTime" rowHeight="280" id="p1I-7g-Q9k" userLabel="selectCellTime" customClass="SelectCellTime" customModule="ruckus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectCellTime" rowHeight="280" id="p1I-7g-Q9k" userLabel="selectCellTime" customClass="SelectCellTime" customModule="ruckus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="142" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p1I-7g-Q9k" id="6Rq-gE-ico">
@@ -495,7 +495,7 @@
                                             <outlet property="selectedValue" destination="TPh-EC-fd2" id="Ykh-kI-91q"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectCell" rowHeight="280" id="Bsf-F9-nkv" userLabel="selectCell" customClass="SelectCell" customModule="ruckus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectCell" rowHeight="280" id="Bsf-F9-nkv" userLabel="selectCell" customClass="SelectCell" customModule="ruckus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="422" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bsf-F9-nkv" id="jNx-A2-ULJ">
@@ -587,7 +587,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uo8-5N-Fgc">
-                                                    <rect key="frame" x="45" y="14" width="228" height="31"/>
+                                                    <rect key="frame" x="45" y="14" width="283" height="31"/>
                                                     <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="changeDifficultyValue:forEvent:" destination="awe-PQ-acA" eventType="valueChanged" id="dck-sm-FOV"/>
@@ -595,7 +595,7 @@
                                                     </connections>
                                                 </slider>
                                                 <imageView userInteractionEnabled="NO" alpha="0.5" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angry" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-52-pM6">
-                                                    <rect key="frame" x="281" y="13" width="29" height="29"/>
+                                                    <rect key="frame" x="336" y="13" width="29" height="29"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="FXg-ZW-68U"/>
@@ -629,7 +629,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-AS-XOv">
-                                                    <rect key="frame" x="16" y="13" width="288" height="31"/>
+                                                    <rect key="frame" x="16" y="13" width="343" height="31"/>
                                                     <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="endTouch:" destination="oHo-b6-XdW" eventType="touchUpInside" id="IKE-qd-phl"/>
@@ -657,7 +657,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGs-Ia-7fw">
-                                                    <rect key="frame" x="125" y="10" width="70" height="70"/>
+                                                    <rect key="frame" x="152.5" y="10" width="70" height="70"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="oQ8-CL-3Lr"/>
@@ -871,7 +871,7 @@ none of the ads</string>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="creditsCell" rowHeight="57" id="es0-gM-MN6" userLabel="creditCell" customClass="CreditsCell" customModule="ruckus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="creditsCell" rowHeight="57" id="es0-gM-MN6" userLabel="creditCell" customClass="CreditsCell" customModule="ruckus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="es0-gM-MN6" id="g2H-AB-4iF">
@@ -998,7 +998,7 @@ none of the ads</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="455" id="WDR-c0-vwC" userLabel="FoldingCell" customClass="HelpCell" customModule="ruckus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="455" id="WDR-c0-vwC" userLabel="FoldingCell" customClass="HelpCell" customModule="ruckus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="455"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WDR-c0-vwC" id="wlT-HW-huL">
@@ -1617,18 +1617,12 @@ none of the ads</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oQ-vb-nN4" userLabel="fullScene">
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-Ga-Pg6" userLabel="fullScreenAR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </sceneKitView>
+                            </arscnView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zs-Pn-F38" userLabel="LeftEyeView">
                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
                                 <subviews>
-                                    <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-kL-eky" userLabel="LeftEyeScene">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="BXY-oi-jN4" appends="YES" id="hAV-Bl-GXo"/>
-                                        </connections>
-                                    </sceneKitView>
                                     <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-oo-Z02" userLabel="LeftEyeAR">
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
                                         <gestureRecognizers/>
@@ -1636,40 +1630,25 @@ none of the ads</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="CQL-kL-eky" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="1kX-Ac-5Lg"/>
-                                    <constraint firstAttribute="bottom" secondItem="CQL-kL-eky" secondAttribute="bottom" id="5me-9N-dwA"/>
                                     <constraint firstItem="Iyn-oo-Z02" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="JbY-iR-9mb"/>
-                                    <constraint firstAttribute="trailing" secondItem="CQL-kL-eky" secondAttribute="trailing" id="XJP-mW-bp0"/>
                                     <constraint firstItem="Iyn-oo-Z02" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="aIm-E5-hae"/>
                                     <constraint firstAttribute="bottom" secondItem="Iyn-oo-Z02" secondAttribute="bottom" id="b58-pG-9Yv"/>
-                                    <constraint firstItem="CQL-kL-eky" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="lF3-3A-yiM"/>
                                     <constraint firstAttribute="trailing" secondItem="Iyn-oo-Z02" secondAttribute="trailing" id="y3d-xh-nJn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iji-vP-t44" userLabel="RightEyeView">
                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="667"/>
                                 <subviews>
-                                    <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-R7-AaM" userLabel="RightEyeScene">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="BXY-oi-jN4" appends="YES" id="NID-7g-xlK"/>
-                                        </connections>
-                                    </sceneKitView>
                                     <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-sa-iW0" userLabel="RightEyeAR">
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
                                     </arscnView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="r5m-R7-AaM" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="STr-0v-hum"/>
-                                    <constraint firstAttribute="bottom" secondItem="r5m-R7-AaM" secondAttribute="bottom" id="emk-GW-vp3"/>
                                     <constraint firstAttribute="bottom" secondItem="t4y-sa-iW0" secondAttribute="bottom" id="hNT-6d-bIR"/>
                                     <constraint firstItem="t4y-sa-iW0" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="jbe-bC-mPH"/>
                                     <constraint firstAttribute="trailing" secondItem="t4y-sa-iW0" secondAttribute="trailing" id="mdG-rg-nyR"/>
                                     <constraint firstItem="t4y-sa-iW0" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="pxd-LE-RSu"/>
-                                    <constraint firstItem="r5m-R7-AaM" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="s2t-MJ-ViX"/>
-                                    <constraint firstAttribute="trailing" secondItem="r5m-R7-AaM" secondAttribute="trailing" id="vEG-0K-SX3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1677,40 +1656,30 @@ none of the ads</string>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Iji-vP-t44" secondAttribute="trailing" id="6xc-vo-J1D"/>
-                            <constraint firstItem="2oQ-vb-nN4" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="BZL-sA-Ttz"/>
                             <constraint firstItem="2zs-Pn-F38" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="Cko-53-TyK"/>
-                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="2oQ-vb-nN4" secondAttribute="bottom" id="E4L-zE-xd6"/>
                             <constraint firstItem="Iji-vP-t44" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="trailing" id="GmI-EJ-uSX"/>
-                            <constraint firstItem="2oQ-vb-nN4" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="MG8-AY-JeK"/>
                             <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="bottom" id="Q2L-2K-qEw"/>
-                            <constraint firstAttribute="trailing" secondItem="2oQ-vb-nN4" secondAttribute="trailing" id="XD1-zy-pYU"/>
+                            <constraint firstItem="WhK-Ga-Pg6" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="SR4-08-msc"/>
                             <constraint firstItem="Iji-vP-t44" firstAttribute="width" secondItem="2zs-Pn-F38" secondAttribute="width" id="XiD-Fb-pST"/>
+                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="WhK-Ga-Pg6" secondAttribute="bottom" id="XjY-zt-WKF"/>
                             <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="bottom" id="Y3i-Tn-R9x"/>
                             <constraint firstItem="Iji-vP-t44" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="aBC-ss-YlB"/>
+                            <constraint firstAttribute="trailing" secondItem="WhK-Ga-Pg6" secondAttribute="trailing" id="ihH-2u-ell"/>
                             <constraint firstItem="2zs-Pn-F38" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="lO9-G1-c0L"/>
+                            <constraint firstItem="WhK-Ga-Pg6" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="paV-M2-nvi"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="BXY-oi-jN4" appends="YES" id="2Tg-ML-SvG"/>
-                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="ARBoxing" image="gloves" id="Ztn-t9-5NX"/>
                     <connections>
-                        <outlet property="leftEyeScene" destination="CQL-kL-eky" id="wNu-WT-rD4"/>
+                        <outlet property="fullScreenARView" destination="WhK-Ga-Pg6" id="ncJ-Xg-57j"/>
                         <outlet property="leftEyeSceneAR" destination="Iyn-oo-Z02" id="HDN-Mo-Znz"/>
                         <outlet property="leftEyeView" destination="2zs-Pn-F38" id="8SZ-6C-DQz"/>
-                        <outlet property="rightEyeScene" destination="r5m-R7-AaM" id="foE-zg-DWi"/>
                         <outlet property="rightEyeSceneAR" destination="t4y-sa-iW0" id="WTC-63-hxv"/>
                         <outlet property="rightEyeView" destination="Iji-vP-t44" id="RyV-b6-tHx"/>
-                        <outlet property="scnView" destination="2oQ-vb-nN4" id="1OH-WX-OxF"/>
                         <segue destination="XFC-7j-dmq" kind="presentation" identifier="workoutFinishedFromTimer" id="bfH-a8-V8R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hca-Yc-cYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="BXY-oi-jN4">
-                    <connections>
-                        <action selector="doubleTapThat:" destination="vPz-ww-a1l" id="RrD-2W-Qes"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1983.2" y="1792.353823088456"/>
         </scene>
