@@ -28,6 +28,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     @IBOutlet weak var leftEyeView: UIView!
     @IBOutlet weak var rightEyeView: UIView!
     
+    
     let scene = ARScene.init(create: true)
     
     var gameOverlay: AROverlay?
