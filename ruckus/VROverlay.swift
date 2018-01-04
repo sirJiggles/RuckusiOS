@@ -9,8 +9,8 @@ import UIKit
 import SpriteKit
 
 
-class AROverlay: SKScene {
-    weak var parentView: ARVC?
+class VROverlay: SKScene {
+    weak var parentView: VRVC?
     
     // UI components (that need to be modified)
     var timeLabel = SKLabelNode(text: "00:00")
@@ -18,7 +18,7 @@ class AROverlay: SKScene {
     var roundLabel = SKLabelNode(text: "Round: 1")
     var punchLabel = SKLabelNode(text: "Hits: 0")
     
-    convenience init(parent: ARVC, size: CGSize) {
+    convenience init(parent: VRVC, size: CGSize) {
         self.init(sceneSize: size)
         
         parentView = parent

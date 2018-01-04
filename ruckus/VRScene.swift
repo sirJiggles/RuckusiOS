@@ -22,7 +22,7 @@ enum AnimationModelName: String {
     case vanguard
 }
 
-class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
+class VRScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
     
@@ -40,7 +40,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     // if the cam follows the user
     var moveMode: Bool = true
     
-    var animationController: ARAnimationController?
+    var animationController: VRAnimationController?
     
     lazy var componentSystems:[GKComponentSystem] = {
         let targetSystem = GKComponentSystem(componentClass: TargetingAgent.self)
@@ -82,7 +82,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         }
         
         // start callin the hits
-        animationController = ARAnimationController.init(withModel: model)
+        animationController = VRAnimationController.init(withModel: model)
     }
     
     // this is called when we touch the scene, it's a simple test func

@@ -1123,10 +1123,10 @@ none of the ads</string>
             </objects>
             <point key="canvasLocation" x="1970.625" y="991.90140845070425"/>
         </scene>
-        <!--AR Intro Boxing-->
+        <!--VR Intro Boxing-->
         <scene sceneID="FB1-0P-QIe">
             <objects>
-                <viewController id="1Yg-yA-J9M" userLabel="AR Intro Boxing" customClass="ARIntroVC" customModule="ruckus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1Yg-yA-J9M" userLabel="VR Intro Boxing" customClass="VRIntroVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oYj-DM-UpT"/>
                         <viewControllerLayoutGuide type="bottom" id="csh-LQ-Yxc"/>
@@ -1605,10 +1605,10 @@ none of the ads</string>
             </objects>
             <point key="canvasLocation" x="-1125" y="1793.661971830986"/>
         </scene>
-        <!--ARBoxing-->
+        <!--VRBoxing-->
         <scene sceneID="STn-8a-awG">
             <objects>
-                <viewController id="vPz-ww-a1l" customClass="ARVC" customModule="ruckus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vPz-ww-a1l" userLabel="VRBoxing" customClass="VRVC" customModule="ruckus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uj4-k8-Ed6"/>
                         <viewControllerLayoutGuide type="bottom" id="8EN-y4-dhQ"/>
@@ -1617,65 +1617,22 @@ none of the ads</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-Ga-Pg6" userLabel="fullScreenAR">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTQ-RG-MIT" userLabel="Scene">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </arscnView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zs-Pn-F38" userLabel="LeftEyeView">
-                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
-                                <subviews>
-                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-oo-Z02" userLabel="LeftEyeAR">
-                                        <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
-                                        <gestureRecognizers/>
-                                    </arscnView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Iyn-oo-Z02" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="JbY-iR-9mb"/>
-                                    <constraint firstItem="Iyn-oo-Z02" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="aIm-E5-hae"/>
-                                    <constraint firstAttribute="bottom" secondItem="Iyn-oo-Z02" secondAttribute="bottom" id="b58-pG-9Yv"/>
-                                    <constraint firstAttribute="trailing" secondItem="Iyn-oo-Z02" secondAttribute="trailing" id="y3d-xh-nJn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iji-vP-t44" userLabel="RightEyeView">
-                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="667"/>
-                                <subviews>
-                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-sa-iW0" userLabel="RightEyeAR">
-                                        <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
-                                    </arscnView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="t4y-sa-iW0" secondAttribute="bottom" id="hNT-6d-bIR"/>
-                                    <constraint firstItem="t4y-sa-iW0" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="jbe-bC-mPH"/>
-                                    <constraint firstAttribute="trailing" secondItem="t4y-sa-iW0" secondAttribute="trailing" id="mdG-rg-nyR"/>
-                                    <constraint firstItem="t4y-sa-iW0" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="pxd-LE-RSu"/>
-                                </constraints>
-                            </view>
+                            </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Iji-vP-t44" secondAttribute="trailing" id="6xc-vo-J1D"/>
-                            <constraint firstItem="2zs-Pn-F38" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="Cko-53-TyK"/>
-                            <constraint firstItem="Iji-vP-t44" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="trailing" id="GmI-EJ-uSX"/>
-                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="bottom" id="Q2L-2K-qEw"/>
-                            <constraint firstItem="WhK-Ga-Pg6" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="SR4-08-msc"/>
-                            <constraint firstItem="Iji-vP-t44" firstAttribute="width" secondItem="2zs-Pn-F38" secondAttribute="width" id="XiD-Fb-pST"/>
-                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="WhK-Ga-Pg6" secondAttribute="bottom" id="XjY-zt-WKF"/>
-                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="bottom" id="Y3i-Tn-R9x"/>
-                            <constraint firstItem="Iji-vP-t44" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="aBC-ss-YlB"/>
-                            <constraint firstAttribute="trailing" secondItem="WhK-Ga-Pg6" secondAttribute="trailing" id="ihH-2u-ell"/>
-                            <constraint firstItem="2zs-Pn-F38" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="lO9-G1-c0L"/>
-                            <constraint firstItem="WhK-Ga-Pg6" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="paV-M2-nvi"/>
+                            <constraint firstAttribute="trailing" secondItem="gTQ-RG-MIT" secondAttribute="trailing" id="Qnh-Ck-svn"/>
+                            <constraint firstItem="gTQ-RG-MIT" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="T9O-al-efJ"/>
+                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="gTQ-RG-MIT" secondAttribute="bottom" id="qHS-b1-Yes"/>
+                            <constraint firstItem="gTQ-RG-MIT" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="sLE-Gp-4IZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ARBoxing" image="gloves" id="Ztn-t9-5NX"/>
                     <connections>
-                        <outlet property="fullScreenARView" destination="WhK-Ga-Pg6" id="ncJ-Xg-57j"/>
-                        <outlet property="leftEyeSceneAR" destination="Iyn-oo-Z02" id="HDN-Mo-Znz"/>
-                        <outlet property="leftEyeView" destination="2zs-Pn-F38" id="8SZ-6C-DQz"/>
-                        <outlet property="rightEyeSceneAR" destination="t4y-sa-iW0" id="WTC-63-hxv"/>
-                        <outlet property="rightEyeView" destination="Iji-vP-t44" id="RyV-b6-tHx"/>
+                        <outlet property="sceneView" destination="gTQ-RG-MIT" id="5qZ-SM-bV5"/>
                         <segue destination="XFC-7j-dmq" kind="presentation" identifier="workoutFinishedFromTimer" id="bfH-a8-V8R"/>
                     </connections>
                 </viewController>

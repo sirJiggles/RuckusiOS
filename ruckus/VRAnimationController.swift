@@ -1,5 +1,5 @@
 //
-//  ARAnimationController.swift
+//  VRAnimationController.swift
 //  ruckus
 //
 //  Created by Gareth on 26.12.17.
@@ -9,7 +9,7 @@
 import Foundation
 import SceneKit
 
-class ARAnimationController {
+class VRAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
     let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
@@ -23,7 +23,7 @@ class ARAnimationController {
     var aniamtionSequences: [Timer] = []
     var attackTimer: Timer?
     
-    static let sharedInstance = ARAnimationController()
+    static let sharedInstance = VRAnimationController()
     
     init() {
         settingsAccessor = SettingsAccessor()

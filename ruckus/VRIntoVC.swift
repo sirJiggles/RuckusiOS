@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ARIntroVC: UIViewController {
+class VRIntroVC: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }

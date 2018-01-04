@@ -49,7 +49,7 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
     
     weak var timerVCDelegate: TimableVCDelegate?
     
-    var isARVC: Bool = false
+    var isVRVC: Bool = false
     
     required init?(coder aDecoder: NSCoder) {
         timer = IntervalTimer.sharedInstance
@@ -170,12 +170,12 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
             }
         }
         
-        comboPauseTime = (isARVC) ? 4.0 : 1.0
+        comboPauseTime = (isVRVC) ? 4.0 : 1.0
         
         // update the difficulty, this is how often we will call our combos
         if let difficultySetting = settingsAccessor?.getDifficulty() {
             // this is the time offset for calling out the hits (beetween 4 and 0.5 seconds)
-            if isARVC {
+            if isVRVC {
                 // plus 3 seconds for the AR combo
                 comboPauseTime = Double((4 - (3.5 * difficultySetting)) + 3.0)
             } else {
