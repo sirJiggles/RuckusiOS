@@ -4,7 +4,7 @@
 def ruckusPods
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
-    
+
     # Pods for ruckus
     pod 'MKRingProgressView', '~> 1.1'
     pod 'FoldingCell', '~> 2.0.3'
@@ -14,7 +14,7 @@ def ruckusPods
     pod 'Google-Mobile-Ads-SDK'
     pod 'Fabric'
     pod 'Crashlytics'
-#    pod 'CardboardSDK', '~> 0.7'
+    pod 'GVRSDK'
 end
 
 target 'ruckus' do

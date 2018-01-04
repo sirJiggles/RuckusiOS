@@ -110,7 +110,9 @@ class GoProViewController: UIViewController {
     // After a payment we check that the reciept is valid
     func validateReceipt() {
         let appleValidator = AppleReceiptValidator(service: .production)
-        SwiftyStoreKit.verifyReceipt(using: appleValidator, password: ValidationChecks.secret.rawValue) { result in
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+        
+//        SwiftyStoreKit.verifyReceipt(using: appleValidator, password: ValidationChecks.secret.rawValue) { result in
             switch result {
             case .success(let receipt):
                 // Verify the purchase of Consumable or NonConsumable

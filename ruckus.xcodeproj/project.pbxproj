@@ -85,6 +85,10 @@
 		7F3370871F5B7B100076E7A6 /* ruckus.lite.watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */; };
 		7F33708A1F5B7B230076E7A6 /* ruckus.lite.watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F340E981EF719B000AE3DEB /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F340E961EF719AB00AE3DEB /* XCUIElement.swift */; };
+		7F34DA8B1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */; };
+		7F34DA8C1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */; };
+		7F34DA8E1FFEF12C003D3AA0 /* VRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */; };
+		7F34DA8F1FFEF12C003D3AA0 /* VRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */; };
 		7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */; };
 		7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */; };
 		7F4D9FE01EE44D920049ADA8 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDC1EE44D920049ADA8 /* pause.wav */; };
@@ -365,6 +369,8 @@
 		7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ruckus.lite.watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F33705B1F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F340E961EF719AB00AE3DEB /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
+		7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRRenderLoop.swift; sourceTree = "<group>"; };
+		7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRController.swift; sourceTree = "<group>"; };
 		7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
 		7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		7F4D9FDC1EE44D920049ADA8 /* pause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pause.wav; sourceTree = "<group>"; };
@@ -391,6 +397,8 @@
 		7F7775641F40AF140037B49F /* SettingsAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccessor.swift; sourceTree = "<group>"; };
 		7F7775701F40BF160037B49F /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		7F7775721F40BF270037B49F /* HitCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitCaller.swift; sourceTree = "<group>"; };
+		7F8219E21FFED8A00077D77D /* ruckus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ruckus-Bridging-Header.h"; sourceTree = "<group>"; };
+		7F8219E31FFED8A00077D77D /* ruckus.lite-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ruckus.lite-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F83E53A1E53AB530019A31F /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		7F8593A21FF130B90085DB3E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		7F8593A51FF130C60085DB3E /* VRVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRVC.swift; sourceTree = "<group>"; };
@@ -734,6 +742,8 @@
 				7F018A1F1F4BECF200BC044F /* VolumeCell.swift */,
 				7FDE6B9A1FF2F26C00502F4A /* VRAnimationController.swift */,
 				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
+				7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */,
+				7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -954,6 +964,8 @@
 				7FB3580E1E4294EA00EF9BD2 /* LaunchScreen.storyboard */,
 				7FB358111E4294EA00EF9BD2 /* Info.plist */,
 				7F6127051E50BB4800ED1544 /* Settings.plist */,
+				7F8219E21FFED8A00077D77D /* ruckus-Bridging-Header.h */,
+				7F8219E31FFED8A00077D77D /* ruckus.lite-Bridging-Header.h */,
 			);
 			path = ruckus;
 			sourceTree = "<group>";
@@ -1210,7 +1222,7 @@
 					7FB357FF1E4294EA00EF9BD2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WMQYY9222D;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1240,6 +1252,7 @@
 					};
 					7FC61E131F5192D300645009 = {
 						DevelopmentTeam = WMQYY9222D;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1800,6 +1813,7 @@
 				7FDE6B9B1FF2F26C00502F4A /* VRAnimationController.swift in Sources */,
 				7F8593A61FF130C60085DB3E /* VRVC.swift in Sources */,
 				7F76939F1EE37C950036DED7 /* CreditsCell.swift in Sources */,
+				7F34DA8B1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */,
 				7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */,
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
@@ -1844,6 +1858,7 @@
 				7FCD8A6B1FF71F9400180075 /* VRIntoVC.swift in Sources */,
 				7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */,
+				7F34DA8E1FFEF12C003D3AA0 /* VRController.swift in Sources */,
 				7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */,
 				7F7775711F40BF1F0037B49F /* SoundPlayer.swift in Sources */,
 				7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */,
@@ -1887,6 +1902,7 @@
 				7FDE6B9C1FF2F26C00502F4A /* VRAnimationController.swift in Sources */,
 				7F8593A71FF130C60085DB3E /* VRVC.swift in Sources */,
 				7FC61E191F5192D300645009 /* CreditsCell.swift in Sources */,
+				7F34DA8C1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */,
 				7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */,
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
@@ -1931,6 +1947,7 @@
 				7FCD8A6C1FF71F9400180075 /* VRIntoVC.swift in Sources */,
 				7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */,
+				7F34DA8F1FFEF12C003D3AA0 /* VRController.swift in Sources */,
 				7FC61E3A1F5192D300645009 /* ScrollCell.swift in Sources */,
 				7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */,
 				7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */,
@@ -2282,6 +2299,7 @@
 			baseConfigurationReference = 862A59C76E7A93C5186A93F1 /* Pods-ruckus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ruckus/ruckus.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2293,9 +2311,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ruckus/ruckus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -2304,6 +2325,7 @@
 			baseConfigurationReference = 976240D7952CD0844046E65F /* Pods-ruckus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ruckus/ruckus.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2315,9 +2337,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ruckus/ruckus-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -2396,6 +2420,7 @@
 			baseConfigurationReference = 67FE73F8ECBE73E345638F35 /* Pods-ruckus.lite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ruckus/ruckus.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2407,6 +2432,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ruckus/ruckus.lite-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2418,6 +2445,7 @@
 			baseConfigurationReference = 45C2ACB459B74D3F6097A8B7 /* Pods-ruckus.lite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ruckus/ruckus.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2429,6 +2457,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ruckus/ruckus.lite-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

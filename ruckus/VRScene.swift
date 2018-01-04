@@ -22,7 +22,9 @@ enum AnimationModelName: String {
     case vanguard
 }
 
-class VRScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
+//SCNSceneRendererDelegate
+
+class VRScene: SCNScene, SCNPhysicsContactDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
     
@@ -69,20 +71,20 @@ class VRScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         // this class will check for collisions
         physicsWorld.contactDelegate = self
         
-        createPlayerNode()
+//        createPlayerNode()
         
-        setUpChar()
+//        setUpChar()
         
-//        makeFloor()
+        makeFloor()
         
 //        ligntMeUp()
         
-        if moveMode {
-            createSeekingBehaviour()
-        }
+//        if moveMode {
+//            createSeekingBehaviour()
+//        }
         
         // start callin the hits
-        animationController = VRAnimationController.init(withModel: model)
+//        animationController = VRAnimationController.init(withModel: model)
     }
     
     // this is called when we touch the scene, it's a simple test func
@@ -154,12 +156,12 @@ class VRScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             modelWrapper.addChildNode(model)
             
             
-            // get up close and personal!
-//            if !moveMode {
-//                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
-//            }
+//             get up close and personal!
+            if !moveMode {
+                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
+            }
             
-//            rootNode.addChildNode(modelWrapper)
+            rootNode.addChildNode(modelWrapper)
             
         }
     }
@@ -266,38 +268,38 @@ class VRScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     }
     
     // MARK:- Render delegate
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        update(updateAtTime: time)
-    }
-    
-    func update(updateAtTime time: TimeInterval) {
-        // update the component systems in the scene on render
-        // this is game loop!
-        let dt: Double
-        
-        if let lt = timeLast {
-            dt = time - lt
-        } else {
-            dt = 0
-        }
-        
-        // update the agents
-        if let pl = player {
-            if let component = pl.component(ofType: NodeComponent.self) {
-                modelWrapper.look(at: component.node.position)
-            }
-            pl.agent.update(deltaTime: dt)
-        }
-
-        fighter?.agent.update(deltaTime: dt)
-        
-        
-        //        for componentSystem in componentSystems {
-        //            componentSystem.update(deltaTime: dt)
-        //        }
-        
-        timeLast = time
-    }
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//        update(updateAtTime: time)
+//    }
+//
+//    func update(updateAtTime time: TimeInterval) {
+//        // update the component systems in the scene on render
+//        // this is game loop!
+//        let dt: Double
+//
+//        if let lt = timeLast {
+//            dt = time - lt
+//        } else {
+//            dt = 0
+//        }
+//
+//        // update the agents
+//        if let pl = player {
+//            if let component = pl.component(ofType: NodeComponent.self) {
+//                modelWrapper.look(at: component.node.position)
+//            }
+//            pl.agent.update(deltaTime: dt)
+//        }
+//
+//        fighter?.agent.update(deltaTime: dt)
+//
+//
+//        //        for componentSystem in componentSystems {
+//        //            componentSystem.update(deltaTime: dt)
+//        //        }
+//
+//        timeLast = time
+//    }
 }
 
 
