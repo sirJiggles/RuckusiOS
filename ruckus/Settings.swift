@@ -126,8 +126,8 @@ class Settings {
         }
         
         // check if we have the key in the deafults
-        if let enabledFromInternalPlist = self.defaultsPlist[key]?["enabled"] {
-            return enabledFromInternalPlist as? Bool
+        if let enabledFromInternalPlist = self.defaultsPlist[key] as? [String: AnyObject], let enabled = enabledFromInternalPlist["enabled"] as? Bool {
+            return enabled
         } else {
             throw SettingsModelError.CouldNotGetEnabled
         }

@@ -308,7 +308,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
             if cellType == .selectCell {
                 if let cell = cell as? SelectCell {
                     
-                    guard let data = tableData[cellKey.rawValue], let values = data["possibleValues"] as? [String] else {
+                    guard let data = tableData[cellKey.rawValue] as? [String: AnyObject], let values = data["possibleValues"] as? [String] else {
                         fatalError("Could not get the data for the picker")
                     }
                     
@@ -347,8 +347,10 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
             if let cell =  cell as? ToggleCell {
                 let cellKey = settings.keyForCell(atIndexPath: indexPath)
                 do {
-                    let enabled = try settings.getEnabled(forKey: cellKey.rawValue)!
-                    cell.toggleSwitch.isEnabled = enabled as Bool
+                    guard let enabled = try settings.getEnabled(forKey: cellKey.rawValue) else {
+                        fatalError("Unable to get enabled value")
+                    }
+                    cell.toggleSwitch.isEnabled = enabled
                 } catch let error {
                     fatalError("\(error)")
                 }
@@ -381,7 +383,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
             fatalError("\(error)")
         }
         
-        guard let data = tableData[cellKey.rawValue], let label = data["label"] else {
+        guard let data = tableData[cellKey.rawValue] as? [String: AnyObject], let label = data["label"] else {
             fatalError("Could not get the data")
         }
         
@@ -544,10 +546,8 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     func didClickInfo(sender: UITableViewCell) {
         let indexPath = self.tableView.indexPath(for: sender)
         let cellKey = settings.keyForCell(atIndexPath: indexPath!)
-        if let descr = tableData[cellKey.rawValue]?["descr"] {
-            if let descrString = descr as? String {
-                self.showAlert(descrString)
-            }
+        if let descr = tableData[cellKey.rawValue] as? [String: AnyObject], let value = descr["descr"] as? String {
+            self.showAlert(value)
         }
     }
     
@@ -564,7 +564,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     }
     
     func disableRetaledToggles(forKey cellKey: PossibleSetting, currentState isOn: Bool) {
-        if let data = tableData[cellKey.rawValue], let disables = data["disables"] as? [String] {
+        if let data = tableData[cellKey.rawValue] as? [String: AnyObject], let disables = data["disables"] as? [String] {
             
             var subDisables: [PossibleSetting] = []
             
@@ -575,7 +575,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
                     print("Could not convert to setting")
                     return
                 }
-                if let subData = tableData[setting.rawValue], let subDataDisables = subData["disables"] as? [String] {
+                if let subData = tableData[setting.rawValue] as? [String: AnyObject], let subDataDisables = subData["disables"] as? [String] {
                     if subDataDisables.count > 0 {
                         subDisables.append(setting)
                     }
