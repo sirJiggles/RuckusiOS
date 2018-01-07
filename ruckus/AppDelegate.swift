@@ -13,23 +13,23 @@ import Fabric
 import Crashlytics
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDelegate, UINavigationControllerDelegate {
 
     var window: UIWindow?
     var bridge: WatchNotificationBridge?
     var intervalTimerSettings =  IntervalTimerSettingsHelper()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+
         let env = ProcessInfo.processInfo.environment
         if let uiTests = env["UITESTS"], uiTests == "1" {
             // remove local storage for user tests
             // reset user defaults
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         }
-        
+
         Fabric.with([Crashlytics.self])
-        
+
         // init the bridge if it does not exist
         if (bridge == nil) {
             bridge = WatchNotificationBridge.sharedInstance
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDe
             if bridge?.messageSession == nil {
                 bridge?.setUpSession()
             }
-            
+
             // when the watch requests settings do what we do when the session is fist set up,
             // send them
             NotificationCenter.default.addObserver(
@@ -46,16 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDe
                 name: NSNotification.Name(NotificationKey.RequestUserDefaultsFromWatch.rawValue),
                 object: nil
             )
-            
+
         }
-        
+
         // set as never go to sleep
         UIApplication.shared.isIdleTimerDisabled = true
-        
+
         // check for old purchases on user defaults
         let paid = UserDefaults.standard.bool(forKey: "proVersion")
         PurchasedState.sharedInstance.isPaid = paid
-        
+
         // if the bundle id is pro, set as paid. this and do not do the store kit
         // checking
         if Bundle.main.bundleIdentifier == "garethfuller.ruckus" {
@@ -63,31 +63,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDe
             UserDefaults.standard.set(true, forKey: "proVersion")
             return true
         }
-        
+
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            
+
             for purchase in purchases {
-                
+
                 if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
-                    
+
                     if purchase.needsFinishTransaction {
                         // Deliver content from server, then:
                         SwiftyStoreKit.finishTransaction(purchase.transaction)
                     }
-                    
+
                     // set as paid
                     PurchasedState.sharedInstance.isPaid = true
-                    
+
                     // set also in user defaults as paid
                     UserDefaults.standard.set(true, forKey: "proVersion")
                 }
             }
         }
-        
-        
+
+
         return true
     }
-    
+//
     @objc func didSettupSession() {
         // set up the listener for a sync of of the settings from the watch
         NotificationCenter.default.removeObserver(
@@ -138,6 +138,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDe
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+
+        return navigationController.topViewController!.supportedInterfaceOrientations
+
     }
     
     @objc func updateUserDefaults(_ payload: NSNotification) {

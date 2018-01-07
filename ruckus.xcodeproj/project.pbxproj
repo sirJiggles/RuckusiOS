@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032C708F021324B4614236DE /* Pods_ruckusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FCC1C1AE790D9D8F15D4EB /* Pods_ruckusUITests.framework */; };
-		26F1FDC63D07996C827882A4 /* Pods_ruckusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542C055B021A21A38A4A854D /* Pods_ruckusTests.framework */; };
-		37940181EF0AA581F3DE50D9 /* Pods_ruckus_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E039DED56B7B1A40D8C19A30 /* Pods_ruckus_watch_Extension.framework */; };
-		4350C1946F9DE7F7BF45E1D0 /* Pods_ruckus_lite_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A920DD3F3065F33D1DA4055 /* Pods_ruckus_lite_watch.framework */; };
-		61287E1192476E3E86E4C00A /* Pods_ruckus_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9041E651361575E7FD10EE12 /* Pods_ruckus_watch.framework */; };
+		3AE92202044F3461731ED65A /* libPods-ruckus.lite.watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C2D44709BC3D02D8F5CBEF /* libPods-ruckus.lite.watch Extension.a */; };
+		4182D06AFBAA6697617394AD /* libPods-ruckus.lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C825A7DA840E1902DBA230E5 /* libPods-ruckus.lite.a */; };
+		52DEE3FDA4364F74DF402E28 /* libPods-ruckus.lite.watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61AEF9C90402F83475BAFB70 /* libPods-ruckus.lite.watch.a */; };
+		7548EEDF4815F3B5394456D3 /* libPods-ruckusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A97CC90532439D827076F69E /* libPods-ruckusTests.a */; };
 		7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F018A1F1F4BECF200BC044F /* VolumeCell.swift */; };
 		7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E3241E56617E0093622A /* SettingsViewController.swift */; };
 		7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04E2591E563D0F005D94C5 /* SelectCell.swift */; };
@@ -85,10 +84,14 @@
 		7F3370871F5B7B100076E7A6 /* ruckus.lite.watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */; };
 		7F33708A1F5B7B230076E7A6 /* ruckus.lite.watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F340E981EF719B000AE3DEB /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F340E961EF719AB00AE3DEB /* XCUIElement.swift */; };
-		7F34DA8B1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */; };
-		7F34DA8C1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */; };
+		7F34DA8B1FFEE09A003D3AA0 /* RenderLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8A1FFEE09A003D3AA0 /* RenderLoop.swift */; };
+		7F34DA8C1FFEE09A003D3AA0 /* RenderLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8A1FFEE09A003D3AA0 /* RenderLoop.swift */; };
 		7F34DA8E1FFEF12C003D3AA0 /* VRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */; };
 		7F34DA8F1FFEF12C003D3AA0 /* VRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */; };
+		7F3B904C200036C300F51777 /* GoogleHeadTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B904B200036C300F51777 /* GoogleHeadTransform.swift */; };
+		7F3B904D200036C300F51777 /* GoogleHeadTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B904B200036C300F51777 /* GoogleHeadTransform.swift */; };
+		7F3B905120003DA400F51777 /* SceneKitVRRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B905020003DA400F51777 /* SceneKitVRRenderer.swift */; };
+		7F3B905220003DA400F51777 /* SceneKitVRRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B905020003DA400F51777 /* SceneKitVRRenderer.swift */; };
 		7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */; };
 		7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */; };
 		7F4D9FE01EE44D920049ADA8 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDC1EE44D920049ADA8 /* pause.wav */; };
@@ -212,6 +215,14 @@
 		7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
 		7FCD8A6B1FF71F9400180075 /* VRIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A6A1FF71F9400180075 /* VRIntoVC.swift */; };
 		7FCD8A6C1FF71F9400180075 /* VRIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A6A1FF71F9400180075 /* VRIntoVC.swift */; };
+		7FD18CBC20025F63000B3CE1 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7FD18CBB20025F63000B3CE1 /* Cartfile */; };
+		7FD18CBD20025F63000B3CE1 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7FD18CBB20025F63000B3CE1 /* Cartfile */; };
+		7FD18CC72002636D000B3CE1 /* MKRingProgressView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD18CC020026197000B3CE1 /* MKRingProgressView.framework */; };
+		7FD18CC82002636D000B3CE1 /* MKRingProgressView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD18CC020026197000B3CE1 /* MKRingProgressView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FD18CCA20026371000B3CE1 /* FoldingCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD18CC22002619A000B3CE1 /* FoldingCell.framework */; };
+		7FD18CCB20026371000B3CE1 /* FoldingCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD18CC22002619A000B3CE1 /* FoldingCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FD18CCC20026377000B3CE1 /* SwiftyStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD18CBE20026193000B3CE1 /* SwiftyStoreKit.framework */; };
+		7FD18CCD20026377000B3CE1 /* SwiftyStoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD18CBE20026193000B3CE1 /* SwiftyStoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
 		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
 		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
@@ -227,9 +238,10 @@
 		7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
 		7FFC06801F5C6D9C00F40EED /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC067F1F5C6B8B00F40EED /* crowd.wav */; };
 		7FFC06811F5C6D9C00F40EED /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC067F1F5C6B8B00F40EED /* crowd.wav */; };
-		C6AA4A801597CDCC308D3468 /* Pods_ruckus_lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B8DE8DA792AABEF2236F6C /* Pods_ruckus_lite.framework */; };
-		D878AC4CBB31D959F07FA576 /* Pods_ruckus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C79FF37A56D8B1AE865D9A8 /* Pods_ruckus.framework */; };
-		FC6A544A229861DA15B7D61E /* Pods_ruckus_lite_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5860BA06376080A7A99990 /* Pods_ruckus_lite_watch_Extension.framework */; };
+		DE7FB26E355348D1DA81B770 /* libPods-ruckus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA3F7DE85CB0A8BE4DF4B85 /* libPods-ruckus.a */; };
+		E93344C99223728FA2E0B654 /* libPods-ruckusUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F8517BF378CA2A3B4FCEAB /* libPods-ruckusUITests.a */; };
+		F761E6A03472AF9C5B4C57A6 /* libPods-ruckus.watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0BBF11DF7AFDA0E776C5FF /* libPods-ruckus.watch Extension.a */; };
+		F994C7356CE9CB751222DA99 /* libPods-ruckus.watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 348F4440F8C62C769D9820C8 /* libPods-ruckus.watch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -322,19 +334,33 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FD18CC92002636D000B3CE1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7FD18CCD20026377000B3CE1 /* SwiftyStoreKit.framework in Embed Frameworks */,
+				7FD18CCB20026371000B3CE1 /* FoldingCell.framework in Embed Frameworks */,
+				7FD18CC82002636D000B3CE1 /* MKRingProgressView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		003BC91500BC3340F2D85331 /* Pods-ruckusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		004DF41C55A529DB23F67872 /* Pods-ruckus.watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch/Pods-ruckus.watch.debug.xcconfig"; sourceTree = "<group>"; };
-		0A920DD3F3065F33D1DA4055 /* Pods_ruckus_lite_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_lite_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F8517BF378CA2A3B4FCEAB /* libPods-ruckusUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckusUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6C05C2133D8C4BA7A84245 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		2D9E204BFA822313D6EC1434 /* Pods-ruckus.watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		341EC0AFE7179ED763894CCD /* Pods-ruckusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		348F4440F8C62C769D9820C8 /* libPods-ruckus.watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckus.watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C2ACB459B74D3F6097A8B7 /* Pods-ruckus.lite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.release.xcconfig"; sourceTree = "<group>"; };
 		4B4859988AFA2D926919C550 /* Pods-ruckus.watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		542C055B021A21A38A4A854D /* Pods_ruckusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C79FF37A56D8B1AE865D9A8 /* Pods_ruckus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA3F7DE85CB0A8BE4DF4B85 /* libPods-ruckus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61AEF9C90402F83475BAFB70 /* libPods-ruckus.lite.watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckus.lite.watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FE73F8ECBE73E345638F35 /* Pods-ruckus.lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.debug.xcconfig"; sourceTree = "<group>"; };
 		6954B1FC44CD2BAF9EB720B9 /* Pods-ruckusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78E14FC63C911EA2AD8AFC4D /* Pods-ruckusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -369,8 +395,11 @@
 		7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ruckus.lite.watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F33705B1F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F340E961EF719AB00AE3DEB /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
-		7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRRenderLoop.swift; sourceTree = "<group>"; };
+		7F34DA8A1FFEE09A003D3AA0 /* RenderLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderLoop.swift; sourceTree = "<group>"; };
 		7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRController.swift; sourceTree = "<group>"; };
+		7F3B904B200036C300F51777 /* GoogleHeadTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleHeadTransform.swift; sourceTree = "<group>"; };
+		7F3B904F20003A7C00F51777 /* VRControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRControllerProtocol.h; sourceTree = "<group>"; };
+		7F3B905020003DA400F51777 /* SceneKitVRRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitVRRenderer.swift; sourceTree = "<group>"; };
 		7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
 		7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		7F4D9FDC1EE44D920049ADA8 /* pause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pause.wav; sourceTree = "<group>"; };
@@ -446,6 +475,10 @@
 		7FCD8A671FF6E54C00180075 /* TimableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimableController.swift; sourceTree = "<group>"; };
 		7FCD8A6A1FF71F9400180075 /* VRIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRIntoVC.swift; sourceTree = "<group>"; };
 		7FD12BBE1E8EE956003209EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
+		7FD18CBB20025F63000B3CE1 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		7FD18CBE20026193000B3CE1 /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStoreKit.framework; path = Carthage/Build/iOS/SwiftyStoreKit.framework; sourceTree = "<group>"; };
+		7FD18CC020026197000B3CE1 /* MKRingProgressView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MKRingProgressView.framework; path = Carthage/Build/iOS/MKRingProgressView.framework; sourceTree = "<group>"; };
+		7FD18CC22002619A000B3CE1 /* FoldingCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoldingCell.framework; path = Carthage/Build/iOS/FoldingCell.framework; sourceTree = "<group>"; };
 		7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHelper.swift; path = ruckus/UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationLoader.swift; path = ../AnimationLoader.swift; sourceTree = "<group>"; };
 		7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitGiver.swift; sourceTree = "<group>"; };
@@ -458,15 +491,14 @@
 		7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		7FFC067F1F5C6B8B00F40EED /* crowd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crowd.wav; sourceTree = "<group>"; };
 		862A59C76E7A93C5186A93F1 /* Pods-ruckus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus/Pods-ruckus.debug.xcconfig"; sourceTree = "<group>"; };
-		9041E651361575E7FD10EE12 /* Pods_ruckus_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976240D7952CD0844046E65F /* Pods-ruckus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus/Pods-ruckus.release.xcconfig"; sourceTree = "<group>"; };
 		A6277DF2BF4A2F9EDE8DF979 /* Pods-ruckus.watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch/Pods-ruckus.watch.release.xcconfig"; sourceTree = "<group>"; };
-		C4FCC1C1AE790D9D8F15D4EB /* Pods_ruckusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5860BA06376080A7A99990 /* Pods_ruckus_lite_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_lite_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E039DED56B7B1A40D8C19A30 /* Pods_ruckus_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3B8DE8DA792AABEF2236F6C /* Pods_ruckus_lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A97CC90532439D827076F69E /* libPods-ruckusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C825A7DA840E1902DBA230E5 /* libPods-ruckus.lite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckus.lite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9C2D44709BC3D02D8F5CBEF /* libPods-ruckus.lite.watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckus.lite.watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED946260C5D79302D41FE68E /* Pods-ruckus.lite.watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		EEE62A58231C19CD48860746 /* Pods-ruckus.lite.watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch.debug.xcconfig"; sourceTree = "<group>"; };
+		EF0BBF11DF7AFDA0E776C5FF /* libPods-ruckus.watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruckus.watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEFD67DA61837E16646E83B3 /* Pods-ruckus.lite.watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -475,7 +507,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61287E1192476E3E86E4C00A /* Pods_ruckus_watch.framework in Frameworks */,
+				F994C7356CE9CB751222DA99 /* libPods-ruckus.watch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F124A9D1F65B41F000CC4B8 /* HealthKit.framework in Frameworks */,
-				37940181EF0AA581F3DE50D9 /* Pods_ruckus_watch_Extension.framework in Frameworks */,
+				F761E6A03472AF9C5B4C57A6 /* libPods-ruckus.watch Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3370841F5B79DD0076E7A6 /* HealthKit.framework in Frameworks */,
-				FC6A544A229861DA15B7D61E /* Pods_ruckus_lite_watch_Extension.framework in Frameworks */,
+				3AE92202044F3461731ED65A /* libPods-ruckus.lite.watch Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,8 +533,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD18CCA20026371000B3CE1 /* FoldingCell.framework in Frameworks */,
 				7FCA39E81E8AEA8600F53C61 /* HealthKit.framework in Frameworks */,
-				D878AC4CBB31D959F07FA576 /* Pods_ruckus.framework in Frameworks */,
+				7FD18CCC20026377000B3CE1 /* SwiftyStoreKit.framework in Frameworks */,
+				7FD18CC72002636D000B3CE1 /* MKRingProgressView.framework in Frameworks */,
+				DE7FB26E355348D1DA81B770 /* libPods-ruckus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +545,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26F1FDC63D07996C827882A4 /* Pods_ruckusTests.framework in Frameworks */,
+				7548EEDF4815F3B5394456D3 /* libPods-ruckusTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +553,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032C708F021324B4614236DE /* Pods_ruckusUITests.framework in Frameworks */,
+				E93344C99223728FA2E0B654 /* libPods-ruckusUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +563,7 @@
 			files = (
 				7FE390301F5C9C2A0006EBE7 /* StoreKit.framework in Frameworks */,
 				7FC61E3E1F5192D300645009 /* HealthKit.framework in Frameworks */,
-				C6AA4A801597CDCC308D3468 /* Pods_ruckus_lite.framework in Frameworks */,
+				4182D06AFBAA6697617394AD /* libPods-ruckus.lite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +571,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4350C1946F9DE7F7BF45E1D0 /* Pods_ruckus_lite_watch.framework in Frameworks */,
+				52DEE3FDA4364F74DF402E28 /* libPods-ruckus.lite.watch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,17 +604,20 @@
 		5F39644547C80A611D9B0977 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FD18CC22002619A000B3CE1 /* FoldingCell.framework */,
+				7FD18CC020026197000B3CE1 /* MKRingProgressView.framework */,
+				7FD18CBE20026193000B3CE1 /* SwiftyStoreKit.framework */,
 				7FE3902F1F5C9C2A0006EBE7 /* StoreKit.framework */,
 				7F30C6381E8FDFEE004D90FB /* HealthKit.framework */,
 				7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */,
-				5C79FF37A56D8B1AE865D9A8 /* Pods_ruckus.framework */,
-				9041E651361575E7FD10EE12 /* Pods_ruckus_watch.framework */,
-				E039DED56B7B1A40D8C19A30 /* Pods_ruckus_watch_Extension.framework */,
-				542C055B021A21A38A4A854D /* Pods_ruckusTests.framework */,
-				C4FCC1C1AE790D9D8F15D4EB /* Pods_ruckusUITests.framework */,
-				E3B8DE8DA792AABEF2236F6C /* Pods_ruckus_lite.framework */,
-				0A920DD3F3065F33D1DA4055 /* Pods_ruckus_lite_watch.framework */,
-				CA5860BA06376080A7A99990 /* Pods_ruckus_lite_watch_Extension.framework */,
+				5DA3F7DE85CB0A8BE4DF4B85 /* libPods-ruckus.a */,
+				C825A7DA840E1902DBA230E5 /* libPods-ruckus.lite.a */,
+				61AEF9C90402F83475BAFB70 /* libPods-ruckus.lite.watch.a */,
+				D9C2D44709BC3D02D8F5CBEF /* libPods-ruckus.lite.watch Extension.a */,
+				348F4440F8C62C769D9820C8 /* libPods-ruckus.watch.a */,
+				EF0BBF11DF7AFDA0E776C5FF /* libPods-ruckus.watch Extension.a */,
+				A97CC90532439D827076F69E /* libPods-ruckusTests.a */,
+				04F8517BF378CA2A3B4FCEAB /* libPods-ruckusUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -685,6 +723,14 @@
 			path = "Ruckus Watch Extension";
 			sourceTree = "<group>";
 		};
+		7F3B904E20003A5A00F51777 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7F3B904F20003A7C00F51777 /* VRControllerProtocol.h */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		7F5B42081FF44D7900AAED46 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,8 +788,9 @@
 				7F018A1F1F4BECF200BC044F /* VolumeCell.swift */,
 				7FDE6B9A1FF2F26C00502F4A /* VRAnimationController.swift */,
 				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
-				7F34DA8A1FFEE09A003D3AA0 /* VRRenderLoop.swift */,
+				7F34DA8A1FFEE09A003D3AA0 /* RenderLoop.swift */,
 				7F34DA8D1FFEF12C003D3AA0 /* VRController.swift */,
+				7F3B905020003DA400F51777 /* SceneKitVRRenderer.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -803,6 +850,7 @@
 			isa = PBXGroup;
 			children = (
 				7FAC98CA1E745F83003848DE /* DoubleExtension.swift */,
+				7F3B904B200036C300F51777 /* GoogleHeadTransform.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -912,6 +960,7 @@
 		7FB357F71E4294EA00EF9BD2 = {
 			isa = PBXGroup;
 			children = (
+				7FD18CBB20025F63000B3CE1 /* Cartfile */,
 				7FB247F01ED22F9D00267498 /* Shared */,
 				7FB358021E4294EA00EF9BD2 /* ruckus */,
 				7FADC4E41F51A6CA00E7B59D /* ruckus.lite */,
@@ -945,6 +994,7 @@
 		7FB358021E4294EA00EF9BD2 /* ruckus */ = {
 			isa = PBXGroup;
 			children = (
+				7F3B904E20003A5A00F51777 /* API */,
 				7F5B42211FF4734500AAED46 /* Agents */,
 				7F5B42081FF44D7900AAED46 /* Entities */,
 				7F5B42091FF44D8000AAED46 /* Components */,
@@ -1085,6 +1135,7 @@
 				7F7222941EE896790062279E /* ShellScript */,
 				36134717BAF15E4181301D87 /* [CP] Embed Pods Frameworks */,
 				3027FBC359FA972907DAD803 /* [CP] Copy Pods Resources */,
+				7FD18CC92002636D000B3CE1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1333,6 +1384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD18CBC20025F63000B3CE1 /* Cartfile in Resources */,
 				7FB358101E4294EA00EF9BD2 /* LaunchScreen.storyboard in Resources */,
 				7FB5F5C91F4A10BE006BF8F3 /* bell.mp3 in Resources */,
 				7F8593A31FF130BA0085DB3E /* art.scnassets in Resources */,
@@ -1367,6 +1419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD18CBD20025F63000B3CE1 /* Cartfile in Resources */,
 				7FB057081F51B3B10023D873 /* Assets.xcassets in Resources */,
 				7FC61E411F5192D300645009 /* LaunchScreen.storyboard in Resources */,
 				7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */,
@@ -1812,8 +1865,9 @@
 				7F5AE9C21E6F551F005B4290 /* TimerViewController.swift in Sources */,
 				7FDE6B9B1FF2F26C00502F4A /* VRAnimationController.swift in Sources */,
 				7F8593A61FF130C60085DB3E /* VRVC.swift in Sources */,
+				7F3B904C200036C300F51777 /* GoogleHeadTransform.swift in Sources */,
 				7F76939F1EE37C950036DED7 /* CreditsCell.swift in Sources */,
-				7F34DA8B1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */,
+				7F34DA8B1FFEE09A003D3AA0 /* RenderLoop.swift in Sources */,
 				7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */,
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
@@ -1854,6 +1908,7 @@
 				7F95A9941E8FEBCD0057D8AB /* NotificationKeys.swift in Sources */,
 				7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */,
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
+				7F3B905120003DA400F51777 /* SceneKitVRRenderer.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
 				7FCD8A6B1FF71F9400180075 /* VRIntoVC.swift in Sources */,
 				7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */,
@@ -1901,8 +1956,9 @@
 				7FC61E181F5192D300645009 /* TimerViewController.swift in Sources */,
 				7FDE6B9C1FF2F26C00502F4A /* VRAnimationController.swift in Sources */,
 				7F8593A71FF130C60085DB3E /* VRVC.swift in Sources */,
+				7F3B904D200036C300F51777 /* GoogleHeadTransform.swift in Sources */,
 				7FC61E191F5192D300645009 /* CreditsCell.swift in Sources */,
-				7F34DA8C1FFEE09A003D3AA0 /* VRRenderLoop.swift in Sources */,
+				7F34DA8C1FFEE09A003D3AA0 /* RenderLoop.swift in Sources */,
 				7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */,
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
@@ -1943,6 +1999,7 @@
 				7FC61E361F5192D300645009 /* NotificationKeys.swift in Sources */,
 				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
+				7F3B905220003DA400F51777 /* SceneKitVRRenderer.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
 				7FCD8A6C1FF71F9400180075 /* VRIntoVC.swift in Sources */,
 				7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */,
@@ -2304,6 +2361,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ruckus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2330,6 +2392,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ruckus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2425,6 +2492,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2450,6 +2518,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -51,6 +51,19 @@ class TimableController: UIViewController, IntervalTimerDelegate, ListensToPlayE
     
     var isVRVC: Bool = false
     
+    
+    init() {
+        timer = IntervalTimer.sharedInstance
+        notificationBridge = WatchNotificationBridge.sharedInstance
+        intervalTimerSettings = IntervalTimerSettingsHelper()
+        settingsAccessor = SettingsAccessor()
+        
+        // set the state of the flags at the start
+        paused = timer.paused
+        running = timer.running
+        super.init(nibName: nil, bundle:nil)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         timer = IntervalTimer.sharedInstance
         notificationBridge = WatchNotificationBridge.sharedInstance

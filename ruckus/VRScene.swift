@@ -36,6 +36,7 @@ class VRScene: SCNScene, SCNPhysicsContactDelegate {
     
     var punchDelegate: PunchInTheHeadDelegate?
     let hitBoxHeight = 4
+    let top = -1.4
     
     var modelName: AnimationModelName = .robot
     var settingsAccessor: SettingsAccessor?
@@ -71,9 +72,9 @@ class VRScene: SCNScene, SCNPhysicsContactDelegate {
         // this class will check for collisions
         physicsWorld.contactDelegate = self
         
-//        createPlayerNode()
+        createPlayerNode()
         
-//        setUpChar()
+        setUpChar()
         
         makeFloor()
         
@@ -84,7 +85,7 @@ class VRScene: SCNScene, SCNPhysicsContactDelegate {
 //        }
         
         // start callin the hits
-//        animationController = VRAnimationController.init(withModel: model)
+        animationController = VRAnimationController.init(withModel: model)
     }
     
     // this is called when we touch the scene, it's a simple test func
@@ -103,13 +104,13 @@ class VRScene: SCNScene, SCNPhysicsContactDelegate {
                 model.addChildNode(child)
             }
             
-            if moveMode {
-//                 'face' the correct direction, for the look at
-                model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
-            }
+//            if moveMode {
+////                 'face' the correct direction, for the look at
+//                model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+//            }
             
             model.scale = SCNVector3(0.01, 0.01, 0.01)
-            model.position = SCNVector3(0,0,0)
+            model.position = SCNVector3(0,top,-0.6)
             
             // add some levels of detail for the main char to bring the size down
             var levelsOfDetail: [SCNLevelOfDetail] = []
@@ -154,12 +155,7 @@ class VRScene: SCNScene, SCNPhysicsContactDelegate {
             
             // wrapper for scaling, and used later for following
             modelWrapper.addChildNode(model)
-            
-            
-//             get up close and personal!
-            if !moveMode {
-                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
-            }
+    
             
             rootNode.addChildNode(modelWrapper)
             
@@ -221,11 +217,12 @@ class VRScene: SCNScene, SCNPhysicsContactDelegate {
     
     func makeFloor() {
         let floor = SCNFloor()
-        floor.firstMaterial?.diffuse.contents = UIColor.lightestBlue
-        floor.reflectivity = 0.4
+        floor.firstMaterial?.diffuse.contents = UIColor.gray
+        floor.reflectivity = 0 // does not work with cardboard
         
         let floorNode = SCNNode(geometry: floor)
         floorNode.physicsBody = SCNPhysicsBody.static()
+        floorNode.position = SCNVector3(0, top, 0)
         
         rootNode.addChildNode(floorNode)
     }

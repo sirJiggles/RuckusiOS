@@ -3,5 +3,5 @@
 //
 
 #import "GVRCardboardView.h"
-//#import "VRControllerProtocol.h"
+#import "VRControllerProtocol.h"
 

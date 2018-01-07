@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vPz-ww-a1l">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="10" y="20" width="355" height="193"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-AL-xl5" userLabel="modeLabel">
-                                        <rect key="frame" x="20" y="0.0" width="315" height="47"/>
+                                        <rect key="frame" x="20" y="0.0" width="315" height="49"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
                                         <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEL-Ln-Pih" userLabel="timeLabel">
-                                        <rect key="frame" x="20" y="37" width="315" height="105"/>
+                                        <rect key="frame" x="20" y="39" width="315" height="110"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="90"/>
                                         <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1240,7 +1240,7 @@ none of the ads</string>
                             <constraint firstItem="NQ6-yj-QxO" firstAttribute="leading" secondItem="lXz-vh-OyR" secondAttribute="leading" id="WPu-MY-YBh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="AR Boxing" image="gloves" id="FIR-LE-ful"/>
+                    <tabBarItem key="tabBarItem" title="VR Boxing" image="gloves" id="FIR-LE-ful"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPF-Pb-Oqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1615,23 +1615,11 @@ none of the ads</string>
                     <view key="view" contentMode="scaleToFill" id="Gbt-50-tue">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTQ-RG-MIT" userLabel="Scene">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </sceneKitView>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gTQ-RG-MIT" secondAttribute="trailing" id="Qnh-Ck-svn"/>
-                            <constraint firstItem="gTQ-RG-MIT" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="T9O-al-efJ"/>
-                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="gTQ-RG-MIT" secondAttribute="bottom" id="qHS-b1-Yes"/>
-                            <constraint firstItem="gTQ-RG-MIT" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="sLE-Gp-4IZ"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ARBoxing" image="gloves" id="Ztn-t9-5NX"/>
+                    <tabBarItem key="tabBarItem" title="VRBoxing" image="gloves" id="Ztn-t9-5NX"/>
                     <connections>
-                        <outlet property="sceneView" destination="gTQ-RG-MIT" id="5qZ-SM-bV5"/>
                         <segue destination="XFC-7j-dmq" kind="presentation" identifier="workoutFinishedFromTimer" id="bfH-a8-V8R"/>
                     </connections>
                 </viewController>
@@ -1681,7 +1669,7 @@ none of the ads</string>
         <image name="stopApp" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BUB-5n-Kud"/>
+        <segue reference="bfH-a8-V8R"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

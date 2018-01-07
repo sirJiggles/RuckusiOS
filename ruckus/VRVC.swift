@@ -9,8 +9,6 @@
 import UIKit
 import QuartzCore
 import SceneKit
-import ARKit
-
 
 protocol PunchInTheHeadDelegate {
     func didGetPunched() -> Void
@@ -21,12 +19,7 @@ protocol PunchInTheHeadDelegate {
 //SCNSceneRendererDelegate
 class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCardboardViewDelegate {
     
-    @IBOutlet weak var sceneView: SCNView!
-    
-//    let scene = VRScene.init(create: true)
-    
-    // dummy scene for now
-    let scene = SCNScene()
+    let scene = VRScene.init(create: true)
     
     var gameOverlay: VROverlay?
     var punchCount: Int = 0
@@ -40,13 +33,8 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     var started = false
     
     // Cardboard shizzle
-    var renderer : [SCNRenderer?] = []
-    var renderTime = 0.0 // seconds
-    var renderLoop: VRRenderLoop?
-    
-//    let VRControllerClassKey = "VRControllerClass";
-//
-    var vrController: VRControllerSwift?;
+    var renderer : SceneKitVRRenderer?
+    var renderLoop: RenderLoop?
     
     required init?(coder aDecoder: NSCoder) {
 
@@ -67,22 +55,18 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     }
     
     override func loadView() {
-//        let vrControllerClassName = Bundle.main
-//            .object(forInfoDictionaryKey: VRControllerClassKey) as! String;
-//
-//        guard let vrClass = NSClassFromString(vrControllerClassName) as? VRControllerProtocol.Type else {
-//            fatalError("#fail Unable to find class \(vrControllerClassName), referenced in Info.plist, key=\(VRControllerClassKey)")
-//        }
-//
-//        vrController = vrClass.init();
+        guard let cardboardView = GVRCardboardView(frame: CGRect.zero) else {
+            fatalError("Could not cerate cardboard view")
+        }
+        cardboardView.delegate = self
         
-        vrController = VRControllerSwift.init()
-        
-        
-        let cardboardView = GVRCardboardView(frame: CGRect.zero)
-        cardboardView?.delegate = self
-        cardboardView?.vrModeEnabled = true
-        cardboardView?.autoresizingMask =  [.flexibleWidth, .flexibleHeight]
+//        Simulators freak
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            cardboardView.vrModeEnabled = false
+        #else
+            cardboardView.vrModeEnabled = true
+        #endif
+        cardboardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         self.view = cardboardView
     }
@@ -91,30 +75,31 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        // overlay configuration
+//         overlay configuration
         gameOverlay = VROverlay(parent: self, size: self.view.frame.size)
         
-        // render delegate
-//        sceneView.delegate = self
-        
-        // just start for now!
+//         just start for now!
 //        donePositioningAndStart()
         
-        // delegate for sending punch signals
-//        scene.punchDelegate = self
+//         delegate for sending punch signals
+        scene.punchDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         guard let cardboardView = self.view as? GVRCardboardView else {
-            fatalError("Could not get cardboard view from self")
+            fatalError("view is not GVRCardboardView")
         }
         
-        renderLoop = VRRenderLoop.init(renderTarget: cardboardView, selector: #selector(GVRCardboardView.render))
+        renderLoop = RenderLoop.init(renderTarget: cardboardView,
+                                     selector: #selector(GVRCardboardView.render))
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        
         renderLoop?.invalidate()
         renderLoop = nil
     }
@@ -124,35 +109,35 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
         // Dispose of any resources that can be recreated.
     }
     
-    func donePositioningAndStart() {
-        // if the timer is not started, start it now! (like a button click)
-        if !running && playOnLoad {
-            proceedWithPlayClick()
-            
-            started = true
-            
-            // overlay for both eyes
+//    func donePositioningAndStart() {
+////         if the timer is not started, start it now! (like a button click)
+//        if !running && playOnLoad {
+//            proceedWithPlayClick()
+//
+//            started = true
+//
+//            // overlay for both eyes
 //            if let overlay = gameOverlay {
-//                sceneView.overlaySKScene = overlay
+////                sceneView.overlaySKScene = overlay
 //            }
-        }
-    }
-    
+//        }
+//    }
+
     // debug for the move to functionality
-    @objc func tapped(recognizer: UITapGestureRecognizer) {
-        // what did you tap on
-        let sceneView = recognizer.view as! SCNView
-        let pos = recognizer.location(in: sceneView)
-        
-//        scene.follow(position: SCNVector3(pos.x, pos.y, 0))
-    }
-    
+//    @objc func tapped(recognizer: UITapGestureRecognizer) {
+//        // what did you tap on
+//        let sceneView = recognizer.view as! SCNView
+//        let pos = recognizer.location(in: sceneView)
+//
+////        scene.follow(position: SCNVector3(pos.x, pos.y, 0))
+//    }
+
     // MARK: - Punch in the head delegates
     func didGetPunched() {
         canBeHit = false
         punchCount = punchCount + 1
         gameOverlay?.punchLabel.text = ("Hits: \(punchCount)")
-        
+
         DispatchQueue.main.async {
             Timer.scheduledTimer(withTimeInterval: self.invincibleTime, repeats: false){ _ in
                 self.canBeHit = true
@@ -161,7 +146,7 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     }
     
     
-    // MARK: - render delegate for VR mode scene
+//     MARK: - render delegate for VR mode scene
 //    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
 //        DispatchQueue.main.async {
 //            // call redraw on scene for agents etc
@@ -169,7 +154,7 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
 //        }
 //    }
     
-    // MARK: - delegate functions for the timable VC!
+//     MARK: - delegate functions for the timable VC!
     func resetUI() {
         gameOverlay?.timeLabel.text = "00:00"
         gameOverlay?.timeLabel.fontColor = UIColor.white
@@ -195,19 +180,19 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
         switch (timer.currentMode) {
         case .preparing:
             gameOverlay?.modeLabel.text = "Prepare"
-//            scene.animationController?.didStop()
+            scene.animationController?.didStop()
         case .resting:
             gameOverlay?.modeLabel.text = "Resting"
-//            scene.animationController?.didStop()
+            scene.animationController?.didStop()
         case .stretching:
             gameOverlay?.modeLabel.text = "Stretch"
-//            scene.animationController?.didStop()
+            scene.animationController?.didStop()
         case .warmup:
             gameOverlay?.modeLabel.text = "Warmup"
-//            scene.animationController?.didStop()
+            scene.animationController?.didStop()
         case .working:
             gameOverlay?.modeLabel.text = "Working"
-//            scene.animationController?.didStart()
+            scene.animationController?.didStart()
         }
     }
     
@@ -227,7 +212,7 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     
     func didFinishPlayingCombo() {
         // let the scene know to play a combo, only if call outs is enabled!
-//        scene.animationController?.didFinnishCallingCombo()
+        scene.animationController?.didFinnishCallingCombo()
     }
     
     func tick(newValue: Double) {
@@ -239,7 +224,7 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     }
     
     func finnishedUI() {
-//        scene.animationController?.didStop()
+        scene.animationController?.didStop()
     }
     
     func didStartUI() {
@@ -247,83 +232,38 @@ class VRVC: TimableController, TimableVCDelegate, PunchInTheHeadDelegate, GVRCar
     }
     
     func stopWorkoutUI() {
-//        scene.animationController?.didStop()
+        scene.animationController?.didStop()
     }
     
     func pauseWorkoutUI() {
-//        scene.animationController?.didStop()
+        scene.animationController?.didStop()
     }
     
     // MARK: - Google Cardboard hookup
-    func createRenderer() -> SCNRenderer {
-        let renderer = SCNRenderer.init(context: EAGLContext.current(), options: nil)
-        let camNode = SCNNode()
-        camNode.camera = SCNCamera()
-        renderer.pointOfView = camNode
-        renderer.scene = vrController!.scene
-        // comment this out if you would like custom lighting
-        renderer.autoenablesDefaultLighting = true
-        return renderer
-    }
-    
-    
     func cardboardView(_ cardboardView: GVRCardboardView!, willStartDrawing headTransform: GVRHeadTransform!) {
-        renderer.append(createRenderer())
-        renderer.append(createRenderer())
-        renderer.append(createRenderer())
+        renderer = SceneKitVRRenderer(scene:scene)
+        
+        renderer?.cardboardView(cardboardView, willStartDrawing: headTransform)
     }
-    
     
     func cardboardView(_ cardboardView: GVRCardboardView!, prepareDrawFrame headTransform: GVRHeadTransform!) {
-        
-        vrController!.prepareFrame(with: headTransform);
-        
-        glEnable(GLenum(GL_DEPTH_TEST))
-        
-        // can't get SCNRenderer to do this, has to do myself
-        if let color = scene.background.contents as? UIColor {
-            var r: CGFloat = 0
-            var g: CGFloat = 0
-            var b: CGFloat = 0
-            color.getRed(&r, green: &g, blue: &b, alpha: nil)
-            
-            glClearColor(GLfloat(r), GLfloat(g), GLfloat(b), 1)
-        }
-        else {
-            glClearColor(0, 0, 0, 1)
-        }
-        
-        glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
-        glEnable(GLenum(GL_SCISSOR_TEST));
-        
-        renderTime = CACurrentMediaTime()
+//        renderer?.prepareFrame(with: headTransform)
+        renderer?.cardboardView(cardboardView, prepareDrawFrame: headTransform)
     }
     
     func cardboardView(_ cardboardView: GVRCardboardView!, draw eye: GVREye, with headTransform: GVRHeadTransform!) {
-        
-        let viewport = headTransform.viewport(for: eye);
-        glViewport(GLint(viewport.origin.x), GLint(viewport.origin.y), GLint(viewport.size.width), GLint(viewport.size.height));
-        glScissor(GLint(viewport.origin.x), GLint(viewport.origin.y), GLint(viewport.size.width), GLint(viewport.size.height));
-        
-        
-        let projection_matrix = headTransform.projectionMatrix(for: eye, near: 0.1, far: 1000.0);
-        let model_view_matrix = GLKMatrix4Multiply(headTransform.eye(fromHeadMatrix: eye), headTransform.headPoseInStartSpace())
-        
-        guard let eyeRenderer = renderer[eye.rawValue] else {
-            fatalError("no eye renderer for eye")
-        }
-        
-        eyeRenderer.pointOfView?.camera?.projectionTransform = SCNMatrix4FromGLKMatrix4(projection_matrix);
-        eyeRenderer.pointOfView?.transform = SCNMatrix4FromGLKMatrix4(GLKMatrix4Transpose(model_view_matrix));
-        
-        if glGetError() == GLenum(GL_NO_ERROR) {
-            eyeRenderer.render(atTime: renderTime)
-        }
-        
+        renderer?.cardboardView(cardboardView, draw: eye, with: headTransform);
     }
     
     func cardboardView(_ cardboardView: GVRCardboardView!, shouldPauseDrawing pause: Bool) {
         renderLoop?.paused = pause;
+    }
+    
+    func cardboardView(_ cardboardView: GVRCardboardView!, didFire event: GVRUserEvent) {
+        
+//        if event == GVRUserEvent.trigger {
+//            vrController!.eventTriggered();
+//        }
     }
 
 }

@@ -6,16 +6,17 @@
 //  Copyright © 2018 Gareth. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class VRRenderLoop: NSObject {
-    let displayLink: CADisplayLink
+class RenderLoop: NSObject {
+    let displayLink: CADisplayLink;
     
     var paused = false {
         didSet {
-            displayLink.isPaused = paused
+            displayLink.isPaused = paused;
         }
     }
+    
     
     init(renderTarget:AnyObject,  selector: Selector) {
         displayLink = CADisplayLink.init(target: renderTarget, selector: selector)
@@ -32,6 +33,7 @@ class VRRenderLoop: NSObject {
                                                selector: #selector(applicationDidBecomeActive),
                                                name: NSNotification.Name.UIApplicationDidBecomeActive,
                                                object: nil)
+        
     }
     
     deinit {

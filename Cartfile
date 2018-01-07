@@ -1,0 +1,4 @@
+
+github "bizz84/SwiftyStoreKit" ~> 0.10
+github "maxkonovalov/MKRingProgressView" ~> 1.1
+github "Ramotion/folding-cell" ~> 2.0.3

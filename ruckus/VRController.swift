@@ -9,8 +9,8 @@
 import Foundation
 import SceneKit
 
-@objc(VRControllerSwift)
-class VRControllerSwift : NSObject {
+@objc(VRController)
+class VRController : NSObject, VRControllerProtocol {
     
     let scene = SCNScene();
     
@@ -20,8 +20,8 @@ class VRControllerSwift : NSObject {
     
     var focusedNode : SCNNode?
     
-    let greyMaterial = VRControllerSwift.material(color: .gray)
-    let purpleMaterial = VRControllerSwift.material(color: .purple)
+    let greyMaterial = VRController.material(color: .gray)
+    let purpleMaterial = VRController.material(color: .purple)
     
     // MARK: Game Controller
     
@@ -75,7 +75,7 @@ class VRControllerSwift : NSObject {
     
     func prepareFrame(with headTransform: GVRHeadTransform) {
         
-//        cursor.position = headTransform.rotateVector(SCNVector3(0, -3, -9));
+        cursor.position = headTransform.rotateVector(SCNVector3(0, -3, -9));
         
         // let's create long ray (100 meters) that goes the same way
         // cursor.position is directed

@@ -2,38 +2,21 @@ PODS:
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
-  - FoldingCell (2.0.5)
   - Google-Mobile-Ads-SDK (7.27.0)
-  - GoogleToolboxForMac/Defines (2.1.0)
-  - GoogleToolboxForMac/Logger (2.1.0):
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-  - GTMSessionFetcher/Core (1.1.6)
-  - GVRSDK (1.120.0):
-    - GoogleToolboxForMac/Logger (= 2.1.0)
-    - GTMSessionFetcher/Core (= 1.1.6)
-  - MKRingProgressView (1.1.4)
-  - SwiftyStoreKit (0.12.0)
+  - GVRSDK (0.8.5)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - FoldingCell (~> 2.0.3)
   - Google-Mobile-Ads-SDK
-  - GVRSDK
-  - MKRingProgressView (~> 1.1)
-  - SwiftyStoreKit (~> 0.10)
+  - GVRSDK (~> 0.8.0)
 
 SPEC CHECKSUMS:
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
   Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
-  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
-  GVRSDK: 0cb9d0ce06a84d698e61e3db9509766022dcf815
-  MKRingProgressView: fbcfe6e5485404fc4e4bc3becbed4a1c8c7df715
-  SwiftyStoreKit: 59c57f4aa11d3c564e7e5f589eae8bf98ac59f3d
+  GVRSDK: 69e9f15d4c0aff2f127467b03c570c1fc51fe74d
 
-PODFILE CHECKSUM: 30967c54a661f263636b6600d452a51ee9d64044
+PODFILE CHECKSUM: 0b60ebcf3f5db126d3d4be26dc99998b376acbf0
 
 COCOAPODS: 1.2.1
