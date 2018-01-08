@@ -52,46 +52,15 @@ class SceneKitVRRenderer: NSObject, GVRCardboardViewDelegate {
     let scene: VRScene
     var renderer : [SCNRenderer?] = []
     var renderTime = 0.0 // seconds
-    var camNodeGlobal = SCNNode()
     
     init(scene: VRScene) {
         self.scene = scene
-        camNodeGlobal.camera = SCNCamera()
     }
     
-    func prepareFrame(with headTransform: GVRHeadTransform) {
-        let scnVersion = SCNMatrix4FromGLKMatrix4(headTransform.headPoseInStartSpace())
-        
-        let matrix = float4x4(scnVersion)
-        let vector = float4(SCNVector3Zero)
-        let result = matrix * vector
-        scene.modelWrapper.position = SCNVector3(result)
-        
-//        print(scene.modelWrapper.posi)
-        
-        
-        print(headTransform.headPoseInStartSpace().m13)
-        print(headTransform.headPoseInStartSpace().m12)
-        print(headTransform.headPoseInStartSpace().m11)
-        
-//        print(SCNVector3(result))
-//        print(scene.modelWrapper.position)
-        
-//        print(SCNMatrix4FromGLKMatrix4(headTransform.headPoseInStartSpace()))
-//        print(headTransform.headPoseInStartSpace())
-        // move the cams pov to move with the head
-//        scene.rootNode.position = headTransform.rotateVector(SCNVector3(0, 0, 0))
-//        scene.rootNode.transform = SCNMatrix4FromGLKMatrix4(headTransform.headPoseInStartSpace())
-//        camNodeGlobal.transform = SCNMatrix4FromGLKMatrix4(headTransform.headPoseInStartSpace())
-//        renderer.pointOfView = camNodeGlobal
-    }
     
     func createRenderer() -> SCNRenderer {
         let renderer = SCNRenderer.init(context: EAGLContext.current(), options: nil)
         
-//        let camNode = SCNNode()
-//        camNode.camera = SCNCamera()
-//
 //        renderer.pointOfView = camNodeGlobal
         renderer.scene = scene
         // comment this out if you would like custom lighting
