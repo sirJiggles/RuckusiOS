@@ -1627,12 +1627,19 @@ none of the ads</string>
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
                                         <gestureRecognizers/>
                                     </arscnView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ElG-Le-sKQ" userLabel="LeftEyeImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ElG-Le-sKQ" secondAttribute="bottom" id="0za-Pl-Afv"/>
+                                    <constraint firstItem="ElG-Le-sKQ" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="A5h-iM-0yy"/>
+                                    <constraint firstAttribute="trailing" secondItem="ElG-Le-sKQ" secondAttribute="trailing" id="FdA-Eg-Dmj"/>
                                     <constraint firstItem="Iyn-oo-Z02" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="JbY-iR-9mb"/>
                                     <constraint firstItem="Iyn-oo-Z02" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="aIm-E5-hae"/>
                                     <constraint firstAttribute="bottom" secondItem="Iyn-oo-Z02" secondAttribute="bottom" id="b58-pG-9Yv"/>
+                                    <constraint firstItem="ElG-Le-sKQ" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="faP-I2-Gu5"/>
                                     <constraint firstAttribute="trailing" secondItem="Iyn-oo-Z02" secondAttribute="trailing" id="y3d-xh-nJn"/>
                                 </constraints>
                             </view>
@@ -1642,13 +1649,20 @@ none of the ads</string>
                                     <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-sa-iW0" userLabel="RightEyeAR">
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
                                     </arscnView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3wW-XK-1c6" userLabel="RightEyeImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3wW-XK-1c6" secondAttribute="trailing" id="FzS-X3-Tnb"/>
                                     <constraint firstAttribute="bottom" secondItem="t4y-sa-iW0" secondAttribute="bottom" id="hNT-6d-bIR"/>
+                                    <constraint firstItem="3wW-XK-1c6" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="hpz-n3-E2j"/>
                                     <constraint firstItem="t4y-sa-iW0" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="jbe-bC-mPH"/>
+                                    <constraint firstAttribute="bottom" secondItem="3wW-XK-1c6" secondAttribute="bottom" id="kQM-Ob-Kop"/>
                                     <constraint firstAttribute="trailing" secondItem="t4y-sa-iW0" secondAttribute="trailing" id="mdG-rg-nyR"/>
                                     <constraint firstItem="t4y-sa-iW0" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="pxd-LE-RSu"/>
+                                    <constraint firstItem="3wW-XK-1c6" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="qBH-BS-Tps"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1672,6 +1686,8 @@ none of the ads</string>
                     <tabBarItem key="tabBarItem" title="ARBoxing" image="gloves" id="Ztn-t9-5NX"/>
                     <connections>
                         <outlet property="fullScreenARView" destination="WhK-Ga-Pg6" id="ncJ-Xg-57j"/>
+                        <outlet property="imageViewLeft" destination="ElG-Le-sKQ" id="nF4-Dl-so2"/>
+                        <outlet property="imageViewRight" destination="3wW-XK-1c6" id="KcH-Ye-hIT"/>
                         <outlet property="leftEyeSceneAR" destination="Iyn-oo-Z02" id="HDN-Mo-Znz"/>
                         <outlet property="leftEyeView" destination="2zs-Pn-F38" id="8SZ-6C-DQz"/>
                         <outlet property="rightEyeSceneAR" destination="t4y-sa-iW0" id="WTC-63-hxv"/>
