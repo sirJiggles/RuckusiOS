@@ -59,7 +59,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     
     // Parametres
     let interpupilaryDistance = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
-    let viewBackgroundColor : UIColor = UIColor.white
+    let viewBackgroundColor : UIColor = UIColor.black
     
     // Set eyeFOV and cameraImageScale. Uncomment any of the below lines to change FOV.
     //    let eyeFOV = 38.5; let cameraImageScale = 1.739; // (FOV: 38.5 ± 2.0) Brute-force estimate based on iPhone7+
@@ -137,15 +137,15 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             return
         }
         // Hit test result from intersecting with an existing plane anchor, taking into account the plane’s extent.
-        let hitResults = leftEyeSceneAR.hitTest(location, types: .existingPlaneUsingExtent)
+        let hitResults = fullScreenARView.hitTest(location, types: .existingPlaneUsingExtent)
         if hitResults.count > 0 {
             let result: ARHitTestResult = hitResults.first!
             if let planeAnchor = result.anchor as? ARPlaneAnchor {
                 for var index in 0...anchors.count - 1 {
                     // remove all the nodes from the scene except for the one that is selected
                     if anchors[index].identifier != planeAnchor.identifier {
-                        leftEyeSceneAR.node(for: anchors[index])?.removeFromParentNode()
-                        leftEyeSceneAR.session.remove(anchor: anchors[index])
+                        fullScreenARView.node(for: anchors[index])?.removeFromParentNode()
+                        fullScreenARView.session.remove(anchor: anchors[index])
                     }
                     index += 1
                 }
@@ -153,7 +153,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
                 anchors = [planeAnchor]
                 // set isPlaneSelected to true
                 isPlaneSelected = true
-                setPlaneTexture(node: leftEyeSceneAR.node(for: planeAnchor)!)
+                setPlaneTexture(node: fullScreenARView.node(for: planeAnchor)!)
             }
         }
     }
@@ -183,7 +183,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             return
         }
         
-        let hitResults = leftEyeSceneAR.hitTest(location, types: .existingPlaneUsingExtent)
+        let hitResults = fullScreenARView.hitTest(location, types: .existingPlaneUsingExtent)
         if hitResults.count > 0 {
             let result: ARHitTestResult = hitResults.first!
             let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
@@ -212,10 +212,9 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         UIApplication.shared.isIdleTimerDisabled = true
         
         fullScreenARView.isHidden = true
+        fullScreenARView.automaticallyUpdatesLighting = true
         
-
-        // render delegate (in here for the VR stuff)
-//        leftEyeSceneAR.delegate = self
+        //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
         rightEyeSceneAR.isPlaying = true
         leftEyeSceneAR.isPlaying = true
@@ -240,9 +239,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         self.imageViewRight.clipsToBounds = true
         self.imageViewRight.contentMode = UIViewContentMode.center
         
-//        leftEyeSceneAR.automaticallyUpdatesLighting = true
-        
-//        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+
     }
     
     func initSceneView(_ sceneView: ARSCNView, withDebug debug: Bool = false) {
@@ -301,7 +298,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         DispatchQueue.main.async {
             self.updateFrame()
             // call redraw on scene for agents etc
-//            self.scene.update(updateAtTime: time)
+            self.scene.update(updateAtTime: time)
         }
     }
     
