@@ -28,7 +28,7 @@ class AROverlay: SKScene {
         self.init(size: sceneSize)
         
         let paddingLR = CGFloat(self.size.width / 5)
-        let paddingTB = CGFloat(self.size.height / 5)
+        let paddingTB = CGFloat(self.size.height / 9)
         let topAlign = self.size.height - paddingTB
         let leftAlign = paddingLR
         let rightAlign = self.size.width - paddingLR
