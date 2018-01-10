@@ -205,7 +205,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             
             scene.setCharAt(position: newLocation)
             
-            clearTexture(node: fullScreenARView.node(for: result.anchor)!)
+            clearTexture(node: fullScreenARView.node(for: result.anchor!)!)
             
             donePositioningAndStart()
         }
@@ -231,7 +231,10 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         fullScreenARView.isHidden = true
         fullScreenARView.automaticallyUpdatesLighting = true
         
-        //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+//        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        
+        // debug for left eye lopez
+        leftEyeSceneAR.debugOptions = [ARSCNDebugOptions.showWorldOrigin, .showConstraints]
         
         rightEyeSceneAR.isPlaying = true
         leftEyeSceneAR.isPlaying = true
@@ -282,15 +285,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             // remove the plane from the screen
             
         }
-    }
-    
-    // debug for the move to functionality
-    @objc func tapped(recognizer: UITapGestureRecognizer) {
-        // what did you tap on
-        let sceneView = recognizer.view as! SCNView
-        let pos = recognizer.location(in: sceneView)
-        
-        scene.follow(position: SCNVector3(pos.x, pos.y, 0))
     }
     
     // MARK: - Punch in the head delegates

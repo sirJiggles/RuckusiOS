@@ -83,25 +83,18 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         animationController = ARAnimationController.init(withModel: model)
     }
     
-    // this is called when we touch the scene, it's a simple test func
-    func follow(position: SCNVector3) {
-        // move it arround my char
-        playerNode.position = SCNVector3(Float(arc4random_uniform(2) + 1),0, Float(arc4random_uniform(2) + 1))
-    }
-    
-    func updateHeadPos(withPosition position: SCNMatrix4) {
+    func updateHeadPos(withPosition position: matrix_float4x4) {
         // get the transform to vector 3 as we just want X Z for the player node that
         // we seek, else the fighter will fly :D
-//        let z = 0
-//        let x = 0
-        // lets see if this works might jump a little
-        playerNode.transform = position
-        playerNode.position.y = 0
-        
-//        playerNode.position = SCNVector3(x, 0, z)
+        let posForPiller = SCNVector3(
+            position.columns.3.x,
+            0,
+            position.columns.3.z
+        )
+        playerNode.position = posForPiller
         
         // then we set the head node transform using the normal transform matrix
-        headNode.transform = position
+        headNode.transform = SCNMatrix4FromMat4(position)
     }
     
     func setUpChar() {
