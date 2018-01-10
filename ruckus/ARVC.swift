@@ -164,6 +164,15 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         }
     }
     
+    // Should clear the texture after the user selects where to put the boxer
+    func clearTexture(node: SCNNode) {
+        if let geometryNode = node.childNodes.first {
+            if node.childNodes.count > 0 {
+                geometryNode.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
+            }
+        }
+    }
+    
     func setPlaneTexture(node: SCNNode) {
         if started {
             return
@@ -195,6 +204,8 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             
             scene.setCharAt(position: newLocation)
+            
+            clearTexture(node: fullScreenARView.node(for: result.anchor)!)
             
             donePositioningAndStart()
         }
@@ -251,11 +262,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     func initSceneView(_ sceneView: ARSCNView, withDebug debug: Bool = false) {
         sceneView.scene = scene
         
-//        // gesture recognizer
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-//
-//        sceneView.addGestureRecognizer(tapGesture)
-        
         // show statistics such as fps and timing information
         sceneView.showsStatistics = debug
     }
@@ -269,10 +275,12 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             
             // overlay for both eyes
             if let overlay = gameOverlay {
-                fullScreenARView.overlaySKScene = overlay
                 leftEyeSceneAR.overlaySKScene = overlay
                 rightEyeSceneAR.overlaySKScene = overlay
             }
+            
+            // remove the plane from the screen
+            
         }
     }
     
@@ -315,7 +323,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         }
         if let planeAnchor = anchor as? ARPlaneAnchor {
             node = SCNNode()
-//            let geo = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
             let geo = SCNPlane(width: 1, height: 1)
             geo.firstMaterial?.diffuse.contents = UIColor.green
             let planeNode = SCNNode(geometry: geo)
