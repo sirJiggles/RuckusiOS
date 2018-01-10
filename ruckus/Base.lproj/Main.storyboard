@@ -33,7 +33,7 @@
                                 <rect key="frame" x="10" y="44" width="355" height="222"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-AL-xl5" userLabel="modeLabel">
-                                        <rect key="frame" x="20" y="0.0" width="315" height="49"/>
+                                        <rect key="frame" x="20" y="0.0" width="315" height="46.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
                                         <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEL-Ln-Pih" userLabel="timeLabel">
-                                        <rect key="frame" x="20" y="39" width="315" height="110"/>
+                                        <rect key="frame" x="20" y="36.666666666666671" width="315" height="105.00000000000001"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="90"/>
                                         <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
