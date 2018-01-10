@@ -437,6 +437,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         let uiimage = UIImage(cgImage: cgimage!, scale: scale_custom, orientation: imageOrientation)
         self.imageViewLeft.image = uiimage
         self.imageViewRight.image = uiimage
+        
+        // get the position of the users head and send this to the scene
+        if let cam = fullScreenARView.session.currentFrame?.camera {
+            scene.updateHeadPos(withPosition: cam.transform)
+        }
 
     }
     
