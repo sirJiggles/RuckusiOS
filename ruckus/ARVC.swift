@@ -31,6 +31,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     @IBOutlet weak var imageViewLeft: UIImageView!
     @IBOutlet weak var imageViewRight: UIImageView!
     
+    @IBOutlet weak var rotateInstructionsView: UIView!
     
     let scene = ARScene.init(create: true)
     
@@ -116,6 +117,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -511,5 +517,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     func pauseWorkoutUI() {
         scene.animationController?.didStop()
     }
+    
+    // MARK: - IBActions
+    @IBAction func dismissArMode(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
