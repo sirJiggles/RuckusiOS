@@ -15,7 +15,7 @@ class ARAnimationController {
     let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
     
     var runningPlayer: SCNAnimationPlayer?
-    var speed: Double = 1.0
+    var speed: Double = 0.1
     var callOutsEnabled: Bool = true
     
     var settingsAccessor: SettingsAccessor?
@@ -29,7 +29,7 @@ class ARAnimationController {
         settingsAccessor = SettingsAccessor()
         
         if let difficulty = settingsAccessor?.getDifficulty() {
-            speed = Double(difficulty + 1.0)
+            speed = Double(difficulty) + 0.1
         }
         
         if let enabled = settingsAccessor?.getCallOuts() {
