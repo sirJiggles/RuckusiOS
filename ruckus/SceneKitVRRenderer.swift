@@ -78,7 +78,7 @@ class SceneKitVRRenderer: NSObject, GVRCardboardViewDelegate {
     
     func cardboardView(_ cardboardView: GVRCardboardView!, prepareDrawFrame headTransform: GVRHeadTransform!) {
         
-        prepareFrame(with: headTransform)
+//        prepareFrame(with: headTransform)
         
         glEnable(GLenum(GL_DEPTH_TEST))
         
