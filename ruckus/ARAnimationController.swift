@@ -15,7 +15,7 @@ class ARAnimationController {
     let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
     
     var runningPlayer: SCNAnimationPlayer?
-    var speed: Double = 0.3
+    var speed: Double = 0.5
     var callOutsEnabled: Bool = true
     
     var settingsAccessor: SettingsAccessor?
@@ -29,7 +29,7 @@ class ARAnimationController {
         settingsAccessor = SettingsAccessor()
         
         if let difficulty = settingsAccessor?.getDifficulty() {
-            speed = Double(difficulty) + 0.1
+            speed = Double(difficulty) + 0.5
         }
         
         if let enabled = settingsAccessor?.getCallOuts() {
@@ -57,12 +57,13 @@ class ARAnimationController {
             if move == .bigCross {
                 factor = 2.0
             }
-            i = i + (factor / speed) - 0.2
+            i = i + (factor / speed)
         }
     }
     
     // this gets called when we switch to a form of working mode
     func didStart() {
+        runCombo()
         // just go into full attack mode
         attackTimer = Timer.scheduledTimer(timeInterval: 5.0 / speed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
     }
@@ -111,7 +112,7 @@ class ARAnimationController {
             case .idle:
                 player.speed = 1.2
             default:
-                player.speed = CGFloat(speed + 0.2)
+                player.speed = CGFloat(speed)
             }
 
             players.append(player)
