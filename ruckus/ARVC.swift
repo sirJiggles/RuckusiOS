@@ -10,6 +10,7 @@ import UIKit
 import QuartzCore
 import SceneKit
 import ARKit
+import AudioToolbox
 
 protocol PunchInTheHeadDelegate {
     func didGetPunched() -> Void
@@ -290,6 +291,9 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         punchCount = punchCount + 1
         gameOverlay?.punchLabel.text = ("Hits: \(punchCount)")
         
+        // vibrate the phone when hit!
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
         DispatchQueue.main.async {
             Timer.scheduledTimer(withTimeInterval: self.invincibleTime, repeats: false){ _ in
                 self.canBeHit = true
@@ -302,8 +306,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
             self.updateFrame()
-            // call redraw on scene for agents etc
-            self.scene.update(updateAtTime: time)
         }
     }
     
