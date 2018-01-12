@@ -28,6 +28,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     @IBOutlet weak var leftEyeView: UIView!
     @IBOutlet weak var rightEyeView: UIView!
     
+    @IBOutlet weak var imageViewLeft: UIImageView!
+    @IBOutlet weak var imageViewRight: UIImageView!
+    
+    @IBOutlet weak var rotateInstructionsView: UIView!
+    
     let scene = ARScene.init(create: true)
     
     var gameOverlay: AROverlay?
@@ -50,6 +55,18 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     var isPlaneSelected = false
     
     var started = false
+    
+    let eyeCamera : SCNCamera = SCNCamera()
+    
+    // Parametres
+    let interpupilaryDistance = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
+    let viewBackgroundColor : UIColor = UIColor.black
+    
+    // Set eyeFOV and cameraImageScale. Uncomment any of the below lines to change FOV.
+    //    let eyeFOV = 38.5; let cameraImageScale = 1.739; // (FOV: 38.5 ± 2.0) Brute-force estimate based on iPhone7+
+    let eyeFOV = 60; let cameraImageScale = 3.478; // Calculation based on iPhone7+ // <- Works ok for cheap mobile headsets. Rough guestimate.
+    //    let eyeFOV = 90; let cameraImageScale = 6; // (Scale: 6 ± 1.0) Very Rough Guestimate.
+    //    let eyeFOV = 120; let cameraImageScale = 8.756; // Rough Guestimate.
     
     required init?(coder aDecoder: NSCoder) {
 
@@ -75,7 +92,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
-        leftEyeSceneAR.session.run(configuration, options: [
+        fullScreenARView.session.run(configuration, options: [
             ARSession.RunOptions.removeExistingAnchors,
             ARSession.RunOptions.resetTracking
         ])
@@ -85,10 +102,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        leftEyeView.isHidden = true
-//        leftEyeSceneAR.isHidden = true
-//        rightEyeSceneAR.isHidden = true
-//        rightEyeView.isHidden = true
+        
         fullScreenARView.isHidden = true
         
         // overlay configuration
@@ -103,6 +117,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -124,15 +143,15 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             return
         }
         // Hit test result from intersecting with an existing plane anchor, taking into account the plane’s extent.
-        let hitResults = leftEyeSceneAR.hitTest(location, types: .existingPlaneUsingExtent)
+        let hitResults = fullScreenARView.hitTest(location, types: .existingPlaneUsingExtent)
         if hitResults.count > 0 {
             let result: ARHitTestResult = hitResults.first!
             if let planeAnchor = result.anchor as? ARPlaneAnchor {
                 for var index in 0...anchors.count - 1 {
                     // remove all the nodes from the scene except for the one that is selected
                     if anchors[index].identifier != planeAnchor.identifier {
-                        leftEyeSceneAR.node(for: anchors[index])?.removeFromParentNode()
-                        leftEyeSceneAR.session.remove(anchor: anchors[index])
+                        fullScreenARView.node(for: anchors[index])?.removeFromParentNode()
+                        fullScreenARView.session.remove(anchor: anchors[index])
                     }
                     index += 1
                 }
@@ -140,7 +159,16 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
                 anchors = [planeAnchor]
                 // set isPlaneSelected to true
                 isPlaneSelected = true
-                setPlaneTexture(node: leftEyeSceneAR.node(for: planeAnchor)!)
+                setPlaneTexture(node: fullScreenARView.node(for: planeAnchor)!)
+            }
+        }
+    }
+    
+    // Should clear the texture after the user selects where to put the boxer
+    func clearTexture(node: SCNNode) {
+        if let geometryNode = node.childNodes.first {
+            if node.childNodes.count > 0 {
+                geometryNode.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
             }
         }
     }
@@ -170,12 +198,14 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             return
         }
         
-        let hitResults = leftEyeSceneAR.hitTest(location, types: .existingPlaneUsingExtent)
+        let hitResults = fullScreenARView.hitTest(location, types: .existingPlaneUsingExtent)
         if hitResults.count > 0 {
             let result: ARHitTestResult = hitResults.first!
             let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             
             scene.setCharAt(position: newLocation)
+            
+            clearTexture(node: fullScreenARView.node(for: result.anchor!)!)
             
             donePositioningAndStart()
         }
@@ -190,27 +220,50 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         rightEyeView.layer.cornerRadius = cornerSize
         rightEyeView.layer.masksToBounds = true
         
-//        fullScreenARView.scene = scene
+        fullScreenARView.scene = scene
         leftEyeSceneAR.scene = scene
         rightEyeSceneAR.scene = scene
         
-        // render delegate (in here for the VR stuff)
-        leftEyeSceneAR.delegate = self
+        fullScreenARView.delegate = self
         
-        rightEyeSceneAR.isPlaying = true
+        UIApplication.shared.isIdleTimerDisabled = true
         
-        leftEyeSceneAR.automaticallyUpdatesLighting = true
+        fullScreenARView.isHidden = true
+        fullScreenARView.automaticallyUpdatesLighting = true
         
 //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        
+        // debug for left eye lopez
+//        leftEyeSceneAR.debugOptions = [ARSCNDebugOptions.showWorldOrigin, .showConstraints]
+        
+        rightEyeSceneAR.isPlaying = true
+        leftEyeSceneAR.isPlaying = true
+        
+        self.view.backgroundColor = viewBackgroundColor
+        
+        ////////////////////////////////////////////////////////////////
+        // Create CAMERA
+        eyeCamera.zNear = 0.001
+        /*
+         Note:
+         - camera.projectionTransform was not used as it currently prevents the simplistic setting of .fieldOfView . The lack of metal, or lower-level calculations, is likely what is causing mild latency with the camera.
+         - .fieldOfView may refer to .yFov or a diagonal-fov.
+         - in a STEREOSCOPIC layout on iPhone7+, the fieldOfView of one eye by default, is closer to 38.5°, than the listed default of 60°
+         */
+        eyeCamera.fieldOfView = CGFloat(eyeFOV)
+        
+        ////////////////////////////////////////////////////////////////
+        // Setup ImageViews - for rendering Camera Image
+        self.imageViewLeft.clipsToBounds = true
+        self.imageViewLeft.contentMode = UIViewContentMode.center
+        self.imageViewRight.clipsToBounds = true
+        self.imageViewRight.contentMode = UIViewContentMode.center
+        
+
     }
     
     func initSceneView(_ sceneView: ARSCNView, withDebug debug: Bool = false) {
         sceneView.scene = scene
-        
-//        // gesture recognizer
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-//
-//        sceneView.addGestureRecognizer(tapGesture)
         
         // show statistics such as fps and timing information
         sceneView.showsStatistics = debug
@@ -229,15 +282,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
                 rightEyeSceneAR.overlaySKScene = overlay
             }
         }
-    }
-    
-    // debug for the move to functionality
-    @objc func tapped(recognizer: UITapGestureRecognizer) {
-        // what did you tap on
-        let sceneView = recognizer.view as! SCNView
-        let pos = recognizer.location(in: sceneView)
-        
-        scene.follow(position: SCNVector3(pos.x, pos.y, 0))
     }
     
     // MARK: - Punch in the head delegates
@@ -270,7 +314,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
         }
         if let planeAnchor = anchor as? ARPlaneAnchor {
             node = SCNNode()
-//            let geo = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
             let geo = SCNPlane(width: 1, height: 1)
             geo.firstMaterial?.diffuse.contents = UIColor.green
             let planeNode = SCNNode(geometry: geo)
@@ -324,23 +367,72 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     
     func updateFrame() {
         
-        // Clone pointOfView for Second View
-        let pointOfView : SCNNode = (leftEyeSceneAR.pointOfView?.clone())!
-
+        // CREATE POINT OF VIEWS
+        let pointOfView : SCNNode = SCNNode()
+        pointOfView.transform = (fullScreenARView.pointOfView?.transform)!
+        pointOfView.scale = (fullScreenARView.pointOfView?.scale)!
+        // Create POV from Camera
+        pointOfView.camera = eyeCamera
+        
+        // Set PointOfView for SceneView-LeftEye
+        leftEyeSceneAR.pointOfView = pointOfView
+        
+        // Clone pointOfView for Right-Eye SceneView
+        let pointOfView2 : SCNNode = (leftEyeSceneAR.pointOfView?.clone())!
         // Determine Adjusted Position for Right Eye
         let orientation : SCNQuaternion = pointOfView.orientation
         let orientationQuaternion : GLKQuaternion = GLKQuaternionMake(orientation.x, orientation.y, orientation.z, orientation.w)
         let eyePos : GLKVector3 = GLKVector3Make(1.0, 0.0, 0.0)
         let rotatedEyePos : GLKVector3 = GLKQuaternionRotateVector3(orientationQuaternion, eyePos)
         let rotatedEyePosSCNV : SCNVector3 = SCNVector3Make(rotatedEyePos.x, rotatedEyePos.y, rotatedEyePos.z)
-
-        let mag : Float = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
-        pointOfView.position.x += rotatedEyePosSCNV.x * mag
-        pointOfView.position.y += rotatedEyePosSCNV.y * mag
-        pointOfView.position.z += rotatedEyePosSCNV.z * mag
-
-        // Set PointOfView for SecondView
-        rightEyeSceneAR.pointOfView = pointOfView
+        let mag : Float = Float(interpupilaryDistance)
+        pointOfView2.position.x += rotatedEyePosSCNV.x * mag
+        pointOfView2.position.y += rotatedEyePosSCNV.y * mag
+        pointOfView2.position.z += rotatedEyePosSCNV.z * mag
+        
+        // Set PointOfView for SceneView-RightEye
+        rightEyeSceneAR.pointOfView = pointOfView2
+        
+        ////////////////////////////////////////////
+        // RENDER CAMERA IMAGE
+        /*
+         Note:
+         - as camera.contentsTransform doesn't appear to affect the camera-image at the current time, we are re-rendering the image.
+         - for performance, this should be ideally be ported to metal
+         */
+        // Clear Original Camera-Image
+        leftEyeSceneAR.scene.background.contents = UIColor.clear // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
+        
+        // Read Camera-Image
+        let pixelBuffer : CVPixelBuffer? = fullScreenARView.session.currentFrame?.capturedImage
+        if pixelBuffer == nil { return }
+        let ciimage = CIImage(cvPixelBuffer: pixelBuffer!)
+        // Convert ciimage to cgimage, so uiimage can affect its orientation
+        let context = CIContext(options: nil)
+        let cgimage = context.createCGImage(ciimage, from: ciimage.extent)
+        
+        // Determine Camera-Image Scale
+        var scale_custom : CGFloat = 1.0
+        // let cameraImageSize : CGSize = CGSize(width: ciimage.extent.width, height: ciimage.extent.height) // 1280 x 720 on iPhone 7+
+        // let eyeViewSize : CGSize = CGSize(width: self.view.bounds.width / 2, height: self.view.bounds.height) // (736/2) x 414 on iPhone 7+
+        // let scale_aspectFill : CGFloat = cameraImageSize.height / eyeViewSize.height // 1.739 // fov = ~38.5 (guestimate on iPhone7+)
+        // let scale_aspectFit : CGFloat = cameraImageSize.width / eyeViewSize.width // 3.478 // fov = ~60
+        // scale_custom = 8.756 // (8.756) ~ appears close to 120° FOV - (guestimate on iPhone7+)
+        // scale_custom = 6 // (6±1) ~ appears close-ish to 90° FOV - (guestimate on iPhone7+)
+        scale_custom = CGFloat(cameraImageScale)
+        
+        // Determine Camera-Image Orientation
+        let imageOrientation : UIImageOrientation = (UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.landscapeLeft) ? UIImageOrientation.down : UIImageOrientation.up
+        
+        // Display Camera-Image
+        let uiimage = UIImage(cgImage: cgimage!, scale: scale_custom, orientation: imageOrientation)
+        self.imageViewLeft.image = uiimage
+        self.imageViewRight.image = uiimage
+        
+        // get the position of the users head and send this to the scene
+        if let cam = fullScreenARView.session.currentFrame?.camera {
+            scene.updateHeadPos(withPosition: cam.transform)
+        }
 
     }
     
@@ -428,5 +520,11 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     func pauseWorkoutUI() {
         scene.animationController?.didStop()
     }
+    
+    // MARK: - IBActions
+    @IBAction func dismissArMode(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }

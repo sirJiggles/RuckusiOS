@@ -20,6 +20,8 @@ enum AnimationModelName: String {
     case robot
     case futureMan
     case vanguard
+    case regularBoxer
+    case beastBoxer
 }
 
 class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
@@ -28,6 +30,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     
     // this is all for the seeking behaviour, we won't use it for now
     var playerNode = SCNNode()
+    var headNode = SCNNode()
     var timeLast: Double?
     var player: PlayerEntity?
     var fighter: FighterEntity?
@@ -72,23 +75,31 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         createPlayerNode()
         
         setUpChar()
+    
         
-//        makeFloor()
-        
-//        ligntMeUp()
-        
-        if moveMode {
-            createSeekingBehaviour()
-        }
+//        if moveMode {
+//            createSeekingBehaviour()
+//        }
         
         // start callin the hits
         animationController = ARAnimationController.init(withModel: model)
     }
     
-    // this is called when we touch the scene, it's a simple test func
-    func follow(position: SCNVector3) {
-        // move it arround my char
-        playerNode.position = SCNVector3(Float(arc4random_uniform(2) + 1),0, Float(arc4random_uniform(2) + 1))
+    func updateHeadPos(withPosition position: matrix_float4x4) {
+        // get the transform to vector 3 as we just want X Z for the player node that
+        // we seek, else the fighter will fly :D
+//        let posForPiller = SCNVector3(
+//            position.columns.3.x,
+//            0,
+//            position.columns.3.z
+//        )
+//        playerNode.position = posForPiller
+        
+        // then we set the head node transform using the normal transform matrix
+        headNode.transform = SCNMatrix4FromMat4(position)
+        
+        // get the char to look at the location
+//        modelWrapper.look(at: playerNode.position)
     }
     
     func setUpChar() {
@@ -101,12 +112,10 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
                 model.addChildNode(child)
             }
             
-            if moveMode {
-//                 'face' the correct direction, for the look at
-                model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
-            }
+            // 'face' the correct direction, for the look at
+            model.rotation = SCNVector4(0, 0.5, 0, Float(180).degreesToRadians)
             
-            model.scale = SCNVector3(0.01, 0.01, 0.01)
+            model.scale = SCNVector3(0.011, 0.011, 0.011)
             model.position = SCNVector3(0,0,0)
             
             // add some levels of detail for the main char to bring the size down
@@ -153,53 +162,12 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             // wrapper for scaling, and used later for following
             modelWrapper.addChildNode(model)
             
-            
-            // get up close and personal!
-//            if !moveMode {
-//                modelWrapper.position = SCNVector3(0.1, 0.6, 2)
-//            }
-            
-//            rootNode.addChildNode(modelWrapper)
-            
         }
     }
     
     func setCharAt(position: SCNVector3) {
         modelWrapper.position = position
         rootNode.addChildNode(modelWrapper)
-    }
-    
-    // set up the lights
-    func ligntMeUp() {
-        // lights
-        let spotLightNode = SCNNode()
-        spotLightNode.light = SCNLight()
-        if let light = spotLightNode.light {
-            light.type = .spot
-            light.attenuationEndDistance = 100
-            light.attenuationStartDistance = 0
-            light.attenuationFalloffExponent = 1
-            light.color = UIColor.white
-            light.intensity = 1800
-        }
-        
-        spotLightNode.position = SCNVector3(0,10,10)
-        rootNode.addChildNode(spotLightNode)
-
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        if let amLight = ambientLightNode.light {
-            amLight.type = .ambient
-            amLight.color = UIColor.white
-            amLight.intensity = 200
-        }
-        rootNode.addChildNode(ambientLightNode)
-      
-        let centerNode = SCNNode()
-        centerNode.position = SCNVector3Zero
-        rootNode.addChildNode(centerNode)
-        spotLightNode.constraints = [SCNLookAtConstraint(target: centerNode)]
-        
     }
     
     
@@ -215,27 +183,14 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             componentSystem.addComponent(foundIn: fighter!)
         }
     }
-
-    
-    func makeFloor() {
-        let floor = SCNFloor()
-        floor.firstMaterial?.diffuse.contents = UIColor.lightestBlue
-        floor.reflectivity = 0.4
-        
-        let floorNode = SCNNode(geometry: floor)
-        floorNode.physicsBody = SCNPhysicsBody.static()
-        
-        rootNode.addChildNode(floorNode)
-    }
     
     func createPlayerNode() {
         // this is the "piller" that represents where the player stands
-        playerNode.position = SCNVector3(2,0,2)
+        playerNode.position = SCNVector3(2,0,0)
         
         // add a box inside this piller, this is the one that represents the users head
         let headGeo = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
-        let headNode = SCNNode(geometry: headGeo)
-        playerNode.addChildNode(headNode)
+        headNode = SCNNode(geometry: headGeo)
         headNode.position = SCNVector3(0, 1.4, 0)
         
         headNode.physicsBody = SCNPhysicsBody.kinematic()
@@ -245,6 +200,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         }
         
         rootNode.addChildNode(playerNode)
+        rootNode.addChildNode(headNode)
     }
     
     // MARK: - Collision detection set up and delegate
