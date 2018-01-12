@@ -15,7 +15,7 @@ class ARAnimationController {
     let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
     
     var runningPlayer: SCNAnimationPlayer?
-    var speed: Double = 0.1
+    var speed: Double = 0.3
     var callOutsEnabled: Bool = true
     
     var settingsAccessor: SettingsAccessor?
@@ -61,22 +61,10 @@ class ARAnimationController {
         }
     }
     
-    // this is called way up on high when the hit calling is done with a combo
-    func didFinnishCallingCombo() {
-        if callOutsEnabled {
-            let startAgainSpeed = 3.0 / speed
-            attackTimer = Timer.scheduledTimer(timeInterval: startAgainSpeed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: false)
-        }
-    }
-    
     // this gets called when we switch to a form of working mode
     func didStart() {
         // just go into full attack mode
-        if !callOutsEnabled {
-            attackTimer = Timer.scheduledTimer(timeInterval: 6.0 / speed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
-        }
-        
-        // the else is to just wait for the did finnish calling combo call
+        attackTimer = Timer.scheduledTimer(timeInterval: 5.0 / speed, target: self, selector: #selector(runCombo), userInfo: nil, repeats: true)
     }
     
     // this gets called when we go into a paused / rest / ended mode

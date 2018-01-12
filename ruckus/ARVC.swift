@@ -19,7 +19,7 @@ protocol PunchInTheHeadDelegate {
     }
 }
 
-class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheHeadDelegate {
+class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     
     @IBOutlet weak var fullScreenARView: ARSCNView!
@@ -34,13 +34,14 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     
     @IBOutlet weak var rotateInstructionsView: UIView!
     
+    @IBOutlet weak var rightEyeCountdown: UILabel!
+    
+    @IBOutlet weak var leftEyeCountdown: UILabel!
+    
     let scene = ARScene.init(create: true)
     
-    var gameOverlay: AROverlay?
     var punchCount: Int = 0
     var canBeHit: Bool = true
-    
-    var playOnLoad = true
 
     // how long the user is untouchable, gets set based on difficulty
     var invincibleTime = 0.08
@@ -59,6 +60,8 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     
     let eyeCamera : SCNCamera = SCNCamera()
     
+    var settingsAccessor: SettingsAccessor?
+    
     // Parametres
     let interpupilaryDistance = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
     let viewBackgroundColor : UIColor = UIColor.black
@@ -69,9 +72,13 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     //    let eyeFOV = 90; let cameraImageScale = 6; // (Scale: 6 ± 1.0) Very Rough Guestimate.
     //    let eyeFOV = 120; let cameraImageScale = 8.756; // Rough Guestimate.
     
+    var rumbleTimer: Timer?
+    
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
+        
+        settingsAccessor = SettingsAccessor()
         
         if let difficulty = self.settingsAccessor?.getDifficulty() {
             if difficulty > 0 {
@@ -80,11 +87,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
                 invincibleTime = 0.08
             }
         }
-        
-        // we want to know about VC timer stuff
-        timerVCDelegate = self
-        
-        isARVC = true
     }
     
     // MARK: - VC Lifecycle
@@ -103,16 +105,20 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         fullScreenARView.isHidden = true
-        
-        // overlay configuration
-        gameOverlay = AROverlay(parent: self, size: self.view.frame.size)
         
         setUpVRScene()
         
         // delegate for sending punch signals
         scene.punchDelegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // house keeping
+        rumbleTimer?.invalidate()
+        leftEyeCountdown.isHidden = true
+        rightEyeCountdown.isHidden = true
+        started = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -271,25 +277,41 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
     }
     
     func donePositioningAndStart() {
-        // if the timer is not started, start it now! (like a button click)
-        if !running && playOnLoad {
-            proceedWithPlayClick()
+        started = true
+        var seconds = 10
+        // show the countdown
+        leftEyeCountdown.isHidden = false
+        rightEyeCountdown.isHidden = false
+        
+        // show the 10 second countdown and then start the fight!
+        rumbleTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ _ in
             
-            started = true
-            
-            // overlay for both eyes
-            if let overlay = gameOverlay {
-                leftEyeSceneAR.overlaySKScene = overlay
-                rightEyeSceneAR.overlaySKScene = overlay
+            // upate the seconds countdown on the eyes
+            DispatchQueue.main.async {
+                self.leftEyeCountdown.text = "\(seconds)"
+                self.rightEyeCountdown.text = "\(seconds)"
             }
+            
+            if (seconds <= 0) {
+                // remove the countdown
+                self.leftEyeCountdown.isHidden = true
+                self.rightEyeCountdown.isHidden = true
+                
+                // stop the timer
+                self.rumbleTimer?.invalidate()
+                // now start the pain!
+                self.scene.animationController?.didStart()
+            }
+            
+            seconds -= 1
         }
+        
     }
     
     // MARK: - Punch in the head delegates
     func didGetPunched() {
         canBeHit = false
         punchCount = punchCount + 1
-        gameOverlay?.punchLabel.text = ("Hits: \(punchCount)")
         
         // vibrate the phone when hit!
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -436,91 +458,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
             scene.updateHeadPos(withPosition: cam.transform)
         }
 
-    }
-    
-    // MARK: - delegate functions for the timable VC!
-    func resetUI() {
-        gameOverlay?.timeLabel.text = "00:00"
-        gameOverlay?.timeLabel.fontColor = UIColor.white
-        gameOverlay?.modeLabel.isHidden = true
-    }
-    
-    func setColours() {
-        switch (timer.currentMode) {
-        case .preparing:
-            gameOverlay?.modeLabel.fontColor = UIColor.lightGreen
-            gameOverlay?.timeLabel.fontColor = UIColor.lightGreen
-        case .resting, .stretching:
-            gameOverlay?.modeLabel.fontColor = UIColor.lightestBlue
-            gameOverlay?.timeLabel.fontColor = UIColor.lightestBlue
-        case .working, .warmup:
-            gameOverlay?.modeLabel.fontColor = UIColor.theOrange
-            gameOverlay?.timeLabel.fontColor = UIColor.theOrange
-        }
-    }
-    
-    func setUpSwitchModesUI() {
-        gameOverlay?.timeLabel.text = "00:00"
-        switch (timer.currentMode) {
-        case .preparing:
-            gameOverlay?.modeLabel.text = "Prepare"
-            scene.animationController?.didStop()
-        case .resting:
-            gameOverlay?.modeLabel.text = "Resting"
-            scene.animationController?.didStop()
-        case .stretching:
-            gameOverlay?.modeLabel.text = "Stretch"
-            scene.animationController?.didStop()
-        case .warmup:
-            gameOverlay?.modeLabel.text = "Warmup"
-            scene.animationController?.didStop()
-        case .working:
-            gameOverlay?.modeLabel.text = "Working"
-            scene.animationController?.didStart()
-        }
-    }
-    
-    func updateCircuitNumberUI(to newValue: Double, circuitNumber: Int) {
-        gameOverlay?.roundLabel.text = "Round: \(circuitNumber)"
-    }
-    
-    func startWorkoutUI() {
-        gameOverlay?.timeLabel.fontColor = UIColor.theOrange
-        gameOverlay?.modeLabel.fontColor = UIColor.theOrange
-        gameOverlay?.modeLabel.isHidden = false
-    }
-    
-    func didTickUISecond(time: String, mode: TimerMode) {
-        gameOverlay?.timeLabel.text = time
-    }
-    
-    func didFinishPlayingCombo() {
-        // let the scene know to play a combo, only if call outs is enabled!
-        scene.animationController?.didFinnishCallingCombo()
-    }
-    
-    func tick(newValue: Double) {
-        // do nothing
-    }
-    
-    func settingsSyncUI() {
-        // do nothing
-    }
-    
-    func finnishedUI() {
-        scene.animationController?.didStop()
-    }
-    
-    func didStartUI() {
-        // do nothing
-    }
-    
-    func stopWorkoutUI() {
-        scene.animationController?.didStop()
-    }
-    
-    func pauseWorkoutUI() {
-        scene.animationController?.didStop()
     }
     
     // MARK: - IBActions
