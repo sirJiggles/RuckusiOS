@@ -234,7 +234,7 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
 //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
         // debug for left eye lopez
-        leftEyeSceneAR.debugOptions = [ARSCNDebugOptions.showWorldOrigin, .showConstraints]
+//        leftEyeSceneAR.debugOptions = [ARSCNDebugOptions.showWorldOrigin, .showConstraints]
         
         rightEyeSceneAR.isPlaying = true
         leftEyeSceneAR.isPlaying = true
@@ -281,9 +281,6 @@ class ARVC: TimableController, TimableVCDelegate, ARSCNViewDelegate, PunchInTheH
                 leftEyeSceneAR.overlaySKScene = overlay
                 rightEyeSceneAR.overlaySKScene = overlay
             }
-            
-            // remove the plane from the screen
-            
         }
     }
     

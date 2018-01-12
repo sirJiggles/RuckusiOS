@@ -276,12 +276,14 @@
 		<key>label</key>
 		<string>Opponent</string>
 		<key>value</key>
-		<string>robot</string>
+		<string>regularBoxer</string>
 		<key>possibleValues</key>
 		<array>
+			<string>regularBoxer</string>
+			<string>beastBoxer</string>
 			<string>robot</string>
-			<string>futureMan</string>
 			<string>vanguard</string>
+			<string>futureMan</string>
 		</array>
 	</dict>
 </dict>

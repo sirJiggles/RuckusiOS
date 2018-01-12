@@ -20,6 +20,8 @@ enum AnimationModelName: String {
     case robot
     case futureMan
     case vanguard
+    case regularBoxer
+    case beastBoxer
 }
 
 class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
@@ -75,9 +77,9 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         setUpChar()
     
         
-        if moveMode {
-            createSeekingBehaviour()
-        }
+//        if moveMode {
+//            createSeekingBehaviour()
+//        }
         
         // start callin the hits
         animationController = ARAnimationController.init(withModel: model)
@@ -86,15 +88,18 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     func updateHeadPos(withPosition position: matrix_float4x4) {
         // get the transform to vector 3 as we just want X Z for the player node that
         // we seek, else the fighter will fly :D
-        let posForPiller = SCNVector3(
-            position.columns.3.x,
-            0,
-            position.columns.3.z
-        )
-        playerNode.position = posForPiller
+//        let posForPiller = SCNVector3(
+//            position.columns.3.x,
+//            0,
+//            position.columns.3.z
+//        )
+//        playerNode.position = posForPiller
         
         // then we set the head node transform using the normal transform matrix
         headNode.transform = SCNMatrix4FromMat4(position)
+        
+        // get the char to look at the location
+//        modelWrapper.look(at: playerNode.position)
     }
     
     func setUpChar() {
@@ -108,9 +113,9 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             }
             
             // 'face' the correct direction, for the look at
-            model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+            model.rotation = SCNVector4(0, 0.5, 0, Float(180).degreesToRadians)
             
-            model.scale = SCNVector3(0.01, 0.01, 0.01)
+            model.scale = SCNVector3(0.011, 0.011, 0.011)
             model.position = SCNVector3(0,0,0)
             
             // add some levels of detail for the main char to bring the size down
@@ -181,12 +186,11 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     
     func createPlayerNode() {
         // this is the "piller" that represents where the player stands
-        playerNode.position = SCNVector3(2,0,2)
+        playerNode.position = SCNVector3(2,0,0)
         
         // add a box inside this piller, this is the one that represents the users head
         let headGeo = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
         headNode = SCNNode(geometry: headGeo)
-        playerNode.addChildNode(headNode)
         headNode.position = SCNVector3(0, 1.4, 0)
         
         headNode.physicsBody = SCNPhysicsBody.kinematic()
@@ -196,6 +200,7 @@ class ARScene: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
         }
         
         rootNode.addChildNode(playerNode)
+        rootNode.addChildNode(headNode)
     }
     
     // MARK: - Collision detection set up and delegate
