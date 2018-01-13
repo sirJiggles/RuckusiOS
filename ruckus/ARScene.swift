@@ -61,20 +61,22 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     }
     
     func updateHeadPos(withPosition position: matrix_float4x4) {
-        // get the transform to vector 3 as we just want X Z for the player node that
-        // we seek, else the fighter will fly :D
-        let posForPiller = SCNVector3(
-            position.columns.3.x,
-            theFloor,
-            position.columns.3.z
-        )
-        // below is the height of the model
-//        modelWrapper.boundingBox.max.y - modelWrapper.boundingBox.min.y
-        
+        // only look at if not throwing a combo, else it is too hard to move
+        // out the way
+        if let animationController = self.animationController {
+            if !animationController.hitting {
+                // where should we look
+                let posForLookAt = SCNVector3(
+                    position.columns.3.x,
+                    theFloor,
+                    position.columns.3.z
+                )
+                modelWrapper.look(at: posForLookAt)
+            }
+        }
+    
         // then we set the head node transform using the normal transform matrix
         headNode.transform = SCNMatrix4FromMat4(position)
-        
-        modelWrapper.look(at: posForPiller)
     }
     
     func setUpChar() {

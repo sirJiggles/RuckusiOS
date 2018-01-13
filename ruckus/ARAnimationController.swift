@@ -14,7 +14,6 @@ class ARAnimationController {
     var players: [SCNAnimationPlayer] = []
     let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
     
-    var runningPlayer: SCNAnimationPlayer?
     var speed: Double = 0.5
     var callOutsEnabled: Bool = true
     
@@ -24,6 +23,8 @@ class ARAnimationController {
     var attackTimer: Timer?
     
     static let sharedInstance = ARAnimationController()
+    
+    var hitting = false
     
     init() {
         settingsAccessor = SettingsAccessor()
@@ -43,21 +44,25 @@ class ARAnimationController {
         setUpMoves()
         
         // start with the idle stance on init
-        playMove(named: .idle, after: 0)
+        playMove(named: .idle, after: 0, lastMove: true)
     }
     
     @objc func runCombo() {
+        hitting = true
         // clear all the animation timers from the last combo
         aniamtionSequences = []
         let combo = HitGiver.sharedInstance.getCombo()
         var i: Double = 0.0
         var factor = 1.0
+        var index = 1
         for move in combo {
-            playMove(named: move, after: i)
+            let lastMove = (index == combo.count)
+            playMove(named: move, after: i, lastMove: lastMove)
             if move == .bigCross {
                 factor = 2.0
             }
             i = i + (factor / speed)
+            index += 1
         }
     }
     
@@ -82,26 +87,29 @@ class ARAnimationController {
             pl.stop(withBlendOutDuration: 0.2)
         }
         // play the idle
-        playMove(named: .idle, after: 0)
+        playMove(named: .idle, after: 0, lastMove: true)
     }
     
-    func playMove(named move: Move, after: Double) {
+    func playMove(named move: Move, after: Double, lastMove: Bool) {
         if let player = model.animationPlayer(forKey: move.rawValue) {
-            let move = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: player, repeats: false)
+            let move = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: [player, lastMove], repeats: false)
             aniamtionSequences.append(move)
-            runningPlayer = player
         }
     }
     
     @objc func whosGotta(_ timer: Timer) {
-        if let player = timer.userInfo as? SCNAnimationPlayer {
-            // stop other animations
-            for pl in players {
-                pl.stop(withBlendOutDuration: 0.2)
+        if let info = timer.userInfo as? [AnyObject] {
+            if let player = info[0] as? SCNAnimationPlayer, let lastMove = info[1] as? Bool {
+                // stop other animations
+                for pl in players {
+                    pl.stop(withBlendOutDuration: 0.2)
+                }
+                player.play()
+                if lastMove {
+                    hitting = false
+                }
             }
-            player.play()
         }
-       
     }
     
     func setUpMoves() {
