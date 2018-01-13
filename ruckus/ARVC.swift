@@ -213,6 +213,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             
             scene.setCharAt(position: newLocation)
             
+            scene.createFloorAt(position: newLocation)
+            
             clearTexture(node: fullScreenARView.node(for: result.anchor!)!)
             
             donePositioningAndStart()

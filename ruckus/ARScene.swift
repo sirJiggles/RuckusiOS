@@ -89,14 +89,18 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         spotLightNode.light = SCNLight()
         if let light = spotLightNode.light {
             light.type = .spot
-            light.attenuationEndDistance = 100
-            light.attenuationStartDistance = 0
-            light.attenuationFalloffExponent = 1
+//            light.attenuationEndDistance = 100
+//            light.attenuationStartDistance = 0
+//            light.attenuationFalloffExponent = 1
             light.color = UIColor.white
             light.intensity = 1800
+            light.castsShadow = true
+//            light.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+            light.shadowRadius = 200
+            light.shadowMode = .deferred
         }
         
-        spotLightNode.position = SCNVector3(0,10,10)
+        spotLightNode.position = SCNVector3(0,10,4)
         rootNode.addChildNode(spotLightNode)
         
         ambientLightNode.light = SCNLight()
@@ -179,6 +183,23 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         // the floor os used to work out the y for the look at!
         theFloor = position.y
         rootNode.addChildNode(modelWrapper)
+    }
+    
+    func createFloorAt(position: SCNVector3) {
+        let floorGeo = SCNFloor()
+        floorGeo.reflectivity = 0
+        if let mat = floorGeo.firstMaterial {
+            mat.lightingModel = .constant
+            mat.diffuse.contents = UIColor.white
+            mat.writesToDepthBuffer = true
+            mat.colorBufferWriteMask = []
+//            mat.colorBufferWriteMask = SCNColorMask(rawValue: 0)
+        }
+        
+        let floorNode = SCNNode(geometry: floorGeo)
+        
+        floorNode.position = SCNVector3(0, position.y - 0.1, 0)
+        rootNode.addChildNode(floorNode)
     }
     
     func createPlayerNode() {
