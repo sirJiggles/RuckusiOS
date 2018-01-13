@@ -12,7 +12,7 @@ import SceneKit
 class ARAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .cross, .idle, .rightHook, .leftHook, .bigCross]
+    let animations: [Move] = [.jab, .cross, .idle, .rightHook, .leftHook, .bigCross, .uppercut, .quadPunch]
     
     var speed: Double = 0.5
     var callOutsEnabled: Bool = true

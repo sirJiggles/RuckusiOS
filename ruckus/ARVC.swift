@@ -172,15 +172,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         }
     }
     
-    // Should clear the texture after the user selects where to put the boxer
-    func clearTexture(node: SCNNode) {
-        if let geometryNode = node.childNodes.first {
-            if node.childNodes.count > 0 {
-                geometryNode.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
-            }
-        }
-    }
-    
     func setPlaneTexture(node: SCNNode) {
         if started {
             return
@@ -211,11 +202,12 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             let result: ARHitTestResult = hitResults.first!
             let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             
+            scene.moveFloorTo(position: newLocation)
+            
             scene.setCharAt(position: newLocation)
             
-            scene.createFloorAt(position: newLocation)
-            
-            clearTexture(node: fullScreenARView.node(for: result.anchor!)!)
+            fullScreenARView.node(for: result.anchor!)!.removeFromParentNode()
+            fullScreenARView.session.remove(anchor: result.anchor!)
             
             donePositioningAndStart()
         }
@@ -239,7 +231,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
         
         fullScreenARView.isHidden = true
-//        fullScreenARView.automaticallyUpdatesLighting = true
         
 //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
@@ -332,7 +323,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         // get the light estimate, and update the lights based on the room lights
         if let estimate = fullScreenARView.session.currentFrame?.lightEstimate {
-            scene.spotLightNode.light?.intensity = estimate.ambientIntensity * 6
+            scene.spotLightNode.light?.intensity = estimate.ambientIntensity * 3
             scene.ambientLightNode.light?.intensity = estimate.ambientIntensity
         }
         DispatchQueue.main.async {
@@ -459,6 +450,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         // Display Camera-Image
         let uiimage = UIImage(cgImage: cgimage!, scale: scale_custom, orientation: imageOrientation)
+        
         self.imageViewLeft.image = uiimage
         self.imageViewRight.image = uiimage
         

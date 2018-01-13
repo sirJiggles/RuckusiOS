@@ -17,29 +17,32 @@ enum CollisionCategory : Int {
 }
 
 enum AnimationModelName: String {
-    case robot
-    case futureMan
-    case vanguard
     case regularBoxer
     case beastBoxer
+    case soldier
+    case swat
+    case joe
 }
 
 class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
     
+    
     var headNode = SCNNode()
     
     var punchDelegate: PunchInTheHeadDelegate?
     var theFloor: Float = 0
     
-    var modelName: AnimationModelName = .robot
+    var modelName: AnimationModelName = .regularBoxer
     var settingsAccessor: SettingsAccessor?
     
     var animationController: ARAnimationController?
     
     var spotLightNode = SCNNode()
     var ambientLightNode = SCNNode()
+    
+    var floorNode = SCNNode()
     
     convenience init(create: Bool) {
         self.init()
@@ -55,6 +58,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         // this class will check for collisions
         physicsWorld.contactDelegate = self
         
+//        createFloor()
+        
         createPlayerNode()
         
         setUpChar()
@@ -63,6 +68,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         
         // start callin the hits
         animationController = ARAnimationController.init(withModel: model)
+        
     }
     
     func updateHeadPos(withPosition position: matrix_float4x4) {
@@ -89,15 +95,13 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         spotLightNode.light = SCNLight()
         if let light = spotLightNode.light {
             light.type = .spot
-//            light.attenuationEndDistance = 100
-//            light.attenuationStartDistance = 0
-//            light.attenuationFalloffExponent = 1
             light.color = UIColor.white
             light.intensity = 1800
-            light.castsShadow = true
-//            light.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
-            light.shadowRadius = 200
-            light.shadowMode = .deferred
+            // maybe we come back to shadows later
+//            light.castsShadow = true
+////            light.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+//            light.shadowRadius = 200
+//            light.shadowMode = .deferred
         }
         
         spotLightNode.position = SCNVector3(0,10,4)
@@ -185,30 +189,36 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         rootNode.addChildNode(modelWrapper)
     }
     
-    func createFloorAt(position: SCNVector3) {
+    func moveFloorTo(position: SCNVector3) {
+        createFloor()
+        floorNode.position = SCNVector3(0, position.y - 0.1, 0)
+    }
+    
+    func createFloor() {
         let floorGeo = SCNFloor()
         floorGeo.reflectivity = 0
-        if let mat = floorGeo.firstMaterial {
-            mat.lightingModel = .constant
-            mat.diffuse.contents = UIColor.white
-            mat.writesToDepthBuffer = true
-            mat.colorBufferWriteMask = []
-//            mat.colorBufferWriteMask = SCNColorMask(rawValue: 0)
-        }
         
-        let floorNode = SCNNode(geometry: floorGeo)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.white
         
-        floorNode.position = SCNVector3(0, position.y - 0.1, 0)
+        material.blendMode = .multiply
+        material.lightingModel = .lambert
+        
+//        material.colorBufferWriteMask = SCNColorMask(rawValue: 0)
+        floorGeo.materials = [material]
+
+        floorNode = SCNNode(geometry: floorGeo)
+        
         rootNode.addChildNode(floorNode)
     }
     
     func createPlayerNode() {
         
         // add a box inside this piller, this is the one that represents the users head
-        let headGeo = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
+        let headGeo = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+        // do not want to see the head
         headGeo.firstMaterial?.diffuse.contents = UIColor.clear
         headNode = SCNNode(geometry: headGeo)
-        headNode.position = SCNVector3(0, 1.4, 0)
         
         headNode.physicsBody = SCNPhysicsBody.kinematic()
         if let physBod = headNode.physicsBody {
