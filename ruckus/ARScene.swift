@@ -132,7 +132,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // 'face' the correct direction, for the look at
             model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             
-            model.scale = SCNVector3(0.011, 0.011, 0.011)
+//            0.0105 is my height
+            model.scale = SCNVector3(0.0105, 0.0105, 0.0105)
             model.position = SCNVector3(0,0,0)
             
             // add some levels of detail for the main char to bring the size down

@@ -74,11 +74,15 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     var rumbleTimer: Timer?
     
+    let player: SoundPlayer = SoundPlayer.sharedInstance
+    let playerQue = DispatchQueue(label: "ruckus.sound_que", qos: DispatchQoS.background)
+    
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
         
         settingsAccessor = SettingsAccessor()
+        
         
         if let difficulty = self.settingsAccessor?.getDifficulty() {
             if difficulty > 0 {
@@ -310,6 +314,17 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         // vibrate the phone when hit!
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
+        
+        playerQue.async {
+            let randomIndex = Int(arc4random_uniform(UInt32(4))) + 1
+            do {
+                try self.player.play("punch_\(randomIndex)", withExtension: "wav", loop: false)
+            } catch let error {
+                fatalError(error.localizedDescription)
+            }
+        }
+       
+        
         DispatchQueue.main.async {
             Timer.scheduledTimer(withTimeInterval: self.invincibleTime, repeats: false){ _ in
                 self.canBeHit = true
@@ -323,7 +338,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         // get the light estimate, and update the lights based on the room lights
         if let estimate = fullScreenARView.session.currentFrame?.lightEstimate {
-            scene.spotLightNode.light?.intensity = estimate.ambientIntensity * 3
+            scene.spotLightNode.light?.intensity = estimate.ambientIntensity
             scene.ambientLightNode.light?.intensity = estimate.ambientIntensity
         }
         DispatchQueue.main.async {
