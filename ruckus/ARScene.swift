@@ -38,6 +38,9 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     var animationController: ARAnimationController?
     
+    var spotLightNode = SCNNode()
+    var ambientLightNode = SCNNode()
+    
     convenience init(create: Bool) {
         self.init()
         
@@ -55,6 +58,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         createPlayerNode()
         
         setUpChar()
+        
+        ligntMeUp()
         
         // start callin the hits
         animationController = ARAnimationController.init(withModel: model)
@@ -77,6 +82,33 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
         // then we set the head node transform using the normal transform matrix
         headNode.transform = SCNMatrix4FromMat4(position)
+    }
+    
+    func ligntMeUp() {
+        // lights
+        spotLightNode.light = SCNLight()
+        if let light = spotLightNode.light {
+            light.type = .spot
+            light.attenuationEndDistance = 100
+            light.attenuationStartDistance = 0
+            light.attenuationFalloffExponent = 1
+            light.color = UIColor.white
+            light.intensity = 1800
+        }
+        
+        spotLightNode.position = SCNVector3(0,10,10)
+        rootNode.addChildNode(spotLightNode)
+        
+        ambientLightNode.light = SCNLight()
+        if let amLight = ambientLightNode.light {
+            amLight.type = .ambient
+            amLight.color = UIColor.white
+            amLight.intensity = 200
+        }
+        rootNode.addChildNode(ambientLightNode)
+        
+        spotLightNode.constraints = [SCNLookAtConstraint(target: modelWrapper)]
+        
     }
     
     func setUpChar() {

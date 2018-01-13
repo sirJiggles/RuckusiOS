@@ -95,6 +95,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
+        configuration.isLightEstimationEnabled = true
         fullScreenARView.session.run(configuration, options: [
             ARSession.RunOptions.removeExistingAnchors,
             ARSession.RunOptions.resetTracking
@@ -236,7 +237,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
         
         fullScreenARView.isHidden = true
-        fullScreenARView.automaticallyUpdatesLighting = true
+//        fullScreenARView.automaticallyUpdatesLighting = true
         
 //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
@@ -326,6 +327,12 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     // MARK: - render delegate for VR mode scene
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
+        // get the light estimate, and update the lights based on the room lights
+        if let estimate = fullScreenARView.session.currentFrame?.lightEstimate {
+            scene.spotLightNode.light?.intensity = estimate.ambientIntensity * 6
+            scene.ambientLightNode.light?.intensity = estimate.ambientIntensity
+        }
         DispatchQueue.main.async {
             self.updateFrame()
         }

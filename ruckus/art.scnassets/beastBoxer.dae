@@ -4,1208 +4,1208 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2018-01-10T22:17:36Z</created>
-  <modified>2018-01-10T22:17:36Z</modified>
+  <created>2018-01-13T00:17:31Z</created>
+  <modified>2018-01-13T00:17:31Z</modified>
   <unit meter="0.010000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
  <library_animations>
-  <animation id="mixamorig_Hips-anim" name="mixamorig_Hips-anim">
+  <animation id="beastBoxer-1" name="beastBoxer-1">
    <animation id="keyframedAnimations1">
     <source id="genericSource2">
-     <float_array id="mixamorig_Hips-anim3-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-13-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim3-array" count="2" stride="1">
+      <accessor source="#beastBoxer-13-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource4">
-     <float_array id="mixamorig_Hips-anim5-array" count="32">0.969044 -0.246408 -0.015418 0 0.246875 0.966424 0.071252 18.6461 -0.002656 -0.072852 0.997339 0 0 0 0 1 0.969044 -0.246408 -0.015418 0 0.246875 0.966424 0.071252 18.6461 -0.002656 -0.072852 0.997339 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-15-array" count="32">0.999808 0.018899 -0.005084 -0.236785 -0.018901 0.999821 -0.000189 6.40149 0.005079 0.000285 0.999987 0 0 0 0 1 0.999808 0.018899 -0.005084 -0.236785 -0.018901 0.999821 -0.000189 6.40149 0.005079 0.000285 0.999987 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim5-array" count="2" stride="16">
+      <accessor source="#beastBoxer-15-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim6">
+    <sampler id="beastBoxer-16">
      <input semantic="INPUT" source="#genericSource2"/>
      <input semantic="OUTPUT" source="#genericSource4"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim6" target="mixamorig_LeftArm/SID_1"/>
+    <channel source="#beastBoxer-16" target="mixamorig_RightHandPinky2/SID_1"/>
    </animation>
    <animation id="keyframedAnimations7">
     <source id="genericSource8">
-     <float_array id="mixamorig_Hips-anim9-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-19-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim9-array" count="2" stride="1">
+      <accessor source="#beastBoxer-19-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource10">
-     <float_array id="mixamorig_Hips-anim11-array" count="32">0.802774 -0.542401 0.247698 -4.43741 0.596164 0.721794 -0.351571 3.2783 0.011906 0.429901 0.902798 3.65615 0 0 0 1 0.802774 -0.542401 0.247698 -4.43741 0.596164 0.721794 -0.351571 3.2783 0.011906 0.429901 0.902798 3.65615 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-111-array" count="32">0.999817 -0.019011 0.002326 0.058326 0.019011 0.999819 -2.2e-05 6.43548 -0.002325 6.6e-05 0.999997 0 0 0 0 1 0.999817 -0.019011 0.002326 0.058326 0.019011 0.999819 -2.2e-05 6.43548 -0.002325 6.6e-05 0.999997 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim11-array" count="2" stride="16">
+      <accessor source="#beastBoxer-111-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim12">
+    <sampler id="beastBoxer-112">
      <input semantic="INPUT" source="#genericSource8"/>
      <input semantic="OUTPUT" source="#genericSource10"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim12" target="mixamorig_LeftHandThumb1/SID_2"/>
+    <channel source="#beastBoxer-112" target="mixamorig_LeftHandMiddle2/SID_2"/>
    </animation>
    <animation id="keyframedAnimations13">
     <source id="genericSource14">
-     <float_array id="mixamorig_Hips-anim15-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-115-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim15-array" count="2" stride="1">
+      <accessor source="#beastBoxer-115-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource16">
-     <float_array id="mixamorig_Hips-anim17-array" count="32">-0.999992 0.004004 -0.00016 -11.7926 -0.004006 -0.997883 0.064912 -8.13068 0.0001 0.064912 0.997891 0.433506 0 0 0 1 -0.999992 0.004004 -0.00016 -11.7926 -0.004006 -0.997883 0.064912 -8.13068 0.0001 0.064912 0.997891 0.433506 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-117-array" count="32">0.997455 0.071293 -0.000369 0.113549 -0.071293 0.997455 7e-06 5.8082 0.000368 2e-05 1 0 0 0 0 1 0.997455 0.071293 -0.000369 0.113549 -0.071293 0.997455 7e-06 5.8082 0.000368 2e-05 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim17-array" count="2" stride="16">
+      <accessor source="#beastBoxer-117-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim18">
+    <sampler id="beastBoxer-118">
      <input semantic="INPUT" source="#genericSource14"/>
      <input semantic="OUTPUT" source="#genericSource16"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim18" target="mixamorig_RightUpLeg/SID_3"/>
+    <channel source="#beastBoxer-118" target="mixamorig_LeftHandIndex2/SID_3"/>
    </animation>
    <animation id="keyframedAnimations19">
     <source id="genericSource20">
-     <float_array id="mixamorig_Hips-anim21-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-121-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim21-array" count="2" stride="1">
+      <accessor source="#beastBoxer-121-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource22">
-     <float_array id="mixamorig_Hips-anim23-array" count="32">0.999851 0.017232 0.000636 0.018609 -0.017232 0.999852 -2e-06 5.99499 -0.000636 -9e-06 1 0 0 0 0 1 0.999851 0.017232 0.000636 0.018609 -0.017232 0.999852 -2e-06 5.99499 -0.000636 -9e-06 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-123-array" count="32">0.999994 -0 -0.003435 0 0 1 -1e-06 33.5989 0.003435 1e-06 0.999994 0 0 0 0 1 0.999994 -0 -0.003435 0 0 1 -1e-06 33.5989 0.003435 1e-06 0.999994 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim23-array" count="2" stride="16">
+      <accessor source="#beastBoxer-123-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim24">
+    <sampler id="beastBoxer-124">
      <input semantic="INPUT" source="#genericSource20"/>
      <input semantic="OUTPUT" source="#genericSource22"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim24" target="mixamorig_RightHandThumb3/SID_4"/>
+    <channel source="#beastBoxer-124" target="mixamorig_LeftForeArm/SID_4"/>
    </animation>
    <animation id="keyframedAnimations25">
     <source id="genericSource26">
-     <float_array id="mixamorig_Hips-anim27-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-127-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim27-array" count="2" stride="1">
+      <accessor source="#beastBoxer-127-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource28">
-     <float_array id="mixamorig_Hips-anim29-array" count="32">0.998133 -0.061077 0.000527 -0.060239 0.061077 0.998133 6e-06 4.81965 -0.000526 2.6e-05 1 0 0 0 0 1 0.998133 -0.061077 0.000527 -0.060239 0.061077 0.998133 6e-06 4.81965 -0.000526 2.6e-05 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-129-array" count="32">0.802847 0.542251 -0.247791 4.44226 -0.596057 0.721464 -0.352427 3.28306 -0.012332 0.430642 0.902438 3.65029 0 0 0 1 0.802847 0.542251 -0.247791 4.44226 -0.596057 0.721464 -0.352427 3.28306 -0.012332 0.430642 0.902438 3.65029 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim29-array" count="2" stride="16">
+      <accessor source="#beastBoxer-129-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim30">
+    <sampler id="beastBoxer-130">
      <input semantic="INPUT" source="#genericSource26"/>
      <input semantic="OUTPUT" source="#genericSource28"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim30" target="mixamorig_RightHandRing3/SID_5"/>
+    <channel source="#beastBoxer-130" target="mixamorig_RightHandThumb1/SID_5"/>
    </animation>
    <animation id="keyframedAnimations31">
     <source id="genericSource32">
-     <float_array id="mixamorig_Hips-anim33-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-133-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim33-array" count="2" stride="1">
+      <accessor source="#beastBoxer-133-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource34">
-     <float_array id="mixamorig_Hips-anim35-array" count="32">0.933896 0.122815 -0.335791 0 -0.137997 0.990196 -0.021631 26.0675 0.329842 0.066539 0.941688 -0 0 0 0 1 0.933896 0.122815 -0.335791 0 -0.137997 0.990196 -0.021631 26.0675 0.329842 0.066539 0.941688 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-135-array" count="32">0.982943 0.183902 0.001651 -2.1652 -0.183897 0.982728 0.020664 13.9861 0.002177 -0.020615 0.999785 -0.310705 0 0 0 1 0.982943 0.183902 0.001651 -2.1652 -0.183897 0.982728 0.020664 13.9861 0.002177 -0.020615 0.999785 -0.310705 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim35-array" count="2" stride="16">
+      <accessor source="#beastBoxer-135-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim36">
+    <sampler id="beastBoxer-136">
      <input semantic="INPUT" source="#genericSource32"/>
      <input semantic="OUTPUT" source="#genericSource34"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim36" target="mixamorig_LeftHand/SID_6"/>
+    <channel source="#beastBoxer-136" target="mixamorig_RightHandRing1/SID_6"/>
    </animation>
    <animation id="keyframedAnimations37">
     <source id="genericSource38">
-     <float_array id="mixamorig_Hips-anim39-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-139-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim39-array" count="2" stride="1">
+      <accessor source="#beastBoxer-139-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource40">
-     <float_array id="mixamorig_Hips-anim41-array" count="32">0.99996 -0.00892 -0.000298 -0.070657 0.00892 0.99996 -3e-06 6.03212 0.000298 1e-06 1 -0 0 0 0 1 0.99996 -0.00892 -0.000298 -0.070657 0.00892 0.99996 -3e-06 6.03212 0.000298 1e-06 1 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-141-array" count="32">0.984671 -0.174409 -0.00199 6.47835 0.174411 0.984437 0.021562 12.2426 -0.001801 -0.021578 0.999766 0.519263 0 0 0 1 0.984671 -0.174409 -0.00199 6.47835 0.174411 0.984437 0.021562 12.2426 -0.001801 -0.021578 0.999766 0.519263 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim41-array" count="2" stride="16">
+      <accessor source="#beastBoxer-141-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim42">
+    <sampler id="beastBoxer-142">
      <input semantic="INPUT" source="#genericSource38"/>
      <input semantic="OUTPUT" source="#genericSource40"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim42" target="mixamorig_LeftHandThumb2/SID_7"/>
+    <channel source="#beastBoxer-142" target="mixamorig_LeftHandPinky1/SID_7"/>
    </animation>
    <animation id="keyframedAnimations43">
     <source id="genericSource44">
-     <float_array id="mixamorig_Hips-anim45-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-145-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim45-array" count="2" stride="1">
+      <accessor source="#beastBoxer-145-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource46">
-     <float_array id="mixamorig_Hips-anim47-array" count="32">0.982943 0.183902 0.001651 -2.1652 -0.183897 0.982728 0.020664 13.9861 0.002177 -0.020615 0.999785 -0.310705 0 0 0 1 0.982943 0.183902 0.001651 -2.1652 -0.183897 0.982728 0.020664 13.9861 0.002177 -0.020615 0.999785 -0.310705 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-147-array" count="32">-0.244855 -0.966911 0.071625 -9.18954 -0.401015 0.033738 -0.91545 12.4278 0.882742 -0.252875 -0.396006 3.11031 0 0 0 1 -0.244855 -0.966911 0.071625 -9.18954 -0.401015 0.033738 -0.91545 12.4278 0.882742 -0.252875 -0.396006 3.11031 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim47-array" count="2" stride="16">
+      <accessor source="#beastBoxer-147-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim48">
+    <sampler id="beastBoxer-148">
      <input semantic="INPUT" source="#genericSource44"/>
      <input semantic="OUTPUT" source="#genericSource46"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim48" target="mixamorig_RightHandRing1/SID_8"/>
+    <channel source="#beastBoxer-148" target="mixamorig_RightShoulder/SID_8"/>
    </animation>
    <animation id="keyframedAnimations49">
     <source id="genericSource50">
-     <float_array id="mixamorig_Hips-anim51-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-151-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim51-array" count="2" stride="1">
+      <accessor source="#beastBoxer-151-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource52">
-     <float_array id="mixamorig_Hips-anim53-array" count="32">0.997698 0.067816 0.000639 0.157074 -0.067816 0.997698 -1.9e-05 5.59514 -0.000639 -2.5e-05 1 0 0 0 0 1 0.997698 0.067816 0.000639 0.157074 -0.067816 0.997698 -1.9e-05 5.59514 -0.000639 -2.5e-05 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-153-array" count="32">0.984735 0.174053 0.001849 -6.46536 -0.174054 0.98452 0.020637 12.2429 0.001772 -0.020643 0.999785 0.51295 0 0 0 1 0.984735 0.174053 0.001849 -6.46536 -0.174054 0.98452 0.020637 12.2429 0.001772 -0.020643 0.999785 0.51295 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim53-array" count="2" stride="16">
+      <accessor source="#beastBoxer-153-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim54">
+    <sampler id="beastBoxer-154">
      <input semantic="INPUT" source="#genericSource50"/>
      <input semantic="OUTPUT" source="#genericSource52"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim54" target="mixamorig_LeftHandMiddle3/SID_9"/>
+    <channel source="#beastBoxer-154" target="mixamorig_RightHandPinky1/SID_9"/>
    </animation>
    <animation id="keyframedAnimations55">
     <source id="genericSource56">
-     <float_array id="mixamorig_Hips-anim57-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-157-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim57-array" count="2" stride="1">
+      <accessor source="#beastBoxer-157-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource58">
-     <float_array id="mixamorig_Hips-anim59-array" count="32">0.999857 -0.016899 -0.00066 -0.016768 0.016899 0.999857 -1e-06 5.99979 0.00066 -1e-05 1 0 0 0 0 1 0.999857 -0.016899 -0.00066 -0.016768 0.016899 0.999857 -1e-06 5.99979 0.00066 -1e-05 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-159-array" count="32">0.996555 -0.08293 -9.8e-05 -0.263833 0.08293 0.996555 -5e-06 5.08656 9.9e-05 -3e-06 1 0 0 0 0 1 0.996555 -0.08293 -9.8e-05 -0.263833 0.08293 0.996555 -5e-06 5.08656 9.9e-05 -3e-06 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim59-array" count="2" stride="16">
+      <accessor source="#beastBoxer-159-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim60">
+    <sampler id="beastBoxer-160">
      <input semantic="INPUT" source="#genericSource56"/>
      <input semantic="OUTPUT" source="#genericSource58"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim60" target="mixamorig_LeftHandThumb3/SID_10"/>
+    <channel source="#beastBoxer-160" target="mixamorig_LeftHandIndex3/SID_10"/>
    </animation>
    <animation id="keyframedAnimations61">
     <source id="genericSource62">
-     <float_array id="mixamorig_Hips-anim63-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-163-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim63-array" count="2" stride="1">
+      <accessor source="#beastBoxer-163-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource64">
-     <float_array id="mixamorig_Hips-anim65-array" count="32">1 0.00024 -0.000108 0.045483 -0.000247 0.997776 -0.06666 19.7321 9.2e-05 0.06666 0.997776 4.40213 0 0 0 1 1 0.00024 -0.000108 0.045483 -0.000247 0.997776 -0.06666 19.7321 9.2e-05 0.06666 0.997776 4.40213 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-165-array" count="32">0.999965 0.008304 0.000281 0.068851 -0.008304 0.999966 -3e-06 6.03979 -0.000281 0 1 0 0 0 0 1 0.999965 0.008304 0.000281 0.068851 -0.008304 0.999966 -3e-06 6.03979 -0.000281 0 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim65-array" count="2" stride="16">
+      <accessor source="#beastBoxer-165-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim66">
+    <sampler id="beastBoxer-166">
      <input semantic="INPUT" source="#genericSource62"/>
      <input semantic="OUTPUT" source="#genericSource64"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim66" target="mixamorig_Neck/SID_11"/>
+    <channel source="#beastBoxer-166" target="mixamorig_RightHandThumb2/SID_11"/>
    </animation>
    <animation id="keyframedAnimations67">
     <source id="genericSource68">
-     <float_array id="mixamorig_Hips-anim69-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-169-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim69-array" count="2" stride="1">
+      <accessor source="#beastBoxer-169-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource70">
-     <float_array id="mixamorig_Hips-anim71-array" count="32">0.987642 0.15671 0.002201 6.58231 -0.156722 0.987428 0.020587 13.8833 0.001053 -0.020678 0.999786 0.497518 0 0 0 1 0.987642 0.15671 0.002201 6.58231 -0.156722 0.987428 0.020587 13.8833 0.001053 -0.020678 0.999786 0.497518 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-171-array" count="32">0.999405 -0.034487 -0.000542 -0.252224 0.034487 0.999405 -2.4e-05 5.36376 0.000542 6e-06 1 0 0 0 0 1 0.999405 -0.034487 -0.000542 -0.252224 0.034487 0.999405 -2.4e-05 5.36376 0.000542 6e-06 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim71-array" count="2" stride="16">
+      <accessor source="#beastBoxer-171-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim72">
+    <sampler id="beastBoxer-172">
      <input semantic="INPUT" source="#genericSource68"/>
      <input semantic="OUTPUT" source="#genericSource70"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim72" target="mixamorig_RightHandIndex1/SID_12"/>
+    <channel source="#beastBoxer-172" target="mixamorig_RightHandRing2/SID_12"/>
    </animation>
    <animation id="keyframedAnimations73">
     <source id="genericSource74">
-     <float_array id="mixamorig_Hips-anim75-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-175-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim75-array" count="2" stride="1">
+      <accessor source="#beastBoxer-175-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource76">
-     <float_array id="mixamorig_Hips-anim77-array" count="32">-0.246226 0.966456 -0.073042 9.18464 0.404052 0.033855 -0.914109 12.412 -0.880974 -0.254591 -0.398835 3.14124 0 0 0 1 -0.246226 0.966456 -0.073042 9.18464 0.404052 0.033855 -0.914109 12.412 -0.880974 -0.254591 -0.398835 3.14124 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-177-array" count="32">0.990869 -0.103308 -0.086636 0 0 0.642574 -0.766224 24.6047 0.134827 0.759228 0.636706 0 0 0 0 1 0.990869 -0.103308 -0.086636 0 0 0.642574 -0.766224 24.6047 0.134827 0.759228 0.636706 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim77-array" count="2" stride="16">
+      <accessor source="#beastBoxer-177-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim78">
+    <sampler id="beastBoxer-178">
      <input semantic="INPUT" source="#genericSource74"/>
      <input semantic="OUTPUT" source="#genericSource76"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim78" target="mixamorig_LeftShoulder/SID_13"/>
+    <channel source="#beastBoxer-178" target="mixamorig_RightToeBase/SID_13"/>
    </animation>
    <animation id="keyframedAnimations79">
     <source id="genericSource80">
-     <float_array id="mixamorig_Hips-anim81-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-181-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim81-array" count="2" stride="1">
+      <accessor source="#beastBoxer-181-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource82">
-     <float_array id="mixamorig_Hips-anim83-array" count="32">0.984671 -0.174409 -0.00199 6.47835 0.174411 0.984437 0.021562 12.2426 -0.001801 -0.021578 0.999766 0.519263 0 0 0 1 0.984671 -0.174409 -0.00199 6.47835 0.174411 0.984437 0.021562 12.2426 -0.001801 -0.021578 0.999766 0.519263 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-183-array" count="32">1 -0 0 0.088592 0 1 -0 10.3391 0 0 1 5.74085 0 0 0 1 1 -0 0 0.088592 0 1 -0 10.3391 0 0 1 5.74085 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim83-array" count="2" stride="16">
+      <accessor source="#beastBoxer-183-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim84">
+    <sampler id="beastBoxer-184">
      <input semantic="INPUT" source="#genericSource80"/>
      <input semantic="OUTPUT" source="#genericSource82"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim84" target="mixamorig_LeftHandPinky1/SID_14"/>
+    <channel source="#beastBoxer-184" target="mixamorig_Head/SID_14"/>
    </animation>
    <animation id="keyframedAnimations85">
     <source id="genericSource86">
-     <float_array id="mixamorig_Hips-anim87-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-187-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim87-array" count="2" stride="1">
+      <accessor source="#beastBoxer-187-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource88">
-     <float_array id="mixamorig_Hips-anim89-array" count="32">-0.244855 -0.966911 0.071625 -9.18954 -0.401015 0.033738 -0.91545 12.4278 0.882742 -0.252875 -0.396006 3.11031 0 0 0 1 -0.244855 -0.966911 0.071625 -9.18954 -0.401015 0.033738 -0.91545 12.4278 0.882742 -0.252875 -0.396006 3.11031 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-189-array" count="32">1 -0 0 0 -0 1 0 17.833 0 0 1 -0 0 0 0 1 1 -0 0 0 -0 1 0 17.833 0 0 1 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim89-array" count="2" stride="16">
+      <accessor source="#beastBoxer-189-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim90">
+    <sampler id="beastBoxer-190">
      <input semantic="INPUT" source="#genericSource86"/>
      <input semantic="OUTPUT" source="#genericSource88"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim90" target="mixamorig_RightShoulder/SID_15"/>
+    <channel source="#beastBoxer-190" target="mixamorig_Spine2/SID_15"/>
    </animation>
    <animation id="keyframedAnimations91">
     <source id="genericSource92">
-     <float_array id="mixamorig_Hips-anim93-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-193-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim93-array" count="2" stride="1">
+      <accessor source="#beastBoxer-193-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource94">
-     <float_array id="mixamorig_Hips-anim95-array" count="32">0.999405 -0.034487 -0.000542 -0.252224 0.034487 0.999405 -2.4e-05 5.36376 0.000542 6e-06 1 0 0 0 0 1 0.999405 -0.034487 -0.000542 -0.252224 0.034487 0.999405 -2.4e-05 5.36376 0.000542 6e-06 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-195-array" count="32">1 4.7e-05 2e-06 0.001132 -4.7e-05 1 0 118.419 -2e-06 -0 1 -0.393306 0 0 0 1 1 4.7e-05 2e-06 0.001132 -4.7e-05 1 0 118.419 -2e-06 -0 1 -0.393306 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim95-array" count="2" stride="16">
+      <accessor source="#beastBoxer-195-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim96">
+    <sampler id="beastBoxer-196">
      <input semantic="INPUT" source="#genericSource92"/>
      <input semantic="OUTPUT" source="#genericSource94"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim96" target="mixamorig_RightHandRing2/SID_16"/>
+    <channel source="#beastBoxer-196" target="mixamorig_Hips/SID_16"/>
    </animation>
    <animation id="keyframedAnimations97">
     <source id="genericSource98">
-     <float_array id="mixamorig_Hips-anim99-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-199-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim99-array" count="2" stride="1">
+      <accessor source="#beastBoxer-199-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource100">
-     <float_array id="mixamorig_Hips-anim101-array" count="32">0.990869 -0.103308 -0.086636 0 0 0.642574 -0.766224 24.6047 0.134827 0.759228 0.636706 0 0 0 0 1 0.990869 -0.103308 -0.086636 0 0 0.642574 -0.766224 24.6047 0.134827 0.759228 0.636706 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1101-array" count="32">0.99996 -0.00892 -0.000298 -0.070657 0.00892 0.99996 -3e-06 6.03212 0.000298 1e-06 1 -0 0 0 0 1 0.99996 -0.00892 -0.000298 -0.070657 0.00892 0.99996 -3e-06 6.03212 0.000298 1e-06 1 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim101-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1101-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim102">
+    <sampler id="beastBoxer-1102">
      <input semantic="INPUT" source="#genericSource98"/>
      <input semantic="OUTPUT" source="#genericSource100"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim102" target="mixamorig_RightToeBase/SID_17"/>
+    <channel source="#beastBoxer-1102" target="mixamorig_LeftHandThumb2/SID_17"/>
    </animation>
    <animation id="keyframedAnimations103">
     <source id="genericSource104">
-     <float_array id="mixamorig_Hips-anim105-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1105-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim105-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1105-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource106">
-     <float_array id="mixamorig_Hips-anim107-array" count="32">0.997447 -0.071403 0.00043 -0.112577 0.071403 0.997448 8e-06 5.80665 -0.00043 2.2e-05 1 -0 0 0 0 1 0.997447 -0.071403 0.00043 -0.112577 0.071403 0.997448 8e-06 5.80665 -0.00043 2.2e-05 1 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1107-array" count="32">0.998133 -0.061077 0.000527 -0.060239 0.061077 0.998133 6e-06 4.81965 -0.000526 2.6e-05 1 0 0 0 0 1 0.998133 -0.061077 0.000527 -0.060239 0.061077 0.998133 6e-06 4.81965 -0.000526 2.6e-05 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim107-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1107-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim108">
+    <sampler id="beastBoxer-1108">
      <input semantic="INPUT" source="#genericSource104"/>
      <input semantic="OUTPUT" source="#genericSource106"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim108" target="mixamorig_RightHandIndex2/SID_18"/>
+    <channel source="#beastBoxer-1108" target="mixamorig_RightHandRing3/SID_18"/>
    </animation>
    <animation id="keyframedAnimations109">
     <source id="genericSource110">
-     <float_array id="mixamorig_Hips-anim111-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1111-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim111-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1111-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource112">
-     <float_array id="mixamorig_Hips-anim113-array" count="32">0.987545 -0.15732 -0.002383 -6.58599 0.157335 0.987311 0.021508 13.873 -0.00103 -0.021615 0.999766 0.510628 0 0 0 1 0.987545 -0.15732 -0.002383 -6.58599 0.157335 0.987311 0.021508 13.873 -0.00103 -0.021615 0.999766 0.510628 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1113-array" count="32">0.999886 0.013235 0.007216 -0 -0.002407 0.612755 -0.790269 48.97 -0.014881 0.790162 0.612717 -0 0 0 0 1 0.999886 0.013235 0.007216 -0 -0.002407 0.612755 -0.790269 48.97 -0.014881 0.790162 0.612717 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim113-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1113-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim114">
+    <sampler id="beastBoxer-1114">
      <input semantic="INPUT" source="#genericSource110"/>
      <input semantic="OUTPUT" source="#genericSource112"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim114" target="mixamorig_LeftHandIndex1/SID_19"/>
+    <channel source="#beastBoxer-1114" target="mixamorig_RightFoot/SID_19"/>
    </animation>
    <animation id="keyframedAnimations115">
     <source id="genericSource116">
-     <float_array id="mixamorig_Hips-anim117-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1117-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim117-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1117-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource118">
-     <float_array id="mixamorig_Hips-anim119-array" count="32">1 -0 0 0 -0 1 0 17.833 0 0 1 -0 0 0 0 1 1 -0 0 0 -0 1 0 17.833 0 0 1 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1119-array" count="32">0.991059 0.102222 0.085746 0 -0 0.642664 -0.766148 24.6054 -0.133423 0.759298 0.636918 0 0 0 0 1 0.991059 0.102222 0.085746 0 -0 0.642664 -0.766148 24.6054 -0.133423 0.759298 0.636918 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim119-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1119-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim120">
+    <sampler id="beastBoxer-1120">
      <input semantic="INPUT" source="#genericSource116"/>
      <input semantic="OUTPUT" source="#genericSource118"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim120" target="mixamorig_Spine2/SID_20"/>
+    <channel source="#beastBoxer-1120" target="mixamorig_LeftToeBase/SID_20"/>
    </animation>
    <animation id="keyframedAnimations121">
     <source id="genericSource122">
-     <float_array id="mixamorig_Hips-anim123-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1123-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim123-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1123-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource124">
-     <float_array id="mixamorig_Hips-anim125-array" count="32">0.999808 0.018899 -0.005084 -0.236785 -0.018901 0.999821 -0.000189 6.40149 0.005079 0.000285 0.999987 0 0 0 0 1 0.999808 0.018899 -0.005084 -0.236785 -0.018901 0.999821 -0.000189 6.40149 0.005079 0.000285 0.999987 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1125-array" count="32">0.999994 1e-06 0.003482 0 -1e-06 1 -0 33.6045 -0.003482 0 0.999994 -0 0 0 0 1 0.999994 1e-06 0.003482 0 -1e-06 1 -0 33.6045 -0.003482 0 0.999994 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim125-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1125-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim126">
+    <sampler id="beastBoxer-1126">
      <input semantic="INPUT" source="#genericSource122"/>
      <input semantic="OUTPUT" source="#genericSource124"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim126" target="mixamorig_RightHandPinky2/SID_21"/>
+    <channel source="#beastBoxer-1126" target="mixamorig_RightForeArm/SID_21"/>
    </animation>
    <animation id="keyframedAnimations127">
     <source id="genericSource128">
-     <float_array id="mixamorig_Hips-anim129-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1129-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim129-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1129-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource130">
-     <float_array id="mixamorig_Hips-anim131-array" count="32">1 -0 0 0.088592 0 1 -0 10.3391 0 0 1 5.74085 0 0 0 1 1 -0 0 0.088592 0 1 -0 10.3391 0 0 1 5.74085 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1131-array" count="32">0.989201 0.146566 0.000773 2.04825 -0.14655 0.988985 0.020784 14.7484 0.002282 -0.020673 0.999784 -0.308172 0 0 0 1 0.989201 0.146566 0.000773 2.04825 -0.14655 0.988985 0.020784 14.7484 0.002282 -0.020673 0.999784 -0.308172 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim131-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1131-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim132">
+    <sampler id="beastBoxer-1132">
      <input semantic="INPUT" source="#genericSource128"/>
      <input semantic="OUTPUT" source="#genericSource130"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim132" target="mixamorig_Head/SID_22"/>
+    <channel source="#beastBoxer-1132" target="mixamorig_RightHandMiddle1/SID_22"/>
    </animation>
    <animation id="keyframedAnimations133">
     <source id="genericSource134">
-     <float_array id="mixamorig_Hips-anim135-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1135-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim135-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1135-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource136">
-     <float_array id="mixamorig_Hips-anim137-array" count="32">0.996521 0.083338 5.6e-05 0.263966 -0.083338 0.996521 -4e-06 5.065 -5.6e-05 -1e-06 1 0 0 0 0 1 0.996521 0.083338 5.6e-05 0.263966 -0.083338 0.996521 -4e-06 5.065 -5.6e-05 -1e-06 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1137-array" count="32">1 -0.000662 6.4e-05 0 0.000665 0.995377 -0.096046 13.6854 -0 0.096046 0.995377 -0 0 0 0 1 1 -0.000662 6.4e-05 0 0.000665 0.995377 -0.096046 13.6854 -0 0.096046 0.995377 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim137-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1137-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim138">
+    <sampler id="beastBoxer-1138">
      <input semantic="INPUT" source="#genericSource134"/>
      <input semantic="OUTPUT" source="#genericSource136"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim138" target="mixamorig_RightHandIndex3/SID_23"/>
+    <channel source="#beastBoxer-1138" target="mixamorig_Spine1/SID_23"/>
    </animation>
    <animation id="keyframedAnimations139">
     <source id="genericSource140">
-     <float_array id="mixamorig_Hips-anim141-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1141-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim141-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1141-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource142">
-     <float_array id="mixamorig_Hips-anim143-array" count="32">0.999971 0.007466 0.001401 0 -0.007597 0.982713 0.184979 43.917 4e-06 -0.184984 0.982742 -0 0 0 0 1 0.999971 0.007466 0.001401 0 -0.007597 0.982713 0.184979 43.917 4e-06 -0.184984 0.982742 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1143-array" count="32">0.999517 0.03106 0.000543 0.242844 -0.03106 0.999518 -2.4e-05 5.37283 -0.000544 7e-06 1 -0 0 0 0 1 0.999517 0.03106 0.000543 0.242844 -0.03106 0.999518 -2.4e-05 5.37283 -0.000544 7e-06 1 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim143-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1143-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim144">
+    <sampler id="beastBoxer-1144">
      <input semantic="INPUT" source="#genericSource140"/>
      <input semantic="OUTPUT" source="#genericSource142"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim144" target="mixamorig_RightLeg/SID_24"/>
+    <channel source="#beastBoxer-1144" target="mixamorig_LeftHandRing2/SID_24"/>
    </animation>
    <animation id="keyframedAnimations145">
     <source id="genericSource146">
-     <float_array id="mixamorig_Hips-anim147-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1147-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim147-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1147-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource148">
-     <float_array id="mixamorig_Hips-anim149-array" count="32">0.997455 0.071293 -0.000369 0.113549 -0.071293 0.997455 7e-06 5.8082 0.000368 2e-05 1 0 0 0 0 1 0.997455 0.071293 -0.000369 0.113549 -0.071293 0.997455 7e-06 5.8082 0.000368 2e-05 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1149-array" count="32">0.983192 -0.182568 -0.001758 2.16319 0.182563 0.982957 0.021595 13.9873 -0.002214 -0.021553 0.999765 -0.306635 0 0 0 1 0.983192 -0.182568 -0.001758 2.16319 0.182563 0.982957 0.021595 13.9873 -0.002214 -0.021553 0.999765 -0.306635 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim149-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1149-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim150">
+    <sampler id="beastBoxer-1150">
      <input semantic="INPUT" source="#genericSource146"/>
      <input semantic="OUTPUT" source="#genericSource148"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim150" target="mixamorig_LeftHandIndex2/SID_25"/>
+    <channel source="#beastBoxer-1150" target="mixamorig_LeftHandRing1/SID_25"/>
    </animation>
    <animation id="keyframedAnimations151">
     <source id="genericSource152">
-     <float_array id="mixamorig_Hips-anim153-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1153-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim153-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1153-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource154">
-     <float_array id="mixamorig_Hips-anim155-array" count="32">0.999994 1e-06 0.003482 0 -1e-06 1 -0 33.6045 -0.003482 0 0.999994 -0 0 0 0 1 0.999994 1e-06 0.003482 0 -1e-06 1 -0 33.6045 -0.003482 0 0.999994 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1155-array" count="32">0.999857 -0.016899 -0.00066 -0.016768 0.016899 0.999857 -1e-06 5.99979 0.00066 -1e-05 1 0 0 0 0 1 0.999857 -0.016899 -0.00066 -0.016768 0.016899 0.999857 -1e-06 5.99979 0.00066 -1e-05 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim155-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1155-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim156">
+    <sampler id="beastBoxer-1156">
      <input semantic="INPUT" source="#genericSource152"/>
      <input semantic="OUTPUT" source="#genericSource154"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim156" target="mixamorig_RightForeArm/SID_26"/>
+    <channel source="#beastBoxer-1156" target="mixamorig_LeftHandThumb3/SID_26"/>
    </animation>
    <animation id="keyframedAnimations157">
     <source id="genericSource158">
-     <float_array id="mixamorig_Hips-anim159-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1159-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim159-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1159-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource160">
-     <float_array id="mixamorig_Hips-anim161-array" count="32">0.989201 0.146566 0.000773 2.04825 -0.14655 0.988985 0.020784 14.7484 0.002282 -0.020673 0.999784 -0.308172 0 0 0 1 0.989201 0.146566 0.000773 2.04825 -0.14655 0.988985 0.020784 14.7484 0.002282 -0.020673 0.999784 -0.308172 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1161-array" count="32">0.999962 -0.008554 -0.001593 0 0.008701 0.983039 0.183188 43.9206 -1e-06 -0.183194 0.983077 0 0 0 0 1 0.999962 -0.008554 -0.001593 0 0.008701 0.983039 0.183188 43.9206 -1e-06 -0.183194 0.983077 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim161-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1161-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim162">
+    <sampler id="beastBoxer-1162">
      <input semantic="INPUT" source="#genericSource158"/>
      <input semantic="OUTPUT" source="#genericSource160"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim162" target="mixamorig_RightHandMiddle1/SID_27"/>
+    <channel source="#beastBoxer-1162" target="mixamorig_LeftLeg/SID_27"/>
    </animation>
    <animation id="keyframedAnimations163">
     <source id="genericSource164">
-     <float_array id="mixamorig_Hips-anim165-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1165-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim165-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1165-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource166">
-     <float_array id="mixamorig_Hips-anim167-array" count="32">1 -0.000662 6.4e-05 0 0.000665 0.995377 -0.096046 13.6854 -0 0.096046 0.995377 -0 0 0 0 1 1 -0.000662 6.4e-05 0 0.000665 0.995377 -0.096046 13.6854 -0 0.096046 0.995377 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1167-array" count="32">0.933896 0.122815 -0.335791 0 -0.137997 0.990196 -0.021631 26.0675 0.329842 0.066539 0.941688 -0 0 0 0 1 0.933896 0.122815 -0.335791 0 -0.137997 0.990196 -0.021631 26.0675 0.329842 0.066539 0.941688 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim167-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1167-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim168">
+    <sampler id="beastBoxer-1168">
      <input semantic="INPUT" source="#genericSource164"/>
      <input semantic="OUTPUT" source="#genericSource166"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim168" target="mixamorig_Spine1/SID_28"/>
+    <channel source="#beastBoxer-1168" target="mixamorig_LeftHand/SID_28"/>
    </animation>
    <animation id="keyframedAnimations169">
     <source id="genericSource170">
-     <float_array id="mixamorig_Hips-anim171-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1171-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim171-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1171-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource172">
-     <float_array id="mixamorig_Hips-anim173-array" count="32">0.987351 -0.158541 -0.00162 -0.184573 0.158541 0.987352 -9.1e-05 3.30031 0.001614 -0.000167 0.999999 0 0 0 0 1 0.987351 -0.158541 -0.00162 -0.184573 0.158541 0.987352 -9.1e-05 3.30031 0.001614 -0.000167 0.999999 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1173-array" count="32">0.989142 -0.146962 -0.000988 -2.05555 0.146949 0.988906 0.021702 14.7493 -0.002212 -0.021612 0.999764 -0.322224 0 0 0 1 0.989142 -0.146962 -0.000988 -2.05555 0.146949 0.988906 0.021702 14.7493 -0.002212 -0.021612 0.999764 -0.322224 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim173-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1173-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim174">
+    <sampler id="beastBoxer-1174">
      <input semantic="INPUT" source="#genericSource170"/>
      <input semantic="OUTPUT" source="#genericSource172"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim174" target="mixamorig_RightHandPinky3/SID_29"/>
+    <channel source="#beastBoxer-1174" target="mixamorig_LeftHandMiddle1/SID_29"/>
    </animation>
    <animation id="keyframedAnimations175">
     <source id="genericSource176">
-     <float_array id="mixamorig_Hips-anim177-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1177-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim177-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1177-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource178">
-     <float_array id="mixamorig_Hips-anim179-array" count="32">0.999886 0.013235 0.007216 -0 -0.002407 0.612755 -0.790269 48.97 -0.014881 0.790162 0.612717 -0 0 0 0 1 0.999886 0.013235 0.007216 -0 -0.002407 0.612755 -0.790269 48.97 -0.014881 0.790162 0.612717 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1179-array" count="32">0.999827 -0.017927 0.0049 0.236273 0.017928 0.999839 -0.00018 6.40637 -0.004896 0.000268 0.999988 0 0 0 0 1 0.999827 -0.017927 0.0049 0.236273 0.017928 0.999839 -0.00018 6.40637 -0.004896 0.000268 0.999988 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim179-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1179-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim180">
+    <sampler id="beastBoxer-1180">
      <input semantic="INPUT" source="#genericSource176"/>
      <input semantic="OUTPUT" source="#genericSource178"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim180" target="mixamorig_RightFoot/SID_30"/>
+    <channel source="#beastBoxer-1180" target="mixamorig_LeftHandPinky2/SID_30"/>
    </animation>
    <animation id="keyframedAnimations181">
     <source id="genericSource182">
-     <float_array id="mixamorig_Hips-anim183-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1183-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim183-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1183-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource184">
-     <float_array id="mixamorig_Hips-anim185-array" count="32">0.991059 0.102222 0.085746 0 -0 0.642664 -0.766148 24.6054 -0.133423 0.759298 0.636918 0 0 0 0 1 0.991059 0.102222 0.085746 0 -0 0.642664 -0.766148 24.6054 -0.133423 0.759298 0.636918 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1185-array" count="32">0.987545 -0.15732 -0.002383 -6.58599 0.157335 0.987311 0.021508 13.873 -0.00103 -0.021615 0.999766 0.510628 0 0 0 1 0.987545 -0.15732 -0.002383 -6.58599 0.157335 0.987311 0.021508 13.873 -0.00103 -0.021615 0.999766 0.510628 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim185-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1185-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim186">
+    <sampler id="beastBoxer-1186">
      <input semantic="INPUT" source="#genericSource182"/>
      <input semantic="OUTPUT" source="#genericSource184"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim186" target="mixamorig_LeftToeBase/SID_31"/>
+    <channel source="#beastBoxer-1186" target="mixamorig_LeftHandIndex1/SID_31"/>
    </animation>
    <animation id="keyframedAnimations187">
     <source id="genericSource188">
-     <float_array id="mixamorig_Hips-anim189-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1189-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim189-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1189-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource190">
-     <float_array id="mixamorig_Hips-anim191-array" count="32">0.996555 -0.08293 -9.8e-05 -0.263833 0.08293 0.996555 -5e-06 5.08656 9.9e-05 -3e-06 1 0 0 0 0 1 0.996555 -0.08293 -9.8e-05 -0.263833 0.08293 0.996555 -5e-06 5.08656 9.9e-05 -3e-06 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1191-array" count="32">-0.246226 0.966456 -0.073042 9.18464 0.404052 0.033855 -0.914109 12.412 -0.880974 -0.254591 -0.398835 3.14124 0 0 0 1 -0.246226 0.966456 -0.073042 9.18464 0.404052 0.033855 -0.914109 12.412 -0.880974 -0.254591 -0.398835 3.14124 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim191-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1191-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim192">
+    <sampler id="beastBoxer-1192">
      <input semantic="INPUT" source="#genericSource188"/>
      <input semantic="OUTPUT" source="#genericSource190"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim192" target="mixamorig_LeftHandIndex3/SID_32"/>
+    <channel source="#beastBoxer-1192" target="mixamorig_LeftShoulder/SID_32"/>
    </animation>
    <animation id="keyframedAnimations193">
     <source id="genericSource194">
-     <float_array id="mixamorig_Hips-anim195-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1195-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim195-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1195-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource196">
-     <float_array id="mixamorig_Hips-anim197-array" count="32">0.999817 0.018973 -0.002324 -0.058552 -0.018973 0.99982 -2.2e-05 6.42118 0.002323 6.6e-05 0.999997 0 0 0 0 1 0.999817 0.018973 -0.002324 -0.058552 -0.018973 0.99982 -2.2e-05 6.42118 0.002323 6.6e-05 0.999997 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1197-array" count="32">0.969486 0.244675 0.01522 -0 -0.245135 0.966942 0.070229 18.6336 0.002467 -0.071816 0.997415 -0 0 0 0 1 0.969486 0.244675 0.01522 -0 -0.245135 0.966942 0.070229 18.6336 0.002467 -0.071816 0.997415 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim197-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1197-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim198">
+    <sampler id="beastBoxer-1198">
      <input semantic="INPUT" source="#genericSource194"/>
      <input semantic="OUTPUT" source="#genericSource196"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim198" target="mixamorig_RightHandMiddle2/SID_33"/>
+    <channel source="#beastBoxer-1198" target="mixamorig_RightArm/SID_33"/>
    </animation>
    <animation id="keyframedAnimations199">
     <source id="genericSource200">
-     <float_array id="mixamorig_Hips-anim201-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1201-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim201-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1201-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource202">
-     <float_array id="mixamorig_Hips-anim203-array" count="32">0.999962 -0.008554 -0.001593 0 0.008701 0.983039 0.183188 43.9206 -1e-06 -0.183194 0.983077 0 0 0 0 1 0.999962 -0.008554 -0.001593 0 0.008701 0.983039 0.183188 43.9206 -1e-06 -0.183194 0.983077 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1203-array" count="32">-0.999992 0.004004 -0.00016 -11.7926 -0.004006 -0.997883 0.064912 -8.13068 0.0001 0.064912 0.997891 0.433506 0 0 0 1 -0.999992 0.004004 -0.00016 -11.7926 -0.004006 -0.997883 0.064912 -8.13068 0.0001 0.064912 0.997891 0.433506 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim203-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1203-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim204">
+    <sampler id="beastBoxer-1204">
      <input semantic="INPUT" source="#genericSource200"/>
      <input semantic="OUTPUT" source="#genericSource202"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim204" target="mixamorig_LeftLeg/SID_34"/>
+    <channel source="#beastBoxer-1204" target="mixamorig_RightUpLeg/SID_34"/>
    </animation>
    <animation id="keyframedAnimations205">
     <source id="genericSource206">
-     <float_array id="mixamorig_Hips-anim207-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1207-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim207-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1207-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource208">
-     <float_array id="mixamorig_Hips-anim209-array" count="32">0.999994 -0 -0.003435 0 0 1 -1e-06 33.5989 0.003435 1e-06 0.999994 0 0 0 0 1 0.999994 -0 -0.003435 0 0 1 -1e-06 33.5989 0.003435 1e-06 0.999994 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1209-array" count="32">0.996521 0.083338 5.6e-05 0.263966 -0.083338 0.996521 -4e-06 5.065 -5.6e-05 -1e-06 1 0 0 0 0 1 0.996521 0.083338 5.6e-05 0.263966 -0.083338 0.996521 -4e-06 5.065 -5.6e-05 -1e-06 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim209-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1209-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim210">
+    <sampler id="beastBoxer-1210">
      <input semantic="INPUT" source="#genericSource206"/>
      <input semantic="OUTPUT" source="#genericSource208"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim210" target="mixamorig_LeftForeArm/SID_35"/>
+    <channel source="#beastBoxer-1210" target="mixamorig_RightHandIndex3/SID_35"/>
    </animation>
    <animation id="keyframedAnimations211">
     <source id="genericSource212">
-     <float_array id="mixamorig_Hips-anim213-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1213-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim213-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1213-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource214">
-     <float_array id="mixamorig_Hips-anim215-array" count="32">0.997693 -0.067884 -0.000621 -0.157225 0.067884 0.997693 -1.7e-05 5.59289 0.000621 -2.5e-05 1 0 0 0 0 1 0.997693 -0.067884 -0.000621 -0.157225 0.067884 0.997693 -1.7e-05 5.59289 0.000621 -2.5e-05 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1215-array" count="32">-0.99999 -0.004479 0.000244 11.7911 0.004485 -0.997936 0.064052 -8.12169 -4.3e-05 0.064052 0.997947 0.424052 0 0 0 1 -0.99999 -0.004479 0.000244 11.7911 0.004485 -0.997936 0.064052 -8.12169 -4.3e-05 0.064052 0.997947 0.424052 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim215-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1215-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim216">
+    <sampler id="beastBoxer-1216">
      <input semantic="INPUT" source="#genericSource212"/>
      <input semantic="OUTPUT" source="#genericSource214"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim216" target="mixamorig_RightHandMiddle3/SID_36"/>
+    <channel source="#beastBoxer-1216" target="mixamorig_LeftUpLeg/SID_36"/>
    </animation>
    <animation id="keyframedAnimations217">
     <source id="genericSource218">
-     <float_array id="mixamorig_Hips-anim219-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1219-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim219-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1219-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource220">
-     <float_array id="mixamorig_Hips-anim221-array" count="32">0.989142 -0.146962 -0.000988 -2.05555 0.146949 0.988906 0.021702 14.7493 -0.002212 -0.021612 0.999764 -0.322224 0 0 0 1 0.989142 -0.146962 -0.000988 -2.05555 0.146949 0.988906 0.021702 14.7493 -0.002212 -0.021612 0.999764 -0.322224 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1221-array" count="32">0.987681 0.15647 0.001629 0.181004 -0.15647 0.987683 -8.9e-05 3.2998 -0.001623 -0.000167 0.999999 0 0 0 0 1 0.987681 0.15647 0.001629 0.181004 -0.15647 0.987683 -8.9e-05 3.2998 -0.001623 -0.000167 0.999999 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim221-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1221-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim222">
+    <sampler id="beastBoxer-1222">
      <input semantic="INPUT" source="#genericSource218"/>
      <input semantic="OUTPUT" source="#genericSource220"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim222" target="mixamorig_LeftHandMiddle1/SID_37"/>
+    <channel source="#beastBoxer-1222" target="mixamorig_LeftHandPinky3/SID_37"/>
    </animation>
    <animation id="keyframedAnimations223">
     <source id="genericSource224">
-     <float_array id="mixamorig_Hips-anim225-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1225-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim225-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1225-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource226">
-     <float_array id="mixamorig_Hips-anim227-array" count="32">0.969486 0.244675 0.01522 -0 -0.245135 0.966942 0.070229 18.6336 0.002467 -0.071816 0.997415 -0 0 0 0 1 0.969486 0.244675 0.01522 -0 -0.245135 0.966942 0.070229 18.6336 0.002467 -0.071816 0.997415 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1227-array" count="32">0.999884 -0.013987 -0.005967 0 0.003869 0.613461 -0.789715 48.9664 0.014706 0.789601 0.613444 -0 0 0 0 1 0.999884 -0.013987 -0.005967 0 0.003869 0.613461 -0.789715 48.9664 0.014706 0.789601 0.613444 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim227-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1227-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim228">
+    <sampler id="beastBoxer-1228">
      <input semantic="INPUT" source="#genericSource224"/>
      <input semantic="OUTPUT" source="#genericSource226"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim228" target="mixamorig_RightArm/SID_38"/>
+    <channel source="#beastBoxer-1228" target="mixamorig_LeftFoot/SID_38"/>
    </animation>
    <animation id="keyframedAnimations229">
     <source id="genericSource230">
-     <float_array id="mixamorig_Hips-anim231-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1231-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim231-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1231-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource232">
-     <float_array id="mixamorig_Hips-anim233-array" count="32">0.999827 -0.017927 0.0049 0.236273 0.017928 0.999839 -0.00018 6.40637 -0.004896 0.000268 0.999988 0 0 0 0 1 0.999827 -0.017927 0.0049 0.236273 0.017928 0.999839 -0.00018 6.40637 -0.004896 0.000268 0.999988 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1233-array" count="32">0.987351 -0.158541 -0.00162 -0.184573 0.158541 0.987352 -9.1e-05 3.30031 0.001614 -0.000167 0.999999 0 0 0 0 1 0.987351 -0.158541 -0.00162 -0.184573 0.158541 0.987352 -9.1e-05 3.30031 0.001614 -0.000167 0.999999 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim233-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1233-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim234">
+    <sampler id="beastBoxer-1234">
      <input semantic="INPUT" source="#genericSource230"/>
      <input semantic="OUTPUT" source="#genericSource232"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim234" target="mixamorig_LeftHandPinky2/SID_39"/>
+    <channel source="#beastBoxer-1234" target="mixamorig_RightHandPinky3/SID_39"/>
    </animation>
    <animation id="keyframedAnimations235">
     <source id="genericSource236">
-     <float_array id="mixamorig_Hips-anim237-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1237-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim237-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1237-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource238">
-     <float_array id="mixamorig_Hips-anim239-array" count="32">0.983192 -0.182568 -0.001758 2.16319 0.182563 0.982957 0.021595 13.9873 -0.002214 -0.021553 0.999765 -0.306635 0 0 0 1 0.983192 -0.182568 -0.001758 2.16319 0.182563 0.982957 0.021595 13.9873 -0.002214 -0.021553 0.999765 -0.306635 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1239-array" count="32">0.935004 -0.122904 0.332659 0 0.137533 0.990281 -0.020695 26.0714 -0.326883 0.065101 0.94282 0 0 0 0 1 0.935004 -0.122904 0.332659 0 0.137533 0.990281 -0.020695 26.0714 -0.326883 0.065101 0.94282 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim239-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1239-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim240">
+    <sampler id="beastBoxer-1240">
      <input semantic="INPUT" source="#genericSource236"/>
      <input semantic="OUTPUT" source="#genericSource238"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim240" target="mixamorig_LeftHandRing1/SID_40"/>
+    <channel source="#beastBoxer-1240" target="mixamorig_RightHand/SID_40"/>
    </animation>
    <animation id="keyframedAnimations241">
     <source id="genericSource242">
-     <float_array id="mixamorig_Hips-anim243-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1243-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim243-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1243-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource244">
-     <float_array id="mixamorig_Hips-anim245-array" count="32">1 0.000364 5.8e-05 -0.003216 -0.000369 0.98676 0.162185 11.4512 2e-06 -0.162185 0.98676 -2.66099 0 0 0 1 1 0.000364 5.8e-05 -0.003216 -0.000369 0.98676 0.162185 11.4512 2e-06 -0.162185 0.98676 -2.66099 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1245-array" count="32">0.997447 -0.071403 0.00043 -0.112577 0.071403 0.997448 8e-06 5.80665 -0.00043 2.2e-05 1 -0 0 0 0 1 0.997447 -0.071403 0.00043 -0.112577 0.071403 0.997448 8e-06 5.80665 -0.00043 2.2e-05 1 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim245-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1245-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim246">
+    <sampler id="beastBoxer-1246">
      <input semantic="INPUT" source="#genericSource242"/>
      <input semantic="OUTPUT" source="#genericSource244"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim246" target="mixamorig_Spine/SID_41"/>
+    <channel source="#beastBoxer-1246" target="mixamorig_RightHandIndex2/SID_41"/>
    </animation>
    <animation id="keyframedAnimations247">
     <source id="genericSource248">
-     <float_array id="mixamorig_Hips-anim249-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1249-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim249-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1249-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource250">
-     <float_array id="mixamorig_Hips-anim251-array" count="32">-0.99999 -0.004479 0.000244 11.7911 0.004485 -0.997936 0.064052 -8.12169 -4.3e-05 0.064052 0.997947 0.424052 0 0 0 1 -0.99999 -0.004479 0.000244 11.7911 0.004485 -0.997936 0.064052 -8.12169 -4.3e-05 0.064052 0.997947 0.424052 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1251-array" count="32">0.999851 0.017232 0.000636 0.018609 -0.017232 0.999852 -2e-06 5.99499 -0.000636 -9e-06 1 0 0 0 0 1 0.999851 0.017232 0.000636 0.018609 -0.017232 0.999852 -2e-06 5.99499 -0.000636 -9e-06 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim251-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1251-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim252">
+    <sampler id="beastBoxer-1252">
      <input semantic="INPUT" source="#genericSource248"/>
      <input semantic="OUTPUT" source="#genericSource250"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim252" target="mixamorig_LeftUpLeg/SID_42"/>
+    <channel source="#beastBoxer-1252" target="mixamorig_RightHandThumb3/SID_42"/>
    </animation>
    <animation id="keyframedAnimations253">
     <source id="genericSource254">
-     <float_array id="mixamorig_Hips-anim255-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1255-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim255-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1255-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource256">
-     <float_array id="mixamorig_Hips-anim257-array" count="32">0.987681 0.15647 0.001629 0.181004 -0.15647 0.987683 -8.9e-05 3.2998 -0.001623 -0.000167 0.999999 0 0 0 0 1 0.987681 0.15647 0.001629 0.181004 -0.15647 0.987683 -8.9e-05 3.2998 -0.001623 -0.000167 0.999999 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1257-array" count="32">0.802774 -0.542401 0.247698 -4.43741 0.596164 0.721794 -0.351571 3.2783 0.011906 0.429901 0.902798 3.65615 0 0 0 1 0.802774 -0.542401 0.247698 -4.43741 0.596164 0.721794 -0.351571 3.2783 0.011906 0.429901 0.902798 3.65615 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim257-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1257-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim258">
+    <sampler id="beastBoxer-1258">
      <input semantic="INPUT" source="#genericSource254"/>
      <input semantic="OUTPUT" source="#genericSource256"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim258" target="mixamorig_LeftHandPinky3/SID_43"/>
+    <channel source="#beastBoxer-1258" target="mixamorig_LeftHandThumb1/SID_43"/>
    </animation>
    <animation id="keyframedAnimations259">
     <source id="genericSource260">
-     <float_array id="mixamorig_Hips-anim261-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1261-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim261-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1261-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource262">
-     <float_array id="mixamorig_Hips-anim263-array" count="32">0.999817 -0.019011 0.002326 0.058326 0.019011 0.999819 -2.2e-05 6.43548 -0.002325 6.6e-05 0.999997 0 0 0 0 1 0.999817 -0.019011 0.002326 0.058326 0.019011 0.999819 -2.2e-05 6.43548 -0.002325 6.6e-05 0.999997 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1263-array" count="32">0.998046 0.062486 -0.000472 0.068017 -0.062486 0.998046 8e-06 4.82396 0.000472 2.2e-05 1 0 0 0 0 1 0.998046 0.062486 -0.000472 0.068017 -0.062486 0.998046 8e-06 4.82396 0.000472 2.2e-05 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim263-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1263-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim264">
+    <sampler id="beastBoxer-1264">
      <input semantic="INPUT" source="#genericSource260"/>
      <input semantic="OUTPUT" source="#genericSource262"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim264" target="mixamorig_LeftHandMiddle2/SID_44"/>
+    <channel source="#beastBoxer-1264" target="mixamorig_LeftHandRing3/SID_44"/>
    </animation>
    <animation id="keyframedAnimations265">
     <source id="genericSource266">
-     <float_array id="mixamorig_Hips-anim267-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1267-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim267-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1267-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource268">
-     <float_array id="mixamorig_Hips-anim269-array" count="32">0.999884 -0.013987 -0.005967 0 0.003869 0.613461 -0.789715 48.9664 0.014706 0.789601 0.613444 -0 0 0 0 1 0.999884 -0.013987 -0.005967 0 0.003869 0.613461 -0.789715 48.9664 0.014706 0.789601 0.613444 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1269-array" count="32">0.969044 -0.246408 -0.015418 0 0.246875 0.966424 0.071252 18.6461 -0.002656 -0.072852 0.997339 0 0 0 0 1 0.969044 -0.246408 -0.015418 0 0.246875 0.966424 0.071252 18.6461 -0.002656 -0.072852 0.997339 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim269-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1269-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim270">
+    <sampler id="beastBoxer-1270">
      <input semantic="INPUT" source="#genericSource266"/>
      <input semantic="OUTPUT" source="#genericSource268"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim270" target="mixamorig_LeftFoot/SID_45"/>
+    <channel source="#beastBoxer-1270" target="mixamorig_LeftArm/SID_45"/>
    </animation>
    <animation id="keyframedAnimations271">
     <source id="genericSource272">
-     <float_array id="mixamorig_Hips-anim273-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1273-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim273-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1273-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource274">
-     <float_array id="mixamorig_Hips-anim275-array" count="32">0.999517 0.03106 0.000543 0.242844 -0.03106 0.999518 -2.4e-05 5.37283 -0.000544 7e-06 1 -0 0 0 0 1 0.999517 0.03106 0.000543 0.242844 -0.03106 0.999518 -2.4e-05 5.37283 -0.000544 7e-06 1 -0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1275-array" count="32">0.999971 0.007466 0.001401 0 -0.007597 0.982713 0.184979 43.917 4e-06 -0.184984 0.982742 -0 0 0 0 1 0.999971 0.007466 0.001401 0 -0.007597 0.982713 0.184979 43.917 4e-06 -0.184984 0.982742 -0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim275-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1275-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim276">
+    <sampler id="beastBoxer-1276">
      <input semantic="INPUT" source="#genericSource272"/>
      <input semantic="OUTPUT" source="#genericSource274"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim276" target="mixamorig_LeftHandRing2/SID_46"/>
+    <channel source="#beastBoxer-1276" target="mixamorig_RightLeg/SID_46"/>
    </animation>
    <animation id="keyframedAnimations277">
     <source id="genericSource278">
-     <float_array id="mixamorig_Hips-anim279-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1279-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim279-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1279-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource280">
-     <float_array id="mixamorig_Hips-anim281-array" count="32">0.802847 0.542251 -0.247791 4.44226 -0.596057 0.721464 -0.352427 3.28306 -0.012332 0.430642 0.902438 3.65029 0 0 0 1 0.802847 0.542251 -0.247791 4.44226 -0.596057 0.721464 -0.352427 3.28306 -0.012332 0.430642 0.902438 3.65029 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1281-array" count="32">0.997693 -0.067884 -0.000621 -0.157225 0.067884 0.997693 -1.7e-05 5.59289 0.000621 -2.5e-05 1 0 0 0 0 1 0.997693 -0.067884 -0.000621 -0.157225 0.067884 0.997693 -1.7e-05 5.59289 0.000621 -2.5e-05 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim281-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1281-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim282">
+    <sampler id="beastBoxer-1282">
      <input semantic="INPUT" source="#genericSource278"/>
      <input semantic="OUTPUT" source="#genericSource280"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim282" target="mixamorig_RightHandThumb1/SID_47"/>
+    <channel source="#beastBoxer-1282" target="mixamorig_RightHandMiddle3/SID_47"/>
    </animation>
    <animation id="keyframedAnimations283">
     <source id="genericSource284">
-     <float_array id="mixamorig_Hips-anim285-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1285-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim285-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1285-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource286">
-     <float_array id="mixamorig_Hips-anim287-array" count="32">0.935004 -0.122904 0.332659 0 0.137533 0.990281 -0.020695 26.0714 -0.326883 0.065101 0.94282 0 0 0 0 1 0.935004 -0.122904 0.332659 0 0.137533 0.990281 -0.020695 26.0714 -0.326883 0.065101 0.94282 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1287-array" count="32">0.997698 0.067816 0.000639 0.157074 -0.067816 0.997698 -1.9e-05 5.59514 -0.000639 -2.5e-05 1 0 0 0 0 1 0.997698 0.067816 0.000639 0.157074 -0.067816 0.997698 -1.9e-05 5.59514 -0.000639 -2.5e-05 1 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim287-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1287-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim288">
+    <sampler id="beastBoxer-1288">
      <input semantic="INPUT" source="#genericSource284"/>
      <input semantic="OUTPUT" source="#genericSource286"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim288" target="mixamorig_RightHand/SID_48"/>
+    <channel source="#beastBoxer-1288" target="mixamorig_LeftHandMiddle3/SID_48"/>
    </animation>
    <animation id="keyframedAnimations289">
     <source id="genericSource290">
-     <float_array id="mixamorig_Hips-anim291-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1291-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim291-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1291-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource292">
-     <float_array id="mixamorig_Hips-anim293-array" count="32">0.998046 0.062486 -0.000472 0.068017 -0.062486 0.998046 8e-06 4.82396 0.000472 2.2e-05 1 0 0 0 0 1 0.998046 0.062486 -0.000472 0.068017 -0.062486 0.998046 8e-06 4.82396 0.000472 2.2e-05 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1293-array" count="32">0.999817 0.018973 -0.002324 -0.058552 -0.018973 0.99982 -2.2e-05 6.42118 0.002323 6.6e-05 0.999997 0 0 0 0 1 0.999817 0.018973 -0.002324 -0.058552 -0.018973 0.99982 -2.2e-05 6.42118 0.002323 6.6e-05 0.999997 0 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim293-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1293-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim294">
+    <sampler id="beastBoxer-1294">
      <input semantic="INPUT" source="#genericSource290"/>
      <input semantic="OUTPUT" source="#genericSource292"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim294" target="mixamorig_LeftHandRing3/SID_49"/>
+    <channel source="#beastBoxer-1294" target="mixamorig_RightHandMiddle2/SID_49"/>
    </animation>
    <animation id="keyframedAnimations295">
     <source id="genericSource296">
-     <float_array id="mixamorig_Hips-anim297-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1297-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim297-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1297-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource298">
-     <float_array id="mixamorig_Hips-anim299-array" count="32">1 4.7e-05 2e-06 0.001132 -4.7e-05 1 0 118.419 -2e-06 -0 1 -0.393306 0 0 0 1 1 4.7e-05 2e-06 0.001132 -4.7e-05 1 0 118.419 -2e-06 -0 1 -0.393306 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1299-array" count="32">1 0.00024 -0.000108 0.045483 -0.000247 0.997776 -0.06666 19.7321 9.2e-05 0.06666 0.997776 4.40213 0 0 0 1 1 0.00024 -0.000108 0.045483 -0.000247 0.997776 -0.06666 19.7321 9.2e-05 0.06666 0.997776 4.40213 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim299-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1299-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim300">
+    <sampler id="beastBoxer-1300">
      <input semantic="INPUT" source="#genericSource296"/>
      <input semantic="OUTPUT" source="#genericSource298"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim300" target="mixamorig_Hips/SID_50"/>
+    <channel source="#beastBoxer-1300" target="mixamorig_Neck/SID_50"/>
    </animation>
    <animation id="keyframedAnimations301">
     <source id="genericSource302">
-     <float_array id="mixamorig_Hips-anim303-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1303-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim303-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1303-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource304">
-     <float_array id="mixamorig_Hips-anim305-array" count="32">0.999965 0.008304 0.000281 0.068851 -0.008304 0.999966 -3e-06 6.03979 -0.000281 0 1 0 0 0 0 1 0.999965 0.008304 0.000281 0.068851 -0.008304 0.999966 -3e-06 6.03979 -0.000281 0 1 0 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1305-array" count="32">1 0.000364 5.8e-05 -0.003216 -0.000369 0.98676 0.162185 11.4512 2e-06 -0.162185 0.98676 -2.66099 0 0 0 1 1 0.000364 5.8e-05 -0.003216 -0.000369 0.98676 0.162185 11.4512 2e-06 -0.162185 0.98676 -2.66099 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim305-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1305-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim306">
+    <sampler id="beastBoxer-1306">
      <input semantic="INPUT" source="#genericSource302"/>
      <input semantic="OUTPUT" source="#genericSource304"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim306" target="mixamorig_RightHandThumb2/SID_51"/>
+    <channel source="#beastBoxer-1306" target="mixamorig_Spine/SID_51"/>
    </animation>
    <animation id="keyframedAnimations307">
     <source id="genericSource308">
-     <float_array id="mixamorig_Hips-anim309-array" count="2">0 0.033333 </float_array>
+     <float_array id="beastBoxer-1309-array" count="2">0 0.033333 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim309-array" count="2" stride="1">
+      <accessor source="#beastBoxer-1309-array" count="2" stride="1">
        <param name="TIME" type="float"/>
       </accessor>
      </technique_common>
     </source>
     <source id="genericSource310">
-     <float_array id="mixamorig_Hips-anim311-array" count="32">0.984735 0.174053 0.001849 -6.46536 -0.174054 0.98452 0.020637 12.2429 0.001772 -0.020643 0.999785 0.51295 0 0 0 1 0.984735 0.174053 0.001849 -6.46536 -0.174054 0.98452 0.020637 12.2429 0.001772 -0.020643 0.999785 0.51295 0 0 0 1 </float_array>
+     <float_array id="beastBoxer-1311-array" count="32">0.987642 0.15671 0.002201 6.58231 -0.156722 0.987428 0.020587 13.8833 0.001053 -0.020678 0.999786 0.497518 0 0 0 1 0.987642 0.15671 0.002201 6.58231 -0.156722 0.987428 0.020587 13.8833 0.001053 -0.020678 0.999786 0.497518 0 0 0 1 </float_array>
      <technique_common>
-      <accessor source="#mixamorig_Hips-anim311-array" count="2" stride="16">
+      <accessor source="#beastBoxer-1311-array" count="2" stride="16">
        <param name="TRANSFORM" type="float4x4"/>
       </accessor>
      </technique_common>
     </source>
-    <sampler id="mixamorig_Hips-anim312">
+    <sampler id="beastBoxer-1312">
      <input semantic="INPUT" source="#genericSource308"/>
      <input semantic="OUTPUT" source="#genericSource310"/>
     </sampler>
-    <channel source="#mixamorig_Hips-anim312" target="mixamorig_RightHandPinky1/SID_52"/>
+    <channel source="#beastBoxer-1312" target="mixamorig_RightHandIndex1/SID_52"/>
    </animation>
   </animation>
  </library_animations>
@@ -1900,31 +1900,18 @@
      </bind_material>
     </instance_controller>
    </node>
-   <node id="Gloves" name="Gloves">
-    <instance_controller url="#GlovesMesh">
-     <skeleton>#mixamorig_Hips</skeleton>
-     <bind_material>
-      <technique_common>
-       <instance_material symbol="geometryElement349" target="#Glovemat">
-        <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-        <bind_vertex_input semantic="CHANNEL3" input_semantic="TEXCOORD" input_set="1"/>
-       </instance_material>
-      </technique_common>
-     </bind_material>
-    </instance_controller>
-   </node>
    <node id="mixamorig_Hips" name="mixamorig_Hips" sid="SID_63" type="JOINT">
-    <matrix sid="SID_50">1 4.7e-05 2e-06 0.001132 -4.7e-05 1 0 118.4194 -2e-06 -0 1 -0.393306 0 0 0 1 </matrix>
+    <matrix sid="SID_16">1 4.7e-05 2e-06 0.001132 -4.7e-05 1 0 118.4194 -2e-06 -0 1 -0.393306 0 0 0 1 </matrix>
     <node id="mixamorig_Spine" name="mixamorig_Spine" sid="SID_57" type="JOINT">
-     <matrix sid="SID_41">1 0.000364 5.8e-05 -0.003216 -0.000369 0.98676 0.162185 11.45117 2e-06 -0.162185 0.98676 -2.660989 0 0 0 1 </matrix>
+     <matrix sid="SID_51">1 0.000364 5.8e-05 -0.003216 -0.000369 0.98676 0.162185 11.45117 2e-06 -0.162185 0.98676 -2.660989 0 0 0 1 </matrix>
      <node id="mixamorig_Spine1" name="mixamorig_Spine1" sid="SID_58" type="JOINT">
-      <matrix sid="SID_28">1 -0.000662 6.4e-05 0 0.000665 0.995377 -0.096046 13.68538 -0 0.096046 0.995377 -0 0 0 0 1 </matrix>
+      <matrix sid="SID_23">1 -0.000662 6.4e-05 0 0.000665 0.995377 -0.096046 13.68538 -0 0.096046 0.995377 -0 0 0 0 1 </matrix>
       <node id="mixamorig_Spine2" name="mixamorig_Spine2" sid="SID_59" type="JOINT">
-       <matrix sid="SID_20">1 -0 0 0 -0 1 0 17.83303 0 0 1 -0 0 0 0 1 </matrix>
+       <matrix sid="SID_15">1 -0 0 0 -0 1 0 17.83303 0 0 1 -0 0 0 0 1 </matrix>
        <node id="mixamorig_Neck" name="mixamorig_Neck" sid="SID_62" type="JOINT">
-        <matrix sid="SID_11">1 0.00024 -0.000108 0.045483 -0.000247 0.997776 -0.06666 19.73214 9.2e-05 0.06666 0.997776 4.402129 0 0 0 1 </matrix>
+        <matrix sid="SID_50">1 0.00024 -0.000108 0.045483 -0.000247 0.997776 -0.06666 19.73214 9.2e-05 0.06666 0.997776 4.402129 0 0 0 1 </matrix>
         <node id="mixamorig_Head" name="mixamorig_Head" sid="SID_53" type="JOINT">
-         <matrix sid="SID_22">1 -0 0 0.088592 0 1 -0 10.3391 0 0 1 5.740854 0 0 0 1 </matrix>
+         <matrix sid="SID_14">1 -0 0 0.088592 0 1 -0 10.3391 0 0 1 5.740854 0 0 0 1 </matrix>
          <node id="mixamorig_HeadTop_End" name="mixamorig_HeadTop_End" type="JOINT">
           <matrix>1 0 0 0.13355 0 1 0 20.83461 0 0 1 10.04774 0 0 0 1 </matrix>
          </node>
@@ -1937,19 +1924,19 @@
         </node>
        </node>
        <node id="mixamorig_LeftShoulder" name="mixamorig_LeftShoulder" sid="SID_60" type="JOINT">
-        <matrix sid="SID_13">-0.246226 0.966456 -0.073042 9.184645 0.404052 0.033855 -0.914109 12.41197 -0.880974 -0.254591 -0.398835 3.141241 0 0 0 1 </matrix>
+        <matrix sid="SID_32">-0.246226 0.966456 -0.073042 9.184645 0.404052 0.033855 -0.914109 12.41197 -0.880974 -0.254591 -0.398835 3.141241 0 0 0 1 </matrix>
         <node id="mixamorig_LeftArm" name="mixamorig_LeftArm" sid="SID_66" type="JOINT">
-         <matrix sid="SID_1">0.969044 -0.246408 -0.015418 0 0.246875 0.966424 0.071252 18.64609 -0.002656 -0.072852 0.997339 0 0 0 0 1 </matrix>
+         <matrix sid="SID_45">0.969044 -0.246408 -0.015418 0 0.246875 0.966424 0.071252 18.64609 -0.002656 -0.072852 0.997339 0 0 0 0 1 </matrix>
          <node id="mixamorig_LeftForeArm" name="mixamorig_LeftForeArm" sid="SID_67" type="JOINT">
-          <matrix sid="SID_35">0.999994 -0 -0.003435 0 0 1 -1e-06 33.59888 0.003435 1e-06 0.999994 0 0 0 0 1 </matrix>
+          <matrix sid="SID_4">0.999994 -0 -0.003435 0 0 1 -1e-06 33.59888 0.003435 1e-06 0.999994 0 0 0 0 1 </matrix>
           <node id="mixamorig_LeftHand" name="mixamorig_LeftHand" sid="SID_76" type="JOINT">
-           <matrix sid="SID_6">0.933896 0.122815 -0.335791 0 -0.137997 0.990196 -0.021631 26.06751 0.329842 0.066539 0.941688 -0 0 0 0 1 </matrix>
+           <matrix sid="SID_28">0.933896 0.122815 -0.335791 0 -0.137997 0.990196 -0.021631 26.06751 0.329842 0.066539 0.941688 -0 0 0 0 1 </matrix>
            <node id="mixamorig_LeftHandMiddle1" name="mixamorig_LeftHandMiddle1" sid="SID_91" type="JOINT">
-            <matrix sid="SID_37">0.989142 -0.146962 -0.000988 -2.055547 0.146949 0.988906 0.021702 14.74933 -0.002212 -0.021612 0.999764 -0.322224 0 0 0 1 </matrix>
+            <matrix sid="SID_29">0.989142 -0.146962 -0.000988 -2.055547 0.146949 0.988906 0.021702 14.74933 -0.002212 -0.021612 0.999764 -0.322224 0 0 0 1 </matrix>
             <node id="mixamorig_LeftHandMiddle2" name="mixamorig_LeftHandMiddle2" sid="SID_89" type="JOINT">
-             <matrix sid="SID_44">0.999817 -0.019011 0.002326 0.058326 0.019011 0.999819 -2.2e-05 6.435476 -0.002325 6.6e-05 0.999997 0 0 0 0 1 </matrix>
+             <matrix sid="SID_2">0.999817 -0.019011 0.002326 0.058326 0.019011 0.999819 -2.2e-05 6.435476 -0.002325 6.6e-05 0.999997 0 0 0 0 1 </matrix>
              <node id="mixamorig_LeftHandMiddle3" name="mixamorig_LeftHandMiddle3" sid="SID_82" type="JOINT">
-              <matrix sid="SID_9">0.997698 0.067816 0.000639 0.157074 -0.067816 0.997698 -1.9e-05 5.595142 -0.000639 -2.5e-05 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_48">0.997698 0.067816 0.000639 0.157074 -0.067816 0.997698 -1.9e-05 5.595142 -0.000639 -2.5e-05 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_LeftHandMiddle4" name="mixamorig_LeftHandMiddle4" type="JOINT">
                <matrix>1 0 0 -0.2154 0 1 0 5.4096 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -1957,11 +1944,11 @@
             </node>
            </node>
            <node id="mixamorig_LeftHandThumb1" name="mixamorig_LeftHandThumb1" sid="SID_77" type="JOINT">
-            <matrix sid="SID_2">0.802774 -0.542401 0.247698 -4.437405 0.596164 0.721794 -0.351571 3.278303 0.011906 0.429901 0.902798 3.656149 0 0 0 1 </matrix>
+            <matrix sid="SID_43">0.802774 -0.542401 0.247698 -4.437405 0.596164 0.721794 -0.351571 3.278303 0.011906 0.429901 0.902798 3.656149 0 0 0 1 </matrix>
             <node id="mixamorig_LeftHandThumb2" name="mixamorig_LeftHandThumb2" sid="SID_88" type="JOINT">
-             <matrix sid="SID_7">0.99996 -0.00892 -0.000298 -0.070657 0.00892 0.99996 -3e-06 6.032117 0.000298 1e-06 1 -0 0 0 0 1 </matrix>
+             <matrix sid="SID_17">0.99996 -0.00892 -0.000298 -0.070657 0.00892 0.99996 -3e-06 6.032117 0.000298 1e-06 1 -0 0 0 0 1 </matrix>
              <node id="mixamorig_LeftHandThumb3" name="mixamorig_LeftHandThumb3" sid="SID_79" type="JOINT">
-              <matrix sid="SID_10">0.999857 -0.016899 -0.00066 -0.016768 0.016899 0.999857 -1e-06 5.999793 0.00066 -1e-05 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_26">0.999857 -0.016899 -0.00066 -0.016768 0.016899 0.999857 -1e-06 5.999793 0.00066 -1e-05 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_LeftHandThumb4" name="mixamorig_LeftHandThumb4" type="JOINT">
                <matrix>1 0 0 0.087424 0 1 0 6.198504 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -1969,11 +1956,11 @@
             </node>
            </node>
            <node id="mixamorig_LeftHandIndex1" name="mixamorig_LeftHandIndex1" sid="SID_84" type="JOINT">
-            <matrix sid="SID_19">0.987545 -0.15732 -0.002383 -6.585994 0.157335 0.987311 0.021508 13.87304 -0.00103 -0.021615 0.999766 0.510628 0 0 0 1 </matrix>
+            <matrix sid="SID_31">0.987545 -0.15732 -0.002383 -6.585994 0.157335 0.987311 0.021508 13.87304 -0.00103 -0.021615 0.999766 0.510628 0 0 0 1 </matrix>
             <node id="mixamorig_LeftHandIndex2" name="mixamorig_LeftHandIndex2" sid="SID_85" type="JOINT">
-             <matrix sid="SID_25">0.997455 0.071293 -0.000369 0.113549 -0.071293 0.997455 7e-06 5.808198 0.000368 2e-05 1 0 0 0 0 1 </matrix>
+             <matrix sid="SID_3">0.997455 0.071293 -0.000369 0.113549 -0.071293 0.997455 7e-06 5.808198 0.000368 2e-05 1 0 0 0 0 1 </matrix>
              <node id="mixamorig_LeftHandIndex3" name="mixamorig_LeftHandIndex3" sid="SID_81" type="JOINT">
-              <matrix sid="SID_32">0.996555 -0.08293 -9.8e-05 -0.263833 0.08293 0.996555 -5e-06 5.086557 9.9e-05 -3e-06 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_10">0.996555 -0.08293 -9.8e-05 -0.263833 0.08293 0.996555 -5e-06 5.086557 9.9e-05 -3e-06 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_LeftHandIndex4" name="mixamorig_LeftHandIndex4" type="JOINT">
                <matrix>1 0 0 0.150284 0 1 0 4.814075 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -1981,11 +1968,11 @@
             </node>
            </node>
            <node id="mixamorig_LeftHandRing1" name="mixamorig_LeftHandRing1" sid="SID_78" type="JOINT">
-            <matrix sid="SID_40">0.983192 -0.182568 -0.001758 2.163195 0.182563 0.982957 0.021595 13.98727 -0.002214 -0.021553 0.999765 -0.306635 0 0 0 1 </matrix>
+            <matrix sid="SID_25">0.983192 -0.182568 -0.001758 2.163195 0.182563 0.982957 0.021595 13.98727 -0.002214 -0.021553 0.999765 -0.306635 0 0 0 1 </matrix>
             <node id="mixamorig_LeftHandRing2" name="mixamorig_LeftHandRing2" sid="SID_90" type="JOINT">
-             <matrix sid="SID_46">0.999517 0.03106 0.000543 0.242844 -0.03106 0.999518 -2.4e-05 5.372831 -0.000544 7e-06 1 -0 0 0 0 1 </matrix>
+             <matrix sid="SID_24">0.999517 0.03106 0.000543 0.242844 -0.03106 0.999518 -2.4e-05 5.372831 -0.000544 7e-06 1 -0 0 0 0 1 </matrix>
              <node id="mixamorig_LeftHandRing3" name="mixamorig_LeftHandRing3" sid="SID_83" type="JOINT">
-              <matrix sid="SID_49">0.998046 0.062486 -0.000472 0.068017 -0.062486 0.998046 8e-06 4.823959 0.000472 2.2e-05 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_44">0.998046 0.062486 -0.000472 0.068017 -0.062486 0.998046 8e-06 4.823959 0.000472 2.2e-05 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_LeftHandRing4" name="mixamorig_LeftHandRing4" type="JOINT">
                <matrix>1 0 0 -0.31086 0 1 0 6.4143 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -1993,11 +1980,11 @@
             </node>
            </node>
            <node id="mixamorig_LeftHandPinky1" name="mixamorig_LeftHandPinky1" sid="SID_86" type="JOINT">
-            <matrix sid="SID_14">0.984671 -0.174409 -0.00199 6.478346 0.174411 0.984437 0.021562 12.24262 -0.001801 -0.021578 0.999766 0.519263 0 0 0 1 </matrix>
+            <matrix sid="SID_7">0.984671 -0.174409 -0.00199 6.478346 0.174411 0.984437 0.021562 12.24262 -0.001801 -0.021578 0.999766 0.519263 0 0 0 1 </matrix>
             <node id="mixamorig_LeftHandPinky2" name="mixamorig_LeftHandPinky2" sid="SID_87" type="JOINT">
-             <matrix sid="SID_39">0.999827 -0.017927 0.0049 0.236273 0.017928 0.999839 -0.00018 6.406367 -0.004896 0.000268 0.999988 0 0 0 0 1 </matrix>
+             <matrix sid="SID_30">0.999827 -0.017927 0.0049 0.236273 0.017928 0.999839 -0.00018 6.406367 -0.004896 0.000268 0.999988 0 0 0 0 1 </matrix>
              <node id="mixamorig_LeftHandPinky3" name="mixamorig_LeftHandPinky3" sid="SID_80" type="JOINT">
-              <matrix sid="SID_43">0.987681 0.15647 0.001629 0.181004 -0.15647 0.987683 -8.9e-05 3.299799 -0.001623 -0.000167 0.999999 0 0 0 0 1 </matrix>
+              <matrix sid="SID_37">0.987681 0.15647 0.001629 0.181004 -0.15647 0.987683 -8.9e-05 3.299799 -0.001623 -0.000167 0.999999 0 0 0 0 1 </matrix>
               <node id="mixamorig_LeftHandPinky4" name="mixamorig_LeftHandPinky4" type="JOINT">
                <matrix>1 0 0 -0.417277 0 1 0 4.064173 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -2009,19 +1996,19 @@
         </node>
        </node>
        <node id="mixamorig_RightShoulder" name="mixamorig_RightShoulder" sid="SID_61" type="JOINT">
-        <matrix sid="SID_15">-0.244855 -0.966911 0.071625 -9.18954 -0.401015 0.033738 -0.91545 12.42783 0.882742 -0.252875 -0.396006 3.11031 0 0 0 1 </matrix>
+        <matrix sid="SID_8">-0.244855 -0.966911 0.071625 -9.18954 -0.401015 0.033738 -0.91545 12.42783 0.882742 -0.252875 -0.396006 3.11031 0 0 0 1 </matrix>
         <node id="mixamorig_RightArm" name="mixamorig_RightArm" sid="SID_68" type="JOINT">
-         <matrix sid="SID_38">0.969486 0.244675 0.01522 -0 -0.245135 0.966942 0.070229 18.63359 0.002467 -0.071816 0.997415 -0 0 0 0 1 </matrix>
+         <matrix sid="SID_33">0.969486 0.244675 0.01522 -0 -0.245135 0.966942 0.070229 18.63359 0.002467 -0.071816 0.997415 -0 0 0 0 1 </matrix>
          <node id="mixamorig_RightForeArm" name="mixamorig_RightForeArm" sid="SID_69" type="JOINT">
-          <matrix sid="SID_26">0.999994 1e-06 0.003482 0 -1e-06 1 -0 33.60452 -0.003482 0 0.999994 -0 0 0 0 1 </matrix>
+          <matrix sid="SID_21">0.999994 1e-06 0.003482 0 -1e-06 1 -0 33.60452 -0.003482 0 0.999994 -0 0 0 0 1 </matrix>
           <node id="mixamorig_RightHand" name="mixamorig_RightHand" sid="SID_101" type="JOINT">
-           <matrix sid="SID_48">0.935004 -0.122904 0.332659 0 0.137533 0.990281 -0.020695 26.07137 -0.326883 0.065101 0.94282 0 0 0 0 1 </matrix>
+           <matrix sid="SID_40">0.935004 -0.122904 0.332659 0 0.137533 0.990281 -0.020695 26.07137 -0.326883 0.065101 0.94282 0 0 0 0 1 </matrix>
            <node id="mixamorig_RightHandMiddle1" name="mixamorig_RightHandMiddle1" sid="SID_107" type="JOINT">
-            <matrix sid="SID_27">0.989201 0.146566 0.000773 2.048254 -0.14655 0.988985 0.020784 14.74838 0.002282 -0.020673 0.999784 -0.308172 0 0 0 1 </matrix>
+            <matrix sid="SID_22">0.989201 0.146566 0.000773 2.048254 -0.14655 0.988985 0.020784 14.74838 0.002282 -0.020673 0.999784 -0.308172 0 0 0 1 </matrix>
             <node id="mixamorig_RightHandMiddle2" name="mixamorig_RightHandMiddle2" sid="SID_104" type="JOINT">
-             <matrix sid="SID_33">0.999817 0.018973 -0.002324 -0.058552 -0.018973 0.99982 -2.2e-05 6.42118 0.002323 6.6e-05 0.999997 0 0 0 0 1 </matrix>
+             <matrix sid="SID_49">0.999817 0.018973 -0.002324 -0.058552 -0.018973 0.99982 -2.2e-05 6.42118 0.002323 6.6e-05 0.999997 0 0 0 0 1 </matrix>
              <node id="mixamorig_RightHandMiddle3" name="mixamorig_RightHandMiddle3" sid="SID_95" type="JOINT">
-              <matrix sid="SID_36">0.997693 -0.067884 -0.000621 -0.157225 0.067884 0.997693 -1.7e-05 5.592885 0.000621 -2.5e-05 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_47">0.997693 -0.067884 -0.000621 -0.157225 0.067884 0.997693 -1.7e-05 5.592885 0.000621 -2.5e-05 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_RightHandMiddle4" name="mixamorig_RightHandMiddle4" type="JOINT">
                <matrix>1 0 0 0.215777 0 1 0 5.414184 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -2029,11 +2016,11 @@
             </node>
            </node>
            <node id="mixamorig_RightHandThumb1" name="mixamorig_RightHandThumb1" sid="SID_103" type="JOINT">
-            <matrix sid="SID_47">0.802847 0.542251 -0.247791 4.442259 -0.596057 0.721464 -0.352427 3.28306 -0.012332 0.430642 0.902438 3.650286 0 0 0 1 </matrix>
+            <matrix sid="SID_5">0.802847 0.542251 -0.247791 4.442259 -0.596057 0.721464 -0.352427 3.28306 -0.012332 0.430642 0.902438 3.650286 0 0 0 1 </matrix>
             <node id="mixamorig_RightHandThumb2" name="mixamorig_RightHandThumb2" sid="SID_102" type="JOINT">
-             <matrix sid="SID_51">0.999965 0.008304 0.000281 0.068851 -0.008304 0.999966 -3e-06 6.039788 -0.000281 0 1 0 0 0 0 1 </matrix>
+             <matrix sid="SID_11">0.999965 0.008304 0.000281 0.068851 -0.008304 0.999966 -3e-06 6.039788 -0.000281 0 1 0 0 0 0 1 </matrix>
              <node id="mixamorig_RightHandThumb3" name="mixamorig_RightHandThumb3" sid="SID_92" type="JOINT">
-              <matrix sid="SID_4">0.999851 0.017232 0.000636 0.018609 -0.017232 0.999852 -2e-06 5.99499 -0.000636 -9e-06 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_42">0.999851 0.017232 0.000636 0.018609 -0.017232 0.999852 -2e-06 5.99499 -0.000636 -9e-06 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_RightHandThumb4" name="mixamorig_RightHandThumb4" type="JOINT">
                <matrix>1 0 0 -0.08746 0 1 0 6.191983 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -2041,11 +2028,11 @@
             </node>
            </node>
            <node id="mixamorig_RightHandIndex1" name="mixamorig_RightHandIndex1" sid="SID_97" type="JOINT">
-            <matrix sid="SID_12">0.987642 0.15671 0.002201 6.582313 -0.156722 0.987428 0.020587 13.88333 0.001053 -0.020678 0.999786 0.497518 0 0 0 1 </matrix>
+            <matrix sid="SID_52">0.987642 0.15671 0.002201 6.582313 -0.156722 0.987428 0.020587 13.88333 0.001053 -0.020678 0.999786 0.497518 0 0 0 1 </matrix>
             <node id="mixamorig_RightHandIndex2" name="mixamorig_RightHandIndex2" sid="SID_98" type="JOINT">
-             <matrix sid="SID_18">0.997447 -0.071403 0.00043 -0.112577 0.071403 0.997448 8e-06 5.806653 -0.00043 2.2e-05 1 -0 0 0 0 1 </matrix>
+             <matrix sid="SID_41">0.997447 -0.071403 0.00043 -0.112577 0.071403 0.997448 8e-06 5.806653 -0.00043 2.2e-05 1 -0 0 0 0 1 </matrix>
              <node id="mixamorig_RightHandIndex3" name="mixamorig_RightHandIndex3" sid="SID_94" type="JOINT">
-              <matrix sid="SID_23">0.996521 0.083338 5.6e-05 0.263966 -0.083338 0.996521 -4e-06 5.064999 -5.6e-05 -1e-06 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_35">0.996521 0.083338 5.6e-05 0.263966 -0.083338 0.996521 -4e-06 5.064999 -5.6e-05 -1e-06 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_RightHandIndex4" name="mixamorig_RightHandIndex4" type="JOINT">
                <matrix>1 0 0 -0.151389 0 1 0 4.826245 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -2053,11 +2040,11 @@
             </node>
            </node>
            <node id="mixamorig_RightHandRing1" name="mixamorig_RightHandRing1" sid="SID_106" type="JOINT">
-            <matrix sid="SID_8">0.982943 0.183902 0.001651 -2.165204 -0.183897 0.982728 0.020664 13.98612 0.002177 -0.020615 0.999785 -0.310705 0 0 0 1 </matrix>
+            <matrix sid="SID_6">0.982943 0.183902 0.001651 -2.165204 -0.183897 0.982728 0.020664 13.98612 0.002177 -0.020615 0.999785 -0.310705 0 0 0 1 </matrix>
             <node id="mixamorig_RightHandRing2" name="mixamorig_RightHandRing2" sid="SID_105" type="JOINT">
-             <matrix sid="SID_16">0.999405 -0.034487 -0.000542 -0.252224 0.034487 0.999405 -2.4e-05 5.363761 0.000542 6e-06 1 0 0 0 0 1 </matrix>
+             <matrix sid="SID_12">0.999405 -0.034487 -0.000542 -0.252224 0.034487 0.999405 -2.4e-05 5.363761 0.000542 6e-06 1 0 0 0 0 1 </matrix>
              <node id="mixamorig_RightHandRing3" name="mixamorig_RightHandRing3" sid="SID_96" type="JOINT">
-              <matrix sid="SID_5">0.998133 -0.061077 0.000527 -0.060239 0.061077 0.998133 6e-06 4.81965 -0.000526 2.6e-05 1 0 0 0 0 1 </matrix>
+              <matrix sid="SID_18">0.998133 -0.061077 0.000527 -0.060239 0.061077 0.998133 6e-06 4.81965 -0.000526 2.6e-05 1 0 0 0 0 1 </matrix>
               <node id="mixamorig_RightHandRing4" name="mixamorig_RightHandRing4" type="JOINT">
                <matrix>1 0 0 0.312463 0 1 0 6.421664 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -2065,11 +2052,11 @@
             </node>
            </node>
            <node id="mixamorig_RightHandPinky1" name="mixamorig_RightHandPinky1" sid="SID_100" type="JOINT">
-            <matrix sid="SID_52">0.984735 0.174053 0.001849 -6.465364 -0.174054 0.98452 0.020637 12.24289 0.001772 -0.020643 0.999785 0.51295 0 0 0 1 </matrix>
+            <matrix sid="SID_9">0.984735 0.174053 0.001849 -6.465364 -0.174054 0.98452 0.020637 12.24289 0.001772 -0.020643 0.999785 0.51295 0 0 0 1 </matrix>
             <node id="mixamorig_RightHandPinky2" name="mixamorig_RightHandPinky2" sid="SID_99" type="JOINT">
-             <matrix sid="SID_21">0.999808 0.018899 -0.005084 -0.236785 -0.018901 0.999821 -0.000189 6.401495 0.005079 0.000285 0.999987 0 0 0 0 1 </matrix>
+             <matrix sid="SID_1">0.999808 0.018899 -0.005084 -0.236785 -0.018901 0.999821 -0.000189 6.401495 0.005079 0.000285 0.999987 0 0 0 0 1 </matrix>
              <node id="mixamorig_RightHandPinky3" name="mixamorig_RightHandPinky3" sid="SID_93" type="JOINT">
-              <matrix sid="SID_29">0.987351 -0.158541 -0.00162 -0.184573 0.158541 0.987352 -9.1e-05 3.300306 0.001614 -0.000167 0.999999 0 0 0 0 1 </matrix>
+              <matrix sid="SID_39">0.987351 -0.158541 -0.00162 -0.184573 0.158541 0.987352 -9.1e-05 3.300306 0.001614 -0.000167 0.999999 0 0 0 0 1 </matrix>
               <node id="mixamorig_RightHandPinky4" name="mixamorig_RightHandPinky4" type="JOINT">
                <matrix>1 0 0 0.421358 0 1 0 4.063413 0 0 1 0 0 0 0 1 </matrix>
               </node>
@@ -2084,13 +2071,13 @@
      </node>
     </node>
     <node id="mixamorig_RightUpLeg" name="mixamorig_RightUpLeg" sid="SID_64" type="JOINT">
-     <matrix sid="SID_3">-0.999992 0.004004 -0.00016 -11.7926 -0.004006 -0.997883 0.064912 -8.130675 0.0001 0.064912 0.997891 0.433506 0 0 0 1 </matrix>
+     <matrix sid="SID_34">-0.999992 0.004004 -0.00016 -11.7926 -0.004006 -0.997883 0.064912 -8.130675 0.0001 0.064912 0.997891 0.433506 0 0 0 1 </matrix>
      <node id="mixamorig_RightLeg" name="mixamorig_RightLeg" sid="SID_74" type="JOINT">
-      <matrix sid="SID_24">0.999971 0.007466 0.001401 0 -0.007597 0.982713 0.184979 43.91703 4e-06 -0.184984 0.982742 -0 0 0 0 1 </matrix>
+      <matrix sid="SID_46">0.999971 0.007466 0.001401 0 -0.007597 0.982713 0.184979 43.91703 4e-06 -0.184984 0.982742 -0 0 0 0 1 </matrix>
       <node id="mixamorig_RightFoot" name="mixamorig_RightFoot" sid="SID_75" type="JOINT">
-       <matrix sid="SID_30">0.999886 0.013235 0.007216 -0 -0.002407 0.612755 -0.790269 48.97004 -0.014881 0.790162 0.612717 -0 0 0 0 1 </matrix>
+       <matrix sid="SID_19">0.999886 0.013235 0.007216 -0 -0.002407 0.612755 -0.790269 48.97004 -0.014881 0.790162 0.612717 -0 0 0 0 1 </matrix>
        <node id="mixamorig_RightToeBase" name="mixamorig_RightToeBase" sid="SID_73" type="JOINT">
-        <matrix sid="SID_17">0.990869 -0.103308 -0.086636 0 0 0.642574 -0.766224 24.60471 0.134827 0.759228 0.636706 0 0 0 0 1 </matrix>
+        <matrix sid="SID_13">0.990869 -0.103308 -0.086636 0 0 0.642574 -0.766224 24.60471 0.134827 0.759228 0.636706 0 0 0 0 1 </matrix>
         <node id="mixamorig_RightToe_End" name="mixamorig_RightToe_End" type="JOINT">
          <matrix>1 0 0 0 0 1 0 11.64202 0 0 1 0 0 0 0 1 </matrix>
         </node>
@@ -2099,13 +2086,13 @@
      </node>
     </node>
     <node id="mixamorig_LeftUpLeg" name="mixamorig_LeftUpLeg" sid="SID_65" type="JOINT">
-     <matrix sid="SID_42">-0.99999 -0.004479 0.000244 11.79111 0.004485 -0.997936 0.064052 -8.121685 -4.3e-05 0.064052 0.997947 0.424052 0 0 0 1 </matrix>
+     <matrix sid="SID_36">-0.99999 -0.004479 0.000244 11.79111 0.004485 -0.997936 0.064052 -8.121685 -4.3e-05 0.064052 0.997947 0.424052 0 0 0 1 </matrix>
      <node id="mixamorig_LeftLeg" name="mixamorig_LeftLeg" sid="SID_70" type="JOINT">
-      <matrix sid="SID_34">0.999962 -0.008554 -0.001593 0 0.008701 0.983039 0.183188 43.92064 -1e-06 -0.183194 0.983077 0 0 0 0 1 </matrix>
+      <matrix sid="SID_27">0.999962 -0.008554 -0.001593 0 0.008701 0.983039 0.183188 43.92064 -1e-06 -0.183194 0.983077 0 0 0 0 1 </matrix>
       <node id="mixamorig_LeftFoot" name="mixamorig_LeftFoot" sid="SID_71" type="JOINT">
-       <matrix sid="SID_45">0.999884 -0.013987 -0.005967 0 0.003869 0.613461 -0.789715 48.96635 0.014706 0.789601 0.613444 -0 0 0 0 1 </matrix>
+       <matrix sid="SID_38">0.999884 -0.013987 -0.005967 0 0.003869 0.613461 -0.789715 48.96635 0.014706 0.789601 0.613444 -0 0 0 0 1 </matrix>
        <node id="mixamorig_LeftToeBase" name="mixamorig_LeftToeBase" sid="SID_72" type="JOINT">
-        <matrix sid="SID_31">0.991059 0.102222 0.085746 0 -0 0.642664 -0.766148 24.60535 -0.133423 0.759298 0.636918 0 0 0 0 1 </matrix>
+        <matrix sid="SID_20">0.991059 0.102222 0.085746 0 -0 0.642664 -0.766148 24.60535 -0.133423 0.759298 0.636918 0 0 0 0 1 </matrix>
         <node id="mixamorig_LeftToe_End" name="mixamorig_LeftToe_End" type="JOINT">
          <matrix>1 0 0 0 0 1 0 11.64251 0 0 1 0 0 0 0 1 </matrix>
         </node>
@@ -2113,6 +2100,19 @@
       </node>
      </node>
     </node>
+   </node>
+   <node id="Gloves" name="Gloves">
+    <instance_controller url="#GlovesMesh">
+     <skeleton>#mixamorig_Hips</skeleton>
+     <bind_material>
+      <technique_common>
+       <instance_material symbol="geometryElement349" target="#Glovemat">
+        <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+        <bind_vertex_input semantic="CHANNEL3" input_semantic="TEXCOORD" input_set="1"/>
+       </instance_material>
+      </technique_common>
+     </bind_material>
+    </instance_controller>
    </node>
   </visual_scene>
  </library_visual_scenes>

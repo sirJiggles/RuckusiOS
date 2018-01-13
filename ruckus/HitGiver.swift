@@ -16,6 +16,10 @@ protocol GivesHites {
 class HitGiver: GivesHites {
     let combos: [[Move]] = [
         [.jab, .jab, .cross, .idle],
+        [.jab, .cross, .leftHook, .idle],
+        [.leftHook, .rightHook, .idle],
+        [.jab, .jab, .leftHook],
+        [.leftHook, .bigCross, .leftHook, .idle],
         [.jab, .bigCross, .idle],
         [.bigCross, .idle],
         [.jab, .cross, .idle],
