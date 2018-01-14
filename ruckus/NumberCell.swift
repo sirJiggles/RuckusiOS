@@ -27,6 +27,22 @@ class NumberCell: UITableViewCell {
         // add the tap gesture for the info icon
         infoImage.isUserInteractionEnabled = true
         infoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImage)))
+        
+        // set up text input, crazy you have to do this ...
+        let numberToolbar: UIToolbar = UIToolbar()
+        numberToolbar.barStyle = UIBarStyle.default
+        numberToolbar.items=[
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NumberCell.done))
+        ]
+        
+        numberToolbar.sizeToFit()
+        
+        numberInput.inputAccessoryView = numberToolbar
+    }
+    
+    @objc func done() {
+        numberInput.resignFirstResponder()
     }
     
     @objc func tappedImage() {

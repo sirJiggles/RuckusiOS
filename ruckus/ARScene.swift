@@ -137,7 +137,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // 'face' the correct direction, for the look at
             model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             
-            let mysize: Float = 168.0
             var modelSize: Float
             
             // work out the model size
@@ -150,7 +149,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             
             // calculate the scale using players size
             let factor: Float = 10000.0
-            let diff: Float = (modelSize - mysize)
+            let diff: Float = (modelSize - usersHeight)
 
             var scaleOfModel: Float
             if (diff > 0) {

@@ -77,7 +77,7 @@ struct SettingsAccessor: GetsSettings {
             if let model = try settings.getValue(forKey: PossibleSetting.model.rawValue) as? String {
                 return model
             }
-            return "robot"
+            return AnimationModelName.maleBoxer.rawValue
         } catch let error {
             fatalError(error.localizedDescription)
         }
@@ -85,8 +85,10 @@ struct SettingsAccessor: GetsSettings {
     
     func getUsersHeight() -> Float {
         do {
-            if let height = try settings.getValue(forKey: PossibleSetting.userHeight.rawValue) as? Float {
-                return height
+            if let height = try settings.getValue(forKey: PossibleSetting.userHeight.rawValue) as? String {
+                if let casted = (Float)(height) {
+                    return casted
+                }
             }
             return 170.0
         } catch let error {
