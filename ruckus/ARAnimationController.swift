@@ -24,6 +24,8 @@ class ARAnimationController {
     
     static let sharedInstance = ARAnimationController()
     
+    let soundManager = ARSoundManager()
+    
     var hitting = false
     
     init() {
@@ -110,6 +112,10 @@ class ARAnimationController {
                     pl.stop(withBlendOutDuration: 0.2)
                 }
                 player.play()
+                
+                // play the swoosh sound for each punch
+                soundManager.swoosh()
+                
                 if lastMove {
                     hitting = false
                 }

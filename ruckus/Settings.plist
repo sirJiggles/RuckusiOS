@@ -127,7 +127,7 @@
 	<key>backgroundCrowd</key>
 	<dict>
 		<key>descr</key>
-		<string>Play the sound of a boxing crowd in the background?</string>
+		<string>Play the sound of a boxing crowd in the background? This is also for AR mode</string>
 		<key>enabled</key>
 		<true/>
 		<key>label</key>

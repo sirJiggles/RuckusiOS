@@ -91,6 +91,10 @@
 		7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDE1EE44D920049ADA8 /* finished.wav */; };
 		7F4D9FE61EE45FC20049ADA8 /* WorkoutStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C6351E8FDA4D004D90FB /* WorkoutStoreHelper.swift */; };
 		7F53A1CB1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A1CA1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift */; };
+		7F5651B1200C0CF700C10D9A /* ARSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */; };
+		7F5651B2200C0CF700C10D9A /* ARSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */; };
+		7F5651B4200C12DB00C10D9A /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F5651B3200C12DA00C10D9A /* swoosh.wav */; };
+		7F5651B5200C12DB00C10D9A /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F5651B3200C12DA00C10D9A /* swoosh.wav */; };
 		7F5AE9C21E6F551F005B4290 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */; };
 		7F5B0A631EE4A22E00BA7358 /* GoProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */; };
 		7F5B0A651EE4B6D800BA7358 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
@@ -380,6 +384,8 @@
 		7F4D9FDC1EE44D920049ADA8 /* pause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pause.wav; sourceTree = "<group>"; };
 		7F4D9FDE1EE44D920049ADA8 /* finished.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finished.wav; sourceTree = "<group>"; };
 		7F53A1CA1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntervalTimerSettingsHelper.swift; path = ruckus/IntervalTimerSettingsHelper.swift; sourceTree = "<group>"; };
+		7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSoundManager.swift; sourceTree = "<group>"; };
+		7F5651B3200C12DA00C10D9A /* swoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swoosh.wav; sourceTree = "<group>"; };
 		7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProViewController.swift; sourceTree = "<group>"; };
 		7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedState.swift; sourceTree = "<group>"; };
@@ -764,6 +770,7 @@
 				7F7775641F40AF140037B49F /* SettingsAccessor.swift */,
 				7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */,
 				7F72A05D1FF538E600F6992F /* MatrixConversions.swift */,
+				7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -782,6 +789,7 @@
 				7F6C75E0200AB1F100B20D9D /* punch_1.wav */,
 				7F6C75DD200AB1F000B20D9D /* punch_2.wav */,
 				7F6C75DF200AB1F100B20D9D /* punch_3.wav */,
+				7F5651B3200C12DA00C10D9A /* swoosh.wav */,
 				7F6C75E1200AB1F100B20D9D /* punch_4.wav */,
 				7F6C75DE200AB1F100B20D9D /* punch_5.wav */,
 				7FFC067F1F5C6B8B00F40EED /* crowd.wav */,
@@ -1344,6 +1352,7 @@
 				7FB5F5C91F4A10BE006BF8F3 /* bell.mp3 in Resources */,
 				7F8593A31FF130BA0085DB3E /* art.scnassets in Resources */,
 				7F6127061E50BB4800ED1544 /* Settings.plist in Resources */,
+				7F5651B4200C12DB00C10D9A /* swoosh.wav in Resources */,
 				7FB5F5CA1F4A10C1006BF8F3 /* round-end.wav in Resources */,
 				7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */,
 				7F6C75E3200AB2C300B20D9D /* punch_2.wav in Resources */,
@@ -1383,6 +1392,7 @@
 				7FC61E411F5192D300645009 /* LaunchScreen.storyboard in Resources */,
 				7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */,
 				7FC61E421F5192D300645009 /* bell.mp3 in Resources */,
+				7F5651B5200C12DB00C10D9A /* swoosh.wav in Resources */,
 				7FC61E431F5192D300645009 /* Settings.plist in Resources */,
 				7FC61E441F5192D300645009 /* round-end.wav in Resources */,
 				7F6C75E8200AB2C400B20D9D /* punch_2.wav in Resources */,
@@ -1879,6 +1889,7 @@
 				7F7775711F40BF1F0037B49F /* SoundPlayer.swift in Sources */,
 				7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7F7693A11EE37FF20036DED7 /* ButtonCell.swift in Sources */,
+				7F5651B1200C0CF700C10D9A /* ARSoundManager.swift in Sources */,
 				7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1966,6 +1977,7 @@
 				7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */,
 				7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */,
 				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
+				7F5651B2200C0CF700C10D9A /* ARSoundManager.swift in Sources */,
 				7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

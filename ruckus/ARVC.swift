@@ -62,6 +62,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     var settingsAccessor: SettingsAccessor?
     
+    let soundManager = ARSoundManager()
+    
     // Parametres
     let interpupilaryDistance = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
     let viewBackgroundColor : UIColor = UIColor.black
@@ -73,9 +75,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     //    let eyeFOV = 120; let cameraImageScale = 8.756; // Rough Guestimate.
     
     var rumbleTimer: Timer?
-    
-    let player: SoundPlayer = SoundPlayer.sharedInstance
-    let playerQue = DispatchQueue(label: "ruckus.sound_que", qos: DispatchQoS.background)
     
     required init?(coder aDecoder: NSCoder) {
 
@@ -124,6 +123,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         leftEyeCountdown.isHidden = true
         rightEyeCountdown.isHidden = true
         started = false
+        soundManager.stopTheCrowd()
+        // stop the pain
+        scene.animationController?.didStop()
     }
     
     override func didReceiveMemoryWarning() {
@@ -295,6 +297,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
                 self.leftEyeCountdown.isHidden = true
                 self.rightEyeCountdown.isHidden = true
                 
+                // start the crowd if on in settings
+                self.soundManager.startCrowd()
+                
                 // stop the timer
                 self.rumbleTimer?.invalidate()
                 // now start the pain!
@@ -314,16 +319,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         // vibrate the phone when hit!
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
-        
-        playerQue.async {
-            let randomIndex = Int(arc4random_uniform(UInt32(4))) + 1
-            do {
-                try self.player.play("punch_\(randomIndex)", withExtension: "wav", loop: false)
-            } catch let error {
-                fatalError(error.localizedDescription)
-            }
-        }
-       
+        // make the, you got hit sound!
+        soundManager.playPunchSound()
         
         DispatchQueue.main.async {
             Timer.scheduledTimer(withTimeInterval: self.invincibleTime, repeats: false){ _ in
