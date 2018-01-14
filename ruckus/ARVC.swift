@@ -76,6 +76,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     var rumbleTimer: Timer?
     
+    var ringEnabled: Bool = false
+    
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
@@ -89,6 +91,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             } else {
                 invincibleTime = 0.08
             }
+        }
+        
+        if let enabled = self.settingsAccessor?.getRingEnabled() {
+            ringEnabled = enabled
         }
     }
     
@@ -211,6 +217,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             scene.moveFloorTo(position: newLocation)
             
             scene.setCharAt(position: newLocation)
+            
+            if (ringEnabled) {
+                scene.setRingAt(position: newLocation)
+            }
             
             fullScreenARView.node(for: result.anchor!)!.removeFromParentNode()
             fullScreenARView.session.remove(anchor: result.anchor!)

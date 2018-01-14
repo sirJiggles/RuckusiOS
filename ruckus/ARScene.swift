@@ -27,7 +27,7 @@ enum AnimationModelName: String {
 class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
-    
+    var ring = SCNNode()
     
     var headNode = SCNNode()
     
@@ -68,6 +68,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         createPlayerNode()
         
         setUpChar()
+        
+        setUpRing()
         
         ligntMeUp()
         
@@ -121,6 +123,22 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         rootNode.addChildNode(ambientLightNode)
         
         spotLightNode.constraints = [SCNLookAtConstraint(target: modelWrapper)]
+        
+    }
+    
+    func setUpRing() {
+        let ringNode = SCNScene(named: "art.scnassets/ring.dae")
+        let node = SCNNode()
+        if let ringNodeUnwrapped = ringNode {
+            // we need to do this as mixamo puts all on root level
+            for child in ringNodeUnwrapped.rootNode.childNodes {
+                node.addChildNode(child)
+            }
+            
+//            ring.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+        }
+        
+        ring.addChildNode(node)
         
     }
     
@@ -202,6 +220,13 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         // the floor os used to work out the y for the look at!
         theFloor = position.y
         rootNode.addChildNode(modelWrapper)
+    }
+    
+    func setRingAt(position: SCNVector3) {
+        ring.position = position
+        // move down a little for the floor
+        ring.position.y = position.y - 1.5
+        rootNode.addChildNode(ring)
     }
     
     func moveFloorTo(position: SCNVector3) {

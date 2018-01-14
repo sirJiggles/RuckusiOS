@@ -51,6 +51,17 @@ struct SettingsAccessor: GetsSettings {
         }
     }
     
+    func getRingEnabled() -> Bool {
+        do {
+            if let enabled = try settings.getValue(forKey: PossibleSetting.showRing.rawValue) as? String {
+                return (enabled == "1")
+            }
+            return false
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
     func getVolume() -> Float {
         do {
             if let volume = try settings.getValue(forKey: PossibleSetting.volume.rawValue) as? Float {

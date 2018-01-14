@@ -284,5 +284,16 @@
 		<key>value</key>
 		<string>170</string>
 	</dict>
+	<key>showRing</key>
+	<dict>
+		<key>descr</key>
+		<string>If on, puts you in a virtual ring in AR mode</string>
+		<key>enabled</key>
+		<true/>
+		<key>value</key>
+		<string>0</string>
+		<key>label</key>
+		<string>Show ring</string>
+	</dict>
 </dict>
 </plist>

@@ -23,7 +23,7 @@ protocol PlayesSwooshingNoises {
 
 
 class ARSoundManager: PlaysPunchSounds, ControllsTheCrowd, PlayesSwooshingNoises {
-    let player: SoundPlayer = SoundPlayer.sharedInstance
+    let player = SoundPlayer()
     let playerQue = DispatchQueue(label: "ruckus.ar_sound_que", qos: DispatchQoS.background)
     let swooshQue = DispatchQueue(label: "ruckus.ar_sound_que_swoosh", qos: DispatchQoS.background)
     var crowdSoundsEnabled:Bool = false

@@ -35,6 +35,7 @@ enum PossibleSetting: String {
     case backgroundCrowd
     case userHeight
     case model
+    case showRing
 }
 
 enum CellType: String {
@@ -174,7 +175,12 @@ class Settings {
         case 4:
             return .numberCell
         case 5:
-            return .selectCell
+            switch indexPath.row {
+            case 0:
+                return .selectCell
+            default:
+                return .toggleCell
+            }
         case 6:
             return .buttonCell
         default:
@@ -227,6 +233,8 @@ class Settings {
             return .userHeight
         case (5,0):
             return .model
+        case (5,1):
+            return .showRing
         default:
             return .callOutHits
         }

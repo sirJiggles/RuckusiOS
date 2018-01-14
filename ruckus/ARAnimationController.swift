@@ -99,14 +99,14 @@ class ARAnimationController {
     
     func playMove(named move: Move, after: Double, lastMove: Bool) {
         if let player = model.animationPlayer(forKey: move.rawValue) {
-            let move = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: [player, lastMove], repeats: false)
-            aniamtionSequences.append(move)
+            let moveTime = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: [player, lastMove, move], repeats: false)
+            aniamtionSequences.append(moveTime)
         }
     }
     
     @objc func whosGotta(_ timer: Timer) {
         if let info = timer.userInfo as? [AnyObject] {
-            if let player = info[0] as? SCNAnimationPlayer, let lastMove = info[1] as? Bool {
+            if let player = info[0] as? SCNAnimationPlayer, let lastMove = info[1] as? Bool, let move = info[2] as? Move {
                 // stop other animations
                 for pl in players {
                     pl.stop(withBlendOutDuration: 0.2)
@@ -114,7 +114,19 @@ class ARAnimationController {
                 player.play()
                 
                 // play the swoosh sound for each punch
-                soundManager.swoosh()
+                if move != .idle {
+                    // work out delay time for swoosh noise
+                    var delay: Double = 0
+                    switch move {
+                    case .bigCross:
+                        delay = 1.2 / speed
+                    default:
+                        delay = 0.4 / speed
+                    }
+                    Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: { _ in
+                        self.soundManager.swoosh()
+                    })
+                }
                 
                 if lastMove {
                     hitting = false
