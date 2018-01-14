@@ -409,8 +409,54 @@
                                             <outlet property="toggleSwitch" destination="eN4-Cg-AUU" id="POQ-o3-GGc"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="numberCell" rowHeight="57" id="11b-gO-ahm" userLabel="numberCell" customClass="NumberCell" customModule="ruckus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="142" width="375" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="11b-gO-ahm" id="mEm-MD-Y8v">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="170" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGa-Le-yWb">
+                                                    <rect key="frame" x="49" y="8" width="321" height="40"/>
+                                                    <color key="backgroundColor" red="0.19213148951530457" green="0.19217148423194885" blue="0.192128986120224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="wdt-80-XWJ"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="didEnterNumber:" destination="11b-gO-ahm" eventType="editingDidEnd" id="oTZ-iv-dMk"/>
+                                                    </connections>
+                                                </textField>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="Xqn-a5-tvW">
+                                                    <rect key="frame" x="10" y="14" width="29" height="29"/>
+                                                    <accessibility key="accessibilityConfiguration" label="info icon">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="29" id="FBS-Lz-ORk"/>
+                                                        <constraint firstAttribute="height" constant="29" id="nKZ-V4-WSZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eGa-Le-yWb" firstAttribute="leading" secondItem="Xqn-a5-tvW" secondAttribute="trailing" constant="10" id="J8h-8p-v4d"/>
+                                                <constraint firstItem="eGa-Le-yWb" firstAttribute="centerY" secondItem="mEm-MD-Y8v" secondAttribute="centerY" id="R5v-6b-79T"/>
+                                                <constraint firstItem="Xqn-a5-tvW" firstAttribute="leading" secondItem="mEm-MD-Y8v" secondAttribute="leading" constant="10" id="URv-ZE-zc3"/>
+                                                <constraint firstItem="eGa-Le-yWb" firstAttribute="trailing" secondItem="mEm-MD-Y8v" secondAttribute="trailing" constant="-5" id="wpk-TE-STx"/>
+                                                <constraint firstItem="Xqn-a5-tvW" firstAttribute="centerY" secondItem="mEm-MD-Y8v" secondAttribute="centerY" id="xyV-n7-LEo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="infoImage" destination="Xqn-a5-tvW" id="Ts2-66-bHl"/>
+                                            <outlet property="numberInput" destination="eGa-Le-yWb" id="4ud-yD-IYD"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectCellTime" rowHeight="280" id="p1I-7g-Q9k" userLabel="selectCellTime" customClass="SelectCellTime" customModule="ruckus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="142" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="199" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p1I-7g-Q9k" id="6Rq-gE-ico">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279.66666666666669"/>
@@ -496,7 +542,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectCell" rowHeight="280" id="Bsf-F9-nkv" userLabel="selectCell" customClass="SelectCell" customModule="ruckus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="422" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="479" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bsf-F9-nkv" id="jNx-A2-ULJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279.66666666666669"/>
@@ -572,7 +618,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="difficultyCell" rowHeight="57" id="awe-PQ-acA" customClass="DifficultyCell" customModule="ruckus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="702" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="759" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awe-PQ-acA" id="OmK-Tk-M2k">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56.666666666666664"/>
@@ -622,7 +668,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="57" id="oHo-b6-XdW" userLabel="scrollCell" customClass="ScrollCell" customModule="ruckus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="759" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="816" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oHo-b6-XdW" id="9Xy-7v-XS0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56.666666666666664"/>
@@ -650,7 +696,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="volumeCell" rowHeight="90" id="2mw-nA-pmi" userLabel="volumeButtonCell" customClass="VolumeCell" customModule="ruckus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="816" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="873" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2mw-nA-pmi" id="FYF-XE-KS1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
@@ -712,7 +758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443" y="992"/>
+            <point key="canvasLocation" x="442.39999999999998" y="991.62561576354688"/>
         </scene>
         <!--Upgrade View-->
         <scene sceneID="G60-BG-73X">

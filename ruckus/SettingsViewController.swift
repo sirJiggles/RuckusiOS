@@ -48,12 +48,16 @@ protocol ChangeScrollDelegate: class {
     func didReleaseScroll()
 }
 
+protocol EnterNumberDelegate: class {
+    func didEnterNumber(sender: NumberCell, newValue: String)
+}
+
 enum SettingsError: Error {
     case CouldNotLoadPlist
     case CouldNotGetSettingsKeyFromStore
 }
 
-class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDifficultyDelegate, ToggleCellDelegate, SelectClickDelegate, UITableViewDataSource, UITableViewDelegate, ClickInfoIconDelegate, ButtonCallDelegate, SelectTimeClickDelegate {
+class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDifficultyDelegate, ToggleCellDelegate, SelectClickDelegate, UITableViewDataSource, UITableViewDelegate, ClickInfoIconDelegate, ButtonCallDelegate, SelectTimeClickDelegate, EnterNumberDelegate {
 
     let tableData: [String: AnyObject]
     let settings: Settings
@@ -169,7 +173,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -183,8 +187,10 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         case 3:
             return 2
         case 4:
-            return 2
+            return 1
         case 5:
+            return 1
+        case 6:
             return 1
         default:
             return 1
@@ -276,8 +282,10 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         case 3:
             return "Volume"
         case 4:
-            return "AR Settings"
+            return "Your Height (in cm)"
         case 5:
+            return "AR Settings"
+        case 6:
             return "Credits"
         default:
             return ""
@@ -442,7 +450,18 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
             selectStates[key] = false;
             
             return cell
-
+        
+        case .numberCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: type.rawValue, for: index) as! NumberCell
+            
+            // set the initial value
+            cell.numberInput.text = storedValue as! String
+            
+            // set delegates
+            cell.callDelegate = self
+            cell.toggleInfoDelegete = self
+            
+            return cell
             
         case .difficultyCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: type.rawValue, for: index) as! DifficultyCell
@@ -507,6 +526,11 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         
         // check if we need to close any selected cells that might have been open
         self.closeSelectCells()
+    }
+    
+    func didEnterNumber(sender: NumberCell, newValue: String) {
+        let indexPath = self.tableView.indexPath(for: sender)
+        settings.setValue(newValue, atIndexPath: indexPath!)
     }
     
     // right now it is just one, that is credits button

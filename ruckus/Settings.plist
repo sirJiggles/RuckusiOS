@@ -135,17 +135,6 @@
 		<key>value</key>
 		<string>0</string>
 	</dict>
-	<key>arFollow</key>
-	<dict>
-		<key>descr</key>
-		<string>Turn on / off the AR robot follow mode</string>
-		<key>enabled</key>
-		<true/>
-		<key>label</key>
-		<string>AR Follow mode</string>
-		<key>value</key>
-		<string>1</string>
-	</dict>
 	<key>jumpingKicks</key>
 	<dict>
 		<key>descr</key>
@@ -279,12 +268,21 @@
 		<string>regularBoxer</string>
 		<key>possibleValues</key>
 		<array>
-			<string>regularBoxer</string>
-			<string>beastBoxer</string>
+			<string>maleBoxer</string>
+			<string>femaleBoxer</string>
 			<string>joe</string>
 			<string>swat</string>
 			<string>soldier</string>
 		</array>
+	</dict>
+	<key>userHeight</key>
+	<dict>
+		<key>label</key>
+		<string>Height</string>
+		<key>descr</key>
+		<string>Your height in cm for example 169, this is how tall the fighter will be in AR mode</string>
+		<key>value</key>
+		<string>170</string>
 	</dict>
 </dict>
 </plist>

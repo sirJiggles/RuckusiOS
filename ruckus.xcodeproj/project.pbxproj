@@ -109,6 +109,8 @@
 		7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F6127061E50BB4800ED1544 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
+		7F645E3A200C0142006E5197 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F645E39200C0142006E5197 /* NumberCell.swift */; };
+		7F645E3B200C0142006E5197 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F645E39200C0142006E5197 /* NumberCell.swift */; };
 		7F692BFC1F40681A00D768FB /* Combos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F692BFB1F40681A00D768FB /* Combos.swift */; };
 		7F692C011F4083DA00D768FB /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7F692C001F4083DA00D768FB /* Sounds */; };
 		7F6C75E2200AB2C300B20D9D /* punch_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75E0200AB1F100B20D9D /* punch_1.wav */; };
@@ -390,6 +392,7 @@
 		7F6127001E50B9BF00ED1544 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ruckus/Settings.swift; sourceTree = "<group>"; };
 		7F6127051E50BB4800ED1544 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7F6127071E50BF1500ED1544 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistHelper.swift; path = ruckus/PlistHelper.swift; sourceTree = "<group>"; };
+		7F645E39200C0142006E5197 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
 		7F692BFB1F40681A00D768FB /* Combos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combos.swift; sourceTree = "<group>"; };
 		7F692C001F4083DA00D768FB /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		7F6C75DD200AB1F000B20D9D /* punch_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch_2.wav; sourceTree = "<group>"; };
@@ -746,6 +749,7 @@
 				7F018A1F1F4BECF200BC044F /* VolumeCell.swift */,
 				7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */,
 				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
+				7F645E39200C0142006E5197 /* NumberCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1854,6 +1858,7 @@
 				7FC575D81EED5D17006DAD3E /* Reachable.swift in Sources */,
 				7FB247FD1ED2420700267498 /* WorkoutSession.swift in Sources */,
 				7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */,
+				7F645E3A200C0142006E5197 /* NumberCell.swift in Sources */,
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
 				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */,
@@ -1940,6 +1945,7 @@
 				7FC61E2B1F5192D300645009 /* Reachable.swift in Sources */,
 				7FC61E2C1F5192D300645009 /* WorkoutSession.swift in Sources */,
 				7FC61E2D1F5192D300645009 /* StringExtension.swift in Sources */,
+				7F645E3B200C0142006E5197 /* NumberCell.swift in Sources */,
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
 				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */,

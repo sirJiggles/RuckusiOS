@@ -17,8 +17,8 @@ enum CollisionCategory : Int {
 }
 
 enum AnimationModelName: String {
-    case regularBoxer
-    case beastBoxer
+    case maleBoxer
+    case femaleBoxer
     case soldier
     case swat
     case joe
@@ -34,7 +34,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var punchDelegate: PunchInTheHeadDelegate?
     var theFloor: Float = 0
     
-    var modelName: AnimationModelName = .regularBoxer
+    var modelName: AnimationModelName = .maleBoxer
     var settingsAccessor: SettingsAccessor?
     
     var animationController: ARAnimationController?
@@ -43,6 +43,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var ambientLightNode = SCNNode()
     
     var floorNode = SCNNode()
+    var usersHeight: Float = 170.0
     
     convenience init(create: Bool) {
         self.init()
@@ -53,6 +54,10 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             if let enumValue = AnimationModelName.init(rawValue: animationName) {
                 self.modelName = enumValue
             }
+        }
+        
+        if let height = settingsAccessor?.getUsersHeight() {
+            usersHeight = height
         }
         
         // this class will check for collisions
@@ -132,25 +137,35 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // 'face' the correct direction, for the look at
             model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             
-//            0.0105 is my height
-            model.scale = SCNVector3(0.0105, 0.0105, 0.0105)
+            let mysize: Float = 168.0
+            var modelSize: Float
+            
+            // work out the model size
+            switch modelName {
+            case .femaleBoxer:
+                modelSize = 177.0
+            default:
+                modelSize = 181.0
+            }
+            
+            // calculate the scale using players size
+            let factor: Float = 10000.0
+            let diff: Float = (modelSize - mysize)
+
+            var scaleOfModel: Float
+            if (diff > 0) {
+                // if taller
+                scaleOfModel = Float((modelSize - diff) / factor)
+            } else {
+                // if smaller
+                scaleOfModel = Float((modelSize + diff) / factor)
+            }
+            
+            // no idea why???
+            scaleOfModel = scaleOfModel - 0.0063
+
+            model.scale = SCNVector3(scaleOfModel, scaleOfModel, scaleOfModel)
             model.position = SCNVector3(0,0,0)
-            
-            // add some levels of detail for the main char to bring the size down
-            var levelsOfDetail: [SCNLevelOfDetail] = []
-            
-            let charNode = rootNode.childNode(withName: "Alpha_Surface", recursively: true)
-            
-            for index in 0 ... 5 {
-                if let geo = charNode?.geometry {
-                    let detailLevel = SCNLevelOfDetail(geometry: geo, worldSpaceDistance: CGFloat(index - 1))
-                    levelsOfDetail.append(detailLevel)
-                }
-            }
-            
-            if let geo = charNode?.geometry {
-                geo.levelsOfDetail = levelsOfDetail
-            }
             
             // add collision detection to the hand nodes, these are ones we will add!
             

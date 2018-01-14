@@ -12,7 +12,7 @@ import SceneKit
 class ARAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .cross, .idle, .rightHook, .leftHook, .bigCross, .uppercut, .quadPunch]
+    let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
     
     var speed: Double = 0.5
     var callOutsEnabled: Bool = true
@@ -58,8 +58,13 @@ class ARAnimationController {
         for move in combo {
             let lastMove = (index == combo.count)
             playMove(named: move, after: i, lastMove: lastMove)
-            if move == .bigCross {
-                factor = 2.0
+            switch move {
+            case .bigCross:
+                factor = 1.8
+            case .cross:
+                factor = 0.6
+            default:
+                factor = 1.0
             }
             i = i + (factor / speed)
             index += 1

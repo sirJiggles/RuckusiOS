@@ -83,12 +83,12 @@ struct SettingsAccessor: GetsSettings {
         }
     }
     
-    func getMoveMode() -> Bool {
+    func getUsersHeight() -> Float {
         do {
-            if let enabled = try settings.getValue(forKey: PossibleSetting.arFollow.rawValue) as? String {
-                return (enabled == "1")
+            if let height = try settings.getValue(forKey: PossibleSetting.userHeight.rawValue) as? Float {
+                return height
             }
-            return true
+            return 170.0
         } catch let error {
             fatalError(error.localizedDescription)
         }
