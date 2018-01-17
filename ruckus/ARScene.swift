@@ -39,6 +39,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     var animationController: ARAnimationController?
     
+    let heightManager = ARHeightManager()
+    
     var spotLightNode = SCNNode()
     var ambientLightNode = SCNNode()
     
@@ -91,6 +93,13 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
                 )
                 modelWrapper.look(at: posForLookAt)
             }
+            
+            // getting the average height
+            heightManager.insert(height: position.columns.3.y)
+            
+            // if the current y is lower than the average by a head height, they are ducking
+            animationController.gittinLow = ((position.columns.3.y + 0.15) < heightManager.getAverage())
+
         }
     
         // then we set the head node transform using the normal transform matrix
@@ -211,7 +220,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             
             // wrapper for scaling, and used later for following
             modelWrapper.addChildNode(model)
-            
         }
     }
     

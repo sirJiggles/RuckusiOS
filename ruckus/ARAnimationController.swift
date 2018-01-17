@@ -12,27 +12,41 @@ import SceneKit
 class ARAnimationController {
     var model = SCNNode()
     var players: [SCNAnimationPlayer] = []
-    let animations: [Move] = [.jab, .cross, .idle, .rightHook, .bigCross]
+    let animations: [Move] = [
+        .idle,
+        .jab,
+        .cross,
+        .rightHook,
+        .bigCross,
+        .jabLow,
+        .crossLow,
+        .rightHookLow,
+        .bigCrossLow
+    ]
     
-    var speed: Double = 0.5
+    var speed: Double = 0.7
     var callOutsEnabled: Bool = true
     
     var settingsAccessor: SettingsAccessor?
     
     var aniamtionSequences: [Timer] = []
     var attackTimer: Timer?
+    var afterPunchTimer: Timer?
+    var currentPlayer: SCNAnimationPlayer?
     
     static let sharedInstance = ARAnimationController()
     
     let soundManager = ARSoundManager()
     
     var hitting = false
+    // this gets set externally, when the head moves bellow a threshold
+    var gittinLow = false
     
     init() {
         settingsAccessor = SettingsAccessor()
         
         if let difficulty = settingsAccessor?.getDifficulty() {
-            speed = Double(difficulty) + 0.5
+            speed = Double(difficulty) + 0.7
         }
         
         if let enabled = settingsAccessor?.getCallOuts() {
@@ -46,29 +60,18 @@ class ARAnimationController {
         setUpMoves()
         
         // start with the idle stance on init
-        playMove(named: .idle, after: 0, lastMove: true)
+        playMove(named: .idle, after: 0)
     }
     
     @objc func runCombo() {
-        hitting = true
         // clear all the animation timers from the last combo
         aniamtionSequences = []
         let combo = HitGiver.sharedInstance.getCombo()
         var i: Double = 0.0
-        var factor = 1.0
         var index = 1
         for move in combo {
-            let lastMove = (index == combo.count)
-            playMove(named: move, after: i, lastMove: lastMove)
-            switch move {
-            case .bigCross:
-                factor = 1.8
-            case .cross:
-                factor = 0.6
-            default:
-                factor = 1.0
-            }
-            i = i + (factor / speed)
+            playMove(named: move, after: i)
+            i = i + getHitSpeedFor(move: move)
             index += 1
         }
     }
@@ -91,45 +94,60 @@ class ARAnimationController {
         
         // stop the animations running
         for pl in players {
-            pl.stop(withBlendOutDuration: 0.2)
+            pl.stop(withBlendOutDuration: 0.1)
         }
         // play the idle
-        playMove(named: .idle, after: 0, lastMove: true)
+        playMove(named: .idle, after: 0)
     }
     
-    func playMove(named move: Move, after: Double, lastMove: Bool) {
-        if let player = model.animationPlayer(forKey: move.rawValue) {
-            let moveTime = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: [player, lastMove, move], repeats: false)
-            aniamtionSequences.append(moveTime)
+    func playMove(named move: Move, after: Double) {
+        let moveTimer = Timer.scheduledTimer(timeInterval: after, target: self, selector: #selector(whosGotta(_:)), userInfo: [move], repeats: false)
+        aniamtionSequences.append(moveTimer)
+    }
+    
+    // adjust this for how fast the model hits
+    func getHitSpeedFor(move: Move) -> Double {
+        var factor = 0.6
+        switch move {
+        case .bigCross, .bigCrossLow:
+            factor = 1.1
+        case .cross, .crossLow:
+            factor = 0.5
+        default:
+            factor = 0.6
         }
+        return factor / speed
     }
     
     @objc func whosGotta(_ timer: Timer) {
         if let info = timer.userInfo as? [AnyObject] {
-            if let player = info[0] as? SCNAnimationPlayer, let lastMove = info[1] as? Bool, let move = info[2] as? Move {
-                // stop other animations
-                for pl in players {
-                    pl.stop(withBlendOutDuration: 0.2)
-                }
-                player.play()
+            if let move = info[0] as? Move {
+                // we can also load the low version of each move, if
+                // at the time of playing it the user is low ;)
+                let moveName = (self.gittinLow && move != .idle) ? "\(move.rawValue)Low" : move.rawValue
                 
-                // play the swoosh sound for each punch
-                if move != .idle {
-                    // work out delay time for swoosh noise
-                    var delay: Double = 0
-                    switch move {
-                    case .bigCross:
-                        delay = 1.2 / speed
-                    default:
-                        delay = 0.4 / speed
+                if let player = model.animationPlayer(forKey: moveName) {
+                    // stop running aniamtion
+                    if let runningPlayer = currentPlayer{
+                        runningPlayer.stop(withBlendOutDuration: 0.1)
                     }
-                    Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: { _ in
-                        self.soundManager.swoosh()
-                    })
-                }
-                
-                if lastMove {
-                    hitting = false
+                    
+                    player.play()
+                    currentPlayer = player
+                    
+                    // play the swoosh sound for each punch
+                    if move != .idle {
+                        // we know the model is hitting
+                        hitting = true
+                        // should be not hitting and swooshing just before end of hit
+                        let timeInBetweenPunches: Double = 0.2 / speed
+                        let delay = getHitSpeedFor(move: move) - timeInBetweenPunches
+                        // run timer after time for move - time in between
+                        Timer.scheduledTimer(withTimeInterval: delay, repeats: false, block: { _ in
+                            self.soundManager.swoosh()
+                            self.hitting = false
+                        })
+                    }
                 }
             }
         }
@@ -142,6 +160,9 @@ class ARAnimationController {
             switch (animation) {
             case .idle:
                 player.speed = 1.2
+            // lets speed up the big cross a little
+            case .bigCross, .bigCrossLow:
+                player.speed = CGFloat(speed + 0.2)
             default:
                 player.speed = CGFloat(speed)
             }
@@ -149,6 +170,9 @@ class ARAnimationController {
             players.append(player)
 
             model.addAnimationPlayer(player, forKey: animation.rawValue)
+            
+            // for some reason they all start!
+            player.stop()
         }
     }
 }

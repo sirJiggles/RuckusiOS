@@ -37,6 +37,11 @@ enum Move: String {
     case rightHook
     case bigCross
     case quadPunch
+    // moves for when the head is lower
+    case jabLow
+    case crossLow
+    case bigCrossLow
+    case rightHookLow
 }
 
 struct Combos: ReturnsCombos {
