@@ -155,7 +155,7 @@ class ARAnimationController {
     
     func setUpMoves() {
         for animation in animations {
-            let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/\(animation.rawValue).dae")
+            let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/animations/\(animation.rawValue).dae")
             
             switch (animation) {
             case .idle:

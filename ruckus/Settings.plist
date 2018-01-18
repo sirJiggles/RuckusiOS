@@ -265,14 +265,17 @@
 		<key>label</key>
 		<string>Opponent</string>
 		<key>value</key>
-		<string>regularBoxer</string>
+		<string>maleOne</string>
 		<key>possibleValues</key>
 		<array>
-			<string>maleBoxer</string>
-			<string>femaleBoxer</string>
-			<string>joe</string>
-			<string>swat</string>
-			<string>soldier</string>
+			<string>maleOne</string>
+			<string>maleTwo</string>
+			<string>maleThree</string>
+			<string>maleFour</string>
+			<string>femaleOne</string>
+			<string>femaleTwo</string>
+			<string>femaleThree</string>
+			<string>femaleFour</string>
 		</array>
 	</dict>
 	<key>userHeight</key>

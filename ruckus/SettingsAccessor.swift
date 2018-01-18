@@ -88,7 +88,7 @@ struct SettingsAccessor: GetsSettings {
             if let model = try settings.getValue(forKey: PossibleSetting.model.rawValue) as? String {
                 return model
             }
-            return AnimationModelName.maleBoxer.rawValue
+            return AnimationModelName.maleOne.rawValue
         } catch let error {
             fatalError(error.localizedDescription)
         }

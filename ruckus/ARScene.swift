@@ -17,11 +17,14 @@ enum CollisionCategory : Int {
 }
 
 enum AnimationModelName: String {
-    case maleBoxer
-    case femaleBoxer
-    case soldier
-    case swat
-    case joe
+    case maleOne
+    case maleTwo
+    case maleThree
+    case maleFour
+    case femaleOne
+    case femaleTwo
+    case femaleThree
+    case femaleFour
 }
 
 class ARScene: SCNScene, SCNPhysicsContactDelegate {
@@ -34,7 +37,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var punchDelegate: PunchInTheHeadDelegate?
     var theFloor: Float = 0
     
-    var modelName: AnimationModelName = .maleBoxer
+    var modelName: AnimationModelName = .maleOne
     var settingsAccessor: SettingsAccessor?
     
     var animationController: ARAnimationController?
@@ -143,17 +146,41 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             for child in ringNodeUnwrapped.rootNode.childNodes {
                 node.addChildNode(child)
             }
-            
-//            ring.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
         }
         
         ring.addChildNode(node)
         
     }
     
+    
+    // get the size of the model using the name chosen
+    func getCharSize(using char: AnimationModelName) -> Float {
+        switch char {
+        case .maleFour:
+            return 175.3
+        case .maleOne:
+            return 194.0
+        case .maleThree:
+            return 194.6
+        case .maleTwo:
+            return 193.6
+        case .femaleFour:
+            return 168.1
+        case .femaleOne:
+            return 179.0
+        case .femaleThree:
+            return 165.5
+        case .femaleTwo:
+            return 162.6
+        }
+    }
+    
     func setUpChar() {
+        // work out where to load the file from
+        let file = "art.scnassets/boxers/\(modelName.rawValue)/\(modelName.rawValue).dae"
+        
         // load the char dae
-        let charModel = SCNScene(named: "art.scnassets/\(modelName.rawValue).dae")
+        let charModel = SCNScene(named: file)
         if let charUnwrapped = charModel {
             
             // we need to do this as mixamo puts all on root level
@@ -164,15 +191,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // 'face' the correct direction, for the look at
             model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             
-            var modelSize: Float
-            
             // work out the model size
-            switch modelName {
-            case .femaleBoxer:
-                modelSize = 177.0
-            default:
-                modelSize = 181.0
-            }
+            let modelSize = getCharSize(using: modelName)
             
             // calculate the scale using players size
             let factor: Float = 10000.0
