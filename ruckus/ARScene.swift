@@ -238,7 +238,28 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             let leftHandNode = SCNNode(geometry: leftGeo)
             let rightHandNode = SCNNode(geometry: rightGeo)
             
+            // get the gloves model from file and put them on the hands
+            
+            if let leftForeArm = model.childNode(withName: "mixamorig_LeftForeArm", recursively: true), let rightForeArm = model.childNode(withName: "mixamorig_RightForeArm", recursively: true) {
+                // load the gloves dae
+                if let gloves = SCNScene(named: "art.scnassets/gloves/gloves.dae") {
+                    
+                    
+                    if let leftBoxingGlove = gloves.rootNode.childNode(withName: "left", recursively: true), let rightBoxingGlove = gloves.rootNode.childNode(withName: "right", recursively: true) {
+                        
+                        let scale = 0.83
+                        leftBoxingGlove.scale = SCNVector3(scale, scale, scale)
+                        rightBoxingGlove.scale = SCNVector3(scale, scale, scale)
+                        
+                        leftForeArm.addChildNode(leftBoxingGlove)
+                        rightForeArm.addChildNode(rightBoxingGlove)
+                    }
+                }
+            }
+            
+            
             if let lh = model.childNode(withName: "mixamorig_LeftHandMiddle1", recursively: true), let rh = model.childNode(withName: "mixamorig_RightHandMiddle1", recursively: true) {
+                
                 lh.addChildNode(leftHandNode)
                 rh.addChildNode(rightHandNode)
             }
