@@ -21,6 +21,10 @@ protocol PunchInTheHeadDelegate {
 
 class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
+    // used to debug in the simulators etc, makes it faster to work on :D
+    let debugMode = true
+    
+    @IBOutlet weak var debugSCNView: SCNView!
     
     @IBOutlet weak var fullScreenARView: ARSCNView!
     @IBOutlet weak var leftEyeSceneAR: ARSCNView!
@@ -233,6 +237,26 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     // MARK:- Helper functions
     func setUpVRScene() {
         
+        
+        if debugMode {
+            fullScreenARView.isHidden = true
+            leftEyeView.isHidden = true
+            rightEyeView.isHidden = true
+            rotateInstructionsView.isHidden = true
+            
+            debugSCNView.scene = scene
+            
+            scene.setCharAt(position: SCNVector3Zero)
+            let cam = scene.setUpDebugCam()
+            debugSCNView.pointOfView = cam
+            debugSCNView.allowsCameraControl = true
+            donePositioningAndStart()
+            
+            return
+        }
+        
+        debugSCNView.isHidden = true
+        
         let cornerSize = CGFloat(70)
         leftEyeView.layer.cornerRadius = cornerSize
         leftEyeView.layer.masksToBounds = true
@@ -413,6 +437,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     }
     
     func updateFrame() {
+        
+        if debugMode {
+            return
+        }
         
         // CREATE POINT OF VIEWS
         let pointOfView : SCNNode = SCNNode()

@@ -175,6 +175,22 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         }
     }
     
+    func setUpDebugCam() -> SCNNode {
+        let cam = SCNCamera()
+        let camNode = SCNNode()
+        camNode.camera = cam
+
+        camNode.look(at: SCNVector3(0,0,0))
+        camNode.position = SCNVector3(0,1.3,2)
+        
+        // need to rotate model for debug mode
+        modelWrapper.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
+        
+        rootNode.addChildNode(camNode)
+        
+        return camNode
+    }
+    
     func setUpChar() {
         // work out where to load the file from
         let file = "art.scnassets/boxers/\(modelName.rawValue)/\(modelName.rawValue).dae"

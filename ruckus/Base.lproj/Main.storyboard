@@ -1672,6 +1672,9 @@ none of the ads</string>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-Ga-Pg6" userLabel="fullScreenAR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </arscnView>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-qI-e8I" userLabel="debugSCNView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik5-Bw-ov7">
                                 <rect key="frame" x="-147.66666666666666" y="231.33333333333337" width="670.33333333333337" height="350"/>
                                 <subviews>
@@ -1815,12 +1818,16 @@ none of the ads</string>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="s8N-e7-2lM" secondAttribute="trailing" id="DS1-K0-xld"/>
+                            <constraint firstAttribute="trailing" secondItem="1Zn-qI-e8I" secondAttribute="trailing" id="Kg6-bu-lG6"/>
                             <constraint firstItem="WhK-Ga-Pg6" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="SR4-08-msc"/>
                             <constraint firstItem="s8N-e7-2lM" firstAttribute="top" secondItem="Gbt-50-tue" secondAttribute="top" id="WbR-iv-wlK"/>
                             <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="WhK-Ga-Pg6" secondAttribute="bottom" id="XjY-zt-WKF"/>
+                            <constraint firstItem="8EN-y4-dhQ" firstAttribute="top" secondItem="1Zn-qI-e8I" secondAttribute="bottom" id="Y4t-0q-sYa"/>
                             <constraint firstItem="Ik5-Bw-ov7" firstAttribute="centerX" secondItem="Gbt-50-tue" secondAttribute="centerX" id="ZLl-rI-2YD"/>
+                            <constraint firstItem="1Zn-qI-e8I" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="b6c-uR-YHf"/>
                             <constraint firstAttribute="bottom" secondItem="s8N-e7-2lM" secondAttribute="bottom" id="dH3-gq-yy2"/>
                             <constraint firstItem="Ik5-Bw-ov7" firstAttribute="centerY" secondItem="Gbt-50-tue" secondAttribute="centerY" id="e3T-FJ-tIk"/>
+                            <constraint firstItem="1Zn-qI-e8I" firstAttribute="top" secondItem="Uj4-k8-Ed6" secondAttribute="bottom" id="g98-yA-Qdu"/>
                             <constraint firstAttribute="trailing" secondItem="WhK-Ga-Pg6" secondAttribute="trailing" id="ihH-2u-ell"/>
                             <constraint firstItem="WhK-Ga-Pg6" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="paV-M2-nvi"/>
                             <constraint firstItem="s8N-e7-2lM" firstAttribute="leading" secondItem="Gbt-50-tue" secondAttribute="leading" id="tin-sg-wUO"/>
@@ -1828,6 +1835,7 @@ none of the ads</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="ARBoxing" image="gloves" id="Ztn-t9-5NX"/>
                     <connections>
+                        <outlet property="debugSCNView" destination="1Zn-qI-e8I" id="gLy-FW-fra"/>
                         <outlet property="fullScreenARView" destination="WhK-Ga-Pg6" id="ncJ-Xg-57j"/>
                         <outlet property="imageViewLeft" destination="ElG-Le-sKQ" id="nF4-Dl-so2"/>
                         <outlet property="imageViewRight" destination="3wW-XK-1c6" id="KcH-Ye-hIT"/>
@@ -1843,7 +1851,7 @@ none of the ads</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hca-Yc-cYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1983.2512315270938" y="1791.2"/>
+            <point key="canvasLocation" x="-1984.8" y="1791.1330049261085"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7df-f2-XDz">
