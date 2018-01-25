@@ -155,6 +155,13 @@
 		7F95A9991E9016600057D8AB /* AppToWatchNotificationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9981E9016600057D8AB /* AppToWatchNotificationBridge.swift */; };
 		7FA2627D1F64891C0089E455 /* WatchResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2627B1F64891C0089E455 /* WatchResolution.swift */; };
 		7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5CE571E80684000EF3248 /* StringExtension.swift */; };
+		7FAA9D2A2019AF6A00F86EDC /* TourPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D292019AF6A00F86EDC /* TourPage.swift */; };
+		7FAA9D2B2019AF6A00F86EDC /* TourPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D292019AF6A00F86EDC /* TourPage.swift */; };
+		7FAA9D2D2019AF8E00F86EDC /* TourPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */; };
+		7FAA9D2E2019AF8E00F86EDC /* TourPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */; };
+		7FAA9D2F2019AF8E00F86EDC /* TourPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */; };
+		7FAA9D312019AFB500F86EDC /* ARTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D302019AFB500F86EDC /* ARTourVC.swift */; };
+		7FAA9D322019AFB500F86EDC /* ARTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D302019AFB500F86EDC /* ARTourVC.swift */; };
 		7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC98CA1E745F83003848DE /* DoubleExtension.swift */; };
 		7FB057081F51B3B10023D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3580C1E4294EA00EF9BD2 /* Assets.xcassets */; };
 		7FB247FD1ED2420700267498 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB247FC1ED2420700267498 /* WorkoutSession.swift */; };
@@ -430,6 +437,9 @@
 		7F981B971EC8F2CA003D01F2 /* FinishedInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedInterfaceController.swift; sourceTree = "<group>"; };
 		7FA2627B1F64891C0089E455 /* WatchResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResolution.swift; sourceTree = "<group>"; };
 		7FA5CE571E80684000EF3248 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = ruckus/StringExtension.swift; sourceTree = "<group>"; };
+		7FAA9D292019AF6A00F86EDC /* TourPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPage.swift; sourceTree = "<group>"; };
+		7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourPage.xib; sourceTree = "<group>"; };
+		7FAA9D302019AFB500F86EDC /* ARTourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTourVC.swift; sourceTree = "<group>"; };
 		7FAC98CA1E745F83003848DE /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		7FB247FA1ED236E700267498 /* WorkoutSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
 		7FB247FC1ED2420700267498 /* WorkoutSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
@@ -739,6 +749,7 @@
 				7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */,
 				7F06580D1F44E9B400802155 /* HelpViewController.swift */,
 				7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */,
+				7FAA9D302019AFB500F86EDC /* ARTourVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -766,6 +777,7 @@
 		7F76938B1EE2FE0B0036DED7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7FAA9D292019AF6A00F86EDC /* TourPage.swift */,
 				7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */,
 				7F7775721F40BF270037B49F /* HitCaller.swift */,
 				7F7775701F40BF160037B49F /* SoundPlayer.swift */,
@@ -982,6 +994,7 @@
 				7F6126FA1E50A33C00ED1544 /* ViewControllers */,
 				7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */,
 				7FB358091E4294EA00EF9BD2 /* Main.storyboard */,
+				7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */,
 				7FB3580C1E4294EA00EF9BD2 /* Assets.xcassets */,
 				7FB3580E1E4294EA00EF9BD2 /* LaunchScreen.storyboard */,
 				7FB358111E4294EA00EF9BD2 /* Info.plist */,
@@ -1360,6 +1373,7 @@
 				7FB5F5CA1F4A10C1006BF8F3 /* round-end.wav in Resources */,
 				7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */,
 				7F6C75E3200AB2C300B20D9D /* punch_2.wav in Resources */,
+				7FAA9D2D2019AF8E00F86EDC /* TourPage.xib in Resources */,
 				7F6C75E4200AB2C300B20D9D /* punch_3.wav in Resources */,
 				7F692C011F4083DA00D768FB /* Sounds in Resources */,
 				7F6C75E2200AB2C300B20D9D /* punch_1.wav in Resources */,
@@ -1385,6 +1399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAA9D2F2019AF8E00F86EDC /* TourPage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,6 +1415,7 @@
 				7FC61E431F5192D300645009 /* Settings.plist in Resources */,
 				7FC61E441F5192D300645009 /* round-end.wav in Resources */,
 				7F6C75E8200AB2C400B20D9D /* punch_2.wav in Resources */,
+				7FAA9D2E2019AF8E00F86EDC /* TourPage.xib in Resources */,
 				7F6C75E9200AB2C400B20D9D /* punch_3.wav in Resources */,
 				7FC61E451F5192D300645009 /* finished.wav in Resources */,
 				7F6C75E7200AB2C400B20D9D /* punch_1.wav in Resources */,
@@ -1847,6 +1863,7 @@
 				7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */,
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
+				7FAA9D2A2019AF6A00F86EDC /* TourPage.swift in Sources */,
 				7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
 				7F5B42121FF4529100AAED46 /* MoveComponent.swift in Sources */,
 				7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
@@ -1864,6 +1881,7 @@
 				7F692BFC1F40681A00D768FB /* Combos.swift in Sources */,
 				7FB358041E4294EA00EF9BD2 /* AppDelegate.swift in Sources */,
 				7F5B0A631EE4A22E00BA7358 /* GoProViewController.swift in Sources */,
+				7FAA9D312019AFB500F86EDC /* ARTourVC.swift in Sources */,
 				7F83E53B1E53AB530019A31F /* LoadingScreenViewController.swift in Sources */,
 				7F0658101F44ECA500802155 /* HelpCell.swift in Sources */,
 				7F06580E1F44E9B400802155 /* HelpViewController.swift in Sources */,
@@ -1936,6 +1954,7 @@
 				7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */,
 				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
+				7FAA9D2B2019AF6A00F86EDC /* TourPage.swift in Sources */,
 				7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
 				7F5B42131FF4529100AAED46 /* MoveComponent.swift in Sources */,
 				7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
@@ -1953,6 +1972,7 @@
 				7FC61E231F5192D300645009 /* Combos.swift in Sources */,
 				7FC61E241F5192D300645009 /* AppDelegate.swift in Sources */,
 				7FC61E251F5192D300645009 /* GoProViewController.swift in Sources */,
+				7FAA9D322019AFB500F86EDC /* ARTourVC.swift in Sources */,
 				7FC61E261F5192D300645009 /* LoadingScreenViewController.swift in Sources */,
 				7FC61E271F5192D300645009 /* HelpCell.swift in Sources */,
 				7FC61E281F5192D300645009 /* HelpViewController.swift in Sources */,
