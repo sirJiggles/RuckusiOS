@@ -17,25 +17,28 @@ class ARTourVC: UIViewController, TourPageDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     let tourData = [
         [
             "image": "tour1",
-            "title": "Title one",
+            "title": "Don't try to punch",
             "cta": false
         ],
         [
             "image": "tour2",
-            "title": "Title two",
+            "title": "Dodge the punches",
             "cta": false
         ],
         [
             "image": "tour3",
-            "title": "Title Three",
-            "cta": false
-        ],
-        [
-            "image": "tour4",
-            "title": "Title Four",
+            "title": "Secure your phone",
             "cta": true,
             "ctaAction": "ARBoxing"
         ]
@@ -77,9 +80,11 @@ class ARTourVC: UIViewController, TourPageDelegate {
         
     }
     
+    // if we tapped one of the CTA's on the view
     func didTapCta(with action: String) {
-        let vc = UIViewController(nibName: action, bundle: nil)
-        self.present(vc, animated: true, completion: nil)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: action) {
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     

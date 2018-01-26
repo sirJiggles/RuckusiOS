@@ -1018,14 +1018,14 @@ none of the ads</string>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="MM0-Yh-bD1" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="A4s-6a-WkJ" kind="relationship" relationship="viewControllers" id="HbB-qi-Pct"/>
                         <segue destination="pqt-mD-Ow6" kind="relationship" relationship="viewControllers" id="nD8-JH-9oG"/>
+                        <segue destination="A4s-6a-WkJ" kind="relationship" relationship="viewControllers" id="HbB-qi-Pct"/>
+                        <segue destination="MM0-Yh-bD1" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-807" y="80"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="HRf-j7-l80">
@@ -1305,27 +1305,29 @@ none of the ads</string>
                         <viewControllerLayoutGuide type="bottom" id="d0k-eP-EEB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uEj-yz-Ysx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vjz-4K-xA7">
-                                <rect key="frame" x="168" y="662" width="39" height="37"/>
-                            </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xW-Zj-32e">
                                 <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vjz-4K-xA7">
+                                <rect key="frame" x="168" y="632" width="39" height="37"/>
+                                <color key="tintColor" red="0.52543067929999998" green="0.52552449700000003" blue="0.52542471889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3xW-Zj-32e" secondAttribute="trailing" id="2GI-rf-55L"/>
-                            <constraint firstItem="d0k-eP-EEB" firstAttribute="top" secondItem="vjz-4K-xA7" secondAttribute="bottom" constant="30" id="DM7-pg-mN3"/>
+                            <constraint firstItem="d0k-eP-EEB" firstAttribute="top" secondItem="vjz-4K-xA7" secondAttribute="bottom" constant="60" id="DM7-pg-mN3"/>
                             <constraint firstItem="d0k-eP-EEB" firstAttribute="top" secondItem="3xW-Zj-32e" secondAttribute="bottom" id="Kbh-ww-TLb"/>
                             <constraint firstItem="3xW-Zj-32e" firstAttribute="leading" secondItem="uEj-yz-Ysx" secondAttribute="leading" id="QUY-ib-Ufh"/>
                             <constraint firstItem="vjz-4K-xA7" firstAttribute="centerX" secondItem="uEj-yz-Ysx" secondAttribute="centerX" id="iG1-j4-bGc"/>
                             <constraint firstItem="3xW-Zj-32e" firstAttribute="top" secondItem="ZnU-97-4ye" secondAttribute="bottom" id="lY7-vt-kat"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="AR Boxing" selectedImage="ar-glasses-small" id="NLi-8D-3mk"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="AR Boxing" image="ar-glasses-small" selectedImage="ar-glasses-small" id="NLi-8D-3mk"/>
                     <connections>
                         <outlet property="pageControl" destination="vjz-4K-xA7" id="c6M-uP-BhG"/>
                         <outlet property="scrollView" destination="3xW-Zj-32e" id="aqM-iD-xg5"/>
@@ -1696,7 +1698,7 @@ none of the ads</string>
         <!--ARBoxing-->
         <scene sceneID="STn-8a-awG">
             <objects>
-                <viewController id="vPz-ww-a1l" customClass="ARVC" customModule="ruckus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ARBoxing" id="vPz-ww-a1l" customClass="ARVC" customModule="ruckus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uj4-k8-Ed6"/>
                         <viewControllerLayoutGuide type="bottom" id="8EN-y4-dhQ"/>
@@ -1933,7 +1935,7 @@ none of the ads</string>
         <image name="stopApp" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bfH-a8-V8R"/>
+        <segue reference="BUB-5n-Kud"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.22523248200000001" green="0.64600467679999996" blue="0.53191149230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

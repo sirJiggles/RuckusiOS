@@ -28,16 +28,16 @@ class TourPage: UIView {
     }
     
     func configure(data: [String:AnyObject]) {
-        if let title = data["title"] as String, let image = data["image"] as String, let ctaVisible = data["cta"] as Bool {
+        if let title = data["title"] as? String, let image = data["image"] as? String, let ctaVisible = data["cta"] as? Bool {
             pageLabel.text = title
             pageImage.image = UIImage(named: image)
-            cta.isHidden = ctaVisible
+            cta.isHidden = !ctaVisible
             
             // if the cta is visible and has an action set the
             // string we use for the click action here for the page
             // navigation
             if ctaVisible {
-                if let action = data["ctaAction"] {
+                if let action = data["ctaAction"] as? String {
                     clickAction = action
                 }
             }
