@@ -29,16 +29,19 @@ class ARTourVC: UIViewController, TourPageDelegate {
         [
             "image": "tour1",
             "title": "Don't try to punch",
+            "descr": "There is no way to detect your hand position, this means you cannot hit the boxer!",
             "cta": false
         ],
         [
             "image": "tour2",
             "title": "Dodge the punches",
+            "descr": "Move your head and body to practice dodging. The aim of the game is not to get hit!",
             "cta": false
         ],
         [
             "image": "tour3",
             "title": "Secure your phone",
+            "descr": "Make sure your phone is secure in the headset as you will be making fast head movements.",
             "cta": true,
             "ctaAction": "ARBoxing"
         ]

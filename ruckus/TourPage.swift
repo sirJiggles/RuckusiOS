@@ -14,6 +14,7 @@ class TourPage: UIView {
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var cta: UIButton!
+    @IBOutlet weak var pageDescr: UILabel!
     
     var clickAction: String = ""
     weak var delegate: TourPageDelegate?
@@ -28,10 +29,11 @@ class TourPage: UIView {
     }
     
     func configure(data: [String:AnyObject]) {
-        if let title = data["title"] as? String, let image = data["image"] as? String, let ctaVisible = data["cta"] as? Bool {
+        if let title = data["title"] as? String, let image = data["image"] as? String, let ctaVisible = data["cta"] as? Bool, let descr = data["descr"] as? String {
             pageLabel.text = title
             pageImage.image = UIImage(named: image)
             cta.isHidden = !ctaVisible
+            pageDescr.text = descr
             
             // if the cta is visible and has an action set the
             // string we use for the click action here for the page
