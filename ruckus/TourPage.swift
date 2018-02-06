@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class TourPage: UIView {
-    
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var cta: UIButton!
     @IBOutlet weak var pageDescr: UILabel!
+    @IBOutlet weak var ctaHeight: NSLayoutConstraint!
+    @IBOutlet weak var titleTop: NSLayoutConstraint!
     
-    var clickAction: String = ""
     weak var delegate: TourPageDelegate?
     
     class func loadFromNib() -> TourPage {
@@ -29,27 +29,20 @@ class TourPage: UIView {
     }
     
     func configure(data: [String:AnyObject]) {
+        if NotchUtils().hasSafeAreaInsets() {
+            ctaHeight.constant = 90
+            titleTop.constant = 50
+        }
         if let title = data["title"] as? String, let image = data["image"] as? String, let ctaVisible = data["cta"] as? Bool, let descr = data["descr"] as? String {
             pageLabel.text = title
             pageImage.image = UIImage(named: image)
             cta.isHidden = !ctaVisible
             pageDescr.text = descr
-            
-            // if the cta is visible and has an action set the
-            // string we use for the click action here for the page
-            // navigation
-            if ctaVisible {
-                if let action = data["ctaAction"] as? String {
-                    clickAction = action
-                }
-            }
         }
     }
     // IBActions
     @IBAction func tapCTA(_ sender: Any) {
-        if clickAction != "" {
-            delegate?.didTapCta(with: clickAction)
-        }
+        delegate?.didTapCta()
     }
 }
 

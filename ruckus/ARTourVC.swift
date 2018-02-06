@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TourPageDelegate: class {
-    func didTapCta(with action: String) -> Void
+    func didTapCta() -> Void
 }
 
 class ARTourVC: UIViewController, TourPageDelegate {
@@ -42,14 +42,12 @@ class ARTourVC: UIViewController, TourPageDelegate {
             "image": "tour3",
             "title": "Secure your phone",
             "descr": "Make sure your phone is secure in the headset as you will be making fast head movements.",
-            "cta": true,
-            "ctaAction": "ARBoxing"
+            "cta": true
         ]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,10 +82,9 @@ class ARTourVC: UIViewController, TourPageDelegate {
     }
     
     // if we tapped one of the CTA's on the view
-    func didTapCta(with action: String) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: action) {
-            self.present(vc, animated: true, completion: nil)
-        }
+    func didTapCta() {
+        UserDefaults.standard.set(true, forKey: StateFlags.seen_ar_tour.rawValue)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

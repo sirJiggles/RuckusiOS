@@ -107,6 +107,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // work out how we are orientated, if port ask for rotation
+        rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
+        
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
@@ -119,6 +122,14 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // work out if should show the tour first
+//        if UserDefaults.standard.bool(forKey: StateFlags.seen_ar_tour.rawValue) != true {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: VCIdents.ARTour.rawValue) {
+                // go there
+                self.present(vc, animated: true, completion: nil)
+            }
+//        }
         
         fullScreenARView.isHidden = true
         
@@ -146,7 +157,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
+        
+        let isLand = UIDevice.current.orientation.isLandscape
+        rotateInstructionsView.isHidden = isLand
+        self.tabBarController?.tabBar.isHidden = isLand
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -511,11 +525,4 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         }
 
     }
-    
-    // MARK: - IBActions
-    @IBAction func dismissArMode(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-
 }
