@@ -42,6 +42,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     @IBOutlet weak var leftEyeCountdown: UILabel!
     
+    
+    @IBOutlet weak var unsupportedView: UIView!
+    
     let scene = ARScene.init(create: true)
     
     var punchCount: Int = 0
@@ -110,6 +113,20 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         // work out how we are orientated, if port ask for rotation
         rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
         
+        // none shall pass, if cannot ARKit
+        if !ARWorldTrackingConfiguration.isSupported {
+            unsupportedView.isHidden = false
+            return
+        }
+        
+        // work out if should show the tour first
+        if UserDefaults.standard.bool(forKey: StateFlags.seen_ar_tour.rawValue) != true {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: VCIdents.ARTour.rawValue) {
+                // go there
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
@@ -123,13 +140,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // work out if should show the tour first
-//        if UserDefaults.standard.bool(forKey: StateFlags.seen_ar_tour.rawValue) != true {
-            if let vc = self.storyboard?.instantiateViewController(withIdentifier: VCIdents.ARTour.rawValue) {
-                // go there
-                self.present(vc, animated: true, completion: nil)
-            }
-//        }
+        // no need to continue if not supported
+        if !ARWorldTrackingConfiguration.isSupported {
+            return
+        }
         
         fullScreenARView.isHidden = true
         
