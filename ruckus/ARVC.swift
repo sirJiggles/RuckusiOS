@@ -127,6 +127,11 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             }
         }
         
+        // no need for ARKit madness in debug mode
+        if debugMode {
+            return
+        }
+        
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
@@ -279,6 +284,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             scene.setCharAt(position: SCNVector3Zero)
             let cam = scene.setUpDebugCam()
             debugSCNView.pointOfView = cam
+            debugSCNView.showsStatistics = true
             debugSCNView.allowsCameraControl = true
             donePositioningAndStart()
             

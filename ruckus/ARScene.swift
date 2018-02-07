@@ -210,6 +210,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // work out the model size
             let modelSize = getCharSize(using: modelName)
             
+            addHealthBar(usingSize: modelSize)
+            
             // calculate the scale using players size
             let factor: Float = 10000.0
             let diff: Float = (modelSize - usersHeight)
@@ -278,6 +280,38 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // wrapper for scaling, and used later for following
             modelWrapper.addChildNode(model)
         }
+    }
+    
+    func addHealthBar(usingSize height: Float) {
+        // add the node for the health of the char
+        let healthsize: (CGFloat, CGFloat) = (1, 0.1)
+        let width: CGFloat = 0.05
+        let borderSize: CGFloat = 0.1
+        
+        let healthGeo = SCNBox(width: width, height: healthsize.1, length: healthsize.0, chamferRadius: 0.01)
+        
+        healthGeo.firstMaterial?.diffuse.contents = UIColor.green
+        let healthNode = SCNNode(geometry: healthGeo)
+        
+        healthNode.position = SCNVector3(borderSize / 2, borderSize / 2, borderSize / 2)
+        
+        modelWrapper.addChildNode(healthNode)
+        
+        healthNode.rotation = SCNVector4(0, 1, 0, Float(90).degreesToRadians)
+        
+        // put it above the model nodes head
+        
+        
+        healthNode.position = SCNVector3(0, (height / 100) + 0.05, 0)
+        
+        // reduce health, sample time
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            healthGeo.length = healthGeo.length - 0.01
+            
+            // @GARETH, add time to settings screen,
+            // feature toggle and enable users to change value or disable it
+            // and add end game screen, bosh
+        })
     }
     
     func setCharAt(position: SCNVector3) {
