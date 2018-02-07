@@ -64,7 +64,9 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
         super.viewWillAppear(animated)
         
         timerVCDelegate = self
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
         setUpRoundIcons()
     }
     

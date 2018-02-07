@@ -286,6 +286,20 @@
 			remoteGlobalIDString = 7F33704B1F5B724E0076E7A6;
 			remoteInfo = "ruckus.lite.watch Extension";
 		};
+		7F5FFAFA202BA5530020608C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FC61E131F5192D300645009;
+			remoteInfo = ruckus.lite;
+		};
+		7F5FFAFC202BA55A0020608C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FC61E131F5192D300645009;
+			remoteInfo = ruckus.lite;
+		};
 		7FB358171E4294EA00EF9BD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
@@ -1172,6 +1186,7 @@
 			);
 			dependencies = (
 				7FB358181E4294EA00EF9BD2 /* PBXTargetDependency */,
+				7F5FFAFB202BA5530020608C /* PBXTargetDependency */,
 			);
 			name = ruckusTests;
 			productName = ruckusTests;
@@ -1193,6 +1208,7 @@
 			);
 			dependencies = (
 				7FB358231E4294EA00EF9BD2 /* PBXTargetDependency */,
+				7F5FFAFD202BA55A0020608C /* PBXTargetDependency */,
 			);
 			name = ruckusUITests;
 			productName = ruckusUITests;
@@ -2065,6 +2081,16 @@
 			target = 7F33704B1F5B724E0076E7A6 /* ruckus.lite.watch Extension */;
 			targetProxy = 7F3370881F5B7B180076E7A6 /* PBXContainerItemProxy */;
 		};
+		7F5FFAFB202BA5530020608C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FC61E131F5192D300645009 /* ruckus.lite */;
+			targetProxy = 7F5FFAFA202BA5530020608C /* PBXContainerItemProxy */;
+		};
+		7F5FFAFD202BA55A0020608C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FC61E131F5192D300645009 /* ruckus.lite */;
+			targetProxy = 7F5FFAFC202BA55A0020608C /* PBXContainerItemProxy */;
+		};
 		7FB358181E4294EA00EF9BD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7FB357FF1E4294EA00EF9BD2 /* ruckus */;
@@ -2391,7 +2417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = ruckus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2413,7 +2439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = ruckus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2511,7 +2537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2533,7 +2559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WMQYY9222D;
 				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";

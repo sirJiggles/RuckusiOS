@@ -114,7 +114,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
         
         // none shall pass, if cannot ARKit
-        if !ARWorldTrackingConfiguration.isSupported {
+        if !ARWorldTrackingConfiguration.isSupported && !debugMode {
             unsupportedView.isHidden = false
             return
         }
@@ -141,7 +141,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         super.viewDidLoad()
         
         // no need to continue if not supported
-        if !ARWorldTrackingConfiguration.isSupported {
+        if !ARWorldTrackingConfiguration.isSupported && !debugMode {
             return
         }
         
