@@ -17,7 +17,9 @@ extension String {
     }
     var camelcaseString: String {
         let source = self
-        let first = source.lowercased().substring(to: source.index(after: source.startIndex))
+        let lower = source.lowercased()
+        let end = lower.index(after: source.startIndex)
+        let first = lower[...end]
         if source.contains(" ") {
             let cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
             let rest = String(cammel.dropFirst())

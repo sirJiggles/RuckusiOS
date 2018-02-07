@@ -295,7 +295,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
-        header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightThin)
+        header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         header.backgroundView?.backgroundColor = UIColor.blackOne
     }
     
@@ -455,7 +455,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
             let cell = tableView.dequeueReusableCell(withIdentifier: type.rawValue, for: index) as! NumberCell
             
             // set the initial value
-            cell.numberInput.text = storedValue as! String
+            cell.numberInput.text = storedValue as? String
             
             // set delegates
             cell.callDelegate = self

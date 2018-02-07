@@ -25,7 +25,7 @@ class AppNotificationBridge: NSObject, WCSessionDelegate {
         // check if the session is supported
         if WCSession.isSupported() {
             // start a communication session
-            let session = WCSession.default()
+            let session = WCSession.default
             session.delegate = self
             session.activate()
         } else {

@@ -149,7 +149,7 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
             duration = 1.1
         }
 
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { 
             tableView.beginUpdates()
             tableView.endUpdates()
         }, completion: nil)

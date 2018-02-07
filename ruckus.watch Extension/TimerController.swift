@@ -391,8 +391,8 @@ class TimerController: WKInterfaceController, IntervalTimerDelegate, AppNotifica
         if WKInterfaceDevice.currentResolution() == .Watch42mm {
             size = 60
         }
-        let monospacedFont = UIFont.monospacedDigitSystemFont(ofSize: CGFloat(size), weight: UIFontWeightSemibold)
-        let monospacedString = NSAttributedString(string: text, attributes: [NSFontAttributeName: monospacedFont])
+        let monospacedFont = UIFont.monospacedDigitSystemFont(ofSize: CGFloat(size), weight: UIFont.Weight.semibold)
+        let monospacedString = NSAttributedString(string: text, attributes: [NSAttributedStringKey.font: monospacedFont])
         timeLabel.setAttributedText(monospacedString)
     }
     

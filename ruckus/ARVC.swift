@@ -159,7 +159,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         let isLand = UIDevice.current.orientation.isLandscape
-        rotateInstructionsView.isHidden = isLand
+        if let instructions = rotateInstructionsView {
+            instructions.isHidden = isLand
+        }
         self.tabBarController?.tabBar.isHidden = isLand
     }
     

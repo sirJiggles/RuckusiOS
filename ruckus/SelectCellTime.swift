@@ -72,9 +72,9 @@ class SelectCellTime: UITableViewCell, UIPickerViewDataSource, UIPickerViewDeleg
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         if pickerView == minsPicker {
-            return NSAttributedString(string: String(minValues.index(row, offsetBy: 0)), attributes: [NSForegroundColorAttributeName: UIColor.white])
+            return NSAttributedString(string: String(minValues.index(row, offsetBy: 0)), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         }
-        return NSAttributedString(string: getStringNumber(secondsValues.index(row, offsetBy: 0) * 5), attributes: [NSForegroundColorAttributeName: UIColor.white])
+        return NSAttributedString(string: getStringNumber(secondsValues.index(row, offsetBy: 0) * 5), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
     
     

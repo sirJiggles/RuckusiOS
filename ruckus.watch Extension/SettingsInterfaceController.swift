@@ -105,7 +105,7 @@ class SettingsInterfaceController: WKInterfaceController {
         
     }
     
-    func setAllValues() {
+    @objc func setAllValues() {
         // set up all picker manager classes
         intervalPickerManager.delegate = intervalsPicker
         intervalPickerManager.setUpWithData(forKey: PossibleSetting.rounds.rawValue)

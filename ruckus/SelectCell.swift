@@ -54,7 +54,7 @@ class SelectCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate,
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let myTitle = NSAttributedString(string: values[row], attributes: [NSForegroundColorAttributeName: UIColor.white])
+        let myTitle = NSAttributedString(string: values[row], attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         return myTitle
     }
     

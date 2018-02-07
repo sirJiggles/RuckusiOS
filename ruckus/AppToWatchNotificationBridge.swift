@@ -24,7 +24,7 @@ class WatchNotificationBridge: NSObject, WCSessionDelegate {
     func setUpSession() {
         if WCSession.isSupported() {
             // start a communication session
-            let session = WCSession.default()
+            let session = WCSession.default
             session.delegate = self
             session.activate()
         }

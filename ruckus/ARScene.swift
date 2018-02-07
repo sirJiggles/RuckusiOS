@@ -106,7 +106,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         }
     
         // then we set the head node transform using the normal transform matrix
-        headNode.transform = SCNMatrix4FromMat4(position)
+        headNode.transform = SCNMatrix4.init(position)
     }
     
     func ligntMeUp() {

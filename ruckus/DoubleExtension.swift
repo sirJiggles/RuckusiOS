@@ -14,7 +14,8 @@ extension Double {
             let s = String($0)
             if s.count > 2 {
                 let index = s.index(s.startIndex, offsetBy: 2)
-                let sub = s.substring(to: index)
+                let sub = s[...index]
+//                let sub = s.substring(to: index)
                 return Int(sub)
             } else {
                 return Int(s)
