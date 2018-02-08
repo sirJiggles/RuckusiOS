@@ -46,7 +46,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     @IBOutlet weak var unsupportedView: UIView!
     
-    let scene = ARScene.init(create: true)
+    var scene = ARScene.init(create: true)
     
     var punchCount: Int = 0
     var canBeHit: Bool = true
@@ -74,7 +74,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     // Parametres
     let interpupilaryDistance = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
-    let viewBackgroundColor : UIColor = UIColor.black
     
     // Set eyeFOV and cameraImageScale. Uncomment any of the below lines to change FOV.
 //        let eyeFOV = 38.5; let cameraImageScale = 1.739; // (FOV: 38.5 ± 2.0) Brute-force estimate based on iPhone7+
@@ -136,11 +135,13 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
+        
         fullScreenARView.session.run(configuration, options: [
             ARSession.RunOptions.removeExistingAnchors,
             ARSession.RunOptions.resetTracking
         ])
         
+        setUpVRScene()
     }
    
     override func viewDidLoad() {
@@ -150,8 +151,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         if !ARWorldTrackingConfiguration.isSupported && !debugMode {
             return
         }
-        
-        setUpVRScene()
         
         // delegate for sending punch signals
         scene.punchDelegate = self
@@ -165,11 +164,26 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         started = false
         leftEyeView.isHidden = true
         rightEyeView.isHidden = true
-        fullScreenARView.isHidden = true
-        surfaceFindingTip.isHidden = false
+        fullScreenARView.isHidden = false
         soundManager.stopTheCrowd()
         // stop the pain
         scene.animationController?.didStop()
+        // stop the health ticking
+        scene.healthTicker.invalidate()
+        
+        //@TODO the view is not showing again!
+        
+        self.view.backgroundColor = UIColor.clear
+        
+        // remove the scene nodes and pause the AR session
+        fullScreenARView.session.pause()
+        
+        fullScreenARView.delegate = nil
+        
+        fullScreenARView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -274,8 +288,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     // MARK:- Helper functions
     func setUpVRScene() {
-        
-        
         if debugMode {
             fullScreenARView.isHidden = true
             rotateInstructionsView.isHidden = true
@@ -310,7 +322,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        
 //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
         // debug for left eye lopez
@@ -319,7 +330,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         rightEyeSceneAR.isPlaying = true
         leftEyeSceneAR.isPlaying = true
         
-        self.view.backgroundColor = viewBackgroundColor
+        self.view.backgroundColor = UIColor.black
         
         ////////////////////////////////////////////////////////////////
         // Create CAMERA
@@ -338,15 +349,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         self.imageViewLeft.contentMode = UIViewContentMode.center
         self.imageViewRight.clipsToBounds = true
         self.imageViewRight.contentMode = UIViewContentMode.center
-        
-
-    }
-    
-    func initSceneView(_ sceneView: ARSCNView, withDebug debug: Bool = false) {
-        sceneView.scene = scene
-        
-        // show statistics such as fps and timing information
-        sceneView.showsStatistics = debug
     }
     
     func donePositioningAndStart() {
@@ -385,6 +387,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
                 self.rumbleTimer?.invalidate()
                 // now start the pain!
                 self.scene.animationController?.didStart()
+                
+                self.scene.start()
             }
             
             seconds -= 1

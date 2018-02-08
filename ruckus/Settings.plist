@@ -298,5 +298,25 @@
 		<key>label</key>
 		<string>Show ring</string>
 	</dict>
+	<key>survivalMode</key>
+	<dict>
+		<key>descr</key>
+		<string>Boxer has a health bar that runs out over time. the aim is to last longer than them!</string>
+		<key>enabled</key>
+		<true/>
+		<key>label</key>
+		<string>Survival mode</string>
+		<key>value</key>
+		<string>1</string>
+	</dict>
+	<key>survivalTime</key>
+	<dict>
+		<key>descr</key>
+		<string>How long should survival mode last? this dictates the amount of health the boxer has.</string>
+		<key>label</key>
+		<string>Survival Time</string>
+		<key>value</key>
+		<string>0:45</string>
+	</dict>
 </dict>
 </plist>

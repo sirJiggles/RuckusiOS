@@ -106,4 +106,26 @@ struct SettingsAccessor: GetsSettings {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func getSurvivalEnabled() -> Bool {
+        do {
+            if let enabled = try settings.getValue(forKey: PossibleSetting.survivalMode.rawValue) as? String {
+                return (enabled == "1")
+            }
+            return false
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    func getSurvivalTime() -> Double {
+        do {
+            if let time = try settings.getValue(forKey: PossibleSetting.survivalTime.rawValue) as? String {
+                return time.stringTimeToDouble()
+            }
+            return 45.0
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

@@ -50,6 +50,9 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var floorNode = SCNNode()
     var usersHeight: Float = 170.0
     
+    var survivalTime: Double = 0
+    var healthTicker = Timer()
+    
     convenience init(create: Bool) {
         self.init()
         
@@ -63,6 +66,12 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         
         if let height = settingsAccessor?.getUsersHeight() {
             usersHeight = height
+        }
+        
+        if let _ = settingsAccessor?.getSurvivalEnabled() {
+            if let survivalTime = settingsAccessor?.getSurvivalTime() {
+                self.survivalTime = survivalTime
+            }
         }
         
         // this class will check for collisions
@@ -210,8 +219,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // work out the model size
             let modelSize = getCharSize(using: modelName)
             
-            addHealthBar(usingSize: modelSize)
-            
             // calculate the scale using players size
             let factor: Float = 10000.0
             let diff: Float = (modelSize - usersHeight)
@@ -282,36 +289,73 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         }
     }
     
+    // when we want to start the action
+    func start() {
+        // only show the health bar in survival mode
+        if survivalTime > 0 {
+            let modelSize = getCharSize(using: modelName)
+            addHealthBar(usingSize: modelSize)
+        }
+    }
+    
     func addHealthBar(usingSize height: Float) {
         // add the node for the health of the char
         let healthsize: (CGFloat, CGFloat) = (1, 0.1)
-        let width: CGFloat = 0.05
-        let borderSize: CGFloat = 0.1
+        let width: CGFloat = 0.02
         
-        let healthGeo = SCNBox(width: width, height: healthsize.1, length: healthsize.0, chamferRadius: 0.01)
+        let healthGeo = SCNBox(width: width, height: healthsize.1, length: healthsize.0, chamferRadius: 0.005)
         
         healthGeo.firstMaterial?.diffuse.contents = UIColor.green
         let healthNode = SCNNode(geometry: healthGeo)
-        
-        healthNode.position = SCNVector3(borderSize / 2, borderSize / 2, borderSize / 2)
         
         modelWrapper.addChildNode(healthNode)
         
         healthNode.rotation = SCNVector4(0, 1, 0, Float(90).degreesToRadians)
         
         // put it above the model nodes head
+        healthNode.position = SCNVector3(0, (height / 100) + 0.01, 0)
         
+        let oneHealthUnit = healthsize.0 / CGFloat(survivalTime)
         
-        healthNode.position = SCNVector3(0, (height / 100) + 0.05, 0)
-        
-        // reduce health, sample time
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            healthGeo.length = healthGeo.length - 0.01
+        healthTicker = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            healthGeo.length = healthGeo.length - oneHealthUnit
             
-            // @GARETH, add time to settings screen,
-            // feature toggle and enable users to change value or disable it
-            // and add end game screen, bosh
+            // work out what sort of colour the health bar should be depending on
+            // how much is left
+            let left = (healthGeo.length / healthsize.0) * 100
+            
+            // last 20% go to red colour for health
+            if left <= 20 {
+                healthGeo.firstMaterial?.diffuse.contents = UIColor.red
+            }
+            
+            if left <= 0 {
+                // stop the ticker and send out the event, I am done sir!
+                self.healthTicker.invalidate()
+            }
+//                a nicer way of doing colours, maybe later :)
+//                var colour: UIColor
+//                switch left {
+//                case _ where left > 80:
+//                    colour = UIColor.green
+//                    break
+//                case _ where left > 60:
+//                    colour = UIColor.darkGreen
+//                    break
+//                case _ where left > 40:
+//                    colour = UIColor.darkestGreen
+//                    break
+//                case _ where left > 20:
+//                    colour = UIColor.red
+//                    break
+//                default:
+//                    colour = UIColor.green
+//                    break
+//                }
+//
+//                healthGeo.firstMaterial?.diffuse.contents = colour
         })
+        
     }
     
     func setCharAt(position: SCNVector3) {

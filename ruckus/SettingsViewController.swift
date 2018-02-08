@@ -189,7 +189,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         case 4:
             return 1
         case 5:
-            return 2
+            return 4
         case 6:
             return 1
         default:

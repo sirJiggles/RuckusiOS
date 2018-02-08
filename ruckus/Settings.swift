@@ -36,6 +36,8 @@ enum PossibleSetting: String {
     case userHeight
     case model
     case showRing
+    case survivalMode
+    case survivalTime
 }
 
 enum CellType: String {
@@ -178,6 +180,12 @@ class Settings {
             switch indexPath.row {
             case 0:
                 return .selectCell
+            case 1:
+                return .toggleCell
+            case 2:
+                return .toggleCell
+            case 3:
+                return .selectCellTime
             default:
                 return .toggleCell
             }
@@ -235,6 +243,10 @@ class Settings {
             return .model
         case (5,1):
             return .showRing
+        case (5,2):
+            return .survivalMode
+        case (5,3):
+            return .survivalTime
         default:
             return .callOutHits
         }
