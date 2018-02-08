@@ -22,7 +22,7 @@ protocol PunchInTheHeadDelegate {
 class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     // used to debug in the simulators etc, makes it faster to work on :D
-    let debugMode = true
+    let debugMode = false
     
     @IBOutlet weak var debugSCNView: SCNView!
     
@@ -42,6 +42,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     @IBOutlet weak var leftEyeCountdown: UILabel!
     
+    @IBOutlet weak var surfaceFindingTip: UIView!
     
     @IBOutlet weak var unsupportedView: UIView!
     
@@ -150,8 +151,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             return
         }
         
-        fullScreenARView.isHidden = true
-        
         setUpVRScene()
         
         // delegate for sending punch signals
@@ -164,6 +163,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         leftEyeCountdown.isHidden = true
         rightEyeCountdown.isHidden = true
         started = false
+        leftEyeView.isHidden = true
+        rightEyeView.isHidden = true
+        fullScreenARView.isHidden = true
+        surfaceFindingTip.isHidden = false
         soundManager.stopTheCrowd()
         // stop the pain
         scene.animationController?.didStop()
@@ -275,9 +278,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         if debugMode {
             fullScreenARView.isHidden = true
-            leftEyeView.isHidden = true
-            rightEyeView.isHidden = true
             rotateInstructionsView.isHidden = true
+            surfaceFindingTip.isHidden = true
             
             debugSCNView.scene = scene
             
@@ -292,6 +294,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         }
         
         debugSCNView.isHidden = true
+        surfaceFindingTip.isHidden = false
         
         let cornerSize = CGFloat(70)
         leftEyeView.layer.cornerRadius = cornerSize
@@ -307,7 +310,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        fullScreenARView.isHidden = true
         
 //        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
@@ -353,6 +355,14 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         // show the countdown
         leftEyeCountdown.isHidden = false
         rightEyeCountdown.isHidden = false
+        
+        // show the eyes
+        leftEyeView.isHidden = false
+        rightEyeView.isHidden = false
+        
+        // hide the full screen and the tips
+        fullScreenARView.isHidden = true
+        surfaceFindingTip.isHidden = true
         
         // show the 10 second countdown and then start the fight!
         rumbleTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ _ in
@@ -475,6 +485,11 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     func updateFrame() {
         
         if debugMode {
+            return
+        }
+        
+        // normal full screen update frame
+        if !started {
             return
         }
         
