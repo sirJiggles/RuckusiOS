@@ -336,36 +336,28 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // how much is left
             let left = (healthGeo.length / healthsize.0) * 100
             
-            // last 20% go to red colour for health
-            if left <= 20 {
-                healthGeo.firstMaterial?.diffuse.contents = UIColor.red
+            var colour: UIColor
+            switch left {
+            case _ where left <= 80 && left > 60:
+                colour = UIColor(netHex: 0x4d9900)
+            case _ where left <= 60 && left > 40:
+                colour = UIColor(netHex: 0x739900)
+            case _ where left <= 40 && left > 20:
+                colour = UIColor(netHex: 0x999900)
+            case _ where left <= 20 && left > 10:
+                colour = UIColor(netHex: 0x997300)
+            case _ where left <= 10:
+                colour = UIColor(netHex: 0x994d00)
+            default:
+                colour = UIColor(netHex: 0x269900)
+                break
             }
+            healthGeo.firstMaterial?.diffuse.contents = colour
             
             if left <= 0 {
                 // stop the ticker and send out the event, I am done sir!
                 self.healthTicker.invalidate()
             }
-//                a nicer way of doing colours, maybe later :)
-//                var colour: UIColor
-//                switch left {
-//                case _ where left > 80:
-//                    colour = UIColor.green
-//                    break
-//                case _ where left > 60:
-//                    colour = UIColor.darkGreen
-//                    break
-//                case _ where left > 40:
-//                    colour = UIColor.darkestGreen
-//                    break
-//                case _ where left > 20:
-//                    colour = UIColor.red
-//                    break
-//                default:
-//                    colour = UIColor.green
-//                    break
-//                }
-//
-//                healthGeo.firstMaterial?.diffuse.contents = colour
         })
         
     }
