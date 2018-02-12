@@ -38,6 +38,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var theFloor: Float = 0
     
     var modelName: AnimationModelName = .maleOne
+    var scaleOfModel: Float = 0
+    
     var settingsAccessor: SettingsAccessor?
     
     var animationController: ARAnimationController?
@@ -57,7 +59,23 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         self.init()
         
         settingsAccessor = SettingsAccessor()
+        // this class will check for collisions
+        physicsWorld.contactDelegate = self
         
+        // start callin the hits
+        animationController = ARAnimationController()
+    }
+    
+    // clear the scene when will leave
+    func empty() {
+        healthTicker.invalidate()
+        animationController?.didStop(andIdle: false)
+        rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+    }
+    
+    func settup() {
         if let animationName = settingsAccessor?.getModelName() {
             if let enumValue = AnimationModelName.init(rawValue: animationName) {
                 self.modelName = enumValue
@@ -74,9 +92,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             }
         }
         
-        // this class will check for collisions
-        physicsWorld.contactDelegate = self
-        
 //        createFloor()
         
         createPlayerNode()
@@ -87,9 +102,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         
         ligntMeUp()
         
-        // start callin the hits
-        animationController = ARAnimationController.init(withModel: model)
-        
+        animationController?.prepare(withModel: model)
+        animationController?.start()
     }
     
     func updateHeadPos(withPosition position: matrix_float4x4) {
@@ -223,7 +237,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             let factor: Float = 10000.0
             let diff: Float = (modelSize - usersHeight)
 
-            var scaleOfModel: Float
             if (diff > 0) {
                 // if taller
                 scaleOfModel = Float((modelSize - diff) / factor)
@@ -293,12 +306,11 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     func start() {
         // only show the health bar in survival mode
         if survivalTime > 0 {
-            let modelSize = getCharSize(using: modelName)
-            addHealthBar(usingSize: modelSize)
+            addHealthBar()
         }
     }
     
-    func addHealthBar(usingSize height: Float) {
+    func addHealthBar() {
         // add the node for the health of the char
         let healthsize: (CGFloat, CGFloat) = (1, 0.1)
         let width: CGFloat = 0.02
@@ -313,7 +325,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         healthNode.rotation = SCNVector4(0, 1, 0, Float(90).degreesToRadians)
         
         // put it above the model nodes head
-        healthNode.position = SCNVector3(0, (height / 100) + 0.01, 0)
+        healthNode.position = SCNVector3(0, (scaleOfModel * 185), 0)
         
         let oneHealthUnit = healthsize.0 / CGFloat(survivalTime)
         

@@ -44,7 +44,9 @@ class ARAnimationController {
     
     init() {
         settingsAccessor = SettingsAccessor()
-        
+    }
+    
+    func prepare(withModel model: SCNNode) {
         if let difficulty = settingsAccessor?.getDifficulty() {
             speed = Double(difficulty) + 0.7
         }
@@ -52,13 +54,12 @@ class ARAnimationController {
         if let enabled = settingsAccessor?.getCallOuts() {
             callOutsEnabled = enabled
         }
-    }
-    
-    convenience init(withModel model: SCNNode) {
-        self.init()
+        
         self.model = model
         setUpMoves()
-        
+    }
+    
+    func start() {
         // start with the idle stance on init
         playMove(named: .idle, after: 0)
     }
@@ -84,7 +85,7 @@ class ARAnimationController {
     }
     
     // this gets called when we go into a paused / rest / ended mode
-    func didStop() {
+    func didStop(andIdle: Bool = true) {
         // stop all that are qeued
         for timer in aniamtionSequences {
             timer.invalidate()
@@ -96,8 +97,10 @@ class ARAnimationController {
         for pl in players {
             pl.stop(withBlendOutDuration: 0.1)
         }
-        // play the idle
-        playMove(named: .idle, after: 0)
+        if andIdle {
+            // play the idle
+            playMove(named: .idle, after: 0)
+        }
     }
     
     func playMove(named move: Move, after: Double) {

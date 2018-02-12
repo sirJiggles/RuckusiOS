@@ -22,7 +22,7 @@ protocol PunchInTheHeadDelegate {
 class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     // used to debug in the simulators etc, makes it faster to work on :D
-    let debugMode = false
+    let debugMode = true
     
     @IBOutlet weak var debugSCNView: SCNView!
     
@@ -110,6 +110,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        scene.settup()
+        
         // work out how we are orientated, if port ask for rotation
         rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
         
@@ -127,6 +129,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             }
         }
         
+        setUpVRScene()
+        
         // no need for ARKit madness in debug mode
         if debugMode {
             return
@@ -141,7 +145,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             ARSession.RunOptions.resetTracking
         ])
         
-        setUpVRScene()
+        
     }
    
     override func viewDidLoad() {
@@ -159,30 +163,24 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         // house keeping
         rumbleTimer?.invalidate()
-        leftEyeCountdown.isHidden = true
-        rightEyeCountdown.isHidden = true
         started = false
-        leftEyeView.isHidden = true
-        rightEyeView.isHidden = true
-        fullScreenARView.isHidden = false
+        
         soundManager.stopTheCrowd()
-        // stop the pain
-        scene.animationController?.didStop()
-        // stop the health ticking
-        scene.healthTicker.invalidate()
+//        // stop the pain
+//        scene.animationController?.didStop()
+//        // stop the health ticking
+//        scene.healthTicker.invalidate()
         
-        //@TODO the view is not showing again!
-        
-        self.view.backgroundColor = UIColor.clear
+        scene.empty()
         
         // remove the scene nodes and pause the AR session
-        fullScreenARView.session.pause()
-        
-        fullScreenARView.delegate = nil
-        
-        fullScreenARView.scene.rootNode.enumerateChildNodes { (node, stop) in
-            node.removeFromParentNode()
-        }
+//        fullScreenARView.session.pause()
+//
+//        fullScreenARView.delegate = nil
+//
+//        fullScreenARView.scene.rootNode.enumerateChildNodes { (node, stop) in
+//            node.removeFromParentNode()
+//        }
         
     }
     
@@ -287,26 +285,36 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     }
     
     // MARK:- Helper functions
+    func debugVRScene() {
+        fullScreenARView.isHidden = true
+        rotateInstructionsView.isHidden = true
+        surfaceFindingTip.isHidden = true
+        
+        debugSCNView.scene = scene
+        
+        scene.setCharAt(position: SCNVector3Zero)
+        let cam = scene.setUpDebugCam()
+        debugSCNView.pointOfView = cam
+        debugSCNView.showsStatistics = true
+        debugSCNView.allowsCameraControl = true
+        soundManager.startCrowd()
+        scene.animationController?.didStart()
+        scene.start()
+    }
+    
     func setUpVRScene() {
         if debugMode {
-            fullScreenARView.isHidden = true
-            rotateInstructionsView.isHidden = true
-            surfaceFindingTip.isHidden = true
-            
-            debugSCNView.scene = scene
-            
-            scene.setCharAt(position: SCNVector3Zero)
-            let cam = scene.setUpDebugCam()
-            debugSCNView.pointOfView = cam
-            debugSCNView.showsStatistics = true
-            debugSCNView.allowsCameraControl = true
-            donePositioningAndStart()
-            
+            debugVRScene()
             return
         }
-        
+        // reset visibility state of items
+        leftEyeCountdown.isHidden = true
+        rightEyeCountdown.isHidden = true
+        leftEyeView.isHidden = true
+        rightEyeView.isHidden = true
         debugSCNView.isHidden = true
         surfaceFindingTip.isHidden = false
+        fullScreenARView.isHidden = false
         
         let cornerSize = CGFloat(70)
         leftEyeView.layer.cornerRadius = cornerSize
