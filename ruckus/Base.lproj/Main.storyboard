@@ -1560,7 +1560,7 @@ none of the ads</string>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-Ga-Pg6" userLabel="fullScreenAR">
                                 <rect key="frame" x="44" y="0.0" width="724" height="322"/>
                             </arscnView>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-qI-e8I" userLabel="debugSCNView">
+                            <sceneKitView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-qI-e8I" userLabel="debugSCNView">
                                 <rect key="frame" x="44" y="0.0" width="724" height="322"/>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik5-Bw-ov7">

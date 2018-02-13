@@ -22,7 +22,7 @@ protocol PunchInTheHeadDelegate {
 class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     // used to debug in the simulators etc, makes it faster to work on :D
-    let debugMode = true
+    let debugMode = false
     
     @IBOutlet weak var debugSCNView: SCNView!
     
@@ -71,6 +71,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     var settingsAccessor: SettingsAccessor?
     
     let soundManager = ARSoundManager()
+    
+    var firstLoad = false
     
     // Parametres
     let interpupilaryDistance = 0.066 // This is the value for the distance between two pupils (in metres). The Interpupilary Distance (IPD).
@@ -145,7 +147,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             ARSession.RunOptions.resetTracking
         ])
         
-        
     }
    
     override func viewDidLoad() {
@@ -158,6 +159,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         // delegate for sending punch signals
         scene.punchDelegate = self
+        
+        fullScreenARView.scene = scene
+        leftEyeSceneAR.scene = scene
+        rightEyeSceneAR.scene = scene
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -166,10 +171,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         started = false
         
         soundManager.stopTheCrowd()
-//        // stop the pain
-//        scene.animationController?.didStop()
-//        // stop the health ticking
-//        scene.healthTicker.invalidate()
         
         scene.empty()
         
@@ -178,9 +179,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
 //
 //        fullScreenARView.delegate = nil
 //
-//        fullScreenARView.scene.rootNode.enumerateChildNodes { (node, stop) in
-//            node.removeFromParentNode()
-//        }
+        fullScreenARView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
         
     }
     
@@ -322,10 +323,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         rightEyeView.layer.cornerRadius = cornerSize
         rightEyeView.layer.masksToBounds = true
         
-        fullScreenARView.scene = scene
-        leftEyeSceneAR.scene = scene
-        rightEyeSceneAR.scene = scene
-        
         fullScreenARView.delegate = self
         
         UIApplication.shared.isIdleTimerDisabled = true
@@ -338,7 +335,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         rightEyeSceneAR.isPlaying = true
         leftEyeSceneAR.isPlaying = true
         
-        self.view.backgroundColor = UIColor.black
+//        self.view.backgroundColor = UIColor.black
         
         ////////////////////////////////////////////////////////////////
         // Create CAMERA
@@ -495,7 +492,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     }
     
     func updateFrame() {
-        
         if debugMode {
             return
         }
@@ -539,7 +535,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
          - for performance, this should be ideally be ported to metal
          */
         // Clear Original Camera-Image
-        leftEyeSceneAR.scene.background.contents = UIColor.clear // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
+//        leftEyeSceneAR.scene.background.contents = UIColor.clear // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
         
         // Read Camera-Image
         let pixelBuffer : CVPixelBuffer? = fullScreenARView.session.currentFrame?.capturedImage
