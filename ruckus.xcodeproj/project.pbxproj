@@ -88,6 +88,8 @@
 		7F33708A1F5B7B230076E7A6 /* ruckus.lite.watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F340E981EF719B000AE3DEB /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F340E961EF719AB00AE3DEB /* XCUIElement.swift */; };
 		7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */; };
+		7F4675AB20338D0B0003B442 /* HealthBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarController.swift */; };
+		7F4675AC20338D0B0003B442 /* HealthBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarController.swift */; };
 		7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */; };
 		7F4D9FE01EE44D920049ADA8 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDC1EE44D920049ADA8 /* pause.wav */; };
 		7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDE1EE44D920049ADA8 /* finished.wav */; };
@@ -410,6 +412,7 @@
 		7F33705B1F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F340E961EF719AB00AE3DEB /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
+		7F4675AA20338D0B0003B442 /* HealthBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarController.swift; sourceTree = "<group>"; };
 		7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		7F4D9FDC1EE44D920049ADA8 /* pause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pause.wav; sourceTree = "<group>"; };
 		7F4D9FDE1EE44D920049ADA8 /* finished.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finished.wav; sourceTree = "<group>"; };
@@ -803,6 +806,7 @@
 				7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */,
 				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
 				7F645E39200C0142006E5197 /* NumberCell.swift */,
+				7F4675AA20338D0B0003B442 /* HealthBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1949,6 +1953,7 @@
 				7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */,
 				7F84D197202A4C9800FD1AC4 /* StateFlags.swift in Sources */,
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
+				7F4675AB20338D0B0003B442 /* HealthBarController.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
 				7FCD8A6B1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F84D19D202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,
@@ -2043,6 +2048,7 @@
 				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
 				7F84D198202A4C9800FD1AC4 /* StateFlags.swift in Sources */,
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
+				7F4675AC20338D0B0003B442 /* HealthBarController.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
 				7FCD8A6C1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F84D19E202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,

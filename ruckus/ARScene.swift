@@ -45,6 +45,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var animationController: ARAnimationController?
     
     let heightManager = ARHeightManager()
+    let healthController = HealthBarController()
     
     var spotLightNode = SCNNode()
     var ambientLightNode = SCNNode()
@@ -52,8 +53,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var floorNode = SCNNode()
     var usersHeight: Float = 170.0
     
-    var survivalTime: Double = 0
-    var healthTicker = Timer()
     
     convenience init(create: Bool) {
         self.init()
@@ -64,11 +63,13 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         
         // start callin the hits
         animationController = ARAnimationController()
+        
+        
     }
     
     // clear the scene when will leave
     func empty() {
-        healthTicker.invalidate()
+        healthController.stopHealthTicking()
         animationController?.didStop(andIdle: false)
         rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
@@ -86,12 +87,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             usersHeight = height
         }
         
-        if let _ = settingsAccessor?.getSurvivalEnabled() {
-            if let survivalTime = settingsAccessor?.getSurvivalTime() {
-                self.survivalTime = survivalTime
-            }
-        }
-        
 //        createFloor()
         
         createPlayerNode()
@@ -104,6 +99,9 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         
         animationController?.prepare(withModel: model)
         animationController?.start()
+        
+        // fetch the settings for the health bar
+        healthController.fetchSettings()
     }
     
     func updateHeadPos(withPosition position: matrix_float4x4) {
@@ -305,61 +303,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     // when we want to start the action
     func start() {
         // only show the health bar in survival mode
-        if survivalTime > 0 {
-            addHealthBar()
-        }
-    }
-    
-    func addHealthBar() {
-        // add the node for the health of the char
-        let healthsize: (CGFloat, CGFloat) = (1, 0.1)
-        let width: CGFloat = 0.02
-        
-        let healthGeo = SCNBox(width: width, height: healthsize.1, length: healthsize.0, chamferRadius: 0.005)
-        
-        healthGeo.firstMaterial?.diffuse.contents = UIColor.green
-        let healthNode = SCNNode(geometry: healthGeo)
-        
-        modelWrapper.addChildNode(healthNode)
-        
-        healthNode.rotation = SCNVector4(0, 1, 0, Float(90).degreesToRadians)
-        
-        // put it above the model nodes head
-        healthNode.position = SCNVector3(0, (scaleOfModel * 185), 0)
-        
-        let oneHealthUnit = healthsize.0 / CGFloat(survivalTime)
-        
-        healthTicker = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            healthGeo.length = healthGeo.length - oneHealthUnit
-            
-            // work out what sort of colour the health bar should be depending on
-            // how much is left
-            let left = (healthGeo.length / healthsize.0) * 100
-            
-            var colour: UIColor
-            switch left {
-            case _ where left <= 80 && left > 60:
-                colour = UIColor(netHex: 0x4d9900)
-            case _ where left <= 60 && left > 40:
-                colour = UIColor(netHex: 0x739900)
-            case _ where left <= 40 && left > 20:
-                colour = UIColor(netHex: 0x999900)
-            case _ where left <= 20 && left > 10:
-                colour = UIColor(netHex: 0x997300)
-            case _ where left <= 10:
-                colour = UIColor(netHex: 0x994d00)
-            default:
-                colour = UIColor(netHex: 0x269900)
-                break
-            }
-            healthGeo.firstMaterial?.diffuse.contents = colour
-            
-            if left <= 0 {
-                // stop the ticker and send out the event, I am done sir!
-                self.healthTicker.invalidate()
-            }
-        })
-        
+        healthController.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
     }
     
     func setCharAt(position: SCNVector3) {
