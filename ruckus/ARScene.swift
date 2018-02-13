@@ -53,6 +53,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var floorNode = SCNNode()
     var usersHeight: Float = 170.0
     
+    var startPos = SCNVector3()
     
     convenience init(create: Bool) {
         self.init()
@@ -129,6 +130,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         // then we set the head node transform using the normal transform matrix
         headNode.transform = SCNMatrix4.init(position)
     }
+    
     
     func ligntMeUp() {
         // lights
@@ -306,23 +308,50 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         healthController.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
     }
     
-    func setCharAt(position: SCNVector3) {
-        modelWrapper.position = position
+    func setStartPosition(position: SCNVector3) {
+        startPos = position
+    }
+    
+    func showStartButton() {
+        let startGeo = SCNBox(width: 0.1, height: 0.4, length: 0.8, chamferRadius: 0.05)
+        startGeo.firstMaterial?.diffuse.contents = UIColor.lightGreen
+        
+        let startButton = SCNNode(geometry: startGeo)
+        
+        let startText = SCNText(string: "Start!", extrusionDepth: 0.02)
+        startText.font = UIFont.systemFont(ofSize: 0.21)
+        
+        let startTextNode = SCNNode(geometry: startText)
+        // possition it a little of the ground
+        startButton.position = SCNVector3(startPos.x, startPos.y + 1.5, startPos.z)
+        
+        startButton.addChildNode(startTextNode)
+        
+        startButton.rotation = SCNVector4(0, 1, 0, Float(90).degreesToRadians)
+        startTextNode.position = SCNVector3(-0.05, -1.06, -0.32)
+        startTextNode.rotation = SCNVector4(0, 1, 0, Float(270).degreesToRadians)
+        
+        
+        rootNode.addChildNode(startButton)
+    }
+    
+    func showChar() {
+        modelWrapper.position = startPos
         // the floor os used to work out the y for the look at!
-        theFloor = position.y
+        theFloor = startPos.y
         rootNode.addChildNode(modelWrapper)
     }
     
-    func setRingAt(position: SCNVector3) {
-        ring.position = position
+    func showRing() {
+        ring.position = startPos
         // move down a little for the floor
-        ring.position.y = position.y - 1.5
+        ring.position.y = startPos.y - 1.5
         rootNode.addChildNode(ring)
     }
     
-    func moveFloorTo(position: SCNVector3) {
+    func moveFloor() {
         createFloor()
-        floorNode.position = SCNVector3(0, position.y - 0.1, 0)
+        floorNode.position = SCNVector3(0, startPos.y - 0.1, 0)
     }
     
     func createFloor() {

@@ -270,13 +270,17 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             let result: ARHitTestResult = hitResults.first!
             let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             
-            scene.moveFloorTo(position: newLocation)
+//            scene.moveFloorTo(position: newLocation)
+//
+//            scene.setCharAt(position: newLocation)
             
-            scene.setCharAt(position: newLocation)
+            scene.setStartPosition(position: newLocation)
             
-            if (ringEnabled) {
-                scene.setRingAt(position: newLocation)
-            }
+            scene.showStartButton()
+            
+//            if (ringEnabled) {
+//                scene.setRingAt(position: newLocation)
+//            }
             
             fullScreenARView.node(for: result.anchor!)!.removeFromParentNode()
             fullScreenARView.session.remove(anchor: result.anchor!)
@@ -293,7 +297,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         debugSCNView.scene = scene
         
-        scene.setCharAt(position: SCNVector3Zero)
+        scene.setStartPosition(position: SCNVector3Zero)
+        scene.showChar()
         let cam = scene.setUpDebugCam()
         debugSCNView.pointOfView = cam
         debugSCNView.showsStatistics = true
@@ -357,8 +362,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     }
     
     func donePositioningAndStart() {
-        started = true
         var seconds = 10
+        started = true
         // show the countdown
         leftEyeCountdown.isHidden = false
         rightEyeCountdown.isHidden = false
@@ -372,32 +377,32 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         surfaceFindingTip.isHidden = true
         
         // show the 10 second countdown and then start the fight!
-        rumbleTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ _ in
-            
-            // upate the seconds countdown on the eyes
-            DispatchQueue.main.async {
-                self.leftEyeCountdown.text = "\(seconds)"
-                self.rightEyeCountdown.text = "\(seconds)"
-            }
-            
-            if (seconds <= 0) {
-                // remove the countdown
-                self.leftEyeCountdown.isHidden = true
-                self.rightEyeCountdown.isHidden = true
-                
-                // start the crowd if on in settings
-                self.soundManager.startCrowd()
-                
-                // stop the timer
-                self.rumbleTimer?.invalidate()
-                // now start the pain!
-                self.scene.animationController?.didStart()
-                
-                self.scene.start()
-            }
-            
-            seconds -= 1
-        }
+//        rumbleTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ _ in
+//
+//            // upate the seconds countdown on the eyes
+//            DispatchQueue.main.async {
+//                self.leftEyeCountdown.text = "\(seconds)"
+//                self.rightEyeCountdown.text = "\(seconds)"
+//            }
+//
+//            if (seconds <= 0) {
+//                // remove the countdown
+//                self.leftEyeCountdown.isHidden = true
+//                self.rightEyeCountdown.isHidden = true
+//
+//                // start the crowd if on in settings
+//                self.soundManager.startCrowd()
+//
+//                // stop the timer
+//                self.rumbleTimer?.invalidate()
+//                // now start the pain!
+//                self.scene.animationController?.didStart()
+//
+//                self.scene.start()
+//            }
+//
+//            seconds -= 1
+//        }
         
     }
     
