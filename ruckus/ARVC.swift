@@ -19,7 +19,11 @@ protocol PunchInTheHeadDelegate {
     }
 }
 
-class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
+protocol GazeDelegate {
+    func endGaze() -> Void
+}
+
+class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDelegate  {
     
     // used to debug in the simulators etc, makes it faster to work on :D
     let debugMode = false
@@ -35,13 +39,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     @IBOutlet weak var imageViewLeft: UIImageView!
     @IBOutlet weak var imageViewRight: UIImageView!
-    
     @IBOutlet weak var rotateInstructionsView: UIView!
-    
-    @IBOutlet weak var rightEyeCountdown: UILabel!
-    
-    @IBOutlet weak var leftEyeCountdown: UILabel!
-    
     @IBOutlet weak var surfaceFindingTip: UIView!
     
     @IBOutlet weak var unsupportedView: UIView!
@@ -84,9 +82,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
 //        let eyeFOV = 90; let cameraImageScale = 6; // (Scale: 6 ± 1.0) Very Rough Guestimate.
     //    let eyeFOV = 120; let cameraImageScale = 8.756; // Rough Guestimate.
     
-    var rumbleTimer: Timer?
-    
-    var ringEnabled: Bool = false
+    var gazeTimer: Timer?
+    var isLookingAtButton = false
     
     required init?(coder aDecoder: NSCoder) {
 
@@ -101,10 +98,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             } else {
                 invincibleTime = 0.08
             }
-        }
-        
-        if let enabled = self.settingsAccessor?.getRingEnabled() {
-            ringEnabled = enabled
         }
     }
     
@@ -159,6 +152,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         
         // delegate for sending punch signals
         scene.punchDelegate = self
+        // delegate for the button to send messsages to the VC
+        scene.gazeDelegate = self
         
         fullScreenARView.scene = scene
         leftEyeSceneAR.scene = scene
@@ -167,18 +162,13 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         // house keeping
-        rumbleTimer?.invalidate()
+        gazeTimer?.invalidate()
         started = false
         
         soundManager.stopTheCrowd()
         
         scene.empty()
         
-        // remove the scene nodes and pause the AR session
-//        fullScreenARView.session.pause()
-//
-//        fullScreenARView.delegate = nil
-//
         fullScreenARView.scene.rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
         }
@@ -269,18 +259,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         if hitResults.count > 0 {
             let result: ARHitTestResult = hitResults.first!
             let newLocation = SCNVector3Make(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
-            
-//            scene.moveFloorTo(position: newLocation)
-//
-//            scene.setCharAt(position: newLocation)
-            
             scene.setStartPosition(position: newLocation)
-            
             scene.showStartButton()
-            
-//            if (ringEnabled) {
-//                scene.setRingAt(position: newLocation)
-//            }
             
             fullScreenARView.node(for: result.anchor!)!.removeFromParentNode()
             fullScreenARView.session.remove(anchor: result.anchor!)
@@ -294,18 +274,20 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         fullScreenARView.isHidden = true
         rotateInstructionsView.isHidden = true
         surfaceFindingTip.isHidden = true
+        debugSCNView.isHidden = false
         
         debugSCNView.scene = scene
         
         scene.setStartPosition(position: SCNVector3Zero)
-        scene.showChar()
+        scene.showStartButton()
+//        scene.showChar()
         let cam = scene.setUpDebugCam()
         debugSCNView.pointOfView = cam
         debugSCNView.showsStatistics = true
         debugSCNView.allowsCameraControl = true
-        soundManager.startCrowd()
-        scene.animationController?.didStart()
-        scene.start()
+//        soundManager.startCrowd()
+//        scene.animationController?.didStart()
+//        scene.start()
     }
     
     func setUpVRScene() {
@@ -314,8 +296,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
             return
         }
         // reset visibility state of items
-        leftEyeCountdown.isHidden = true
-        rightEyeCountdown.isHidden = true
         leftEyeView.isHidden = true
         rightEyeView.isHidden = true
         debugSCNView.isHidden = true
@@ -362,11 +342,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
     }
     
     func donePositioningAndStart() {
-        var seconds = 10
         started = true
-        // show the countdown
-        leftEyeCountdown.isHidden = false
-        rightEyeCountdown.isHidden = false
         
         // show the eyes
         leftEyeView.isHidden = false
@@ -376,34 +352,34 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate {
         fullScreenARView.isHidden = true
         surfaceFindingTip.isHidden = true
         
-        // show the 10 second countdown and then start the fight!
-//        rumbleTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ _ in
-//
-//            // upate the seconds countdown on the eyes
-//            DispatchQueue.main.async {
-//                self.leftEyeCountdown.text = "\(seconds)"
-//                self.rightEyeCountdown.text = "\(seconds)"
-//            }
-//
-//            if (seconds <= 0) {
-//                // remove the countdown
-//                self.leftEyeCountdown.isHidden = true
-//                self.rightEyeCountdown.isHidden = true
-//
-//                // start the crowd if on in settings
-//                self.soundManager.startCrowd()
-//
-//                // stop the timer
-//                self.rumbleTimer?.invalidate()
-//                // now start the pain!
-//                self.scene.animationController?.didStart()
-//
-//                self.scene.start()
-//            }
-//
-//            seconds -= 1
-//        }
+        let middleOfScreen = CGPoint(x: self.view.frame.size.width / 2.0, y: self.view.frame.size.height / 2.0)
         
+        // keep looking for gaze on the button!
+        gazeTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){ _ in
+            let buttonHitTest = self.fullScreenARView.hitTest(middleOfScreen, options: nil)
+            if !buttonHitTest.isEmpty {
+                let nodeTouched = buttonHitTest[0].node
+                if nodeTouched.name == NodeNames.startButton.rawValue {
+                    // if not already looking
+                    if !self.isLookingAtButton {
+                        self.scene.startButtonManager.startedToLookAt()
+                        self.isLookingAtButton = true
+                    }
+                }
+            } else {
+                // if was looking at button previously
+                if self.isLookingAtButton {
+                    self.scene.startButtonManager.stoppedLooking()
+                    self.isLookingAtButton = false
+                }
+            }
+        }
+    }
+    
+    // MARK: - Gaze delgate
+    func endGaze() {
+        // just end the timer for the german long looking
+        gazeTimer?.invalidate()
     }
     
     // MARK: - Punch in the head delegates

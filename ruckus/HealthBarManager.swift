@@ -13,7 +13,7 @@ protocol ControlsHeath {
     
 }
 
-class HealthBarController: ControlsHeath {
+class HealthBarManager: ControlsHeath {
     var survivalTime: Double = 0
     var healthTicker = Timer()
     var settingsAccessor: SettingsAccessor?

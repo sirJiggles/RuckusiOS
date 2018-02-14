@@ -31,10 +31,12 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var model = SCNNode()
     var modelWrapper = SCNNode()
     var ring = SCNNode()
+    var ringEnabled = false
     
     var headNode = SCNNode()
     
     var punchDelegate: PunchInTheHeadDelegate?
+    var gazeDelegate: GazeDelegate?
     var theFloor: Float = 0
     
     var modelName: AnimationModelName = .maleOne
@@ -45,7 +47,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var animationController: ARAnimationController?
     
     let heightManager = ARHeightManager()
-    let healthController = HealthBarController()
+    let healthManager = HealthBarManager()
+    let startButtonManager = StartButtonManager()
     
     var spotLightNode = SCNNode()
     var ambientLightNode = SCNNode()
@@ -70,7 +73,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     // clear the scene when will leave
     func empty() {
-        healthController.stopHealthTicking()
+        healthManager.stopHealthTicking()
         animationController?.didStop(andIdle: false)
         rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
@@ -88,7 +91,9 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             usersHeight = height
         }
         
-//        createFloor()
+        if let enabled = self.settingsAccessor?.getRingEnabled() {
+            ringEnabled = enabled
+        }
         
         createPlayerNode()
         
@@ -102,7 +107,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         animationController?.start()
         
         // fetch the settings for the health bar
-        healthController.fetchSettings()
+        healthManager.fetchSettings()
     }
     
     func updateHeadPos(withPosition position: matrix_float4x4) {
@@ -304,8 +309,16 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     // when we want to start the action
     func start() {
+        // show the char etc depending on the settings
+        showChar()
+        if ringEnabled {
+            showRing()
+        }
+//        moveFloor()
         // only show the health bar in survival mode
-        healthController.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
+        healthManager.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
+        // start callin them hits
+        animationController?.didStart()
     }
     
     func setStartPosition(position: SCNVector3) {
@@ -313,26 +326,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     }
     
     func showStartButton() {
-        let startGeo = SCNBox(width: 0.1, height: 0.4, length: 0.8, chamferRadius: 0.05)
-        startGeo.firstMaterial?.diffuse.contents = UIColor.lightGreen
-        
-        let startButton = SCNNode(geometry: startGeo)
-        
-        let startText = SCNText(string: "Start!", extrusionDepth: 0.02)
-        startText.font = UIFont.systemFont(ofSize: 0.21)
-        
-        let startTextNode = SCNNode(geometry: startText)
-        // possition it a little of the ground
-        startButton.position = SCNVector3(startPos.x, startPos.y + 1.5, startPos.z)
-        
-        startButton.addChildNode(startTextNode)
-        
-        startButton.rotation = SCNVector4(0, 1, 0, Float(90).degreesToRadians)
-        startTextNode.position = SCNVector3(-0.05, -1.06, -0.32)
-        startTextNode.rotation = SCNVector4(0, 1, 0, Float(270).degreesToRadians)
-        
-        
-        rootNode.addChildNode(startButton)
+        startButtonManager.placeStartButton(at: startPos, onScene: self)
     }
     
     func showChar() {

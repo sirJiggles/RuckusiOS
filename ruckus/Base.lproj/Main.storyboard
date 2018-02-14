@@ -1576,12 +1576,6 @@ none of the ads</string>
                                                 <rect key="frame" x="-0.66666666666665719" y="0.0" width="335.66666666666663" height="350"/>
                                                 <gestureRecognizers/>
                                             </arscnView>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5j-gO-rUp" userLabel="leftEyeCountdown">
-                                                <rect key="frame" x="121" y="113.33333333333331" width="92" height="122"/>
-                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="100"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1589,10 +1583,8 @@ none of the ads</string>
                                             <constraint firstItem="ElG-Le-sKQ" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="A5h-iM-0yy"/>
                                             <constraint firstAttribute="trailing" secondItem="ElG-Le-sKQ" secondAttribute="trailing" id="FdA-Eg-Dmj"/>
                                             <constraint firstItem="Iyn-oo-Z02" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="JbY-iR-9mb"/>
-                                            <constraint firstItem="x5j-gO-rUp" firstAttribute="centerX" secondItem="2zs-Pn-F38" secondAttribute="centerX" id="Shf-pL-9nU"/>
                                             <constraint firstItem="Iyn-oo-Z02" firstAttribute="leading" secondItem="2zs-Pn-F38" secondAttribute="leading" id="aIm-E5-hae"/>
                                             <constraint firstAttribute="bottom" secondItem="Iyn-oo-Z02" secondAttribute="bottom" id="b58-pG-9Yv"/>
-                                            <constraint firstItem="x5j-gO-rUp" firstAttribute="centerY" secondItem="2zs-Pn-F38" secondAttribute="centerY" id="cRy-U2-sZa"/>
                                             <constraint firstItem="ElG-Le-sKQ" firstAttribute="top" secondItem="2zs-Pn-F38" secondAttribute="top" id="faP-I2-Gu5"/>
                                             <constraint firstAttribute="trailing" secondItem="Iyn-oo-Z02" secondAttribute="trailing" id="y3d-xh-nJn"/>
                                         </constraints>
@@ -1606,17 +1598,10 @@ none of the ads</string>
                                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-sa-iW0" userLabel="RightEyeAR">
                                                 <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="350"/>
                                             </arscnView>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vg-6u-Y0J" userLabel="rightEyeCountdown">
-                                                <rect key="frame" x="121.33333333333331" y="114" width="92" height="122"/>
-                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="100"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="3wW-XK-1c6" secondAttribute="trailing" id="FzS-X3-Tnb"/>
-                                            <constraint firstItem="5Vg-6u-Y0J" firstAttribute="centerY" secondItem="Iji-vP-t44" secondAttribute="centerY" id="GfI-Cj-Ann"/>
                                             <constraint firstAttribute="bottom" secondItem="t4y-sa-iW0" secondAttribute="bottom" id="hNT-6d-bIR"/>
                                             <constraint firstItem="3wW-XK-1c6" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="hpz-n3-E2j"/>
                                             <constraint firstItem="t4y-sa-iW0" firstAttribute="top" secondItem="Iji-vP-t44" secondAttribute="top" id="jbe-bC-mPH"/>
@@ -1624,7 +1609,6 @@ none of the ads</string>
                                             <constraint firstAttribute="trailing" secondItem="t4y-sa-iW0" secondAttribute="trailing" id="mdG-rg-nyR"/>
                                             <constraint firstItem="t4y-sa-iW0" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="pxd-LE-RSu"/>
                                             <constraint firstItem="3wW-XK-1c6" firstAttribute="leading" secondItem="Iji-vP-t44" secondAttribute="leading" id="qBH-BS-Tps"/>
-                                            <constraint firstItem="5Vg-6u-Y0J" firstAttribute="centerX" secondItem="Iji-vP-t44" secondAttribute="centerX" id="r8M-eY-pIE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1787,10 +1771,8 @@ none of the ads</string>
                         <outlet property="fullScreenARView" destination="WhK-Ga-Pg6" id="ncJ-Xg-57j"/>
                         <outlet property="imageViewLeft" destination="ElG-Le-sKQ" id="nF4-Dl-so2"/>
                         <outlet property="imageViewRight" destination="3wW-XK-1c6" id="KcH-Ye-hIT"/>
-                        <outlet property="leftEyeCountdown" destination="x5j-gO-rUp" id="YTm-Sr-FCc"/>
                         <outlet property="leftEyeSceneAR" destination="Iyn-oo-Z02" id="HDN-Mo-Znz"/>
                         <outlet property="leftEyeView" destination="2zs-Pn-F38" id="8SZ-6C-DQz"/>
-                        <outlet property="rightEyeCountdown" destination="5Vg-6u-Y0J" id="2Zu-hi-LlC"/>
                         <outlet property="rightEyeSceneAR" destination="t4y-sa-iW0" id="WTC-63-hxv"/>
                         <outlet property="rightEyeView" destination="Iji-vP-t44" id="RyV-b6-tHx"/>
                         <outlet property="rotateInstructionsView" destination="s8N-e7-2lM" id="VKt-x6-EzG"/>

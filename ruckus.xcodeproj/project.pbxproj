@@ -88,8 +88,12 @@
 		7F33708A1F5B7B230076E7A6 /* ruckus.lite.watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F340E981EF719B000AE3DEB /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F340E961EF719AB00AE3DEB /* XCUIElement.swift */; };
 		7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */; };
-		7F4675AB20338D0B0003B442 /* HealthBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarController.swift */; };
-		7F4675AC20338D0B0003B442 /* HealthBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarController.swift */; };
+		7F4675AB20338D0B0003B442 /* HealthBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarManager.swift */; };
+		7F4675AC20338D0B0003B442 /* HealthBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarManager.swift */; };
+		7F4675AE20339DFE0003B442 /* StartButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AD20339DFE0003B442 /* StartButtonManager.swift */; };
+		7F4675AF20339DFE0003B442 /* StartButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AD20339DFE0003B442 /* StartButtonManager.swift */; };
+		7F4675B12033B1AE0003B442 /* NodeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675B02033B1AE0003B442 /* NodeNames.swift */; };
+		7F4675B22033B1AE0003B442 /* NodeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675B02033B1AE0003B442 /* NodeNames.swift */; };
 		7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */; };
 		7F4D9FE01EE44D920049ADA8 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDC1EE44D920049ADA8 /* pause.wav */; };
 		7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDE1EE44D920049ADA8 /* finished.wav */; };
@@ -412,7 +416,9 @@
 		7F33705B1F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F340E961EF719AB00AE3DEB /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
-		7F4675AA20338D0B0003B442 /* HealthBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarController.swift; sourceTree = "<group>"; };
+		7F4675AA20338D0B0003B442 /* HealthBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarManager.swift; sourceTree = "<group>"; };
+		7F4675AD20339DFE0003B442 /* StartButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonManager.swift; sourceTree = "<group>"; };
+		7F4675B02033B1AE0003B442 /* NodeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeNames.swift; sourceTree = "<group>"; };
 		7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		7F4D9FDC1EE44D920049ADA8 /* pause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pause.wav; sourceTree = "<group>"; };
 		7F4D9FDE1EE44D920049ADA8 /* finished.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finished.wav; sourceTree = "<group>"; };
@@ -806,7 +812,6 @@
 				7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */,
 				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
 				7F645E39200C0142006E5197 /* NumberCell.swift */,
-				7F4675AA20338D0B0003B442 /* HealthBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 		7F76938B1EE2FE0B0036DED7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7F4675AA20338D0B0003B442 /* HealthBarManager.swift */,
 				7FAA9D292019AF6A00F86EDC /* TourPage.swift */,
 				7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */,
 				7F7775721F40BF270037B49F /* HitCaller.swift */,
@@ -825,6 +831,7 @@
 				7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */,
 				7F33388D200EAA0200E6BC71 /* ARHeightManager.swift */,
 				7F84D19C202A6AB200FD1AC4 /* NotchUtils.swift */,
+				7F4675AD20339DFE0003B442 /* StartButtonManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -868,6 +875,7 @@
 			children = (
 				7F84D196202A4C9800FD1AC4 /* StateFlags.swift */,
 				7F84D199202A4EAD00FD1AC4 /* VCIdents.swift */,
+				7F4675B02033B1AE0003B442 /* NodeNames.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -1938,7 +1946,9 @@
 				7F53A1CB1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift in Sources */,
 				7FC575D81EED5D17006DAD3E /* Reachable.swift in Sources */,
 				7FB247FD1ED2420700267498 /* WorkoutSession.swift in Sources */,
+				7F4675AE20339DFE0003B442 /* StartButtonManager.swift in Sources */,
 				7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */,
+				7F4675B12033B1AE0003B442 /* NodeNames.swift in Sources */,
 				7F645E3A200C0142006E5197 /* NumberCell.swift in Sources */,
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
 				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
@@ -1953,7 +1963,7 @@
 				7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */,
 				7F84D197202A4C9800FD1AC4 /* StateFlags.swift in Sources */,
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
-				7F4675AB20338D0B0003B442 /* HealthBarController.swift in Sources */,
+				7F4675AB20338D0B0003B442 /* HealthBarManager.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
 				7FCD8A6B1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F84D19D202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,
@@ -2033,7 +2043,9 @@
 				7FC61E2A1F5192D300645009 /* IntervalTimerSettingsHelper.swift in Sources */,
 				7FC61E2B1F5192D300645009 /* Reachable.swift in Sources */,
 				7FC61E2C1F5192D300645009 /* WorkoutSession.swift in Sources */,
+				7F4675AF20339DFE0003B442 /* StartButtonManager.swift in Sources */,
 				7FC61E2D1F5192D300645009 /* StringExtension.swift in Sources */,
+				7F4675B22033B1AE0003B442 /* NodeNames.swift in Sources */,
 				7F645E3B200C0142006E5197 /* NumberCell.swift in Sources */,
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
 				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
@@ -2048,7 +2060,7 @@
 				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
 				7F84D198202A4C9800FD1AC4 /* StateFlags.swift in Sources */,
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
-				7F4675AC20338D0B0003B442 /* HealthBarController.swift in Sources */,
+				7F4675AC20338D0B0003B442 /* HealthBarManager.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
 				7FCD8A6C1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F84D19E202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,
