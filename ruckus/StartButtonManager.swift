@@ -18,9 +18,11 @@ class StartButtonManager: ManagesStartButton {
     
     var progressBar = SCNBox()
     var buttonNode = SCNNode()
+    var buttonWrapper = SCNNode()
     let progressComplete = 0.7
     var scene: ARScene?
     var lookingTimer = Timer()
+    var buttonVisible = false
     
     func placeStartButton(at location: SCNVector3, onScene scene: ARScene) -> Void {
         let startGeo = SCNBox(width: 0.1, height: 0.4, length: 0.8, chamferRadius: 0.03)
@@ -33,7 +35,7 @@ class StartButtonManager: ManagesStartButton {
         
         let startTextNode = SCNNode(geometry: startText)
         // possition it a little of the ground
-        startButton.position = SCNVector3(location.x, location.y + 1.5, location.z)
+        buttonWrapper.position = SCNVector3(location.x, location.y + 1.5, location.z)
         
         startButton.addChildNode(startTextNode)
         
@@ -56,7 +58,11 @@ class StartButtonManager: ManagesStartButton {
         // set the name for the hit testing
         startButton.name = NodeNames.startButton.rawValue
         
-        scene.rootNode.addChildNode(startButton)
+        buttonWrapper.addChildNode(startButton)
+        
+        scene.rootNode.addChildNode(buttonWrapper)
+        
+        buttonVisible = true
     }
     
     func startedToLookAt() {
@@ -66,7 +72,9 @@ class StartButtonManager: ManagesStartButton {
         let totalTime: Double = 4
         let oneUnit = totalTime / tick
         let percentage = progressComplete / oneUnit
+        // @TODO maybe this does not need to be fired 20 times, now we have the animation
         lookingTimer = Timer.scheduledTimer(withTimeInterval: tick, repeats: true, block: { _ in
+            SCNTransaction.animationDuration = tick
             self.progressBar.length = self.progressBar.length + CGFloat(percentage)
             
             done = done + tick
@@ -77,6 +85,7 @@ class StartButtonManager: ManagesStartButton {
                 self.buttonNode.removeFromParentNode()
                 self.scene?.start()
                 self.scene?.gazeDelegate?.endGaze()
+                self.buttonVisible = false
             }
         })
     }

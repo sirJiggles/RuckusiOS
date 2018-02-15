@@ -85,6 +85,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
     var gazeTimer: Timer?
     var isLookingAtButton = false
     
+    var sceneOriginalContents: Any? = nil
+    
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
@@ -106,6 +108,11 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         super.viewWillAppear(animated)
         
         scene.settup()
+        
+        // reset scene bg contents
+        if sceneOriginalContents != nil {
+            leftEyeSceneAR.scene.background.contents = sceneOriginalContents
+        }
         
         // work out how we are orientated, if port ask for rotation
         rotateInstructionsView.isHidden = UIDevice.current.orientation.isLandscape
@@ -516,7 +523,11 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
          - for performance, this should be ideally be ported to metal
          */
         // Clear Original Camera-Image
-//        leftEyeSceneAR.scene.background.contents = UIColor.clear // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
+        if sceneOriginalContents == nil || leftEyeSceneAR.scene.background.contents as? UIColor != UIColor.clear {
+            sceneOriginalContents = leftEyeSceneAR.scene.background.contents
+        }
+        leftEyeSceneAR.scene.background.contents = UIColor.clear
+         // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
         
         // Read Camera-Image
         let pixelBuffer : CVPixelBuffer? = fullScreenARView.session.currentFrame?.capturedImage

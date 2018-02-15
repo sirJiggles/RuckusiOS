@@ -78,6 +78,11 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
         }
+        
+        // remove all from model wrapper (might not be in scene yet)
+        modelWrapper.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
     }
     
     func settup() {
@@ -122,6 +127,16 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
                     position.columns.3.z
                 )
                 modelWrapper.look(at: posForLookAt)
+                if startButtonManager.buttonVisible {
+                    // @TODO fix rthe look at for the button
+//                    startButtonManager.buttonWrapper.look(at: SCNVector3(
+//                        position.columns.3.x,
+//                        theFloor,
+//                        position.columns.3.z
+//                    ))
+
+//                    startButtonManager.buttonWrapper.look(at: posForLookAt)
+                }
             }
             
             // getting the average height

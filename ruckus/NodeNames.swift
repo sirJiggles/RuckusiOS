@@ -8,4 +8,5 @@
 
 enum NodeNames: String {
     case startButton
+    case fighter
 }
