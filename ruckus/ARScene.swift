@@ -128,6 +128,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
                 )
                 modelWrapper.look(at: posForLookAt)
                 if startButtonManager.buttonVisible {
+                    
                     // @TODO fix rthe look at for the button
 //                    startButtonManager.buttonWrapper.look(at: SCNVector3(
 //                        position.columns.3.x,
