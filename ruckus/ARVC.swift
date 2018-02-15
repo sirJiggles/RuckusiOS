@@ -351,6 +351,11 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
     func donePositioningAndStart() {
         started = true
         
+        scene.showChar()
+        if (scene.ringEnabled) {
+            scene.showRing()
+        }
+        
         // show the eyes
         leftEyeView.isHidden = false
         rightEyeView.isHidden = false

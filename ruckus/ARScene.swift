@@ -127,17 +127,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
                     position.columns.3.z
                 )
                 modelWrapper.look(at: posForLookAt)
-                if startButtonManager.buttonVisible {
-                    
-                    // @TODO fix rthe look at for the button
-//                    startButtonManager.buttonWrapper.look(at: SCNVector3(
-//                        position.columns.3.x,
-//                        theFloor,
-//                        position.columns.3.z
-//                    ))
-
-//                    startButtonManager.buttonWrapper.look(at: posForLookAt)
-                }
             }
             
             // getting the average height
@@ -325,11 +314,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     // when we want to start the action
     func start() {
-        // show the char etc depending on the settings
-        showChar()
-        if ringEnabled {
-            showRing()
-        }
 //        moveFloor()
         // only show the health bar in survival mode
         healthManager.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
@@ -342,7 +326,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     }
     
     func showStartButton() {
-        startButtonManager.placeStartButton(at: startPos, onScene: self)
+        startButtonManager.placeStartButton(onScene: self)
     }
     
     func showChar() {
