@@ -55,8 +55,6 @@
 		7F1BD8E01E64CA8100C9B9A0 /* ruckus.watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7F1BD8C21E64CA8100C9B9A0 /* ruckus.watch.app */; };
 		7F2FFF7D1EF6ADC200CBAFAC /* SettingsModalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2FFF7C1EF6ADC200CBAFAC /* SettingsModalTests.swift */; };
 		7F2FFF7F1EF6B5C000CBAFAC /* SettingsScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2FFF7E1EF6B5C000CBAFAC /* SettingsScreenUITests.swift */; };
-		7F33388E200EAA0200E6BC71 /* ARHeightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F33388D200EAA0200E6BC71 /* ARHeightManager.swift */; };
-		7F33388F200EAA0200E6BC71 /* ARHeightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F33388D200EAA0200E6BC71 /* ARHeightManager.swift */; };
 		7F3370661F5B726E0076E7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7F3370671F5B726E0076E7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7F3370681F5B72750076E7A6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C41E64CA8100C9B9A0 /* Interface.storyboard */; };
@@ -409,7 +407,6 @@
 		7F30C6381E8FDFEE004D90FB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7F320A961EABEDD5006089D1 /* ControllerNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerNames.swift; sourceTree = "<group>"; };
 		7F320A991EABF095006089D1 /* ControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerActions.swift; sourceTree = "<group>"; };
-		7F33388D200EAA0200E6BC71 /* ARHeightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHeightManager.swift; sourceTree = "<group>"; };
 		7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruckus.lite.watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3370471F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ruckus.lite.watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -829,7 +826,6 @@
 				7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */,
 				7F72A05D1FF538E600F6992F /* MatrixConversions.swift */,
 				7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */,
-				7F33388D200EAA0200E6BC71 /* ARHeightManager.swift */,
 				7F84D19C202A6AB200FD1AC4 /* NotchUtils.swift */,
 				7F4675AD20339DFE0003B442 /* StartButtonManager.swift */,
 			);
@@ -1975,7 +1971,6 @@
 				7F7693A11EE37FF20036DED7 /* ButtonCell.swift in Sources */,
 				7F5651B1200C0CF700C10D9A /* ARSoundManager.swift in Sources */,
 				7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */,
-				7F33388E200EAA0200E6BC71 /* ARHeightManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2072,7 +2067,6 @@
 				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
 				7F5651B2200C0CF700C10D9A /* ARSoundManager.swift in Sources */,
 				7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */,
-				7F33388F200EAA0200E6BC71 /* ARHeightManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

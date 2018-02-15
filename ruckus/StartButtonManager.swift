@@ -21,6 +21,7 @@ class StartButtonManager: ManagesStartButton {
     let progressComplete = 0.7
     var scene: ARScene?
     var lookingTimer = Timer()
+    var justStarted = false
     
     func placeStartButton(onScene scene: ARScene) -> Void {
         let startGeo = SCNBox(width: 0.1, height: 0.4, length: 0.8, chamferRadius: 0.03)
@@ -79,6 +80,7 @@ class StartButtonManager: ManagesStartButton {
                 self.buttonNode.removeFromParentNode()
                 self.scene?.start()
                 self.scene?.gazeDelegate?.endGaze()
+                self.justStarted = true
             }
         })
     }

@@ -46,7 +46,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     var animationController: ARAnimationController?
     
-    let heightManager = ARHeightManager()
     let healthManager = HealthBarManager()
     let startButtonManager = StartButtonManager()
     
@@ -55,6 +54,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     var floorNode = SCNNode()
     var usersHeight: Float = 170.0
+    var headYStanding: Float = 0
     
     var startPos = SCNVector3()
     
@@ -129,11 +129,14 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
                 modelWrapper.look(at: posForLookAt)
             }
             
-            // getting the average height
-            heightManager.insert(height: position.columns.3.y)
+            // if users just started, get the yPos now, this is the standing y
+            if (startButtonManager.justStarted) {
+                headYStanding = position.columns.3.y
+                startButtonManager.justStarted = false
+            }
             
             // if the current y is lower than the average by a head height, they are ducking
-            animationController.gittinLow = ((position.columns.3.y + 0.15) < heightManager.getAverage())
+            animationController.gittinLow = ((position.columns.3.y + 0.15) < headYStanding)
 
         }
     
