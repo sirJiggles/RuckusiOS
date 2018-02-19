@@ -140,7 +140,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
-        configuration.isLightEstimationEnabled = true
+//        configuration.isLightEstimationEnabled = true
         
         fullScreenARView.session.run(configuration, options: [
             ARSession.RunOptions.removeExistingAnchors,
@@ -232,18 +232,18 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
                 anchors = [planeAnchor]
                 // set isPlaneSelected to true
                 isPlaneSelected = true
-                setPlaneTexture(node: fullScreenARView.node(for: planeAnchor)!)
+                setPlaneTexture(node: fullScreenARView.node(for: planeAnchor)!, image: #imageLiteral(resourceName: "selection-confirm"))
             }
         }
     }
     
-    func setPlaneTexture(node: SCNNode) {
+    func setPlaneTexture(node: SCNNode, image: UIImage) {
         if started {
             return
         }
         if let geometryNode = node.childNodes.first {
             if node.childNodes.count > 0 {
-                geometryNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "overlay_grid")
+                geometryNode.geometry?.firstMaterial?.diffuse.contents = image
                 geometryNode.geometry?.firstMaterial?.locksAmbientWithDiffuse = true
                 geometryNode.geometry?.firstMaterial?.diffuse.wrapS = SCNWrapMode.repeat
                 geometryNode.geometry?.firstMaterial?.diffuse.wrapT = SCNWrapMode.repeat
@@ -418,10 +418,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         // get the light estimate, and update the lights based on the room lights
-        if let estimate = fullScreenARView.session.currentFrame?.lightEstimate {
-            scene.spotLightNode.light?.intensity = estimate.ambientIntensity
-            scene.ambientLightNode.light?.intensity = estimate.ambientIntensity
-        }
+//        if let estimate = fullScreenARView.session.currentFrame?.lightEstimate {
+//            scene.spotLightNode.light?.intensity = estimate.ambientIntensity
+//            scene.ambientLightNode.light?.intensity = estimate.ambientIntensity
+//        }
         DispatchQueue.main.async {
             self.updateFrame()
         }
@@ -432,15 +432,16 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         if started {
             return node
         }
+        
         if let planeAnchor = anchor as? ARPlaneAnchor {
             node = SCNNode()
             let geo = SCNPlane(width: 1, height: 1)
-            geo.firstMaterial?.diffuse.contents = UIColor.green
             let planeNode = SCNNode(geometry: geo)
             planeNode.position = SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z)
             planeNode.transform = SCNMatrix4MakeRotation(Float(-Double.pi / 2.0), 1.0, 0.0, 0.0);
             node?.addChildNode(planeNode)
             anchors.append(planeAnchor)
+            setPlaneTexture(node: node!, image: #imageLiteral(resourceName: "selection"))
             
         } else {
             // haven't encountered this scenario yet
@@ -456,7 +457,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         }
         planeNodesCount += 1
         if node.childNodes.count > 0 && planeNodesCount % 2 == 0 {
-            node.childNodes[0].geometry?.firstMaterial?.diffuse.contents = UIColor.green
+            setPlaneTexture(node: node, image: #imageLiteral(resourceName: "selection"))
         }
     }
     
@@ -534,13 +535,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         }
         
         leftEyeSceneAR.scene.background.contents = UIColor.clear
-//        let material = SCNMaterial()
-//        material.diffuse.contents = UIColor.white
-//        material.blendMode = SCNBlendMode.multiply
-//        material.lightingModel = .lambert
-////        material.colorBufferWriteMask = SCNColorMask(rawValue: 0)
-//        leftEyeSceneAR.scene.background.contents = material
-        
          // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
         
         // Read Camera-Image
