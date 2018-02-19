@@ -23,7 +23,11 @@ protocol GazeDelegate {
     func endGaze() -> Void
 }
 
-class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDelegate  {
+protocol GameDelegate {
+    func endGame() -> Void
+}
+
+class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDelegate, GameDelegate  {
     
     // used to debug in the simulators etc, makes it faster to work on :D
     let debugMode = false
@@ -46,7 +50,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
     
     var scene = ARScene.init(create: true)
     
-    var punchCount: Int = 0
     var canBeHit: Bool = true
 
     // how long the user is untouchable, gets set based on difficulty
@@ -147,6 +150,9 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
             ARSession.RunOptions.resetTracking
         ])
         
+        // for the settings like crowed sounds
+        soundManager.sync()
+        
     }
    
     override func viewDidLoad() {
@@ -156,11 +162,14 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         if !ARWorldTrackingConfiguration.isSupported && !debugMode {
             return
         }
+        // these only need to be loaded once on load
         
         // delegate for sending punch signals
         scene.punchDelegate = self
         // delegate for the button to send messsages to the VC
         scene.gazeDelegate = self
+        
+        scene.gameDelegate = self
         
         fullScreenARView.scene = scene
         leftEyeSceneAR.scene = scene
@@ -287,14 +296,10 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         
         scene.setStartPosition(position: SCNVector3Zero)
         scene.showStartButton()
-//        scene.showChar()
         let cam = scene.setUpDebugCam()
         debugSCNView.pointOfView = cam
         debugSCNView.showsStatistics = true
         debugSCNView.allowsCameraControl = true
-//        soundManager.startCrowd()
-//        scene.animationController?.didStart()
-//        scene.start()
     }
     
     func setUpVRScene() {
@@ -318,11 +323,6 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         fullScreenARView.delegate = self
         
         UIApplication.shared.isIdleTimerDisabled = true
-        
-//        leftEyeSceneAR.debugOptions = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
-        
-        // debug for left eye lopez
-//        leftEyeSceneAR.debugOptions = [ARSCNDebugOptions.showWorldOrigin, .showConstraints]
         
         rightEyeSceneAR.isPlaying = true
         leftEyeSceneAR.isPlaying = true
@@ -353,6 +353,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         
         scene.moveFloor()
         scene.showChar()
+        
         if (scene.ringEnabled) {
             scene.showRing()
         }
@@ -389,16 +390,35 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         }
     }
     
+    // MARK: - Game delegate
+    func endGame() {
+        // incase the crowed is running
+        soundManager.stopTheCrowd()
+        
+        // show the end screen
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: VCIdents.ARDone.rawValue) else {
+            return
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     // MARK: - Gaze delgate
     func endGaze() {
         // just end the timer for the german long looking
         gazeTimer?.invalidate()
+        
+        // and start the crowed if need be
+        soundManager.startCrowd()
+        
+        // reset gaze looker
+        isLookingAtButton = false
     }
     
     // MARK: - Punch in the head delegates
     func didGetPunched() {
         canBeHit = false
-        punchCount = punchCount + 1
+        
+        ARGameManager.sharedInstance.increasePunchedAmount()
         
         // vibrate the phone when hit!
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))

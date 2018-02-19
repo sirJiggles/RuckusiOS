@@ -9,4 +9,5 @@
 enum VCIdents: String {
     case ARBoxing
     case ARTour
+    case ARDone
 }

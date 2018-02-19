@@ -135,6 +135,10 @@
 		7F6C75EB200AB2C400B20D9D /* punch_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75DE200AB1F100B20D9D /* punch_5.wav */; };
 		7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A05D1FF538E600F6992F /* MatrixConversions.swift */; };
 		7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A05D1FF538E600F6992F /* MatrixConversions.swift */; };
+		7F73757F203B3CC400A84896 /* ARDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73757E203B3CC400A84896 /* ARDoneVC.swift */; };
+		7F737580203B3CC400A84896 /* ARDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73757E203B3CC400A84896 /* ARDoneVC.swift */; };
+		7F737582203B634800A84896 /* ARGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F737581203B634800A84896 /* ARGameManager.swift */; };
+		7F737583203B634800A84896 /* ARGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F737581203B634800A84896 /* ARGameManager.swift */; };
 		7F73C62C1EFC76D4003423E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F73C62E1EFC7785003423E9 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
 		7F73C62F1EFC7787003423E9 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
@@ -241,8 +245,6 @@
 		7FCA39E81E8AEA8600F53C61 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7FCD8A681FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
 		7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
-		7FCD8A6B1FF71F9400180075 /* ARIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */; };
-		7FCD8A6C1FF71F9400180075 /* ARIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
 		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
 		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
@@ -445,6 +447,8 @@
 		7F6C75E0200AB1F100B20D9D /* punch_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch_1.wav; sourceTree = "<group>"; };
 		7F6C75E1200AB1F100B20D9D /* punch_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch_4.wav; sourceTree = "<group>"; };
 		7F72A05D1FF538E600F6992F /* MatrixConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixConversions.swift; sourceTree = "<group>"; };
+		7F73757E203B3CC400A84896 /* ARDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDoneVC.swift; sourceTree = "<group>"; };
+		7F737581203B634800A84896 /* ARGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameManager.swift; sourceTree = "<group>"; };
 		7F76939C1EE376490036DED7 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		7F76939E1EE37C950036DED7 /* CreditsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
 		7F7693A01EE37FF20036DED7 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
@@ -502,7 +506,6 @@
 		7FCA39E61E8AEA8600F53C61 /* ruckus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.entitlements; sourceTree = "<group>"; };
 		7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7FCD8A671FF6E54C00180075 /* TimableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimableController.swift; sourceTree = "<group>"; };
-		7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARIntoVC.swift; sourceTree = "<group>"; };
 		7FD12BBE1E8EE956003209EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
 		7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHelper.swift; path = ruckus/UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationLoader.swift; path = ../AnimationLoader.swift; sourceTree = "<group>"; };
@@ -790,8 +793,8 @@
 				7F76939C1EE376490036DED7 /* CreditsViewController.swift */,
 				7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */,
 				7F06580D1F44E9B400802155 /* HelpViewController.swift */,
-				7FCD8A6A1FF71F9400180075 /* ARIntoVC.swift */,
 				7FAA9D302019AFB500F86EDC /* ARTourVC.swift */,
+				7F73757E203B3CC400A84896 /* ARDoneVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */,
 				7F84D19C202A6AB200FD1AC4 /* NotchUtils.swift */,
 				7F4675AD20339DFE0003B442 /* StartButtonManager.swift */,
+				7F737581203B634800A84896 /* ARGameManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1930,6 +1934,7 @@
 				7F5B421B1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
 				7FCD8A681FF6E54C00180075 /* TimableController.swift in Sources */,
 				7F84D19A202A4EAD00FD1AC4 /* VCIdents.swift in Sources */,
+				7F73757F203B3CC400A84896 /* ARDoneVC.swift in Sources */,
 				7F19F1961E6E0CF100D5CFC3 /* IntervalTimer.swift in Sources */,
 				7F4D9FE61EE45FC20049ADA8 /* WorkoutStoreHelper.swift in Sources */,
 				7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
@@ -1954,6 +1959,7 @@
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
 				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */,
+				7F737582203B634800A84896 /* ARGameManager.swift in Sources */,
 				7F7775651F40AF140037B49F /* SettingsAccessor.swift in Sources */,
 				7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */,
 				7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */,
@@ -1966,7 +1972,6 @@
 				7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */,
 				7F4675AB20338D0B0003B442 /* HealthBarManager.swift in Sources */,
 				7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */,
-				7FCD8A6B1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F84D19D202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,
 				7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */,
@@ -2027,6 +2032,7 @@
 				7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
 				7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */,
 				7F84D19B202A4EAD00FD1AC4 /* VCIdents.swift in Sources */,
+				7F737580203B3CC400A84896 /* ARDoneVC.swift in Sources */,
 				7FC61E1F1F5192D300645009 /* IntervalTimer.swift in Sources */,
 				7FC61E201F5192D300645009 /* WorkoutStoreHelper.swift in Sources */,
 				7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
@@ -2051,6 +2057,7 @@
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
 				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
 				7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */,
+				7F737583203B634800A84896 /* ARGameManager.swift in Sources */,
 				7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */,
 				7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */,
 				7FC61E321F5192D300645009 /* SelectCell.swift in Sources */,
@@ -2063,7 +2070,6 @@
 				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
 				7F4675AC20338D0B0003B442 /* HealthBarManager.swift in Sources */,
 				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
-				7FCD8A6C1FF71F9400180075 /* ARIntoVC.swift in Sources */,
 				7F84D19E202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,
 				7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */,
 				7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */,

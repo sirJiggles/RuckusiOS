@@ -37,6 +37,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     var punchDelegate: PunchInTheHeadDelegate?
     var gazeDelegate: GazeDelegate?
+    var gameDelegate: GameDelegate?
+    
     var theFloor: Float = 0
     
     var modelName: AnimationModelName = .maleOne
@@ -46,7 +48,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     var animationController: ARAnimationController?
     
-    let healthManager = HealthBarManager()
+    var healthManager: HealthBarManager?
     let startButtonManager = StartButtonManager()
     
     var spotLightNode = SCNNode()
@@ -68,12 +70,12 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         // start callin the hits
         animationController = ARAnimationController()
         
-        
+        healthManager = HealthBarManager(withScene: self)
     }
     
     // clear the scene when will leave
     func empty() {
-        healthManager.stopHealthTicking()
+        healthManager?.stopHealthTicking()
         animationController?.didStop(andIdle: false)
         rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
@@ -114,7 +116,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         animationController?.start()
         
         // fetch the settings for the health bar
-        healthManager.fetchSettings()
+        healthManager?.fetchSettings()
     }
     
     func updateHeadPos(withPosition position: matrix_float4x4) {
@@ -319,7 +321,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     // when we want to start the action
     func start() {
         // only show the health bar in survival mode
-        healthManager.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
+        healthManager?.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
         // start callin them hits
         animationController?.didStart()
     }
@@ -355,7 +357,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     func createFloor() {
         let box = SCNBox(width: 20, height: 20, length: 20, chamferRadius: 0)
         let mat = SCNMaterial()
-        mat.diffuse.contents = UIColor(white: 1, alpha: 0.2)
+        mat.diffuse.contents = UIColor(white: 1, alpha: 0.05)
         mat.isDoubleSided = true
         box.firstMaterial = mat
         

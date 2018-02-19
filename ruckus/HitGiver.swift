@@ -35,14 +35,8 @@ class HitGiver: GivesHites {
         [.jab, .rightHook, .idle],
         [.jab, .jab, .idle]
     ]
-
-    var hitsthGiveth: Int = 0
     
     static let sharedInstance = HitGiver()
-    
-    init(){
-        
-    }
     
     func getCombo() -> [Move] {
         
@@ -52,8 +46,9 @@ class HitGiver: GivesHites {
         var stringOfCombos: [Move] = []
         
         for hit in combo {
-            // keep track of the hits called
-            hitsthGiveth = hitsthGiveth + 1
+            if hit != .idle {
+                ARGameManager.sharedInstance.increaseHitAmount()
+            }
             // add the string name of the sound to the flie
             stringOfCombos.append(hit)
         }

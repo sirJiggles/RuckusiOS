@@ -17,8 +17,11 @@ class HealthBarManager: ControlsHeath {
     var survivalTime: Double = 0
     var healthTicker = Timer()
     var settingsAccessor: SettingsAccessor?
+    var scene: ARScene?
     
-    init() {
+    convenience init(withScene scene: ARScene) {
+        self.init()
+        self.scene = scene
         settingsAccessor = SettingsAccessor()
     }
     
@@ -43,6 +46,8 @@ class HealthBarManager: ControlsHeath {
         
         healthGeo.firstMaterial?.diffuse.contents = UIColor.green
         let healthNode = SCNNode(geometry: healthGeo)
+        
+        healthNode.castsShadow = false
         
         model.addChildNode(healthNode)
         
@@ -81,6 +86,10 @@ class HealthBarManager: ControlsHeath {
             if left <= 0 {
                 // stop the ticker and send out the event, I am done sir!
                 self.healthTicker.invalidate()
+                if let scene = self.scene {
+                    scene.gameDelegate?.endGame()
+                    scene.empty()
+                }
             }
         })
     }

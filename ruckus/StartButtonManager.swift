@@ -48,6 +48,8 @@ class StartButtonManager: ManagesStartButton {
         startTextNode.position = SCNVector3(-0.05, -1.06, -0.3)
         startTextNode.rotation = SCNVector4(0, 1, 0, Float(270).degreesToRadians)
         
+        startTextNode.castsShadow = false
+        
         self.progressBar = progressGeo
         self.scene = scene
         self.buttonNode = startButton
@@ -56,6 +58,8 @@ class StartButtonManager: ManagesStartButton {
         startButton.name = NodeNames.startButton.rawValue
         
         startButton.position = SCNVector3(0, (scene.usersHeight / 100) + 0.5, 0)
+        
+        startButton.castsShadow = false
         
         scene.modelWrapper.addChildNode(startButton)
     }

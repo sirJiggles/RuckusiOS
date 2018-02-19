@@ -29,7 +29,7 @@ class ARSoundManager: PlaysPunchSounds, ControllsTheCrowd, PlayesSwooshingNoises
     var crowdSoundsEnabled:Bool = false
     let settingsAccessor = SettingsAccessor()
     
-    init() {
+    func sync() {
         crowdSoundsEnabled = settingsAccessor.getCrowdEnabled()
     }
     
