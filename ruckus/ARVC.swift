@@ -351,6 +351,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
     func donePositioningAndStart() {
         started = true
         
+        scene.moveFloor()
         scene.showChar()
         if (scene.ringEnabled) {
             scene.showRing()
@@ -455,7 +456,7 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         }
         planeNodesCount += 1
         if node.childNodes.count > 0 && planeNodesCount % 2 == 0 {
-            node.childNodes[0].geometry?.firstMaterial?.diffuse.contents = UIColor.yellow
+            node.childNodes[0].geometry?.firstMaterial?.diffuse.contents = UIColor.green
         }
     }
     
@@ -531,7 +532,15 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
         if sceneOriginalContents == nil || leftEyeSceneAR.scene.background.contents as? UIColor != UIColor.clear {
             sceneOriginalContents = leftEyeSceneAR.scene.background.contents
         }
+        
         leftEyeSceneAR.scene.background.contents = UIColor.clear
+//        let material = SCNMaterial()
+//        material.diffuse.contents = UIColor.white
+//        material.blendMode = SCNBlendMode.multiply
+//        material.lightingModel = .lambert
+////        material.colorBufferWriteMask = SCNColorMask(rawValue: 0)
+//        leftEyeSceneAR.scene.background.contents = material
+        
          // This sets a transparent scene bg for all sceneViews - as they're all rendering the same scene.
         
         // Read Camera-Image

@@ -163,6 +163,8 @@
 		7F917ACF1F04487600120FC2 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
 		7F95A9941E8FEBCD0057D8AB /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9931E8FEBCD0057D8AB /* NotificationKeys.swift */; };
 		7F95A9991E9016600057D8AB /* AppToWatchNotificationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9981E9016600057D8AB /* AppToWatchNotificationBridge.swift */; };
+		7F9DA4172036A33900B5916E /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DA4162036A33900B5916E /* BodyParts.swift */; };
+		7F9DA4182036A33900B5916E /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DA4162036A33900B5916E /* BodyParts.swift */; };
 		7FA2627D1F64891C0089E455 /* WatchResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2627B1F64891C0089E455 /* WatchResolution.swift */; };
 		7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5CE571E80684000EF3248 /* StringExtension.swift */; };
 		7FAA9D2A2019AF6A00F86EDC /* TourPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D292019AF6A00F86EDC /* TourPage.swift */; };
@@ -464,6 +466,7 @@
 		7F95A9981E9016600057D8AB /* AppToWatchNotificationBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppToWatchNotificationBridge.swift; path = ruckus/AppToWatchNotificationBridge.swift; sourceTree = "<group>"; };
 		7F95A99C1E90202E0057D8AB /* WatchToAppNotificationBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchToAppNotificationBridge.swift; path = "ruckus.watch Extension/WatchToAppNotificationBridge.swift"; sourceTree = "<group>"; };
 		7F981B971EC8F2CA003D01F2 /* FinishedInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedInterfaceController.swift; sourceTree = "<group>"; };
+		7F9DA4162036A33900B5916E /* BodyParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParts.swift; sourceTree = "<group>"; };
 		7FA2627B1F64891C0089E455 /* WatchResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResolution.swift; sourceTree = "<group>"; };
 		7FA5CE571E80684000EF3248 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = ruckus/StringExtension.swift; sourceTree = "<group>"; };
 		7FAA9D292019AF6A00F86EDC /* TourPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPage.swift; sourceTree = "<group>"; };
@@ -872,6 +875,7 @@
 				7F84D196202A4C9800FD1AC4 /* StateFlags.swift */,
 				7F84D199202A4EAD00FD1AC4 /* VCIdents.swift */,
 				7F4675B02033B1AE0003B442 /* NodeNames.swift */,
+				7F9DA4162036A33900B5916E /* BodyParts.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -1945,6 +1949,7 @@
 				7F4675AE20339DFE0003B442 /* StartButtonManager.swift in Sources */,
 				7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */,
 				7F4675B12033B1AE0003B442 /* NodeNames.swift in Sources */,
+				7F9DA4172036A33900B5916E /* BodyParts.swift in Sources */,
 				7F645E3A200C0142006E5197 /* NumberCell.swift in Sources */,
 				7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */,
 				7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */,
@@ -2041,6 +2046,7 @@
 				7F4675AF20339DFE0003B442 /* StartButtonManager.swift in Sources */,
 				7FC61E2D1F5192D300645009 /* StringExtension.swift in Sources */,
 				7F4675B22033B1AE0003B442 /* NodeNames.swift in Sources */,
+				7F9DA4182036A33900B5916E /* BodyParts.swift in Sources */,
 				7F645E3B200C0142006E5197 /* NumberCell.swift in Sources */,
 				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
 				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,

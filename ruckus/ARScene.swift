@@ -108,6 +108,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         
         ligntMeUp()
         
+        createFloor()
+        
         animationController?.prepare(withModel: model)
         animationController?.start()
         
@@ -152,11 +154,10 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             light.type = .spot
             light.color = UIColor.white
             light.intensity = 1800
-            // maybe we come back to shadows later
-//            light.castsShadow = true
-////            light.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-//            light.shadowRadius = 200
-//            light.shadowMode = .deferred
+            light.castsShadow = true
+            light.shadowColor = UIColor.black
+//            light.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            light.shadowRadius = 10
         }
         
         spotLightNode.position = SCNVector3(0,10,4)
@@ -275,14 +276,14 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             
             // get the gloves model from file and put them on the hands
             
-            if let leftForeArm = model.childNode(withName: "mixamorig_LeftForeArm", recursively: true), let rightForeArm = model.childNode(withName: "mixamorig_RightForeArm", recursively: true) {
+            if let leftForeArm = model.childNode(withName: BodyParts.leftForeArm.rawValue, recursively: true), let rightForeArm = model.childNode(withName: BodyParts.rightForeArm.rawValue, recursively: true) {
                 // load the gloves dae
                 if let gloves = SCNScene(named: "art.scnassets/gloves/gloves.dae") {
                     
                     
                     if let leftBoxingGlove = gloves.rootNode.childNode(withName: "left", recursively: true), let rightBoxingGlove = gloves.rootNode.childNode(withName: "right", recursively: true) {
                         
-                        let scale = 0.83
+                        let scale = 0.87
                         leftBoxingGlove.scale = SCNVector3(scale, scale, scale)
                         rightBoxingGlove.scale = SCNVector3(scale, scale, scale)
                         
@@ -293,7 +294,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             }
             
             
-            if let lh = model.childNode(withName: "mixamorig_LeftHandMiddle1", recursively: true), let rh = model.childNode(withName: "mixamorig_RightHandMiddle1", recursively: true) {
+            if let lh = model.childNode(withName: BodyParts.leftPalm.rawValue, recursively: true), let rh = model.childNode(withName: BodyParts.rightPalm.rawValue, recursively: true) {
                 
                 lh.addChildNode(leftHandNode)
                 rh.addChildNode(rightHandNode)
@@ -317,7 +318,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     // when we want to start the action
     func start() {
-//        moveFloor()
         // only show the health bar in survival mode
         healthManager.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
         // start callin them hits
@@ -347,26 +347,19 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     }
     
     func moveFloor() {
-        createFloor()
-        floorNode.position = SCNVector3(0, startPos.y - 0.1, 0)
+        // the 10 is half the size of the floor box :(
+        floorNode.position = SCNVector3(0, (startPos.y - 0.01) + 10, 0)
+        rootNode.addChildNode(floorNode)
     }
     
     func createFloor() {
-        let floorGeo = SCNFloor()
-        floorGeo.reflectivity = 0
+        let box = SCNBox(width: 20, height: 20, length: 20, chamferRadius: 0)
+        let mat = SCNMaterial()
+        mat.diffuse.contents = UIColor(white: 1, alpha: 0.2)
+        mat.isDoubleSided = true
+        box.firstMaterial = mat
         
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.white
-        
-        material.blendMode = .multiply
-        material.lightingModel = .lambert
-        
-//        material.colorBufferWriteMask = SCNColorMask(rawValue: 0)
-        floorGeo.materials = [material]
-
-        floorNode = SCNNode(geometry: floorGeo)
-        
-        rootNode.addChildNode(floorNode)
+        floorNode = SCNNode(geometry: box)
     }
     
     func createPlayerNode() {
