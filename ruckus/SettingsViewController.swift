@@ -173,7 +173,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return 6
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -187,10 +187,8 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         case 3:
             return 2
         case 4:
-            return 1
-        case 5:
             return 4
-        case 6:
+        case 5:
             return 1
         default:
             return 1
@@ -282,10 +280,8 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
         case 3:
             return "Volume"
         case 4:
-            return "Your Height (in cm)"
-        case 5:
             return "AR Settings"
-        case 6:
+        case 5:
             return "Credits"
         default:
             return ""

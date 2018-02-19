@@ -17,7 +17,7 @@ protocol ManagesStartButton {
 class StartButtonManager: ManagesStartButton {
     
     var progressBar = SCNBox()
-    var buttonNode = SCNNode()
+    var startButton = SCNNode()
     let progressComplete = 0.7
     var scene: ARScene?
     var lookingTimer = Timer()
@@ -27,7 +27,7 @@ class StartButtonManager: ManagesStartButton {
         let startGeo = SCNBox(width: 0.1, height: 0.4, length: 0.8, chamferRadius: 0.03)
         startGeo.firstMaterial?.diffuse.contents = UIColor.lightGreen
         
-        let startButton = SCNNode(geometry: startGeo)
+        startButton = SCNNode(geometry: startGeo)
         
         let startText = SCNText(string: "Start!", extrusionDepth: 0.02)
         startText.font = UIFont.systemFont(ofSize: 0.21)
@@ -41,6 +41,8 @@ class StartButtonManager: ManagesStartButton {
         
         let progressNode = SCNNode(geometry: progressGeo)
         
+        progressNode.castsShadow = true
+        
         startButton.addChildNode(progressNode)
         
         progressNode.position = SCNVector3(-0.05,-0.13,0)
@@ -52,7 +54,6 @@ class StartButtonManager: ManagesStartButton {
         
         self.progressBar = progressGeo
         self.scene = scene
-        self.buttonNode = startButton
         
         // set the name for the hit testing
         startButton.name = NodeNames.startButton.rawValue
@@ -81,7 +82,7 @@ class StartButtonManager: ManagesStartButton {
             // if we get to 4 seconds
             if done >= totalTime {
                 self.lookingTimer.invalidate()
-                self.buttonNode.removeFromParentNode()
+                self.startButton.removeFromParentNode()
                 self.scene?.start()
                 self.scene?.gazeDelegate?.endGaze()
                 self.justStarted = true

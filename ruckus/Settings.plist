@@ -278,15 +278,6 @@
 			<string>femaleFour</string>
 		</array>
 	</dict>
-	<key>userHeight</key>
-	<dict>
-		<key>label</key>
-		<string>Height</string>
-		<key>descr</key>
-		<string>Your height in cm for example 169, this is how tall the fighter will be in AR mode</string>
-		<key>value</key>
-		<string>170</string>
-	</dict>
 	<key>showRing</key>
 	<dict>
 		<key>descr</key>

@@ -94,10 +94,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             }
         }
         
-        if let height = settingsAccessor?.getUsersHeight() {
-            usersHeight = height
-        }
-        
         if let enabled = self.settingsAccessor?.getRingEnabled() {
             ringEnabled = enabled
         }
@@ -137,6 +133,14 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             if (startButtonManager.justStarted) {
                 headYStanding = position.columns.3.y
                 startButtonManager.justStarted = false
+                
+                // update the size of the model, using the users height
+                // 0.010 is the size between the eyes and top of the head
+                usersHeight = ((headYStanding - theFloor) + 0.15) * 100
+                setModelSize()
+                
+                // only show the health bar in survival mode
+                healthManager?.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
             }
             
             // if the current y is lower than the average by a head height, they are ducking
@@ -158,7 +162,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             light.intensity = 1800
             light.castsShadow = true
             light.shadowColor = UIColor.black
-//            light.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             light.shadowRadius = 10
         }
         
@@ -246,25 +249,9 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             // 'face' the correct direction, for the look at
             model.rotation = SCNVector4(0, 1, 0, Float(180).degreesToRadians)
             
-            // work out the model size
-            let modelSize = getCharSize(using: modelName)
+            // this will take the 170 for the start height, then update using height of user after start
+            setModelSize()
             
-            // calculate the scale using players size
-            let factor: Float = 10000.0
-            let diff: Float = (modelSize - usersHeight)
-
-            if (diff > 0) {
-                // if taller
-                scaleOfModel = Float((modelSize - diff) / factor)
-            } else {
-                // if smaller
-                scaleOfModel = Float((modelSize + diff) / factor)
-            }
-            
-            // no idea why???
-            scaleOfModel = scaleOfModel - 0.0063
-
-            model.scale = SCNVector3(scaleOfModel, scaleOfModel, scaleOfModel)
             model.position = SCNVector3(0,0,0)
             
             // add collision detection to the hand nodes, these are ones we will add!
@@ -318,10 +305,30 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         }
     }
     
+    func setModelSize() {
+        // work out the model size
+        let modelSize = getCharSize(using: modelName)
+        
+        // calculate the scale using players size
+        let factor: Float = 10000.0
+        let diff: Float = (modelSize - usersHeight)
+        
+        if (diff > 0) {
+            // if taller
+            scaleOfModel = Float((modelSize - diff) / factor)
+        } else {
+            // if smaller
+            scaleOfModel = Float((modelSize + diff) / factor)
+        }
+        
+        // no idea why???
+        scaleOfModel = scaleOfModel - 0.0063
+        
+        model.scale = SCNVector3(scaleOfModel, scaleOfModel, scaleOfModel)
+    }
+    
     // when we want to start the action
     func start() {
-        // only show the health bar in survival mode
-        healthManager?.addHealthBar(withScale: scaleOfModel, andModel: modelWrapper)
         // start callin them hits
         animationController?.didStart()
     }

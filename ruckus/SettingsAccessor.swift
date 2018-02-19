@@ -94,19 +94,6 @@ struct SettingsAccessor: GetsSettings {
         }
     }
     
-    func getUsersHeight() -> Float {
-        do {
-            if let height = try settings.getValue(forKey: PossibleSetting.userHeight.rawValue) as? String {
-                if let casted = (Float)(height) {
-                    return casted
-                }
-            }
-            return 170.0
-        } catch let error {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
     func getSurvivalEnabled() -> Bool {
         do {
             if let enabled = try settings.getValue(forKey: PossibleSetting.survivalMode.rawValue) as? String {
