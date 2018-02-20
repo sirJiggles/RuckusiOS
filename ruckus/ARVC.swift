@@ -11,6 +11,7 @@ import QuartzCore
 import SceneKit
 import ARKit
 import AudioToolbox
+import ScalingCarousel
 
 protocol PunchInTheHeadDelegate {
     func didGetPunched() -> Void
@@ -27,7 +28,7 @@ protocol GameDelegate {
     func endGame() -> Void
 }
 
-class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDelegate, GameDelegate  {
+class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDelegate, GameDelegate, UICollectionViewDataSource, UICollectionViewDelegate  {
     
     // used to debug in the simulators etc, makes it faster to work on :D
     let debugMode = false
@@ -49,6 +50,8 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
     @IBOutlet weak var unsupportedView: UIView!
     
     var scene = ARScene.init(create: true)
+    
+    @IBOutlet var carousel: ScalingCarouselView!
     
     var canBeHit: Bool = true
 
@@ -432,6 +435,35 @@ class ARVC: UIViewController, ARSCNViewDelegate, PunchInTheHeadDelegate, GazeDel
             }
         }
     }
+    
+    // MARK: - UICollectionViewDatasource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ModelCell", for: indexPath) as! ModelCell
+        
+        
+        cell.boxerImage.image = UIImage(named: "boxer\(indexPath.item + 1)")
+        
+        
+        return cell
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        carousel.didScroll()
+        
+//        if nil is not selected
+//        else is optional (0,1) or (0,2) etc
+//        if let index = carousel.currentCenterCellIndex {
+//            if let
+//        }
+        print(carousel.currentCenterCellIndex)
+    }
+
+
     
     
     // MARK: - render delegate for VR mode scene

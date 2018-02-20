@@ -257,6 +257,8 @@
 		7FE390321F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7FE3CE9B203BF76700CCD6F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C41E64CA8100C9B9A0 /* Interface.storyboard */; };
 		7FE3CE9C203BF76800CCD6F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C41E64CA8100C9B9A0 /* Interface.storyboard */; };
+		7FE3CE9E203BFE1800CCD6F9 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */; };
+		7FE3CE9F203BFE1800CCD6F9 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */; };
 		7FE53BC11F5C1B3200B45643 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
 		7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
@@ -514,6 +516,7 @@
 		7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitGiver.swift; sourceTree = "<group>"; };
 		7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAnimationController.swift; sourceTree = "<group>"; };
 		7FE3902F1F5C9C2A0006EBE7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
 		7FE53BC21F5C1C4900B45643 /* ruckus.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.watch.entitlements; sourceTree = "<group>"; };
 		7FE53BC31F5C1C5100B45643 /* ruckus.lite.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.lite.watch.entitlements; sourceTree = SOURCE_ROOT; };
 		7FE53BC41F5C1C8C00B45643 /* ruckus.lite.watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ruckus.lite.watch Extension.entitlements"; sourceTree = SOURCE_ROOT; };
@@ -817,6 +820,7 @@
 				7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */,
 				7FCD8A671FF6E54C00180075 /* TimableController.swift */,
 				7F645E39200C0142006E5197 /* NumberCell.swift */,
+				7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1967,6 +1971,7 @@
 				7F7775651F40AF140037B49F /* SettingsAccessor.swift in Sources */,
 				7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */,
 				7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */,
+				7FE3CE9E203BFE1800CCD6F9 /* ModelCell.swift in Sources */,
 				7F5B0A651EE4B6D800BA7358 /* PurchasedState.swift in Sources */,
 				7FC575DA1EEDDC57006DAD3E /* SelectCellTime.swift in Sources */,
 				7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */,
@@ -2065,6 +2070,7 @@
 				7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */,
 				7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */,
 				7FC61E321F5192D300645009 /* SelectCell.swift in Sources */,
+				7FE3CE9F203BFE1800CCD6F9 /* ModelCell.swift in Sources */,
 				7FC61E331F5192D300645009 /* PurchasedState.swift in Sources */,
 				7FC61E341F5192D300645009 /* SelectCellTime.swift in Sources */,
 				7FC61E351F5192D300645009 /* PlistHelper.swift in Sources */,
