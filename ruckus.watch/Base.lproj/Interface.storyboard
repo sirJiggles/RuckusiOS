@@ -11,7 +11,7 @@
         <!--Workout Complete-->
         <scene sceneID="WCM-As-09G">
             <objects>
-                <controller identifier="FinishedController" title="Workout Complete" id="5fv-7X-KGV" customClass="FinishedInterfaceController" customModule="ruckus_lite_watch" customModuleProvider="target">
+                <controller identifier="FinishedController" title="Workout Complete" id="5fv-7X-KGV" customClass="FinishedInterfaceController" customModule="ruckus_lite_watch_Extension">
                     <items>
                         <group width="1" alignment="left" radius="6" id="Z3E-mU-yET" userLabel="TimeRow">
                             <items>
@@ -109,7 +109,7 @@
         <!--Unlocking Controller-->
         <scene sceneID="tdf-D2-SXa">
             <objects>
-                <controller identifier="UnlockingController" id="cdY-Fa-9sv" userLabel="Unlocking Controller" customClass="UnlockingInterfaceController" customModule="ruckus_lite_watch" customModuleProvider="target">
+                <controller identifier="UnlockingController" id="cdY-Fa-9sv" userLabel="Unlocking Controller" customClass="UnlockingInterfaceController" customModule="ruckus_lite_watch_Extension">
                     <items>
                         <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="2A8-0o-z5P">
                             <items>
@@ -133,7 +133,7 @@
         <!--TimerController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="TimerController" id="AgC-eL-Hgc" customClass="TimerController" customModule="ruckus_lite_watch" customModuleProvider="target">
+                <controller identifier="TimerController" id="AgC-eL-Hgc" customClass="TimerController" customModule="ruckus_lite_watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" verticalAlignment="center" layout="vertical" id="wPy-dw-McU" userLabel="MainUI">
                             <items>
@@ -293,7 +293,7 @@
         <!--SettingsController-->
         <scene sceneID="0hb-aI-fOH">
             <objects>
-                <controller identifier="SettingsController" title="Settings" id="ojR-2K-eLj" userLabel="SettingsController" customClass="SettingsInterfaceController" customModule="ruckus_lite_watch" customModuleProvider="target">
+                <controller identifier="SettingsController" title="Settings" id="ojR-2K-eLj" userLabel="SettingsController" customClass="SettingsInterfaceController" customModule="ruckus_lite_watch_Extension">
                     <items>
                         <group width="1" alignment="left" alpha="0.59999999999999998" layout="vertical" radius="0.0" id="G1R-DO-Iqk" userLabel="dividerGroup">
                             <items>
@@ -555,7 +555,7 @@
         <!--ControllsController-->
         <scene sceneID="Jzj-5D-V1c">
             <objects>
-                <controller identifier="ControllsController" id="0zo-eA-Jnk" customClass="ControlsInterfaceControllerController" customModule="ruckus_lite_watch" customModuleProvider="target">
+                <controller identifier="ControllsController" id="0zo-eA-Jnk" customClass="ControlsInterfaceControllerController" customModule="ruckus_lite_watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="PXY-tv-Kr5" userLabel="Wrapper">
                             <items>

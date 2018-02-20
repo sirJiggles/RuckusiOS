@@ -6,14 +6,18 @@ def ruckusPods
     use_frameworks!
     
     # Pods for ruckus
-    pod 'MKRingProgressView', '~> 1.1'
-    pod 'FoldingCell', '~> 2.0.3'
+#    pod 'MKRingProgressView', '~> 1.1'
+#    pod 'FoldingCell', '~> 2.0.3'
+#pod 'SwiftyStoreKit', '~> 0.10'
+    pod 'FoldingCell'
+    pod 'MKRingProgressView'
     #  For swift 4 and testing
     #  pod 'SwiftyStoreKit', :git => 'https://github.com/bizz84/SwiftyStoreKit', :branch => 'swift-4.0'
-    pod 'SwiftyStoreKit', '~> 0.10'
+    pod 'SwiftyStoreKit'
     pod 'Google-Mobile-Ads-SDK'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'ScalingCarousel'
 end
 
 target 'ruckus' do
