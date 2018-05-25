@@ -4,14 +4,14 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2018-01-16T20:32:00Z</created>
-  <modified>2018-01-16T20:32:00Z</modified>
+  <created>2018-05-25T21:23:50Z</created>
+  <modified>2018-05-25T21:23:50Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Z_UP</up_axis>
  </asset>
  <library_images>
   <image id="image1">
-   <init_from>everlast.jpg</init_from>
+   <init_from>ring.jpg</init_from>
   </image>
  </library_images>
  <library_materials>
@@ -40,7 +40,7 @@
        <float>50</float>
       </shininess>
       <transparent opaque="A_ONE">
-       <color>0.999952 1 0.999948 1</color>
+       <color>0.999979 1 0.999977 1</color>
       </transparent>
       <transparency>
        <float>1</float>
