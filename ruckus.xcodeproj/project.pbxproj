@@ -10,7 +10,6 @@
 		032C708F021324B4614236DE /* Pods_ruckusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FCC1C1AE790D9D8F15D4EB /* Pods_ruckusUITests.framework */; };
 		26F1FDC63D07996C827882A4 /* Pods_ruckusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542C055B021A21A38A4A854D /* Pods_ruckusTests.framework */; };
 		37940181EF0AA581F3DE50D9 /* Pods_ruckus_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E039DED56B7B1A40D8C19A30 /* Pods_ruckus_watch_Extension.framework */; };
-		4350C1946F9DE7F7BF45E1D0 /* Pods_ruckus_lite_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A920DD3F3065F33D1DA4055 /* Pods_ruckus_lite_watch.framework */; };
 		61287E1192476E3E86E4C00A /* Pods_ruckus_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9041E651361575E7FD10EE12 /* Pods_ruckus_watch.framework */; };
 		6C2E947C20B89E5E0087FE01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C2E947B20B89E5D0087FE01 /* Assets.xcassets */; };
 		7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F018A1F1F4BECF200BC044F /* VolumeCell.swift */; };
@@ -56,72 +55,29 @@
 		7F1BD8E01E64CA8100C9B9A0 /* ruckus.watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7F1BD8C21E64CA8100C9B9A0 /* ruckus.watch.app */; };
 		7F2FFF7D1EF6ADC200CBAFAC /* SettingsModalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2FFF7C1EF6ADC200CBAFAC /* SettingsModalTests.swift */; };
 		7F2FFF7F1EF6B5C000CBAFAC /* SettingsScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2FFF7E1EF6B5C000CBAFAC /* SettingsScreenUITests.swift */; };
-		7F3370661F5B726E0076E7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
-		7F3370671F5B726E0076E7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
-		7F3370681F5B72750076E7A6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C41E64CA8100C9B9A0 /* Interface.storyboard */; };
-		7F3370691F5B728A0076E7A6 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1BD8D51E64CA8100C9B9A0 /* TimerController.swift */; };
-		7F33706A1F5B728E0076E7A6 /* FinishedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F981B971EC8F2CA003D01F2 /* FinishedInterfaceController.swift */; };
-		7F33706B1F5B728E0076E7A6 /* ControlsInterfaceControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5AD361EAB7E8E00F3382A /* ControlsInterfaceControllerController.swift */; };
-		7F33706C1F5B728E0076E7A6 /* UnlockingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F6B231EAD46A300A2DD2B /* UnlockingInterfaceController.swift */; };
-		7F33706D1F5B728E0076E7A6 /* SettingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC378A31EB2869A003DA72C /* SettingsInterfaceController.swift */; };
-		7F33706E1F5B72970076E7A6 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC378A51EB288EF003DA72C /* PickerController.swift */; };
-		7F33706F1F5B72970076E7A6 /* ToggleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDF1381EB773C000B63539 /* ToggleController.swift */; };
-		7F3370701F5B72970076E7A6 /* SliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27D2311EB7CC94007829C4 /* SliderController.swift */; };
-		7F3370711F5B72970076E7A6 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB247FA1ED236E700267498 /* WorkoutSession.swift */; };
-		7F3370721F5B729C0076E7A6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1BD8D71E64CA8100C9B9A0 /* ExtensionDelegate.swift */; };
-		7F3370731F5B72A00076E7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8DB1E64CA8100C9B9A0 /* Assets.xcassets */; };
-		7F3370741F5B73180076E7A6 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9931E8FEBCD0057D8AB /* NotificationKeys.swift */; };
-		7F3370751F5B73230076E7A6 /* WatchToAppNotificationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A99C1E90202E0057D8AB /* WatchToAppNotificationBridge.swift */; };
-		7F3370761F5B73280076E7A6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5CE571E80684000EF3248 /* StringExtension.swift */; };
-		7F3370771F5B732A0076E7A6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8619161E60CEDF005236C2 /* UIColorExtension.swift */; };
-		7F3370781F5B73300076E7A6 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19F1951E6E0CF100D5CFC3 /* IntervalTimer.swift */; };
-		7F3370791F5B73340076E7A6 /* WorkoutStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C6351E8FDA4D004D90FB /* WorkoutStoreHelper.swift */; };
-		7F33707A1F5B73370076E7A6 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
-		7F33707B1F5B733C0076E7A6 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
-		7F33707C1F5B73400076E7A6 /* IntervalTimerSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A1CA1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift */; };
-		7F33707D1F5B73470076E7A6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
-		7F33707F1F5B75740076E7A6 /* ControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F320A991EABF095006089D1 /* ControllerActions.swift */; };
-		7F3370801F5B757A0076E7A6 /* ControllerNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F320A961EABEDD5006089D1 /* ControllerNames.swift */; };
-		7F3370841F5B79DD0076E7A6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F30C6381E8FDFEE004D90FB /* HealthKit.framework */; };
-		7F3370871F5B7B100076E7A6 /* ruckus.lite.watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */; };
-		7F33708A1F5B7B230076E7A6 /* ruckus.lite.watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F340E981EF719B000AE3DEB /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F340E961EF719AB00AE3DEB /* XCUIElement.swift */; };
 		7F3DC9161E5D5D7400AA6190 /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */; };
 		7F4675AB20338D0B0003B442 /* HealthBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarManager.swift */; };
-		7F4675AC20338D0B0003B442 /* HealthBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AA20338D0B0003B442 /* HealthBarManager.swift */; };
 		7F4675AE20339DFE0003B442 /* StartButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AD20339DFE0003B442 /* StartButtonManager.swift */; };
-		7F4675AF20339DFE0003B442 /* StartButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675AD20339DFE0003B442 /* StartButtonManager.swift */; };
 		7F4675B12033B1AE0003B442 /* NodeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675B02033B1AE0003B442 /* NodeNames.swift */; };
-		7F4675B22033B1AE0003B442 /* NodeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4675B02033B1AE0003B442 /* NodeNames.swift */; };
 		7F4D9FDB1EE4434D0049ADA8 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */; };
 		7F4D9FE01EE44D920049ADA8 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDC1EE44D920049ADA8 /* pause.wav */; };
 		7F4D9FE21EE44D920049ADA8 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDE1EE44D920049ADA8 /* finished.wav */; };
 		7F4D9FE61EE45FC20049ADA8 /* WorkoutStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C6351E8FDA4D004D90FB /* WorkoutStoreHelper.swift */; };
 		7F53A1CB1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A1CA1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift */; };
 		7F5651B1200C0CF700C10D9A /* ARSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */; };
-		7F5651B2200C0CF700C10D9A /* ARSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */; };
 		7F5651B4200C12DB00C10D9A /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F5651B3200C12DA00C10D9A /* swoosh.wav */; };
-		7F5651B5200C12DB00C10D9A /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F5651B3200C12DA00C10D9A /* swoosh.wav */; };
 		7F5AE9C21E6F551F005B4290 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */; };
-		7F5B0A631EE4A22E00BA7358 /* GoProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */; };
-		7F5B0A651EE4B6D800BA7358 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
 		7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */; };
-		7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */; };
 		7F5B420F1FF4503300AAED46 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */; };
-		7F5B42101FF4503300AAED46 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */; };
 		7F5B42121FF4529100AAED46 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42111FF4529100AAED46 /* MoveComponent.swift */; };
-		7F5B42131FF4529100AAED46 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42111FF4529100AAED46 /* MoveComponent.swift */; };
 		7F5B42151FF4539100AAED46 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42141FF4539100AAED46 /* NodeComponent.swift */; };
-		7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42141FF4539100AAED46 /* NodeComponent.swift */; };
 		7F5B42181FF4556100AAED46 /* FighterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42171FF4556100AAED46 /* FighterEntity.swift */; };
-		7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B42171FF4556100AAED46 /* FighterEntity.swift */; };
 		7F5B421B1FF462FD00AAED46 /* TargetingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */; };
-		7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B421A1FF462FD00AAED46 /* TargetingAgent.swift */; };
 		7F6127011E50B9BF00ED1544 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F6127061E50BB4800ED1544 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
 		7F645E3A200C0142006E5197 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F645E39200C0142006E5197 /* NumberCell.swift */; };
-		7F645E3B200C0142006E5197 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F645E39200C0142006E5197 /* NumberCell.swift */; };
 		7F692BFC1F40681A00D768FB /* Combos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F692BFB1F40681A00D768FB /* Combos.swift */; };
 		7F692C011F4083DA00D768FB /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7F692C001F4083DA00D768FB /* Sounds */; };
 		7F6C75E2200AB2C300B20D9D /* punch_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75E0200AB1F100B20D9D /* punch_1.wav */; };
@@ -129,17 +85,9 @@
 		7F6C75E4200AB2C300B20D9D /* punch_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75DF200AB1F100B20D9D /* punch_3.wav */; };
 		7F6C75E5200AB2C300B20D9D /* punch_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75E1200AB1F100B20D9D /* punch_4.wav */; };
 		7F6C75E6200AB2C300B20D9D /* punch_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75DE200AB1F100B20D9D /* punch_5.wav */; };
-		7F6C75E7200AB2C400B20D9D /* punch_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75E0200AB1F100B20D9D /* punch_1.wav */; };
-		7F6C75E8200AB2C400B20D9D /* punch_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75DD200AB1F000B20D9D /* punch_2.wav */; };
-		7F6C75E9200AB2C400B20D9D /* punch_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75DF200AB1F100B20D9D /* punch_3.wav */; };
-		7F6C75EA200AB2C400B20D9D /* punch_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75E1200AB1F100B20D9D /* punch_4.wav */; };
-		7F6C75EB200AB2C400B20D9D /* punch_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C75DE200AB1F100B20D9D /* punch_5.wav */; };
 		7F72A05E1FF538E600F6992F /* MatrixConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A05D1FF538E600F6992F /* MatrixConversions.swift */; };
-		7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A05D1FF538E600F6992F /* MatrixConversions.swift */; };
 		7F73757F203B3CC400A84896 /* ARDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73757E203B3CC400A84896 /* ARDoneVC.swift */; };
-		7F737580203B3CC400A84896 /* ARDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73757E203B3CC400A84896 /* ARDoneVC.swift */; };
 		7F737582203B634800A84896 /* ARGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F737581203B634800A84896 /* ARGameManager.swift */; };
-		7F737583203B634800A84896 /* ARGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F737581203B634800A84896 /* ARGameManager.swift */; };
 		7F73C62C1EFC76D4003423E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
 		7F73C62E1EFC7785003423E9 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
 		7F73C62F1EFC7787003423E9 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
@@ -152,37 +100,23 @@
 		7F7775771F40BFFA0037B49F /* HitCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7775721F40BF270037B49F /* HitCaller.swift */; };
 		7F83E53B1E53AB530019A31F /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83E53A1E53AB530019A31F /* LoadingScreenViewController.swift */; };
 		7F84D197202A4C9800FD1AC4 /* StateFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84D196202A4C9800FD1AC4 /* StateFlags.swift */; };
-		7F84D198202A4C9800FD1AC4 /* StateFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84D196202A4C9800FD1AC4 /* StateFlags.swift */; };
 		7F84D19A202A4EAD00FD1AC4 /* VCIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84D199202A4EAD00FD1AC4 /* VCIdents.swift */; };
-		7F84D19B202A4EAD00FD1AC4 /* VCIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84D199202A4EAD00FD1AC4 /* VCIdents.swift */; };
 		7F84D19D202A6AB200FD1AC4 /* NotchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84D19C202A6AB200FD1AC4 /* NotchUtils.swift */; };
-		7F84D19E202A6AB200FD1AC4 /* NotchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84D19C202A6AB200FD1AC4 /* NotchUtils.swift */; };
 		7F8593A31FF130BA0085DB3E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8593A21FF130B90085DB3E /* art.scnassets */; };
-		7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8593A21FF130B90085DB3E /* art.scnassets */; };
 		7F8593A61FF130C60085DB3E /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A51FF130C60085DB3E /* ARVC.swift */; };
-		7F8593A71FF130C60085DB3E /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A51FF130C60085DB3E /* ARVC.swift */; };
 		7F8593AA1FF130F10085DB3E /* ARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A91FF130F10085DB3E /* ARScene.swift */; };
-		7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8593A91FF130F10085DB3E /* ARScene.swift */; };
 		7F8619171E60CEDF005236C2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8619161E60CEDF005236C2 /* UIColorExtension.swift */; };
 		7F89BD4F1F3E152300A74374 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F89BD4E1F3E152300A74374 /* Impact.ttf */; };
-		7F917ACF1F04487600120FC2 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
 		7F95A9941E8FEBCD0057D8AB /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9931E8FEBCD0057D8AB /* NotificationKeys.swift */; };
 		7F95A9991E9016600057D8AB /* AppToWatchNotificationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9981E9016600057D8AB /* AppToWatchNotificationBridge.swift */; };
 		7F9DA4172036A33900B5916E /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DA4162036A33900B5916E /* BodyParts.swift */; };
-		7F9DA4182036A33900B5916E /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DA4162036A33900B5916E /* BodyParts.swift */; };
-		7FA2627D1F64891C0089E455 /* WatchResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2627B1F64891C0089E455 /* WatchResolution.swift */; };
 		7FA5CE581E80684000EF3248 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5CE571E80684000EF3248 /* StringExtension.swift */; };
 		7FAA9D2A2019AF6A00F86EDC /* TourPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D292019AF6A00F86EDC /* TourPage.swift */; };
-		7FAA9D2B2019AF6A00F86EDC /* TourPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D292019AF6A00F86EDC /* TourPage.swift */; };
 		7FAA9D2D2019AF8E00F86EDC /* TourPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */; };
-		7FAA9D2E2019AF8E00F86EDC /* TourPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */; };
 		7FAA9D2F2019AF8E00F86EDC /* TourPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAA9D2C2019AF8E00F86EDC /* TourPage.xib */; };
 		7FAA9D312019AFB500F86EDC /* ARTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D302019AFB500F86EDC /* ARTourVC.swift */; };
-		7FAA9D322019AFB500F86EDC /* ARTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D302019AFB500F86EDC /* ARTourVC.swift */; };
 		7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC98CA1E745F83003848DE /* DoubleExtension.swift */; };
 		7FB247FD1ED2420700267498 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB247FC1ED2420700267498 /* WorkoutSession.swift */; };
-		7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2515E1F7FEDFA003EB418 /* AppStoreIdents.swift */; };
-		7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2515E1F7FEDFA003EB418 /* AppStoreIdents.swift */; };
 		7FB358041E4294EA00EF9BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */; };
 		7FB3580B1E4294EA00EF9BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB358091E4294EA00EF9BD2 /* Main.storyboard */; };
 		7FB358101E4294EA00EF9BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3580E1E4294EA00EF9BD2 /* LaunchScreen.storyboard */; };
@@ -191,81 +125,21 @@
 		7FBC67A61E5B88D500FBEB3B /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC67A51E5B88D500FBEB3B /* DifficultyCell.swift */; };
 		7FC575D81EED5D17006DAD3E /* Reachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC575D71EED5D17006DAD3E /* Reachable.swift */; };
 		7FC575DA1EEDDC57006DAD3E /* SelectCellTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC575D91EEDDC57006DAD3E /* SelectCellTime.swift */; };
-		7FC61E181F5192D300645009 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */; };
-		7FC61E191F5192D300645009 /* CreditsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76939E1EE37C950036DED7 /* CreditsCell.swift */; };
-		7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F018A1F1F4BECF200BC044F /* VolumeCell.swift */; };
-		7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
-		7FC61E1C1F5192D300645009 /* WorkoutFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */; };
-		7FC61E1D1F5192D300645009 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8619161E60CEDF005236C2 /* UIColorExtension.swift */; };
-		7FC61E1E1F5192D300645009 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127001E50B9BF00ED1544 /* Settings.swift */; };
-		7FC61E1F1F5192D300645009 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19F1951E6E0CF100D5CFC3 /* IntervalTimer.swift */; };
-		7FC61E201F5192D300645009 /* WorkoutStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C6351E8FDA4D004D90FB /* WorkoutStoreHelper.swift */; };
-		7FC61E211F5192D300645009 /* AppToWatchNotificationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9981E9016600057D8AB /* AppToWatchNotificationBridge.swift */; };
-		7FC61E221F5192D300645009 /* HitCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7775721F40BF270037B49F /* HitCaller.swift */; };
-		7FC61E231F5192D300645009 /* Combos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F692BFB1F40681A00D768FB /* Combos.swift */; };
-		7FC61E241F5192D300645009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */; };
-		7FC61E251F5192D300645009 /* GoProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */; };
-		7FC61E261F5192D300645009 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83E53A1E53AB530019A31F /* LoadingScreenViewController.swift */; };
-		7FC61E271F5192D300645009 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06580F1F44ECA500802155 /* HelpCell.swift */; };
-		7FC61E281F5192D300645009 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06580D1F44E9B400802155 /* HelpViewController.swift */; };
-		7FC61E291F5192D300645009 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76939C1EE376490036DED7 /* CreditsViewController.swift */; };
-		7FC61E2A1F5192D300645009 /* IntervalTimerSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A1CA1E90F1F80004C358 /* IntervalTimerSettingsHelper.swift */; };
-		7FC61E2B1F5192D300645009 /* Reachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC575D71EED5D17006DAD3E /* Reachable.swift */; };
-		7FC61E2C1F5192D300645009 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB247FC1ED2420700267498 /* WorkoutSession.swift */; };
-		7FC61E2D1F5192D300645009 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5CE571E80684000EF3248 /* StringExtension.swift */; };
-		7FC61E2E1F5192D300645009 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */; };
-		7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC98CA1E745F83003848DE /* DoubleExtension.swift */; };
-		7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7775641F40AF140037B49F /* SettingsAccessor.swift */; };
-		7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC7C2A11E50FEED007579A0 /* ToggleCell.swift */; };
-		7FC61E321F5192D300645009 /* SelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04E2591E563D0F005D94C5 /* SelectCell.swift */; };
-		7FC61E331F5192D300645009 /* PurchasedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */; };
-		7FC61E341F5192D300645009 /* SelectCellTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC575D91EEDDC57006DAD3E /* SelectCellTime.swift */; };
-		7FC61E351F5192D300645009 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6127071E50BF1500ED1544 /* PlistHelper.swift */; };
-		7FC61E361F5192D300645009 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F95A9931E8FEBCD0057D8AB /* NotificationKeys.swift */; };
-		7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC67A51E5B88D500FBEB3B /* DifficultyCell.swift */; };
-		7FC61E381F5192D300645009 /* AdIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9AAC51EDB1B6C002E2085 /* AdIdents.swift */; };
-		7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E3241E56617E0093622A /* SettingsViewController.swift */; };
-		7FC61E3A1F5192D300645009 /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */; };
-		7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7775701F40BF160037B49F /* SoundPlayer.swift */; };
-		7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7693A01EE37FF20036DED7 /* ButtonCell.swift */; };
-		7FC61E3E1F5192D300645009 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		7FC61E411F5192D300645009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3580E1E4294EA00EF9BD2 /* LaunchScreen.storyboard */; };
-		7FC61E421F5192D300645009 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5F5C81F4A1077006BF8F3 /* bell.mp3 */; };
-		7FC61E431F5192D300645009 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
-		7FC61E441F5192D300645009 /* round-end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5F5C71F4A0EC5006BF8F3 /* round-end.wav */; };
-		7FC61E451F5192D300645009 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDE1EE44D920049ADA8 /* finished.wav */; };
-		7FC61E461F5192D300645009 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7F692C001F4083DA00D768FB /* Sounds */; };
-		7FC61E471F5192D300645009 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F89BD4E1F3E152300A74374 /* Impact.ttf */; };
-		7FC61E491F5192D300645009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB358091E4294EA00EF9BD2 /* Main.storyboard */; };
-		7FC61E4A1F5192D300645009 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D9FDC1EE44D920049ADA8 /* pause.wav */; };
 		7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC7C2A11E50FEED007579A0 /* ToggleCell.swift */; };
 		7FC9AAC61EDB1B6C002E2085 /* AdIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9AAC51EDB1B6C002E2085 /* AdIdents.swift */; };
 		7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */; };
 		7FCA39E81E8AEA8600F53C61 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA39E71E8AEA8600F53C61 /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7FCD8A681FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
-		7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD8A671FF6E54C00180075 /* TimableController.swift */; };
 		7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDE35F1E54E9DD000E36F3 /* UserDefaultsHelper.swift */; };
 		7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
-		7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */; };
 		7FDE6B981FF2ED5D00502F4A /* HitGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */; };
-		7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */; };
 		7FDE6B9B1FF2F26C00502F4A /* ARAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */; };
-		7FDE6B9C1FF2F26C00502F4A /* ARAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE6B9A1FF2F26C00502F4A /* ARAnimationController.swift */; };
-		7FE390301F5C9C2A0006EBE7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3902F1F5C9C2A0006EBE7 /* StoreKit.framework */; };
-		7FE390311F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
 		7FE390321F5C9F4F0006EBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C71E64CA8100C9B9A0 /* Assets.xcassets */; };
-		7FE3CE9B203BF76700CCD6F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C41E64CA8100C9B9A0 /* Interface.storyboard */; };
 		7FE3CE9C203BF76800CCD6F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BD8C41E64CA8100C9B9A0 /* Interface.storyboard */; };
 		7FE3CE9E203BFE1800CCD6F9 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */; };
-		7FE3CE9F203BFE1800CCD6F9 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */; };
-		7FE53BC11F5C1B3200B45643 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F6127051E50BB4800ED1544 /* Settings.plist */; };
 		7FFBE6151FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
-		7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */; };
-		7FFC06801F5C6D9C00F40EED /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC067F1F5C6B8B00F40EED /* crowd.wav */; };
 		7FFC06811F5C6D9C00F40EED /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC067F1F5C6B8B00F40EED /* crowd.wav */; };
-		C6AA4A801597CDCC308D3468 /* Pods_ruckus_lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B8DE8DA792AABEF2236F6C /* Pods_ruckus_lite.framework */; };
 		D878AC4CBB31D959F07FA576 /* Pods_ruckus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C79FF37A56D8B1AE865D9A8 /* Pods_ruckus.framework */; };
-		FC6A544A229861DA15B7D61E /* Pods_ruckus_lite_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5860BA06376080A7A99990 /* Pods_ruckus_lite_watch_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,34 +156,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7F1BD8C11E64CA8100C9B9A0;
 			remoteInfo = ruckus.watch;
-		};
-		7F33705C1F5B724E0076E7A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7F33703F1F5B724E0076E7A6;
-			remoteInfo = "Ruckus Watch";
-		};
-		7F3370881F5B7B180076E7A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7F33704B1F5B724E0076E7A6;
-			remoteInfo = "ruckus.lite.watch Extension";
-		};
-		7F5FFAFA202BA5530020608C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7FC61E131F5192D300645009;
-			remoteInfo = ruckus.lite;
-		};
-		7F5FFAFC202BA55A0020608C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FB357F81E4294EA00EF9BD2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7FC61E131F5192D300645009;
-			remoteInfo = ruckus.lite;
 		};
 		7FB358171E4294EA00EF9BD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -350,42 +196,17 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F33708B1F5B7B230076E7A6 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				7F33708A1F5B7B230076E7A6 /* ruckus.lite.watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7FC61E4B1F5192D300645009 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				7F3370871F5B7B100076E7A6 /* ruckus.lite.watch.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		003BC91500BC3340F2D85331 /* Pods-ruckusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		004DF41C55A529DB23F67872 /* Pods-ruckus.watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch/Pods-ruckus.watch.debug.xcconfig"; sourceTree = "<group>"; };
 		0A920DD3F3065F33D1DA4055 /* Pods_ruckus_lite_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_lite_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E6C05C2133D8C4BA7A84245 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		2D9E204BFA822313D6EC1434 /* Pods-ruckus.watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		341EC0AFE7179ED763894CCD /* Pods-ruckusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests.debug.xcconfig"; sourceTree = "<group>"; };
-		45C2ACB459B74D3F6097A8B7 /* Pods-ruckus.lite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.release.xcconfig"; sourceTree = "<group>"; };
 		4B4859988AFA2D926919C550 /* Pods-ruckus.watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		542C055B021A21A38A4A854D /* Pods_ruckusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C79FF37A56D8B1AE865D9A8 /* Pods_ruckus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67FE73F8ECBE73E345638F35 /* Pods-ruckus.lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.debug.xcconfig"; sourceTree = "<group>"; };
 		6954B1FC44CD2BAF9EB720B9 /* Pods-ruckusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6C2E947B20B89E5D0087FE01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78E14FC63C911EA2AD8AFC4D /* Pods-ruckusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -415,9 +236,7 @@
 		7F30C6381E8FDFEE004D90FB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7F320A961EABEDD5006089D1 /* ControllerNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerNames.swift; sourceTree = "<group>"; };
 		7F320A991EABF095006089D1 /* ControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerActions.swift; sourceTree = "<group>"; };
-		7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruckus.lite.watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3370471F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ruckus.lite.watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F33705B1F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F340E961EF719AB00AE3DEB /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
@@ -431,8 +250,6 @@
 		7F5651B0200C0CF700C10D9A /* ARSoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSoundManager.swift; sourceTree = "<group>"; };
 		7F5651B3200C12DA00C10D9A /* swoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swoosh.wav; sourceTree = "<group>"; };
 		7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProViewController.swift; sourceTree = "<group>"; };
-		7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedState.swift; sourceTree = "<group>"; };
 		7F5B42021FF437D000AAED46 /* FloatingPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExtension.swift; sourceTree = "<group>"; };
 		7F5B420E1FF4503300AAED46 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		7F5B42111FF4529100AAED46 /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
@@ -483,7 +300,6 @@
 		7FAC98CA1E745F83003848DE /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		7FB247FA1ED236E700267498 /* WorkoutSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
 		7FB247FC1ED2420700267498 /* WorkoutSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
-		7FB2515E1F7FEDFA003EB418 /* AppStoreIdents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreIdents.swift; sourceTree = "<group>"; };
 		7FB358001E4294EA00EF9BD2 /* ruckus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruckus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB3580A1E4294EA00EF9BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -501,7 +317,6 @@
 		7FC575D71EED5D17006DAD3E /* Reachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachable.swift; sourceTree = "<group>"; };
 		7FC575D91EEDDC57006DAD3E /* SelectCellTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCellTime.swift; sourceTree = "<group>"; };
 		7FC5AD361EAB7E8E00F3382A /* ControlsInterfaceControllerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsInterfaceControllerController.swift; sourceTree = "<group>"; };
-		7FC61E531F5192D300645009 /* ruckus.lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruckus.lite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC61E541F5192D300645009 /* ruckus.lite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ruckus.lite-Info.plist"; path = "/Users/gareth/Development/ruckus/ruckus.lite-Info.plist"; sourceTree = "<absolute>"; };
 		7FC7C2A11E50FEED007579A0 /* ToggleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleCell.swift; sourceTree = "<group>"; };
 		7FC9AAC51EDB1B6C002E2085 /* AdIdents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIdents.swift; sourceTree = "<group>"; };
@@ -530,9 +345,6 @@
 		CA5860BA06376080A7A99990 /* Pods_ruckus_lite_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_lite_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E039DED56B7B1A40D8C19A30 /* Pods_ruckus_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B8DE8DA792AABEF2236F6C /* Pods_ruckus_lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus_lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED946260C5D79302D41FE68E /* Pods-ruckus.lite.watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension.release.xcconfig"; sourceTree = "<group>"; };
-		EEE62A58231C19CD48860746 /* Pods-ruckus.lite.watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch.debug.xcconfig"; sourceTree = "<group>"; };
-		FEFD67DA61837E16646E83B3 /* Pods-ruckus.lite.watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,15 +362,6 @@
 			files = (
 				7F124A9D1F65B41F000CC4B8 /* HealthKit.framework in Frameworks */,
 				37940181EF0AA581F3DE50D9 /* Pods_ruckus_watch_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F3370491F5B724E0076E7A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F3370841F5B79DD0076E7A6 /* HealthKit.framework in Frameworks */,
-				FC6A544A229861DA15B7D61E /* Pods_ruckus_lite_watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,24 +390,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FC61E3D1F5192D300645009 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FE390301F5C9C2A0006EBE7 /* StoreKit.framework in Frameworks */,
-				7FC61E3E1F5192D300645009 /* HealthKit.framework in Frameworks */,
-				C6AA4A801597CDCC308D3468 /* Pods_ruckus_lite.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F62640E7092A7E5FC72BECA3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4350C1946F9DE7F7BF45E1D0 /* Pods_ruckus_lite_watch.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -621,12 +406,6 @@
 				A6277DF2BF4A2F9EDE8DF979 /* Pods-ruckus.watch.release.xcconfig */,
 				4B4859988AFA2D926919C550 /* Pods-ruckus.watch Extension.debug.xcconfig */,
 				2D9E204BFA822313D6EC1434 /* Pods-ruckus.watch Extension.release.xcconfig */,
-				67FE73F8ECBE73E345638F35 /* Pods-ruckus.lite.debug.xcconfig */,
-				45C2ACB459B74D3F6097A8B7 /* Pods-ruckus.lite.release.xcconfig */,
-				EEE62A58231C19CD48860746 /* Pods-ruckus.lite.watch.debug.xcconfig */,
-				FEFD67DA61837E16646E83B3 /* Pods-ruckus.lite.watch.release.xcconfig */,
-				0E6C05C2133D8C4BA7A84245 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */,
-				ED946260C5D79302D41FE68E /* Pods-ruckus.lite.watch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -795,7 +574,6 @@
 				7F5AE9C11E6F551F005B4290 /* TimerViewController.swift */,
 				7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */,
 				7F76939C1EE376490036DED7 /* CreditsViewController.swift */,
-				7F5B0A621EE4A22E00BA7358 /* GoProViewController.swift */,
 				7F06580D1F44E9B400802155 /* HelpViewController.swift */,
 				7FAA9D302019AFB500F86EDC /* ARTourVC.swift */,
 				7F73757E203B3CC400A84896 /* ARDoneVC.swift */,
@@ -832,7 +610,6 @@
 				7FDE6B941FF2E84D00502F4A /* AnimationLoader.swift */,
 				7F7775721F40BF270037B49F /* HitCaller.swift */,
 				7F7775701F40BF160037B49F /* SoundPlayer.swift */,
-				7F5B0A641EE4B6D800BA7358 /* PurchasedState.swift */,
 				7F7775641F40AF140037B49F /* SettingsAccessor.swift */,
 				7FDE6B971FF2ED5D00502F4A /* HitGiver.swift */,
 				7F72A05D1FF538E600F6992F /* MatrixConversions.swift */,
@@ -1002,7 +779,6 @@
 				7F95A9931E8FEBCD0057D8AB /* NotificationKeys.swift */,
 				7FC9AAC51EDB1B6C002E2085 /* AdIdents.swift */,
 				7F4D9FDA1EE4434D0049ADA8 /* Flags.swift */,
-				7FB2515E1F7FEDFA003EB418 /* AppStoreIdents.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -1032,9 +808,6 @@
 				7FB358161E4294EA00EF9BD2 /* ruckusTests.xctest */,
 				7FB358211E4294EA00EF9BD2 /* ruckusUITests.xctest */,
 				7F1BD8C21E64CA8100C9B9A0 /* ruckus.watch.app */,
-				7FC61E531F5192D300645009 /* ruckus.lite.app */,
-				7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */,
-				7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */,
 				7F124AA81F65B41F000CC4B8 /* ruckus.watch Extension.appex */,
 			);
 			name = Products;
@@ -1126,43 +899,6 @@
 			productReference = 7F1BD8C21E64CA8100C9B9A0 /* ruckus.watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		7F33703F1F5B724E0076E7A6 /* ruckus.lite.watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F3370631F5B724E0076E7A6 /* Build configuration list for PBXNativeTarget "ruckus.lite.watch" */;
-			buildPhases = (
-				E1F598BB83075DB01F76AB85 /* [CP] Check Pods Manifest.lock */,
-				7F33703E1F5B724E0076E7A6 /* Resources */,
-				F62640E7092A7E5FC72BECA3 /* Frameworks */,
-				7F33708B1F5B7B230076E7A6 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7F3370891F5B7B180076E7A6 /* PBXTargetDependency */,
-			);
-			name = ruckus.lite.watch;
-			productName = "Ruckus Watch";
-			productReference = 7F3370401F5B724E0076E7A6 /* ruckus.lite.watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		7F33704B1F5B724E0076E7A6 /* ruckus.lite.watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F33705F1F5B724E0076E7A6 /* Build configuration list for PBXNativeTarget "ruckus.lite.watch Extension" */;
-			buildPhases = (
-				3B2273A0E022CF49ED3DFBDB /* [CP] Check Pods Manifest.lock */,
-				7F3370481F5B724E0076E7A6 /* Sources */,
-				7F3370491F5B724E0076E7A6 /* Frameworks */,
-				7F33704A1F5B724E0076E7A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ruckus.lite.watch Extension";
-			productName = "Ruckus Watch Extension";
-			productReference = 7F33704C1F5B724E0076E7A6 /* ruckus.lite.watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		7FB357FF1E4294EA00EF9BD2 /* ruckus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FB3582A1E4294EA00EF9BD2 /* Build configuration list for PBXNativeTarget "ruckus" */;
@@ -1198,7 +934,6 @@
 			);
 			dependencies = (
 				7FB358181E4294EA00EF9BD2 /* PBXTargetDependency */,
-				7F5FFAFB202BA5530020608C /* PBXTargetDependency */,
 			);
 			name = ruckusTests;
 			productName = ruckusTests;
@@ -1218,34 +953,11 @@
 			);
 			dependencies = (
 				7FB358231E4294EA00EF9BD2 /* PBXTargetDependency */,
-				7F5FFAFD202BA55A0020608C /* PBXTargetDependency */,
 			);
 			name = ruckusUITests;
 			productName = ruckusUITests;
 			productReference = 7FB358211E4294EA00EF9BD2 /* ruckusUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		7FC61E131F5192D300645009 /* ruckus.lite */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7FC61E501F5192D300645009 /* Build configuration list for PBXNativeTarget "ruckus.lite" */;
-			buildPhases = (
-				899AAE2A0542D797BA5B39D7 /* [CP] Check Pods Manifest.lock */,
-				7FC61E171F5192D300645009 /* Sources */,
-				7FC61E3D1F5192D300645009 /* Frameworks */,
-				7FC61E401F5192D300645009 /* Resources */,
-				7FC61E4B1F5192D300645009 /* Embed Watch Content */,
-				7FC61E4D1F5192D300645009 /* ShellScript */,
-				95F36941A3A4FC3B1320CB92 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7F33705D1F5B724E0076E7A6 /* PBXTargetDependency */,
-			);
-			name = ruckus.lite;
-			productName = ruckus;
-			productReference = 7FC61E531F5192D300645009 /* ruckus.lite.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -1280,32 +992,6 @@
 							};
 						};
 					};
-					7F33703F1F5B724E0076E7A6 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = WMQYY9222D;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-						};
-					};
-					7F33704B1F5B724E0076E7A6 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = WMQYY9222D;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-							com.apple.BackgroundModes.watchos.extension = {
-								enabled = 1;
-							};
-							com.apple.HealthKit.watchos = {
-								enabled = 1;
-							};
-						};
-					};
 					7FB357FF1E4294EA00EF9BD2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WMQYY9222D;
@@ -1336,18 +1022,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7FB357FF1E4294EA00EF9BD2;
 					};
-					7FC61E131F5192D300645009 = {
-						DevelopmentTeam = WMQYY9222D;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 0;
-							};
-							com.apple.InAppPurchase = {
-								enabled = 1;
-							};
-						};
-					};
 				};
 			};
 			buildConfigurationList = 7FB357FB1E4294EA00EF9BD2 /* Build configuration list for PBXProject "ruckus" */;
@@ -1364,13 +1038,10 @@
 			projectRoot = "";
 			targets = (
 				7FB357FF1E4294EA00EF9BD2 /* ruckus */,
-				7FC61E131F5192D300645009 /* ruckus.lite */,
 				7FB358151E4294EA00EF9BD2 /* ruckusTests */,
 				7FB358201E4294EA00EF9BD2 /* ruckusUITests */,
 				7F1BD8C11E64CA8100C9B9A0 /* ruckus.watch */,
-				7F33703F1F5B724E0076E7A6 /* ruckus.lite.watch */,
 				7F124A821F65B41F000CC4B8 /* ruckus.watch Extension */,
-				7F33704B1F5B724E0076E7A6 /* ruckus.lite.watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -1393,26 +1064,6 @@
 			files = (
 				7F1BD8C81E64CA8100C9B9A0 /* Assets.xcassets in Resources */,
 				7F1BD8C61E64CA8100C9B9A0 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F33703E1F5B724E0076E7A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F3370681F5B72750076E7A6 /* Interface.storyboard in Resources */,
-				7F3370671F5B726E0076E7A6 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F33704A1F5B724E0076E7A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FE3CE9B203BF76700CCD6F9 /* Interface.storyboard in Resources */,
-				7FE53BC11F5C1B3200B45643 /* Settings.plist in Resources */,
-				7F3370661F5B726E0076E7A6 /* Assets.xcassets in Resources */,
-				7F3370731F5B72A00076E7A6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1458,32 +1109,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FC61E401F5192D300645009 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FC61E411F5192D300645009 /* LaunchScreen.storyboard in Resources */,
-				7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */,
-				7FC61E421F5192D300645009 /* bell.mp3 in Resources */,
-				7F5651B5200C12DB00C10D9A /* swoosh.wav in Resources */,
-				7FC61E431F5192D300645009 /* Settings.plist in Resources */,
-				7FC61E441F5192D300645009 /* round-end.wav in Resources */,
-				7F6C75E8200AB2C400B20D9D /* punch_2.wav in Resources */,
-				7FAA9D2E2019AF8E00F86EDC /* TourPage.xib in Resources */,
-				7F6C75E9200AB2C400B20D9D /* punch_3.wav in Resources */,
-				7FC61E451F5192D300645009 /* finished.wav in Resources */,
-				7F6C75E7200AB2C400B20D9D /* punch_1.wav in Resources */,
-				7F6C75EA200AB2C400B20D9D /* punch_4.wav in Resources */,
-				7FC61E461F5192D300645009 /* Sounds in Resources */,
-				7FC61E471F5192D300645009 /* Impact.ttf in Resources */,
-				7FFC06801F5C6D9C00F40EED /* crowd.wav in Resources */,
-				7FC61E491F5192D300645009 /* Main.storyboard in Resources */,
-				7F6C75EB200AB2C400B20D9D /* punch_5.wav in Resources */,
-				7FE390311F5C9F4F0006EBE7 /* Assets.xcassets in Resources */,
-				7FC61E4A1F5192D300645009 /* pause.wav in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1497,36 +1122,16 @@
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus/Pods-ruckus-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B2273A0E022CF49ED3DFBDB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ruckus.lite.watch Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F124A831F65B41F000CC4B8 /* [CP] Check Pods Manifest.lock */ = {
@@ -1559,61 +1164,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6b13eac7f88f7bb6278d825b94466bc5f2a61b51 b37e350fe7327521a54a25aae65a116d8a5c4a4ffd930979f9ab274f467cfd57";
-		};
-		7FC61E4D1F5192D300645009 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6b13eac7f88f7bb6278d825b94466bc5f2a61b51 b37e350fe7327521a54a25aae65a116d8a5c4a4ffd930979f9ab274f467cfd57";
-		};
-		899AAE2A0542D797BA5B39D7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ruckus.lite-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95F36941A3A4FC3B1320CB92 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
-				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
-				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		A76CA435899CE82E376FC73C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1663,24 +1213,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ruckus-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1F598BB83075DB01F76AB85 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ruckus.lite.watch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1738,36 +1270,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F3370481F5B724E0076E7A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FA2627D1F64891C0089E455 /* WatchResolution.swift in Sources */,
-				7F3370801F5B757A0076E7A6 /* ControllerNames.swift in Sources */,
-				7F33707B1F5B733C0076E7A6 /* UserDefaultsHelper.swift in Sources */,
-				7F33706E1F5B72970076E7A6 /* PickerController.swift in Sources */,
-				7F3370771F5B732A0076E7A6 /* UIColorExtension.swift in Sources */,
-				7F33707C1F5B73400076E7A6 /* IntervalTimerSettingsHelper.swift in Sources */,
-				7F33707A1F5B73370076E7A6 /* PlistHelper.swift in Sources */,
-				7F3370711F5B72970076E7A6 /* WorkoutSession.swift in Sources */,
-				7F3370721F5B729C0076E7A6 /* ExtensionDelegate.swift in Sources */,
-				7F3370701F5B72970076E7A6 /* SliderController.swift in Sources */,
-				7F3370691F5B728A0076E7A6 /* TimerController.swift in Sources */,
-				7F33706C1F5B728E0076E7A6 /* UnlockingInterfaceController.swift in Sources */,
-				7F33706F1F5B72970076E7A6 /* ToggleController.swift in Sources */,
-				7F3370751F5B73230076E7A6 /* WatchToAppNotificationBridge.swift in Sources */,
-				7F33707F1F5B75740076E7A6 /* ControllerActions.swift in Sources */,
-				7F33706A1F5B728E0076E7A6 /* FinishedInterfaceController.swift in Sources */,
-				7F33706D1F5B728E0076E7A6 /* SettingsInterfaceController.swift in Sources */,
-				7F33707D1F5B73470076E7A6 /* Settings.swift in Sources */,
-				7F3370791F5B73340076E7A6 /* WorkoutStoreHelper.swift in Sources */,
-				7F3370781F5B73300076E7A6 /* IntervalTimer.swift in Sources */,
-				7F33706B1F5B728E0076E7A6 /* ControlsInterfaceControllerController.swift in Sources */,
-				7F3370761F5B73280076E7A6 /* StringExtension.swift in Sources */,
-				7F3370741F5B73180076E7A6 /* NotificationKeys.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7FB357FC1E4294EA00EF9BD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1780,7 +1282,6 @@
 				7FDDE3601E54E9DD000E36F3 /* UserDefaultsHelper.swift in Sources */,
 				7FDE6B951FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
 				7FAA9D2A2019AF6A00F86EDC /* TourPage.swift in Sources */,
-				7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
 				7F5B42121FF4529100AAED46 /* MoveComponent.swift in Sources */,
 				7F5B42031FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
 				7FCA39E51E8AE8D500F53C61 /* WorkoutFinishedViewController.swift in Sources */,
@@ -1798,7 +1299,6 @@
 				7F7775771F40BFFA0037B49F /* HitCaller.swift in Sources */,
 				7F692BFC1F40681A00D768FB /* Combos.swift in Sources */,
 				7FB358041E4294EA00EF9BD2 /* AppDelegate.swift in Sources */,
-				7F5B0A631EE4A22E00BA7358 /* GoProViewController.swift in Sources */,
 				7FAA9D312019AFB500F86EDC /* ARTourVC.swift in Sources */,
 				7F83E53B1E53AB530019A31F /* LoadingScreenViewController.swift in Sources */,
 				7F0658101F44ECA500802155 /* HelpCell.swift in Sources */,
@@ -1820,7 +1320,6 @@
 				7FC7C2A21E50FEED007579A0 /* ToggleCell.swift in Sources */,
 				7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */,
 				7FE3CE9E203BFE1800CCD6F9 /* ModelCell.swift in Sources */,
-				7F5B0A651EE4B6D800BA7358 /* PurchasedState.swift in Sources */,
 				7FC575DA1EEDDC57006DAD3E /* SelectCellTime.swift in Sources */,
 				7F6127081E50BF1500ED1544 /* PlistHelper.swift in Sources */,
 				7F95A9941E8FEBCD0057D8AB /* NotificationKeys.swift in Sources */,
@@ -1850,7 +1349,6 @@
 				7F0F218D1EF7007E006AF4E7 /* SportModelTests.swift in Sources */,
 				7F0F21911EF70370006AF4E7 /* StringCollectionTests.swift in Sources */,
 				7F13D2B31EFFA9A70095A92D /* Flags.swift in Sources */,
-				7F917ACF1F04487600120FC2 /* PurchasedState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1867,79 +1365,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FC61E171F5192D300645009 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FC61E181F5192D300645009 /* TimerViewController.swift in Sources */,
-				7FDE6B9C1FF2F26C00502F4A /* ARAnimationController.swift in Sources */,
-				7F8593A71FF130C60085DB3E /* ARVC.swift in Sources */,
-				7FC61E191F5192D300645009 /* CreditsCell.swift in Sources */,
-				7FC61E1A1F5192D300645009 /* VolumeCell.swift in Sources */,
-				7FC61E1B1F5192D300645009 /* UserDefaultsHelper.swift in Sources */,
-				7FDE6B961FF2E84D00502F4A /* AnimationLoader.swift in Sources */,
-				7FAA9D2B2019AF6A00F86EDC /* TourPage.swift in Sources */,
-				7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */,
-				7F5B42131FF4529100AAED46 /* MoveComponent.swift in Sources */,
-				7F5B42041FF437D000AAED46 /* FloatingPointExtension.swift in Sources */,
-				7FC61E1C1F5192D300645009 /* WorkoutFinishedViewController.swift in Sources */,
-				7FC61E1D1F5192D300645009 /* UIColorExtension.swift in Sources */,
-				7F5B42101FF4503300AAED46 /* PlayerEntity.swift in Sources */,
-				7FC61E1E1F5192D300645009 /* Settings.swift in Sources */,
-				7F5B421C1FF462FD00AAED46 /* TargetingAgent.swift in Sources */,
-				7FCD8A691FF6E54C00180075 /* TimableController.swift in Sources */,
-				7F84D19B202A4EAD00FD1AC4 /* VCIdents.swift in Sources */,
-				7F737580203B3CC400A84896 /* ARDoneVC.swift in Sources */,
-				7FC61E1F1F5192D300645009 /* IntervalTimer.swift in Sources */,
-				7FC61E201F5192D300645009 /* WorkoutStoreHelper.swift in Sources */,
-				7FFBE6161FF2A470008045C0 /* UITabBarControllerExtension.swift in Sources */,
-				7FC61E211F5192D300645009 /* AppToWatchNotificationBridge.swift in Sources */,
-				7FC61E221F5192D300645009 /* HitCaller.swift in Sources */,
-				7FC61E231F5192D300645009 /* Combos.swift in Sources */,
-				7FC61E241F5192D300645009 /* AppDelegate.swift in Sources */,
-				7FC61E251F5192D300645009 /* GoProViewController.swift in Sources */,
-				7FAA9D322019AFB500F86EDC /* ARTourVC.swift in Sources */,
-				7FC61E261F5192D300645009 /* LoadingScreenViewController.swift in Sources */,
-				7FC61E271F5192D300645009 /* HelpCell.swift in Sources */,
-				7FC61E281F5192D300645009 /* HelpViewController.swift in Sources */,
-				7FC61E291F5192D300645009 /* CreditsViewController.swift in Sources */,
-				7FC61E2A1F5192D300645009 /* IntervalTimerSettingsHelper.swift in Sources */,
-				7FC61E2B1F5192D300645009 /* Reachable.swift in Sources */,
-				7FC61E2C1F5192D300645009 /* WorkoutSession.swift in Sources */,
-				7F4675AF20339DFE0003B442 /* StartButtonManager.swift in Sources */,
-				7FC61E2D1F5192D300645009 /* StringExtension.swift in Sources */,
-				7F4675B22033B1AE0003B442 /* NodeNames.swift in Sources */,
-				7F9DA4182036A33900B5916E /* BodyParts.swift in Sources */,
-				7F645E3B200C0142006E5197 /* NumberCell.swift in Sources */,
-				7FC61E2E1F5192D300645009 /* Flags.swift in Sources */,
-				7F8593AB1FF130F10085DB3E /* ARScene.swift in Sources */,
-				7FC61E2F1F5192D300645009 /* DoubleExtension.swift in Sources */,
-				7F737583203B634800A84896 /* ARGameManager.swift in Sources */,
-				7FC61E301F5192D300645009 /* SettingsAccessor.swift in Sources */,
-				7FC61E311F5192D300645009 /* ToggleCell.swift in Sources */,
-				7FC61E321F5192D300645009 /* SelectCell.swift in Sources */,
-				7FE3CE9F203BFE1800CCD6F9 /* ModelCell.swift in Sources */,
-				7FC61E331F5192D300645009 /* PurchasedState.swift in Sources */,
-				7FC61E341F5192D300645009 /* SelectCellTime.swift in Sources */,
-				7FC61E351F5192D300645009 /* PlistHelper.swift in Sources */,
-				7FC61E361F5192D300645009 /* NotificationKeys.swift in Sources */,
-				7FC61E371F5192D300645009 /* DifficultyCell.swift in Sources */,
-				7F84D198202A4C9800FD1AC4 /* StateFlags.swift in Sources */,
-				7FC61E381F5192D300645009 /* AdIdents.swift in Sources */,
-				7F4675AC20338D0B0003B442 /* HealthBarManager.swift in Sources */,
-				7FC61E391F5192D300645009 /* SettingsViewController.swift in Sources */,
-				7F84D19E202A6AB200FD1AC4 /* NotchUtils.swift in Sources */,
-				7F5B42161FF4539100AAED46 /* NodeComponent.swift in Sources */,
-				7FDE6B991FF2ED5D00502F4A /* HitGiver.swift in Sources */,
-				7FC61E3A1F5192D300645009 /* ScrollCell.swift in Sources */,
-				7FC61E3B1F5192D300645009 /* SoundPlayer.swift in Sources */,
-				7F5B42191FF4556100AAED46 /* FighterEntity.swift in Sources */,
-				7FC61E3C1F5192D300645009 /* ButtonCell.swift in Sources */,
-				7F5651B2200C0CF700C10D9A /* ARSoundManager.swift in Sources */,
-				7F72A05F1FF538E600F6992F /* MatrixConversions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1952,26 +1377,6 @@
 			isa = PBXTargetDependency;
 			target = 7F1BD8C11E64CA8100C9B9A0 /* ruckus.watch */;
 			targetProxy = 7F1BD8DE1E64CA8100C9B9A0 /* PBXContainerItemProxy */;
-		};
-		7F33705D1F5B724E0076E7A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F33703F1F5B724E0076E7A6 /* ruckus.lite.watch */;
-			targetProxy = 7F33705C1F5B724E0076E7A6 /* PBXContainerItemProxy */;
-		};
-		7F3370891F5B7B180076E7A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F33704B1F5B724E0076E7A6 /* ruckus.lite.watch Extension */;
-			targetProxy = 7F3370881F5B7B180076E7A6 /* PBXContainerItemProxy */;
-		};
-		7F5FFAFB202BA5530020608C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7FC61E131F5192D300645009 /* ruckus.lite */;
-			targetProxy = 7F5FFAFA202BA5530020608C /* PBXContainerItemProxy */;
-		};
-		7F5FFAFD202BA55A0020608C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7FC61E131F5192D300645009 /* ruckus.lite */;
-			targetProxy = 7F5FFAFC202BA55A0020608C /* PBXContainerItemProxy */;
 		};
 		7FB358181E4294EA00EF9BD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2093,90 +1498,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Release;
-		};
-		7F3370601F5B724E0076E7A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E6C05C2133D8C4BA7A84245 /* Pods-ruckus.lite.watch Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "ruckus.lite.watch Extension.entitlements";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WMQYY9222D;
-				INFOPLIST_FILE = "Ruckus Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Debug;
-		};
-		7F3370611F5B724E0076E7A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED946260C5D79302D41FE68E /* Pods-ruckus.lite.watch Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "ruckus.lite.watch Extension.entitlements";
-				DEVELOPMENT_TEAM = WMQYY9222D;
-				INFOPLIST_FILE = "Ruckus Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Release;
-		};
-		7F3370641F5B724E0076E7A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEE62A58231C19CD48860746 /* Pods-ruckus.lite.watch.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WMQYY9222D;
-				IBSC_MODULE = Ruckus_Watch_Extension;
-				INFOPLIST_FILE = "Ruckus Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
-		7F3370651F5B724E0076E7A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEFD67DA61837E16646E83B3 /* Pods-ruckus.lite.watch.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = WMQYY9222D;
-				IBSC_MODULE = Ruckus_Watch_Extension;
-				INFOPLIST_FILE = "Ruckus Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -2411,50 +1732,6 @@
 			};
 			name = Release;
 		};
-		7FC61E511F5192D300645009 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67FE73F8ECBE73E345638F35 /* Pods-ruckus.lite.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ruckus/ruckus.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WMQYY9222D;
-				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		7FC61E521F5192D300645009 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45C2ACB459B74D3F6097A8B7 /* Pods-ruckus.lite.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ruckus/ruckus.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WMQYY9222D;
-				INFOPLIST_FILE = "$(SRCROOT)/ruckus.lite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = garethfuller.ruckus.lite;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2472,24 +1749,6 @@
 			buildConfigurations = (
 				7F1BD8E11E64CA8100C9B9A0 /* Debug */,
 				7F1BD8E21E64CA8100C9B9A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F33705F1F5B724E0076E7A6 /* Build configuration list for PBXNativeTarget "ruckus.lite.watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F3370601F5B724E0076E7A6 /* Debug */,
-				7F3370611F5B724E0076E7A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F3370631F5B724E0076E7A6 /* Build configuration list for PBXNativeTarget "ruckus.lite.watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F3370641F5B724E0076E7A6 /* Debug */,
-				7F3370651F5B724E0076E7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2526,15 +1785,6 @@
 			buildConfigurations = (
 				7FB358311E4294EA00EF9BD2 /* Debug */,
 				7FB358321E4294EA00EF9BD2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7FC61E501F5192D300645009 /* Build configuration list for PBXNativeTarget "ruckus.lite" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7FC61E511F5192D300645009 /* Debug */,
-				7FC61E521F5192D300645009 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

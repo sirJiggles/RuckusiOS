@@ -69,10 +69,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     var notificationBridge: WatchNotificationBridge
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var rateButton: UIButton!
-    @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet weak var rateButtonPaid: UIButton!
-    @IBOutlet weak var rateAndUpgrade: UIView!
     
     required init?(coder aDecoder: NSCoder) {
         settings = Settings(usingPlist: "Settings")
@@ -105,13 +102,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     
     override func viewWillAppear(_ animated: Bool) {
         
-        if PurchasedState.sharedInstance.isPaid || currentReachabilityStatus == .notReachable {
-            rateButtonPaid.isHidden = false
-            rateAndUpgrade.isHidden = true
-        } else {
-            rateButtonPaid.isHidden = true
-            rateAndUpgrade.isHidden = false
-        }
+        rateButtonPaid.isHidden = false
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -121,8 +112,6 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     }
     
     override func viewDidLoad() {
-        // set up the rate us button
-        rateButton.layer.cornerRadius = 2
         
         NotificationCenter.default.removeObserver(
             self,
@@ -163,7 +152,7 @@ class SettingsViewController: UIViewController, ChangeScrollDelegate, ChangeDiff
     
     // MARK: - Actions
     @IBAction func clickRate(_ sender: Any) {
-        if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreIdents.pro.rawValue)&action=write-review") {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id1067631847&action=write-review") {
             UIApplication.shared.open(url, completionHandler: nil)
         }
     }

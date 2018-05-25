@@ -8,13 +8,8 @@
 import UIKit
 import MKRingProgressView
 import HealthKit
-import GoogleMobileAds
 
-class TimerViewController: TimableController, TimableVCDelegate, GADInterstitialDelegate {
-    
-    
-    var interstitial: GADInterstitial!
-    
+class TimerViewController: TimableController, TimableVCDelegate {
     var ringCurrent: Double = 0.0
     var roundIcons: [UIView] = []
     
@@ -44,11 +39,6 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set up the full page add, if not paid and have internet connection
-        if PurchasedState.sharedInstance.isPaid == false && currentReachabilityStatus != .notReachable{
-            createAndLoadInterstitial()
-        }
         
         // set the size of the rings and spacing for larger screens
         ring.progress = 0
@@ -191,27 +181,6 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
         // do nothing
     }
     
-    
-    // MARK: - Delegate for the full page ad
-    func createAndLoadInterstitial() {
-        if (Flags.live.rawValue == 1) {
-            interstitial = GADInterstitial(adUnitID: AdIdents.fullPageOnTimer.rawValue)
-        } else {
-            interstitial = GADInterstitial(adUnitID: AdIdents.debugFullPage.rawValue)
-        }
-        
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        // make a new ad
-        createAndLoadInterstitial()
-        
-        // let user porceed with play
-        proceedWithPlayClick()
-    }
-
     
     // MARK: - View functions like clicking buttons
     func repositionAmbiguous() {
@@ -413,19 +382,7 @@ class TimerViewController: TimableController, TimableVCDelegate, GADInterstitial
     }
     
     @IBAction func clickPlay(_ sender: Any) {
-       if PurchasedState.sharedInstance.isPaid || currentReachabilityStatus == .notReachable {
-            proceedWithPlayClick()
-        } else {
-            if interstitial == nil {
-                proceedWithPlayClick()
-            } else {
-                if (interstitial.isReady) {
-                    interstitial.present(fromRootViewController: self)
-                } else {
-                    proceedWithPlayClick()
-                }
-            }
-        }
+        proceedWithPlayClick()
     }
     
 }

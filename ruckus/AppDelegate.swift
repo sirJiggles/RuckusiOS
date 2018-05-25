@@ -8,7 +8,6 @@
 
 import UIKit
 import HealthKit
-import SwiftyStoreKit
 import Fabric
 import Crashlytics
 
@@ -51,39 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WatchNotificationBridgeDe
         
         // set as never go to sleep
         UIApplication.shared.isIdleTimerDisabled = true
-        
-        // check for old purchases on user defaults
-        let paid = UserDefaults.standard.bool(forKey: "proVersion")
-        PurchasedState.sharedInstance.isPaid = paid
-        
-        // if the bundle id is pro, set as paid. this and do not do the store kit
-        // checking
-        if Bundle.main.bundleIdentifier == "garethfuller.ruckus" {
-            PurchasedState.sharedInstance.isPaid = true
-            UserDefaults.standard.set(true, forKey: "proVersion")
-            return true
-        }
-        
-        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            
-            for purchase in purchases {
-                
-                if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
-                    
-                    if purchase.needsFinishTransaction {
-                        // Deliver content from server, then:
-                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-                    }
-                    
-                    // set as paid
-                    PurchasedState.sharedInstance.isPaid = true
-                    
-                    // set also in user defaults as paid
-                    UserDefaults.standard.set(true, forKey: "proVersion")
-                }
-            }
-        }
-        
         
         return true
     }

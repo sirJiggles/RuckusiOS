@@ -3,39 +3,31 @@ PODS:
     - Fabric (~> 1.7.3)
   - Fabric (1.7.3)
   - FoldingCell (3.0.3)
-  - Google-Mobile-Ads-SDK (7.28.0)
   - MKRingProgressView (1.1.4)
   - ScalingCarousel (2.1)
-  - SwiftyStoreKit (0.13.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - FoldingCell
-  - Google-Mobile-Ads-SDK
   - MKRingProgressView
   - ScalingCarousel
-  - SwiftyStoreKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Fabric
     - FoldingCell
-    - Google-Mobile-Ads-SDK
     - MKRingProgressView
     - ScalingCarousel
-    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Crashlytics: a989ef242b66605577a425733797f810bd2725eb
   Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
   FoldingCell: 76ce5d1ddba34c6d25548b473b7b51585e992da0
-  Google-Mobile-Ads-SDK: 7f9bc0011df363ae5616449de3682a14c4701612
   MKRingProgressView: fbcfe6e5485404fc4e4bc3becbed4a1c8c7df715
   ScalingCarousel: ceb3cfcf76c3420b4b5d82ad5e76cd25078e0505
-  SwiftyStoreKit: df6a58aba530128e1c5d5ae4fe7d191e5ac50d5d
 
-PODFILE CHECKSUM: 8e057643dd19e45f2beb6e62b100df92e16ba7ca
+PODFILE CHECKSUM: 61743cb3a842119d2dd35f9d3f07ff556d74be2f
 
 COCOAPODS: 1.5.2
