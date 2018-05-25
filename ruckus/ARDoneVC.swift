@@ -1,6 +1,6 @@
 //
 //  ARDoneVC.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 19.02.18.
 //  Copyright © 2018 Gareth. All rights reserved.

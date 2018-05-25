@@ -15,6 +15,7 @@ protocol ControlsHeath {
 
 class HealthBarManager: ControlsHeath {
     var survivalTime: Double = 0
+    var survivalMode: Bool = true
     var healthTicker = Timer()
     var settingsAccessor: SettingsAccessor?
     var scene: ARScene?
@@ -26,7 +27,8 @@ class HealthBarManager: ControlsHeath {
     }
     
     func fetchSettings() {
-        if let _ = settingsAccessor?.getSurvivalEnabled() {
+        if let survivalEnabled = settingsAccessor?.getSurvivalEnabled() {
+            self.survivalMode = survivalEnabled
             if let survivalTime = settingsAccessor?.getSurvivalTime() {
                 self.survivalTime = survivalTime
             }
@@ -35,11 +37,11 @@ class HealthBarManager: ControlsHeath {
     
     func addHealthBar(withScale scale: Float, andModel model: SCNNode) {
         
-        if survivalTime <= 0 {
+        if survivalTime <= 0 || !survivalMode {
             return
         }
         // add the node for the health of the char
-        let healthsize: (CGFloat, CGFloat) = (1, 0.1)
+        let healthsize: (CGFloat, CGFloat) = (0.8, 0.1)
         let width: CGFloat = 0.02
         
         let healthGeo = SCNBox(width: width, height: healthsize.1, length: healthsize.0, chamferRadius: 0.005)
@@ -87,8 +89,7 @@ class HealthBarManager: ControlsHeath {
                 // stop the ticker and send out the event, I am done sir!
                 self.healthTicker.invalidate()
                 if let scene = self.scene {
-                    scene.gameDelegate?.endGame()
-                    scene.empty()
+                    scene.endGame()
                 }
             }
         })

@@ -1,6 +1,6 @@
 //
 //  ARScene.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 25.12.17.
 //  Copyright © 2017 Gareth. All rights reserved.
@@ -39,8 +39,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var gazeDelegate: GazeDelegate?
     var gameDelegate: GameDelegate?
     
-    var theFloor: Float = 0
-    
     var modelName: AnimationModelName = .maleOne
     var scaleOfModel: Float = 0
     
@@ -58,8 +56,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     var usersHeight: Float = 170.0
     var headYStanding: Float = 0
     
-    var startPos = SCNVector3()
-    
     convenience init(create: Bool) {
         self.init()
         
@@ -75,8 +71,6 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
     
     // clear the scene when will leave
     func empty() {
-        healthManager?.stopHealthTicking()
-        animationController?.didStop(andIdle: false)
         rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
         }
@@ -87,6 +81,23 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         }
     }
     
+    func stopTimers() {
+        healthManager?.stopHealthTicking()
+        animationController?.didStop(andIdle: false)
+    }
+    
+    
+    // when the game is over
+    func endGame() {
+        stopTimers()
+        animationController?.end()
+        // after the drama, end the show
+        Timer.scheduledTimer(withTimeInterval: 3.3, repeats: false) { _ in
+            self.gameDelegate?.endGame()
+            self.empty()
+        }
+    }
+    
     func settup() {
         if let animationName = settingsAccessor?.getModelName() {
             if let enumValue = AnimationModelName.init(rawValue: animationName) {
@@ -94,8 +105,8 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             }
         }
         
-        if let enabled = self.settingsAccessor?.getRingEnabled() {
-            ringEnabled = enabled
+        if let enabledRing = self.settingsAccessor?.getRingEnabled() {
+            ringEnabled = enabledRing
         }
         
         createPlayerNode()
@@ -120,13 +131,15 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         // out the way
         if let animationController = self.animationController {
             if !animationController.hitting {
-                // where should we look
-                let posForLookAt = SCNVector3(
-                    position.columns.3.x,
-                    theFloor,
-                    position.columns.3.z
-                )
-                modelWrapper.look(at: posForLookAt)
+                if let parent = modelWrapper.parent {
+                    // where should we look
+                    let posForLookAt = SCNVector3(
+                        position.columns.3.x,
+                        parent.position.y,
+                        position.columns.3.z
+                    )
+                    modelWrapper.look(at: posForLookAt)
+                }
             }
             
             // if users just started, get the yPos now, this is the standing y
@@ -136,7 +149,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
                 
                 // update the size of the model, using the users height
                 // 0.010 is the size between the eyes and top of the head
-                usersHeight = ((headYStanding - theFloor) + 0.15) * 100
+                usersHeight = ((headYStanding - modelWrapper.parent!.position.y) + 0.15) * 100
                 setModelSize()
                 
                 // only show the health bar in survival mode
@@ -145,9 +158,9 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
             
             // if the current y is lower than the average by a head height, they are ducking
             animationController.gittinLow = ((position.columns.3.y + 0.15) < headYStanding)
-
+            
         }
-    
+        
         // then we set the head node transform using the normal transform matrix
         headNode.transform = SCNMatrix4.init(position)
     }
@@ -221,7 +234,7 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         let cam = SCNCamera()
         let camNode = SCNNode()
         camNode.camera = cam
-
+        
         camNode.look(at: SCNVector3(0,0,0))
         camNode.position = SCNVector3(0,1.3,2)
         
@@ -333,32 +346,30 @@ class ARScene: SCNScene, SCNPhysicsContactDelegate {
         animationController?.didStart()
     }
     
-    func setStartPosition(position: SCNVector3) {
-        startPos = position
-    }
-    
     func showStartButton() {
         startButtonManager.placeStartButton(onScene: self)
     }
     
-    func showChar() {
-        modelWrapper.position = startPos
-        // the floor os used to work out the y for the look at!
-        theFloor = startPos.y
-        rootNode.addChildNode(modelWrapper)
+    func showChar(wrappingNode: SCNNode) {
+        wrappingNode.addChildNode(modelWrapper)
+        rootNode.addChildNode(wrappingNode)
     }
     
     func showRing() {
-        ring.position = startPos
-        // move down a little for the floor
-        ring.position.y = startPos.y - 1.5
-        rootNode.addChildNode(ring)
+        if let parentNode = modelWrapper.parent {
+            ring.position = parentNode.position
+            // move down a little for the floor
+            ring.position.y = parentNode.position.y - 1.5
+            rootNode.addChildNode(ring)
+        }
     }
     
     func moveFloor() {
-        // the 10 is half the size of the floor box :(
-        floorNode.position = SCNVector3(0, (startPos.y - 0.01) + 10, 0)
-        rootNode.addChildNode(floorNode)
+        if let parentNode = modelWrapper.parent {
+            // the 10 is half the size of the floor box :(
+            floorNode.position = SCNVector3(0, (parentNode.position.y - 0.01) + 10, 0)
+            rootNode.addChildNode(floorNode)
+        }
     }
     
     func createFloor() {

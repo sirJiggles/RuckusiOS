@@ -1,6 +1,6 @@
 //
 //  ARTourVC.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 25.01.18.
 //  Copyright © 2018 Gareth. All rights reserved.
@@ -28,18 +28,36 @@ class ARTourVC: UIViewController, TourPageDelegate {
     let tourData = [
         [
             "image": "tour1",
+            "title": "Find a surface",
+            "descr": "When you find a surface you will see this purple image. tap once to select",
+            "cta": false
+        ],
+        [
+            "image": "tour2",
+            "title": "Confirm the surface",
+            "descr": "To confirm this is where you want the boxer, tap again. it will go green",
+            "cta": false
+        ],
+        [
+            "image": "tour3",
+            "title": "Look at start",
+            "descr": "Put on the headset and look at the start button until the game starts!",
+            "cta": false
+        ],
+        [
+            "image": "tour4",
             "title": "Don't try to punch",
             "descr": "There is no way to detect your hand position, this means you cannot hit the boxer!",
             "cta": false
         ],
         [
-            "image": "tour2",
+            "image": "tour5",
             "title": "Dodge the punches",
             "descr": "Move your head and body to practice dodging. The aim of the game is not to get hit!",
             "cta": false
         ],
         [
-            "image": "tour3",
+            "image": "tour6",
             "title": "Secure your phone",
             "descr": "Make sure your phone is secure in the headset as you will be making fast head movements.",
             "cta": true

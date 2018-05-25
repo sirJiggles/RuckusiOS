@@ -1,6 +1,6 @@
 //
 //  ARSoundManager.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 14.01.18.
 //  Copyright © 2018 Gareth. All rights reserved.

@@ -31,7 +31,6 @@ class TourPage: UIView {
     func configure(data: [String:AnyObject]) {
         if NotchUtils().hasSafeAreaInsets() {
             ctaHeight.constant = 90
-            titleTop.constant = 50
         }
         if let title = data["title"] as? String, let image = data["image"] as? String, let ctaVisible = data["cta"] as? Bool, let descr = data["descr"] as? String {
             pageLabel.text = title

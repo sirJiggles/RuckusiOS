@@ -109,6 +109,72 @@ class CreditsViewController: UIViewController, UITableViewDataSource, UITableVie
                 "image": #imageLiteral(resourceName: "arrow"),
                 "tint": true,
                 "url": "http://www.flaticon.com/authors/gregor-cresnar"
+            ],
+            [
+                "label": "Rotate Phone - Google",
+                "image": #imageLiteral(resourceName: "rotate"),
+                "tint": true,
+                "url" : "https://www.flaticon.com/free-icon/smartphone_565961"
+            ],
+            [
+                "label": "Smartphone sad face",
+                "image": #imageLiteral(resourceName: "device-not-supported"),
+                "tint": true,
+                "url": "http://www.flaticon.com/authors/freepik"
+            ],
+            [
+                "label": "Hand on phone",
+                "image": #imageLiteral(resourceName: "surface-finder"),
+                "tint": false,
+                "url": "http://www.flaticon.com/authors/freepik"
+            ],
+            [
+                "label": "Footprints",
+                "image": #imageLiteral(resourceName: "selection"),
+                "tint": false,
+                "url": "http://www.flaticon.com/authors/freepik"
+            ],
+            [
+                "label": "Boxer",
+                "image": #imageLiteral(resourceName: "tour1"),
+                "tint": false,
+                "url": "http://www.flaticon.com/authors/freepik"
+            ],
+            [
+                "label": "Gregor Cresnar - Move icon",
+                "image": #imageLiteral(resourceName: "tour2"),
+                "tint": false,
+                "url": "http://www.flaticon.com/authors/gregor-cresnar"
+            ],
+            [
+                "label": "Phone breaking icon",
+                "image": #imageLiteral(resourceName: "tour3"),
+                "tint": false,
+                "url": "http://www.flaticon.com/authors/pixel-perfect"
+            ],
+            [
+                "label": "Warning Icon",
+                "image": #imageLiteral(resourceName: "tour3"),
+                "tint": false,
+                "url": "http://www.flaticon.com/authors/twitter"
+            ],
+            [
+                "label": "AR Glasses",
+                "image": #imageLiteral(resourceName: "ar-glasses"),
+                "tint": true,
+                "url": "http://www.flaticon.com/authors/good-ware"
+            ],
+            [
+                "label": "Animations",
+                "url": "http://www.mixamo.com/"
+            ],
+            [
+                "label": "Models",
+                "url": "http://www.adobe.com/products/fuse.html"
+            ],
+            [
+                "label": "Boxing Ring",
+                "url": "http://www.turbosquid.com/3d-models/free-boxing-ring-3d-model/604474"
             ]
         ]
         

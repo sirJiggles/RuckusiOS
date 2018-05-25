@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Secure your phone" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTG-8g-Nhw">
-                            <rect key="frame" x="20" y="0.0" width="375" height="60"/>
+                            <rect key="frame" x="20" y="0.0" width="335" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="xry-dg-P9M"/>
                             </constraints>
@@ -43,7 +43,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure your phone will not fall out of the hedset during fast head movements." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHp-vR-R0z" userLabel="Page descr">
-                            <rect key="frame" x="20" y="60" width="375" height="150"/>
+                            <rect key="frame" x="20" y="60" width="335" height="150"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="150" id="xy9-oc-PQx"/>
                             </constraints>
@@ -52,7 +52,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m0O-Kd-slv">
-                            <rect key="frame" x="187.66666666666663" y="210" width="280" height="300"/>
+                            <rect key="frame" x="47.666666666666657" y="210" width="280" height="300"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="280" id="a1K-bB-Vvc"/>
                                 <constraint firstAttribute="height" constant="300" id="eDp-5c-JHc"/>
@@ -86,6 +86,82 @@
                 <outlet property="pageImage" destination="m0O-Kd-slv" id="bcG-nS-kRj"/>
                 <outlet property="pageLabel" destination="XTG-8g-Nhw" id="xwf-ch-UMc"/>
                 <outlet property="titleTop" destination="n9c-Qo-k3b" id="5dF-vL-Ymy"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="97.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="fRv-kE-ZVR" customClass="TourPage" customModule="AR_Boxing" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPx-cB-qQ9">
+                    <rect key="frame" x="0.0" y="752" width="375" height="60"/>
+                    <color key="backgroundColor" red="0.043137254899999998" green="0.4431372549" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="KAi-3N-jwg"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="N8t-Yo-fXz"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                    <state key="normal" title="START">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapCTA:" destination="fRv-kE-ZVR" eventType="touchUpInside" id="3ZL-ng-973"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gtt-CN-2sG">
+                    <rect key="frame" x="0.0" y="44" width="375" height="510"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Secure your phone" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptq-e1-aJe">
+                            <rect key="frame" x="20" y="0.0" width="335" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="yvA-7Q-Gg2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure your phone will not fall out of the hedset during fast head movements." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKP-Ry-uST" userLabel="Page descr">
+                            <rect key="frame" x="20" y="60" width="335" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="K2d-bn-twq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LnG-xb-UNt">
+                            <rect key="frame" x="47.666666666666657" y="210" width="280" height="300"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="300" id="P9D-l2-uFT"/>
+                                <constraint firstAttribute="width" constant="280" id="Tqv-vV-6fL"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cKP-Ry-uST" firstAttribute="leading" secondItem="gtt-CN-2sG" secondAttribute="leading" constant="20" id="8GO-SO-bra"/>
+                        <constraint firstAttribute="trailing" secondItem="cKP-Ry-uST" secondAttribute="trailing" constant="20" id="MIq-sp-ETf"/>
+                        <constraint firstItem="ptq-e1-aJe" firstAttribute="leading" secondItem="gtt-CN-2sG" secondAttribute="leading" constant="20" id="Nau-bJ-sbc"/>
+                        <constraint firstAttribute="trailing" secondItem="ptq-e1-aJe" secondAttribute="trailing" constant="20" id="OcV-VF-FBm"/>
+                        <constraint firstItem="LnG-xb-UNt" firstAttribute="centerX" secondItem="gtt-CN-2sG" secondAttribute="centerX" id="rYb-ry-Mr3"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.094117647060000004" green="0.15686274510000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="XPx-cB-qQ9" secondAttribute="bottom" id="3fC-tS-zx4"/>
+                <constraint firstItem="XPx-cB-qQ9" firstAttribute="trailing" secondItem="h5C-GX-7AU" secondAttribute="trailing" id="IY7-AV-pGf"/>
+                <constraint firstItem="gtt-CN-2sG" firstAttribute="leading" secondItem="fRv-kE-ZVR" secondAttribute="leading" id="LsL-nD-VZP"/>
+                <constraint firstItem="h5C-GX-7AU" firstAttribute="top" secondItem="gtt-CN-2sG" secondAttribute="top" id="Yzh-XR-dVu"/>
+                <constraint firstItem="XPx-cB-qQ9" firstAttribute="leading" secondItem="h5C-GX-7AU" secondAttribute="leading" id="bCM-nw-am3"/>
+                <constraint firstAttribute="trailing" secondItem="gtt-CN-2sG" secondAttribute="trailing" id="fSy-g7-rib"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="h5C-GX-7AU"/>
+            <connections>
+                <outlet property="cta" destination="XPx-cB-qQ9" id="Htj-RU-BkU"/>
+                <outlet property="ctaHeight" destination="KAi-3N-jwg" id="phH-cZ-6zg"/>
+                <outlet property="pageDescr" destination="cKP-Ry-uST" id="4bv-Au-wvb"/>
+                <outlet property="pageImage" destination="LnG-xb-UNt" id="8DZ-Kt-pkj"/>
+                <outlet property="pageLabel" destination="ptq-e1-aJe" id="Ge2-0s-7p5"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="97.5"/>
         </view>

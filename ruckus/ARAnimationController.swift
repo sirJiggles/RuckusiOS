@@ -1,6 +1,6 @@
 //
 //  ARAnimationController.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 26.12.17.
 //  Copyright © 2017 Gareth. All rights reserved.
@@ -21,11 +21,11 @@ class ARAnimationController {
         .jabLow,
         .crossLow,
         .rightHookLow,
-        .bigCrossLow
+        .bigCrossLow,
+        .defeat
     ]
     
     var speed: Double = 0.7
-    var callOutsEnabled: Bool = true
     
     var settingsAccessor: SettingsAccessor?
     
@@ -50,11 +50,6 @@ class ARAnimationController {
         if let difficulty = settingsAccessor?.getDifficulty() {
             speed = Double(difficulty) + 0.7
         }
-        
-        if let enabled = settingsAccessor?.getCallOuts() {
-            callOutsEnabled = enabled
-        }
-        
         self.model = model
         setUpMoves()
     }
@@ -62,6 +57,11 @@ class ARAnimationController {
     func start() {
         // start with the idle stance on init
         playMove(named: .idle, after: 0)
+    }
+    
+    func end() {
+        // end with some drama
+        playMove(named: .defeat, after: 0)
     }
     
     @objc func runCombo() {
@@ -127,7 +127,7 @@ class ARAnimationController {
             if let move = info[0] as? Move {
                 // we can also load the low version of each move, if
                 // at the time of playing it the user is low ;)
-                let moveName = (self.gittinLow && move != .idle) ? "\(move.rawValue)Low" : move.rawValue
+                let moveName = (self.gittinLow && move != .idle && move != .defeat) ? "\(move.rawValue)Low" : move.rawValue
                 
                 if let player = model.animationPlayer(forKey: moveName) {
                     // stop running aniamtion
@@ -139,7 +139,7 @@ class ARAnimationController {
                     currentPlayer = player
                     
                     // play the swoosh sound for each punch
-                    if move != .idle {
+                    if move != .idle && move != .defeat {
                         // we know the model is hitting
                         hitting = true
                         // should be not hitting and swooshing just before end of hit
@@ -161,6 +161,8 @@ class ARAnimationController {
             let player = AnimationLoader.loadAnimation(fromSceneNamed: "art.scnassets/animations/\(animation.rawValue).dae")
             
             switch (animation) {
+            case .defeat:
+                player.speed = 1
             case .idle:
                 player.speed = 1.2
             // lets speed up the big cross a little
@@ -169,9 +171,9 @@ class ARAnimationController {
             default:
                 player.speed = CGFloat(speed)
             }
-
+            
             players.append(player)
-
+            
             model.addAnimationPlayer(player, forKey: animation.rawValue)
             
             // for some reason they all start!

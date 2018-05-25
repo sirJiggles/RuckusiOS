@@ -42,6 +42,8 @@ enum Move: String {
     case crossLow
     case bigCrossLow
     case rightHookLow
+    // animation for dying
+    case defeat
 }
 
 struct Combos: ReturnsCombos {

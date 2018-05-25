@@ -25,11 +25,11 @@ fileprivate struct HelpData {
 class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    var cellHeights = (0..<16).map { _ in C.CellHeight.close }
+    var cellHeights = (0..<21).map { _ in C.CellHeight.close }
     
     let kCloseCellHeight: CGFloat = 70
     let kOpenCellHeight: CGFloat = 380
-    let kRowsCount = 16
+    let kRowsCount = 21
     
     // set up the data for the videos
     fileprivate let tableData: [HelpData] = [
@@ -112,6 +112,31 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
             id: "_UaB0mcCqyA",
             descr: "As with the jumping version of this kick. Keep up the guard. Jump up then twist. Look over the shoulder, spot your target then strike and try to keep the hands up. This move is underestimated in power and range. Try to get close to the bag until it is uncomfortable.",
             label: "Spinning side kick"
+        ),
+        HelpData(
+            id: "",
+            descr: "Finding a surface can be tricky, somtimes I find it is easier when placing items on the floor for reference. It is especially hard for me on gym / black floors, so watch out for that!",
+            label: "AR Boxing - Placing the boxer"
+        ),
+        HelpData(
+            id: "",
+            descr: "Make sure you place your the correct way round and if possible, adjust the focus on headset. Also be mindful that you no not accidently click the sound off",
+            label: "AR Boxing - Positioning your phone"
+        ),
+        HelpData(
+            id: "",
+            descr: "When you get to the end of the game, click close on the summary screen to restart. You will need to find the planes on the floor again",
+            label: "AR Boxing - Restarting the game"
+        ),
+        HelpData(
+            id: "",
+            descr: "You can enable a virtual boxing ring in the settings screen! However be careful, you can no longer see your feet!",
+            label: "AR Boxing - Get in the ring!"
+        ),
+        HelpData(
+            id: "",
+            descr: "In the settings screen you can adjust the time for this feature or disable it. without survival the game never ends as there is no health bar and the dude will never die!",
+            label: "AR Boxing - Survival mode"
         )
     ]
 
@@ -173,7 +198,7 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 16
+        return 21
     }
     
     // here we put the data in
@@ -183,16 +208,23 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as? HelpCell {
             
-            if let webView = cell.webview {
-                let ytEmbed = "<style type='text/css'>body{padding:0;margin:0;background-color:#1C1C1D;width:100%;height:100%;}</style><html><body><iframe width='\(webView.frame.width)' height='212' src='https://www.youtube.com/embed/\(data.id)' frameborder='0' allowfullscreen></iframe></body></html>"
-                
-                webView.loadHTMLString(ytEmbed, baseURL: nil)
+            if data.id == "" {
+                cell.webview.isHidden = true
+            } else {
+                if let webView = cell.webview {
+                    let ytEmbed = "<style type='text/css'>body{padding:0;margin:0;background-color:#1C1C1D;width:100%;height:100%;}</style><html><body><iframe width='\(webView.frame.width)' height='212' src='https://www.youtube.com/embed/\(data.id)' frameborder='0' allowfullscreen></iframe></body></html>"
+                    
+                    webView.loadHTMLString(ytEmbed, baseURL: nil)
+                }
             }
             if let moveName = cell.moveName {
                 moveName.text = data.label
             }
             if let details = cell.details {
                 details.text = data.descr
+                if data.id == "" {
+                    details.font = UIFont.systemFont(ofSize: 16)
+                }
             }
             return cell
         } else {
@@ -201,8 +233,6 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             return cell
         }
-        
-//        return cell
         
     }
 

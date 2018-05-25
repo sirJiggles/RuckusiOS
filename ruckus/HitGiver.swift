@@ -1,6 +1,6 @@
 //
 //  HitGiver.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 26.12.17.
 //  Copyright © 2017 Gareth. All rights reserved.
@@ -15,15 +15,15 @@ protocol GivesHites {
 
 class HitGiver: GivesHites {
     let combos: [[Move]] = [
-//        [.jab, .cross, .leftHook, .idle],
-//        [.quadPunch, .idle],
-//        [.jab, .cross, .hook, .uppercut, .idle],
-//        [.uppercut, .idle],
-//        [.jab, .cross, .uppercut],
-//        [.bigCross, .uppercut],
-//        [.leftHook, .rightHook, .idle],
-//        [.jab, .jab, .leftHook],
-//        [.leftHook, .bigCross, .leftHook, .idle],
+        //        [.jab, .cross, .leftHook, .idle],
+        //        [.quadPunch, .idle],
+        //        [.jab, .cross, .hook, .uppercut, .idle],
+        //        [.uppercut, .idle],
+        //        [.jab, .cross, .uppercut],
+        //        [.bigCross, .uppercut],
+        //        [.leftHook, .rightHook, .idle],
+        //        [.jab, .jab, .leftHook],
+        //        [.leftHook, .bigCross, .leftHook, .idle],
         [.jab, .jab, .cross, .idle],
         [.jab, .bigCross, .idle],
         [.bigCross, .idle],

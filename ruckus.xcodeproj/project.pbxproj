@@ -12,6 +12,7 @@
 		37940181EF0AA581F3DE50D9 /* Pods_ruckus_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E039DED56B7B1A40D8C19A30 /* Pods_ruckus_watch_Extension.framework */; };
 		4350C1946F9DE7F7BF45E1D0 /* Pods_ruckus_lite_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A920DD3F3065F33D1DA4055 /* Pods_ruckus_lite_watch.framework */; };
 		61287E1192476E3E86E4C00A /* Pods_ruckus_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9041E651361575E7FD10EE12 /* Pods_ruckus_watch.framework */; };
+		6C2E947C20B89E5E0087FE01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C2E947B20B89E5D0087FE01 /* Assets.xcassets */; };
 		7F018A201F4BECF200BC044F /* VolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F018A1F1F4BECF200BC044F /* VolumeCell.swift */; };
 		7F01E3251E56617E0093622A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E3241E56617E0093622A /* SettingsViewController.swift */; };
 		7F04E25A1E563D0F005D94C5 /* SelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04E2591E563D0F005D94C5 /* SelectCell.swift */; };
@@ -179,13 +180,11 @@
 		7FAA9D312019AFB500F86EDC /* ARTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D302019AFB500F86EDC /* ARTourVC.swift */; };
 		7FAA9D322019AFB500F86EDC /* ARTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA9D302019AFB500F86EDC /* ARTourVC.swift */; };
 		7FAC98CB1E745F83003848DE /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC98CA1E745F83003848DE /* DoubleExtension.swift */; };
-		7FB057081F51B3B10023D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3580C1E4294EA00EF9BD2 /* Assets.xcassets */; };
 		7FB247FD1ED2420700267498 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB247FC1ED2420700267498 /* WorkoutSession.swift */; };
 		7FB2515F1F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2515E1F7FEDFA003EB418 /* AppStoreIdents.swift */; };
 		7FB251601F7FEDFA003EB418 /* AppStoreIdents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2515E1F7FEDFA003EB418 /* AppStoreIdents.swift */; };
 		7FB358041E4294EA00EF9BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */; };
 		7FB3580B1E4294EA00EF9BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB358091E4294EA00EF9BD2 /* Main.storyboard */; };
-		7FB3580D1E4294EA00EF9BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3580C1E4294EA00EF9BD2 /* Assets.xcassets */; };
 		7FB358101E4294EA00EF9BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3580E1E4294EA00EF9BD2 /* LaunchScreen.storyboard */; };
 		7FB5F5C91F4A10BE006BF8F3 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5F5C81F4A1077006BF8F3 /* bell.mp3 */; };
 		7FB5F5CA1F4A10C1006BF8F3 /* round-end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5F5C71F4A0EC5006BF8F3 /* round-end.wav */; };
@@ -388,6 +387,7 @@
 		5C79FF37A56D8B1AE865D9A8 /* Pods_ruckus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruckus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FE73F8ECBE73E345638F35 /* Pods-ruckus.lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckus.lite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite.debug.xcconfig"; sourceTree = "<group>"; };
 		6954B1FC44CD2BAF9EB720B9 /* Pods-ruckusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6C2E947B20B89E5D0087FE01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78E14FC63C911EA2AD8AFC4D /* Pods-ruckusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruckusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F018A1F1F4BECF200BC044F /* VolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeCell.swift; sourceTree = "<group>"; };
 		7F01E3241E56617E0093622A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -487,7 +487,6 @@
 		7FB358001E4294EA00EF9BD2 /* ruckus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruckus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB3580A1E4294EA00EF9BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7FB3580C1E4294EA00EF9BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FB3580F1E4294EA00EF9BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FB358111E4294EA00EF9BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FB358161E4294EA00EF9BD2 /* ruckusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ruckusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1060,9 +1059,9 @@
 				7F6126FA1E50A33C00ED1544 /* ViewControllers */,
 				7F32C766201F0D7C008C0835 /* Storyboards */,
 				7FB358031E4294EA00EF9BD2 /* AppDelegate.swift */,
-				7FB3580C1E4294EA00EF9BD2 /* Assets.xcassets */,
 				7FB358111E4294EA00EF9BD2 /* Info.plist */,
 				7F6127051E50BB4800ED1544 /* Settings.plist */,
+				6C2E947B20B89E5D0087FE01 /* Assets.xcassets */,
 			);
 			path = ruckus;
 			sourceTree = "<group>";
@@ -1098,8 +1097,6 @@
 				7F124A841F65B41F000CC4B8 /* Sources */,
 				7F124A9C1F65B41F000CC4B8 /* Frameworks */,
 				7F124A9F1F65B41F000CC4B8 /* Resources */,
-				7F124AA31F65B41F000CC4B8 /* [CP] Embed Pods Frameworks */,
-				7F124AA41F65B41F000CC4B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1118,7 +1115,6 @@
 				7F1BD8C01E64CA8100C9B9A0 /* Resources */,
 				7F1BD8E61E64CA8100C9B9A0 /* Embed App Extensions */,
 				5201B25650C630CCB0F10D50 /* Frameworks */,
-				1DC45DC1D369ADDC876C295B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1137,7 +1133,6 @@
 				E1F598BB83075DB01F76AB85 /* [CP] Check Pods Manifest.lock */,
 				7F33703E1F5B724E0076E7A6 /* Resources */,
 				F62640E7092A7E5FC72BECA3 /* Frameworks */,
-				89C745D0B89D8FA16DBE333E /* [CP] Copy Pods Resources */,
 				7F33708B1F5B7B230076E7A6 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -1158,8 +1153,6 @@
 				7F3370481F5B724E0076E7A6 /* Sources */,
 				7F3370491F5B724E0076E7A6 /* Frameworks */,
 				7F33704A1F5B724E0076E7A6 /* Resources */,
-				7D83F71DF79628779CF9F4D0 /* [CP] Embed Pods Frameworks */,
-				B554A86DE7B2A3EBEABB6919 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1181,7 +1174,6 @@
 				7F1BD8E81E64CA8100C9B9A0 /* Embed Watch Content */,
 				7F7222941EE896790062279E /* ShellScript */,
 				36134717BAF15E4181301D87 /* [CP] Embed Pods Frameworks */,
-				3027FBC359FA972907DAD803 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1201,8 +1193,6 @@
 				7FB358121E4294EA00EF9BD2 /* Sources */,
 				7FB358131E4294EA00EF9BD2 /* Frameworks */,
 				7FB358141E4294EA00EF9BD2 /* Resources */,
-				B1E6AC39E04F01F61C606000 /* [CP] Embed Pods Frameworks */,
-				CE322E1BB50D660EAC102EB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1223,8 +1213,6 @@
 				7FB3581D1E4294EA00EF9BD2 /* Sources */,
 				7FB3581E1E4294EA00EF9BD2 /* Frameworks */,
 				7FB3581F1E4294EA00EF9BD2 /* Resources */,
-				2A9CE81DA97729EE42E2088E /* [CP] Embed Pods Frameworks */,
-				855E6AB4CB27379DD5FB60EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1248,7 +1236,6 @@
 				7FC61E4B1F5192D300645009 /* Embed Watch Content */,
 				7FC61E4D1F5192D300645009 /* ShellScript */,
 				95F36941A3A4FC3B1320CB92 /* [CP] Embed Pods Frameworks */,
-				97B6D574D94FAF8E7A1FEB78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1447,7 +1434,7 @@
 				7F6C75E2200AB2C300B20D9D /* punch_1.wav in Resources */,
 				7F6C75E5200AB2C300B20D9D /* punch_4.wav in Resources */,
 				7F89BD4F1F3E152300A74374 /* Impact.ttf in Resources */,
-				7FB3580D1E4294EA00EF9BD2 /* Assets.xcassets in Resources */,
+				6C2E947C20B89E5E0087FE01 /* Assets.xcassets in Resources */,
 				7FFC06811F5C6D9C00F40EED /* crowd.wav in Resources */,
 				7FB3580B1E4294EA00EF9BD2 /* Main.storyboard in Resources */,
 				7F6C75E6200AB2C300B20D9D /* punch_5.wav in Resources */,
@@ -1475,7 +1462,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB057081F51B3B10023D873 /* Assets.xcassets in Resources */,
 				7FC61E411F5192D300645009 /* LaunchScreen.storyboard in Resources */,
 				7F8593A41FF130BA0085DB3E /* art.scnassets in Resources */,
 				7FC61E421F5192D300645009 /* bell.mp3 in Resources */,
@@ -1501,60 +1487,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1DC45DC1D369ADDC876C295B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.watch/Pods-ruckus.watch-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2A9CE81DA97729EE42E2088E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3027FBC359FA972907DAD803 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus/Pods-ruckus-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		36134717BAF15E4181301D87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ruckus/Pods-ruckus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
+				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1567,28 +1517,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckus.lite.watch Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7D83F71DF79628779CF9F4D0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F124A831F65B41F000CC4B8 /* [CP] Check Pods Manifest.lock */ = {
@@ -1597,43 +1535,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckus.watch Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7F124AA31F65B41F000CC4B8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F124AA41F65B41F000CC4B8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.watch Extension/Pods-ruckus.watch Extension-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F7222941EE896790062279E /* ShellScript */ = {
@@ -1662,49 +1573,22 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6b13eac7f88f7bb6278d825b94466bc5f2a61b51 b37e350fe7327521a54a25aae65a116d8a5c4a4ffd930979f9ab274f467cfd57";
 		};
-		855E6AB4CB27379DD5FB60EE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckusUITests/Pods-ruckusUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		899AAE2A0542D797BA5B39D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckus.lite-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		89C745D0B89D8FA16DBE333E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite.watch/Pods-ruckus.lite.watch-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		95F36941A3A4FC3B1320CB92 /* [CP] Embed Pods Frameworks */ = {
@@ -1713,28 +1597,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
+				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		97B6D574D94FAF8E7A1FEB78 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite/Pods-ruckus.lite-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A76CA435899CE82E376FC73C /* [CP] Check Pods Manifest.lock */ = {
@@ -1743,43 +1621,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckusTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B1E6AC39E04F01F61C606000 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B554A86DE7B2A3EBEABB6919 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckus.lite.watch Extension/Pods-ruckus.lite.watch Extension-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8D410B9B8E7BD680491C009 /* [CP] Check Pods Manifest.lock */ = {
@@ -1788,28 +1639,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckusUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CE322E1BB50D660EAC102EB9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ruckusTests/Pods-ruckusTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D9A8C7722D24F740ADFC1F10 /* [CP] Check Pods Manifest.lock */ = {
@@ -1818,13 +1657,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckus-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1F598BB83075DB01F76AB85 /* [CP] Check Pods Manifest.lock */ = {
@@ -1833,13 +1675,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckus.lite.watch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5C0E5A67C4092D7AB8DE7F9 /* [CP] Check Pods Manifest.lock */ = {
@@ -1848,13 +1693,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruckus.watch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

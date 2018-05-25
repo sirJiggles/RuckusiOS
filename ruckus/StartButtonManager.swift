@@ -1,6 +1,6 @@
 //
 //  StartButtonManager.swift
-//  ruckus
+//  VRBoxing
 //
 //  Created by Gareth on 13.02.18.
 //  Copyright © 2018 Gareth. All rights reserved.
@@ -24,13 +24,13 @@ class StartButtonManager: ManagesStartButton {
     var justStarted = false
     
     func placeStartButton(onScene scene: ARScene) -> Void {
-        let startGeo = SCNBox(width: 0.1, height: 0.4, length: 0.8, chamferRadius: 0.03)
+        let startGeo = SCNBox(width: 0.1, height: 0.5, length: 0.9, chamferRadius: 0.03)
         startGeo.firstMaterial?.diffuse.contents = UIColor.lightGreen
         
         startButton = SCNNode(geometry: startGeo)
         
-        let startText = SCNText(string: "Start!", extrusionDepth: 0.02)
-        startText.font = UIFont.systemFont(ofSize: 0.21)
+        let startText = SCNText(string: "START", extrusionDepth: 0.02)
+        startText.font = UIFont.systemFont(ofSize: 0.19)
         
         let startTextNode = SCNNode(geometry: startText)
         
@@ -41,12 +41,12 @@ class StartButtonManager: ManagesStartButton {
         
         let progressNode = SCNNode(geometry: progressGeo)
         
-        progressNode.castsShadow = true
+        progressNode.castsShadow = false
         
         startButton.addChildNode(progressNode)
         
         progressNode.position = SCNVector3(-0.05,-0.13,0)
-        startButton.rotation = SCNVector4(0, 1, 0, Float(270).degreesToRadians)
+        startButton.rotation = SCNVector4(0, 1, 0, Float(230).degreesToRadians)
         startTextNode.position = SCNVector3(-0.05, -1.06, -0.3)
         startTextNode.rotation = SCNVector4(0, 1, 0, Float(270).degreesToRadians)
         
@@ -58,7 +58,7 @@ class StartButtonManager: ManagesStartButton {
         // set the name for the hit testing
         startButton.name = NodeNames.startButton.rawValue
         
-        startButton.position = SCNVector3(0, (scene.usersHeight / 100) + 0.5, 0)
+        startButton.position = SCNVector3(-1, (scene.usersHeight / 100) - 0.1, 0.1)
         
         startButton.castsShadow = false
         
@@ -69,7 +69,7 @@ class StartButtonManager: ManagesStartButton {
         var done = 0.2
         // some easy to read vars for us
         let tick: Double = 0.2
-        let totalTime: Double = 4
+        let totalTime: Double = 2
         let oneUnit = totalTime / tick
         let percentage = progressComplete / oneUnit
         // @TODO maybe this does not need to be fired 20 times, now we have the animation
@@ -79,7 +79,7 @@ class StartButtonManager: ManagesStartButton {
             
             done = done + tick
             
-            // if we get to 4 seconds
+            // if we get to x seconds
             if done >= totalTime {
                 self.lookingTimer.invalidate()
                 self.startButton.removeFromParentNode()

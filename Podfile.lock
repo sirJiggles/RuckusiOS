@@ -17,6 +17,16 @@ DEPENDENCIES:
   - ScalingCarousel
   - SwiftyStoreKit
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - FoldingCell
+    - Google-Mobile-Ads-SDK
+    - MKRingProgressView
+    - ScalingCarousel
+    - SwiftyStoreKit
+
 SPEC CHECKSUMS:
   Crashlytics: a989ef242b66605577a425733797f810bd2725eb
   Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
@@ -28,4 +38,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8e057643dd19e45f2beb6e62b100df92e16ba7ca
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2
