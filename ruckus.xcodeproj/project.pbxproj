@@ -236,8 +236,6 @@
 		7F30C6381E8FDFEE004D90FB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7F320A961EABEDD5006089D1 /* ControllerNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerNames.swift; sourceTree = "<group>"; };
 		7F320A991EABF095006089D1 /* ControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerActions.swift; sourceTree = "<group>"; };
-		7F3370471F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F33705B1F5B724E0076E7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F340E961EF719AB00AE3DEB /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		7F3DC9151E5D5D7400AA6190 /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
 		7F4675AA20338D0B0003B442 /* HealthBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarManager.swift; sourceTree = "<group>"; };
@@ -317,7 +315,6 @@
 		7FC575D71EED5D17006DAD3E /* Reachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachable.swift; sourceTree = "<group>"; };
 		7FC575D91EEDDC57006DAD3E /* SelectCellTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCellTime.swift; sourceTree = "<group>"; };
 		7FC5AD361EAB7E8E00F3382A /* ControlsInterfaceControllerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsInterfaceControllerController.swift; sourceTree = "<group>"; };
-		7FC61E541F5192D300645009 /* ruckus.lite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ruckus.lite-Info.plist"; path = "/Users/gareth/Development/ruckus/ruckus.lite-Info.plist"; sourceTree = "<absolute>"; };
 		7FC7C2A11E50FEED007579A0 /* ToggleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleCell.swift; sourceTree = "<group>"; };
 		7FC9AAC51EDB1B6C002E2085 /* AdIdents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIdents.swift; sourceTree = "<group>"; };
 		7FCA39E41E8AE8D500F53C61 /* WorkoutFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutFinishedViewController.swift; sourceTree = "<group>"; };
@@ -332,8 +329,6 @@
 		7FE3902F1F5C9C2A0006EBE7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7FE3CE9D203BFE1800CCD6F9 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
 		7FE53BC21F5C1C4900B45643 /* ruckus.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.watch.entitlements; sourceTree = "<group>"; };
-		7FE53BC31F5C1C5100B45643 /* ruckus.lite.watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruckus.lite.watch.entitlements; sourceTree = SOURCE_ROOT; };
-		7FE53BC41F5C1C8C00B45643 /* ruckus.lite.watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ruckus.lite.watch Extension.entitlements"; sourceTree = SOURCE_ROOT; };
 		7FEDF1381EB773C000B63539 /* ToggleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleController.swift; sourceTree = "<group>"; };
 		7FFBE6141FF2A470008045C0 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		7FFC067F1F5C6B8B00F40EED /* crowd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crowd.wav; sourceTree = "<group>"; };
@@ -519,26 +514,6 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		7F3370411F5B724E0076E7A6 /* ruckus.lite.watch */ = {
-			isa = PBXGroup;
-			children = (
-				7FE53BC31F5C1C5100B45643 /* ruckus.lite.watch.entitlements */,
-				7F3370471F5B724E0076E7A6 /* Info.plist */,
-			);
-			name = ruckus.lite.watch;
-			path = "Ruckus Watch";
-			sourceTree = "<group>";
-		};
-		7F3370501F5B724E0076E7A6 /* ruckus.lite.watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				7FE53BC41F5C1C8C00B45643 /* ruckus.lite.watch Extension.entitlements */,
-				7F33705B1F5B724E0076E7A6 /* Info.plist */,
-			);
-			name = "ruckus.lite.watch Extension";
-			path = "Ruckus Watch Extension";
-			sourceTree = "<group>";
-		};
 		7F5B42081FF44D7900AAED46 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,14 +677,6 @@
 			path = ruckus;
 			sourceTree = "<group>";
 		};
-		7FADC4E41F51A6CA00E7B59D /* ruckus.lite */ = {
-			isa = PBXGroup;
-			children = (
-				7FC61E541F5192D300645009 /* ruckus.lite-Info.plist */,
-			);
-			name = ruckus.lite;
-			sourceTree = "<group>";
-		};
 		7FB247F01ED22F9D00267498 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,13 +755,10 @@
 			children = (
 				7FB247F01ED22F9D00267498 /* Shared */,
 				7FB358021E4294EA00EF9BD2 /* ruckus */,
-				7FADC4E41F51A6CA00E7B59D /* ruckus.lite */,
 				7FB358191E4294EA00EF9BD2 /* ruckusTests */,
 				7FB358241E4294EA00EF9BD2 /* ruckusUITests */,
 				7F1BD8C31E64CA8100C9B9A0 /* ruckus.watch */,
 				7F1BD8D21E64CA8100C9B9A0 /* ruckus.watch Extension */,
-				7F3370411F5B724E0076E7A6 /* ruckus.lite.watch */,
-				7F3370501F5B724E0076E7A6 /* ruckus.lite.watch Extension */,
 				7FB358011E4294EA00EF9BD2 /* Products */,
 				5F39644547C80A611D9B0977 /* Frameworks */,
 				59D1B0354C994B60CA97F4DA /* Pods */,

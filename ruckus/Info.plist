@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.01</string>
+	<string>4.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -36,6 +36,8 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Need access to the cam for AR tracking in AR boxing mode</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Health kit read access enables us to to more accuratly create a profile we use when creating stats about your workout (like calorie burn)</string>
 	<key>NSHealthUpdateUsageDescription</key>
@@ -78,7 +80,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Need access to the cam for AR tracking in AR boxing mode</string>
 </dict>
 </plist>
